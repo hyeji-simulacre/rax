@@ -1,0 +1,30 @@
+name: 사례 제보
+description: 기록관리·아카이브 분야의 AI 적용(AX) 사례를 알려주세요.
+title: "[사례] "
+labels: ["사례 제보"]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: 사례 제목
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: 링크 (사이트, GitHub 저장소, 논문, 보고서, 기사)
+    validations:
+      required: true
+  - type: input
+    id: org
+    attributes:
+      label: 기관·기업·개인
+  - type: dropdown
+    id: category
+    attributes:
+      label: 카테고리
+      options: ["분류·평가", "공개·비식별", "OCR·고문서", "메타데이터·기술", "검색·챗봇", "음성·영상", "보존·관리 자동화", "정책·가이드"]
+  - type: textarea
+    id: summary
+    attributes:
+      label: 간단한 설명
