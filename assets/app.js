@@ -1,9 +1,8 @@
 (() => {
-  // GitHub Pages(owner.github.io/repo/)에서는 주소로 저장소를 알아낸다
-  const REPO = location.hostname.endsWith(".github.io")
-    ? `${location.hostname.split(".")[0]}/${location.pathname.split("/")[1] || location.hostname}`
-    : "hyeji-simulacre/rax";
-  const SUBMIT_URL = `https://github.com/${REPO}/issues/new?template=case.yml`;
+  // 사례 제보를 받는 Google Apps Script 웹 앱 주소 (scripts/apps-script.gs 참고)
+  // 비어 있으면 GitHub 이슈 양식으로 대신 연결한다
+  const SUBMIT_ENDPOINT = "";
+  const ISSUE_URL = "https://github.com/hyeji-simulacre/rax/issues/new?template=case.yml";
 
   // 카테고리: 색상 두 개(그라데이션)와 라인 아이콘
   const CATS = [
@@ -195,7 +194,52 @@
     document.addEventListener("keydown", e => {
       if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
     });
-    for (const id of ["#submitLink", "#footerSubmit"]) $(id).href = SUBMIT_URL;
+    bindSubmit();
+  }
+
+  // ---------- submit ----------
+  function openSubmit(e) {
+    e?.preventDefault();
+    if (!SUBMIT_ENDPOINT) { window.open(ISSUE_URL, "_blank", "noopener"); return; }
+    $("#submitForm").hidden = false; $("#submitDone").hidden = true; $("#submitMsg").textContent = "";
+    $("#submitDialog").showModal();
+    $("#submitForm [name=title]").focus();
+  }
+
+  function bindSubmit() {
+    $("#submitCat").insertAdjacentHTML("beforeend", CATS.map(c => `<option>${esc(c.key)}</option>`).join(""));
+    $("#submitLink").addEventListener("click", openSubmit);
+    $("#footerSubmit").addEventListener("click", openSubmit);
+    if (location.hash === "#submit") setTimeout(openSubmit, 300);
+    $("#closeSubmit").addEventListener("click", () => $("#submitDialog").close());
+    $("#submitDialog").addEventListener("click", e => { if (e.target === $("#submitDialog")) $("#submitDialog").close(); });
+    $("#submitAgain").addEventListener("click", () => { $("#submitForm").reset(); $("#submitForm").hidden = false; $("#submitDone").hidden = true; });
+
+    $("#submitForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const f = e.target, msg = $("#submitMsg"), btn = $("#submitBtn");
+      const data = Object.fromEntries(new FormData(f));
+      f.title.setAttribute("aria-invalid", !data.title.trim());
+      const urlOk = /^https?:\/\/\S+\.\S+/.test(data.url.trim());
+      f.url.setAttribute("aria-invalid", !urlOk);
+      if (!data.title.trim()) { msg.textContent = "사례 제목을 적어 주세요."; f.title.focus(); return; }
+      if (!urlOk) { msg.textContent = "링크는 http:// 또는 https:// 로 시작하는 주소로 적어 주세요."; f.url.focus(); return; }
+      if (cases.some(c => c.url.replace(/\/$/, "") === data.url.trim().replace(/\/$/, ""))) {
+        msg.textContent = "이미 아카이브에 있는 사례예요. 검색창에서 찾아보세요."; return;
+      }
+      msg.textContent = ""; btn.disabled = true; btn.textContent = "보내는 중…";
+      const body = JSON.stringify(data);
+      try {
+        // Apps Script는 다른 출처에서 응답을 읽기 어려워 no-cors로 한 번만 보낸다 (검증은 위에서 끝냄)
+        await fetch(SUBMIT_ENDPOINT, { method: "POST", mode: "no-cors", body });
+        done();
+      } catch (err) {
+        msg.textContent = "보내지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요.";
+      } finally {
+        btn.disabled = false; btn.textContent = "제보하기";
+      }
+      function done() { f.reset(); f.hidden = true; $("#submitDone").hidden = false; }
+    });
   }
 
   function readParams() {

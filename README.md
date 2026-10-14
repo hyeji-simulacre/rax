@@ -24,7 +24,8 @@
 
 ## 사례 추가하기
 
-- **제보:** [GitHub 이슈의 '사례 제보' 양식](../../issues/new?template=case.yml)을 쓰면 됩니다.
+- **제보:** 사이트의 '사례 제보' 버튼으로 보내면 구글 시트 'RAX 사례 제보'에 쌓입니다. GitHub 이슈의 [사례 제보 양식](../../issues/new?template=case.yml)도 쓸 수 있습니다.
+- **주간 업데이트:** 매주 Claude 예약 작업이 [절차서](docs/update-procedure.md)에 따라 제보와 새 사례를 정리해 PR로 올립니다. PR을 검토하고 병합하면 사이트에 반영됩니다.
 - **직접 추가:** `data/cases.json`에 항목을 넣으면 됩니다.
 
 ```json

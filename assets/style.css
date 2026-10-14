@@ -209,6 +209,36 @@ main { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 .tags span { font: 500 13px var(--ko); color: var(--ink-2); }
 .tags span::before { content: "#"; color: var(--ink-3); margin-right: 1px; }
 
+/* ---------- submit dialog ---------- */
+.submit { width: min(640px, calc(100% - 32px)); }
+.submit-inner, .submit-done { position: relative; padding: 32px 32px 28px; }
+.submit-head h3 { margin: 4px 0 6px; font: 700 26px var(--ko); letter-spacing: -.03em; }
+.submit-head .eyebrow { margin: 0; font-size: 12px; }
+.submit-head .muted { margin: 0; font: 400 14.5px/1.6 var(--ko); }
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 22px; }
+.field { display: flex; flex-direction: column; gap: 6px; font: 500 13px var(--ko); color: var(--ink-2); }
+.field.full { grid-column: 1 / -1; }
+.field b { color: #e5484d; font-weight: 600; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 12px 14px; border-radius: var(--r-sm);
+  border: 1px solid var(--line); background: rgba(245, 246, 248, .7);
+  font: 400 15px/1.5 var(--ko); color: var(--ink); outline: 0; resize: vertical;
+  transition: border-color .2s, box-shadow .2s, background .2s;
+}
+.field input:focus, .field select:focus, .field textarea:focus { background: #fff; border-color: rgba(79, 107, 255, .5); box-shadow: 0 0 0 4px rgba(79, 107, 255, .12); }
+.field [aria-invalid="true"] { border-color: #e5484d; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-msg { min-height: 1.4em; margin: 14px 0 0; font: 400 14px var(--ko); color: #e5484d; }
+.submit-actions { display: flex; justify-content: flex-end; margin-top: 6px; }
+.submit-actions .glass-btn { padding: 13px 26px; font-size: 15px; }
+.glass-btn[disabled] { opacity: .55; pointer-events: none; }
+.submit-done { text-align: center; padding: 56px 32px 44px; }
+.submit-done h3 { margin: 18px 0 6px; font: 700 22px var(--ko); }
+.submit-done .muted { margin: 0 0 24px; font-family: var(--ko); }
+.done-mark { width: 64px; height: 64px; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; color: #fff; background: linear-gradient(135deg, #22a06b, #7fe0b0); box-shadow: 0 10px 30px rgba(34, 160, 107, .3); }
+.done-mark svg { width: 30px; height: 30px; stroke-width: 2.6; }
+button.glass-btn { border-style: solid; }
+
 /* ---------- footer ---------- */
 .footer { max-width: 1240px; margin: 80px auto 0; padding: 32px 24px 48px; border-top: 1px solid var(--line); font: 400 14px var(--ko); }
 .footer p { margin: 4px 0; }
@@ -234,5 +264,7 @@ main { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
   .chip-row::-webkit-scrollbar { display: none; }
   .chip { flex: none; }
   .detail-body { padding: 18px 20px 22px; }
+  .submit-inner { padding: 26px 20px 22px; }
+  .fields { grid-template-columns: 1fr; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
