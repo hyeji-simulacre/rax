@@ -3,6 +3,8 @@
 국내외 공공기관·기업·연구자·개인이 **기록관리와 아카이브에 AI를 적용한 사례(AX, AI Transformation)** 를 모아
 카테고리별로 보여주는 정적 웹사이트입니다. 서비스, GitHub 저장소, MCP 서버·API, 논문, 보고서, 기사까지 함께 담습니다.
 
+- 사이트: **https://hyeji-simulacre.github.io/rax/**
+
 영감: [PAX — 모두의 공공AX 사례 아카이브](https://hollobit.github.io/PAX/)
 
 ## 카테고리
