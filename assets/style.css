@@ -855,7 +855,7 @@ body.asking::after { height: 520px; }
 .case-inner { max-width: 1120px; margin: 0 auto; padding: 48px clamp(16px, 4vw, 48px) 96px; }
 .case-head h1 { margin: 18px 0 8px; font: 800 clamp(28px, 4vw, 48px)/1.2 var(--ko); letter-spacing: -.04em; word-break: keep-all; }
 .case-head .sub { margin: 0; color: var(--ink-3); font: 400 15px var(--ko); }
-.case-page .detail-cover { margin: 32px 0 0; aspect-ratio: 16 / 8; border-radius: 22px; }
+.case-view .detail-cover { margin: 32px 0 0; aspect-ratio: 16 / 8; border-radius: 22px; }
 .case-cols { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 56px; margin-top: 40px; align-items: start; }
 .case-summary { margin: 0; font: 400 17.5px/1.85 var(--ko); color: var(--ink-2); word-break: keep-all; }
 .case-side { border-top: 2px solid var(--ink); padding-top: 14px; }
@@ -889,7 +889,7 @@ body.asking::after { height: 520px; }
 }
 @media (max-width: 640px) {
   .case-inner { padding-top: 28px; }
-  .case-page .detail-cover { border-radius: 16px; }
+  .case-view .detail-cover { border-radius: 16px; }
   .case-summary { font-size: 16px; }
   .rel-grid { grid-template-columns: 1fr 1fr; gap: 20px 14px; }
   .rel-text b { font-size: 14px; }
@@ -1032,3 +1032,13 @@ body.asking::after { height: 520px; }
   .ar-tools .sort { margin-left: auto; }
 }
 @media (prefers-reduced-motion: reduce) { .ar-bg { transform: none !important; } }
+
+/* ==== v2.8: 사례·카테고리 서브페이지 (머리말·꼬리말 유지) ==== */
+body.in-view main > section:not(.view) { display: none !important; }
+.view { padding: 100px 0 40px; animation: case-in .35s cubic-bezier(.2, .7, .2, 1); }
+.view[hidden] { display: none; }
+.view .case-inner { padding: 24px 0 64px; max-width: 1120px; }
+.view.cat-view .case-inner { max-width: none; }
+.view > .case-back { margin-left: max(0px, calc((100% - 1120px) / 2)); }
+.cat-view > .case-back { margin-left: 0; }
+@media (max-width: 640px) { .view { padding-top: 84px; } }

@@ -13,7 +13,7 @@
  *   CHAT_DAILY_MAX: (선택) 하루 최대 채팅 호출 수, 기본 300
  */
 const FIELDS = ["title", "url", "org", "category", "region", "summary", "contact"];
-const MAX_LEN = { title: 300, url: 1000, org: 200, category: 40, region: 10, summary: 2000, contact: 200 };
+const MAX_LEN = { title: 300, url: 1000, org: 200, category: 40, region: 40, summary: 2000, contact: 200 };
 
 function doPost(e) {
   try {

@@ -25,8 +25,8 @@
   ];
   const CAT = Object.fromEntries(CATS.map(c => [c.key, c]));
   const FACETS = [
-    { field: "region", label: "지역", values: ["국내", "해외"] },
-    { field: "format", label: "형식", values: ["사이트·서비스", "GitHub·오픈소스", "MCP·API", "논문", "보고서", "기사·발표"] },
+    { field: "country", label: "국가", values: [] }, // 데이터를 읽은 뒤 사례가 많은 나라 순으로 채운다
+    { field: "format", label: "형식", values: ["MCP·API", "GitHub·오픈소스", "사이트·서비스", "논문", "보고서", "기사·발표"] },
     { field: "orgType", label: "주체", values: ["공공기관", "기업", "학계·연구", "개인·커뮤니티"] },
   ];
 
@@ -34,7 +34,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const hash = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
 
-  const state = { q: "", org: null, cat: null, region: null, format: null, orgType: null, sort: "relevance", guide: null };
+  const state = { q: "", org: null, cat: null, country: null, format: null, orgType: null, sort: "relevance", guide: null };
   let guides = [];
 
   // ---------- 문장형 질문 검색 ----------
@@ -241,7 +241,8 @@
     else if (sort === "old") s.sort((a, b) => -byYear(a, b));
     else if (sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
     else s.sort(byYear);
-    return s;
+    // MCP·API 사례를 언제나 맨 앞에 둔다 (나머지 순서는 그대로)
+    return [...s.filter(x => x.format === "MCP·API"), ...s.filter(x => x.format !== "MCP·API")];
   }
 
   // ---------- 질문 제시어 · 안내 패널 ----------
@@ -304,7 +305,7 @@
       <div class="picks">${picks.map((it, i) => `
         <button class="pick" type="button" data-id="${esc(it.id)}">
           <span class="rank cited">${i + 1}</span>
-          <span><b>${esc(titleOf(it))}</b>${it._why ? `<em>${esc(it._why)}</em>` : ""}<small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
+          <span><b>${esc(titleOf(it))}</b>${it._why ? `<em>${esc(it._why)}</em>` : ""}<small>${esc(it.country)} · ${esc(shortOrg(it.org))}</small></span>
         </button>`).join("")}</div>` : ""}
       <p class="more">${matched ? `<a href="#" data-guide="${esc(g.id)}">이 안내로 사례 모아 보기</a> · ` : ""}아래에서 관련 사례 ${list.length}건을 더 볼 수 있어요.</p>
       <div class="related">${others.map(o => `<button class="prompt" type="button" data-guide="${esc(o.id)}">${esc(o.q)}</button>`).join("")}</div>`;
@@ -326,7 +327,7 @@
         </div>
         <div class="body">
           <h3>${esc(titleOf(it))}</h3>
-          <div class="by"><span>by ${byLink(it)}</span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
+          <div class="by"><span>by ${byLink(it)}</span><span class="where">${esc(it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
         </div>
       </article>`;
   }
@@ -446,7 +447,7 @@
     $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
       <li><button type="button" data-src="${esc(it.id)}">
         <span class="rank${i < 8 ? " cited" : ""}">${i + 1}</span>
-        <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
+        <span><b>${esc(titleOf(it))}</b><small>${esc(it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
       </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
   }
 
@@ -497,7 +498,7 @@
     const img = imageFor(it), dc = $("#dCover");
     dc.hidden = !img;
     dc.innerHTML = img ? `<img src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.parentNode.hidden=true">` : "";
-    $("#dMeta").innerHTML = [it.category, it.format, it.apiType, it.orgType, it.region === "국내" ? "국내" : it.country, it.year]
+    $("#dMeta").innerHTML = [it.category, it.format, it.apiType, it.orgType, it.country, it.year]
       .filter(Boolean).map(v => `<span class="pill">${esc(v)}</span>`).join("");
     $("#dTitle").textContent = titleOf(it);
     $("#dSub").textContent = [it.titleKo ? it.title : null, it.org].filter(Boolean).join(" — ");
@@ -528,20 +529,14 @@
     put($("#dSameCat"), sameCat, `${it.category}의 다른 사례`);
     put($("#dOtherCat"), otherCat, "다른 카테고리의 관련 사례", "주제가 겹치는 다른 업무 영역의 사례예요.");
 
-    const d = $("#detail");
-    if (!d.open) d.showModal();
-    d.scrollTop = 0;
-    if (push) history.pushState({ case: id }, "", `#case=${encodeURIComponent(id)}`);
+    showView("case");
+    if (push) history.pushState({ view: 1 }, "", `#case=${encodeURIComponent(id)}`);
   }
-  function closeDetail() {
-    if (!$("#detail").open) return;
-    if (history.state && history.state.case) history.back(); // 브라우저 뒤로 가기와 같게
-    else { $("#detail").close(); history.replaceState(null, "", location.pathname); }
-  }
+  const closeDetail = leaveView;
   const caseFromHash = () => { const m = /^#case=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
   // ---------- 카테고리 페이지 (전체 화면, 주소 #cat=이름) ----------
-  const cp = { cat: null, q: "", region: null, format: null, orgType: null, sort: "recent" };
+  const cp = { cat: null, q: "", country: null, format: null, orgType: null, sort: "recent" };
   function cpList({ ignore } = {}) {
     const toks = tokenize(cp.q);
     return cases.filter(it => {
@@ -576,18 +571,38 @@
   }
   function openCat(key, { push = true } = {}) {
     if (!CAT[key]) return;
-    Object.assign(cp, { cat: key, q: "", region: null, format: null, orgType: null });
+    Object.assign(cp, { cat: key, q: "", country: null, format: null, orgType: null });
     $("#cpQ").value = "";
     renderCat();
-    const d = $("#catPage");
-    if (!d.open) d.showModal();
-    d.scrollTop = 0;
-    if (push) history.pushState({ cat: key }, "", `#cat=${encodeURIComponent(key)}`);
+    showView("cat");
+    if (push) history.pushState({ view: 1 }, "", `#cat=${encodeURIComponent(key)}`);
   }
-  function closeCat() {
-    if (!$("#catPage").open) return;
-    if (history.state && history.state.cat) history.back();
-    else { $("#catPage").close(); history.replaceState(null, "", location.pathname); }
+  const closeCat = leaveView;
+  // ---------- 서브페이지 전환: 처음 화면 섹션을 숨기고 사례/카테고리 페이지만 보여 준다 ----------
+  let homeY = 0, inView = null;
+  function showView(name) {
+    if (!inView) homeY = scrollY;
+    inView = name;
+    document.body.classList.add("in-view");
+    $("#caseView").hidden = name !== "case"; $("#catView").hidden = name !== "cat";
+    if (lenis) lenis.scrollTo(0, { immediate: true }); else scrollTo(0, 0);
+  }
+  function showHome(restore = true) {
+    if (!inView) return;
+    inView = null;
+    document.body.classList.remove("in-view");
+    $("#caseView").hidden = $("#catView").hidden = true;
+    if (restore) requestAnimationFrame(() => { if (lenis) lenis.scrollTo(homeY, { immediate: true }); else scrollTo(0, homeY); });
+  }
+  function leaveView() {
+    if (history.state && history.state.view) history.back(); // 브라우저 뒤로 가기와 같게
+    else { showHome(); history.replaceState(null, "", location.pathname); }
+  }
+  function route() {
+    const id = caseFromHash(), cat = catFromHash();
+    if (id) openDetail(id, { push: false });
+    else if (cat) { if (inView !== "cat" || cp.cat !== cat) openCat(cat, { push: false }); else showView("cat"); }
+    else showHome();
   }
   const catFromHash = () => { const m = /^#cat=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
@@ -610,7 +625,7 @@
     $("#makerMore").hidden = pool.length <= makerShown;
   }
   function showOrg(id) {
-    if ($("#catPage").open) { $("#catPage").close(); history.replaceState(null, "", location.pathname); }
+    if (inView) { showHome(false); history.replaceState(null, "", location.pathname); }
     state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = ""; $("#arQ").value = "";
     for (const f of FACETS) state[f.field] = null;
     update(); goTo("#arBody");
@@ -658,29 +673,34 @@
     $("#grid").addEventListener("click", e => { if (e.target.closest(".org-link")) return; const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
     $("#grid").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
     $("#closeDetail").addEventListener("click", closeDetail);
-    $("#detail").addEventListener("cancel", e => { e.preventDefault(); closeDetail(); });
-    $("#detail").addEventListener("click", e => {
+    $("#caseView").addEventListener("click", e => {
       const r = e.target.closest("[data-rel]"); if (r) { openDetail(r.dataset.rel); return; }
-      const o = e.target.closest("[data-org]"); if (o) { const id = o.dataset.org; closeDetail(); setTimeout(() => showOrg(id), 60); }
+      const o = e.target.closest("[data-org]"); if (o) showOrg(o.dataset.org);
     });
     window.addEventListener("popstate", () => {
-      const id = caseFromHash(), cat = catFromHash();
-      if (id) openDetail(id, { push: false }); else if ($("#detail").open) $("#detail").close();
-      if (cat && !id) { if (!$("#catPage").open || cp.cat !== cat) openCat(cat, { push: false }); }
-      else if (!id && $("#catPage").open) $("#catPage").close();
+      route();
     });
+    // 서브페이지에서 머리말·꼬리말의 #링크를 누르면 처음 화면으로 돌아가 그 위치로 간다
+    document.addEventListener("click", e => {
+      const a = e.target.closest('a[href^="#"], a.logo'); if (!a || !inView) return;
+      const href = a.getAttribute("href");
+      if (/^#(submit|feedback|case=|cat=)/.test(href || "")) return;
+      e.preventDefault(); e.stopPropagation();
+      showHome(false); history.pushState(null, "", location.pathname);
+      const t = href && href.startsWith("#") && href.length > 1 ? $(href) : null;
+      requestAnimationFrame(() => t ? goTo(t) : goTo(0));
+    }, true);
     // 카테고리 페이지
     $("#cpBack").addEventListener("click", closeCat);
-    $("#catPage").addEventListener("cancel", e => { e.preventDefault(); closeCat(); });
-    $("#catPage").addEventListener("click", e => {
+    $("#catView").addEventListener("click", e => {
       if (e.target.closest(".org-link")) return;
       const k = e.target.closest("[data-cpcat]");
-      if (k) { Object.assign(cp, { cat: k.dataset.cpcat, q: "", region: null, format: null, orgType: null }); $("#cpQ").value = "";
-        history.replaceState({ cat: cp.cat }, "", `#cat=${encodeURIComponent(cp.cat)}`); renderCat(); $("#catPage").scrollTop = 0; return; }
+      if (k) { Object.assign(cp, { cat: k.dataset.cpcat, q: "", country: null, format: null, orgType: null }); $("#cpQ").value = "";
+        history.replaceState({ cat: cp.cat }, "", `#cat=${encodeURIComponent(cp.cat)}`); renderCat(); return; }
       const f = e.target.closest("[data-cpf]"); if (f) { cp[f.dataset.cpf] = f.dataset.val || null; renderCat(); return; }
       const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id);
     });
-    $("#catPage").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
+    $("#catView").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
     $("#cpForm").addEventListener("submit", e => { e.preventDefault(); $("#cpQ").blur(); });
     $("#cpQ").addEventListener("input", e => { cp.q = e.target.value.trim(); renderCat(); });
     $("#cpSort").addEventListener("change", e => { cp.sort = e.target.value; renderCat(); });
@@ -795,6 +815,8 @@
       $("#resultInfo").textContent = "사례 데이터를 불러오지 못했습니다.";
       return;
     }
+    const byCount = {}; for (const c of cases) byCount[c.country] = (byCount[c.country] || 0) + 1;
+    FACETS[0].values = Object.keys(byCount).sort((a, b) => (a === "국제") - (b === "국제") || byCount[b] - byCount[a] || a.localeCompare(b, "ko"));
     renderStats(); renderCategories(); renderPrompts(); renderMakers();
     const gp = new URLSearchParams(location.search).get("guide");
     update();
