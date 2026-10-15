@@ -675,3 +675,11 @@ body.asking .ask { margin-top: 0; }
 }
 
 input[type=search]::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+
+/* 의견 보내기 */
+.fb-types { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.fb-types input { position: absolute; opacity: 0; pointer-events: none; }
+.fb-types span { display: inline-block; padding: 9px 16px; border-radius: 999px; border: 1px solid var(--line); font: 500 14px var(--ko); color: #4a505c; cursor: pointer; background: #fff; transition: background .2s, color .2s; }
+.fb-types input:checked + span { background: #0f1115; color: #fff; border-color: #0f1115; }
+.fb-types input:focus-visible + span { outline: 3px solid rgba(213, 71, 70, .35); outline-offset: 2px; }
+@media (max-width: 640px) { #feedbackOpen { display: none; } }

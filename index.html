@@ -25,6 +25,7 @@
     </nav>
     <div class="head-actions">
       <a class="glass-btn icon" href="#top" id="headAsk" aria-label="질문하기"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+      <button class="glass-btn" id="feedbackOpen" type="button">의견 보내기</button>
       <button class="glass-btn solid" id="submitLink" type="button">사례 제보</button>
     </div>
   </header>
@@ -121,6 +122,7 @@
       <div class="foot-links">
         <a href="#top">질문하기</a><a href="#archive">사례 아카이브</a>
         <a id="footerSubmit" href="#submit">사례 제보</a>
+        <a id="footerFeedback" href="#feedback">의견 보내기</a>
         <a href="https://github.com/hyeji-simulacre/rax" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
@@ -202,6 +204,36 @@
         <img src="assets/coffee-qr.png" alt="송금용 QR 코드" width="220" height="220">
         <p>휴대폰 카메라로 QR을 비추면 송금 화면이 열려요. 고맙습니다!</p>
       </div>
+    </div>
+  </dialog>
+
+  <dialog id="feedbackDialog" class="detail submit feedback" aria-labelledby="fbTitle">
+    <form id="feedbackForm" class="submit-inner" novalidate>
+      <button class="glass-btn icon close" type="button" id="fbClose" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+      <div class="submit-head">
+        <p class="eyebrow en">Feedback</p>
+        <h3 id="fbTitle">의견 보내기</h3>
+        <p class="muted">RAX를 쓰면서 불편했던 점, 바라는 기능, 잘못된 정보를 알려주세요. 하나하나 읽고 반영할게요.</p>
+      </div>
+      <div class="fb-types" role="radiogroup" aria-label="의견 종류">
+        <label><input type="radio" name="kind" value="개선 제안" checked><span>개선 제안</span></label>
+        <label><input type="radio" name="kind" value="오류 신고"><span>오류 신고</span></label>
+        <label><input type="radio" name="kind" value="정보 정정"><span>정보 정정</span></label>
+        <label><input type="radio" name="kind" value="응원"><span>응원</span></label>
+      </div>
+      <div class="fields">
+        <label class="field full"><span>내용 <b>*</b></span><textarea name="message" rows="6" maxlength="1800" required placeholder="자유롭게 적어 주세요."></textarea></label>
+        <label class="field full"><span>연락처 (선택)</span><input name="contact" maxlength="200" placeholder="답장을 받고 싶으면 이메일을 적어 주세요 · 공개되지 않습니다"></label>
+        <label class="hp" aria-hidden="true">웹사이트<input name="website" tabindex="-1" autocomplete="off"></label>
+      </div>
+      <p class="form-msg" id="fbMsg" role="status"></p>
+      <div class="submit-actions"><button class="glass-btn solid" type="submit" id="fbBtn">보내기</button></div>
+    </form>
+    <div class="submit-done" id="fbDone" hidden>
+      <div class="done-mark"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17 19 7"/></svg></div>
+      <h3>의견 고맙습니다</h3>
+      <p class="muted">보내주신 내용은 꼼꼼히 읽고 다음 업데이트에 반영할게요.</p>
+      <button class="glass-btn" type="button" id="fbAgain">닫기</button>
     </div>
   </dialog>
 

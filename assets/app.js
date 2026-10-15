@@ -507,6 +507,27 @@
       if (e.key === "/" && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); $("#q").focus(); }
     });
     bindSubmit(); bindAsk();
+    // 의견 보내기: 제보와 같은 구글 시트로, 제목 앞에 [의견]을 붙여 구분한다
+    const openFb = e => { e?.preventDefault(); $("#feedbackForm").hidden = false; $("#fbDone").hidden = true; $("#fbMsg").textContent = ""; $("#feedbackDialog").showModal(); $("#feedbackForm [name=message]").focus(); };
+    $("#feedbackOpen").addEventListener("click", openFb);
+    $("#footerFeedback").addEventListener("click", openFb);
+    if (location.hash === "#feedback") setTimeout(openFb, 300);
+    $("#fbClose").addEventListener("click", () => $("#feedbackDialog").close());
+    $("#fbAgain").addEventListener("click", () => $("#feedbackDialog").close());
+    $("#feedbackDialog").addEventListener("click", e => { if (e.target === $("#feedbackDialog")) $("#feedbackDialog").close(); });
+    $("#feedbackForm").addEventListener("submit", async e => {
+      e.preventDefault();
+      const f = e.target, msg = $("#fbMsg"), btn = $("#fbBtn"), d = Object.fromEntries(new FormData(f));
+      if (!d.message.trim()) { msg.textContent = "내용을 적어 주세요."; f.message.focus(); return; }
+      if (!SUBMIT_ENDPOINT) { msg.textContent = "지금은 의견을 받을 수 없어요. GitHub 이슈로 알려주세요."; return; }
+      btn.disabled = true; btn.textContent = "보내는 중…"; msg.textContent = "";
+      const body = JSON.stringify({ title: `[의견] ${d.kind}`, url: location.href.split("#")[0], category: "의견", region: "",
+        org: navigator.userAgent.includes("Mobile") ? "모바일" : "데스크톱", summary: d.message, contact: d.contact, website: d.website });
+      try { await fetch(SUBMIT_ENDPOINT, { method: "POST", mode: "no-cors", body }); f.reset(); f.hidden = true; $("#fbDone").hidden = false; }
+      catch { msg.textContent = "보내지 못했어요. 인터넷 연결을 확인하고 다시 시도해 주세요."; }
+      finally { btn.disabled = false; btn.textContent = "보내기"; }
+    });
+
     // 개발자 정보
     $("#devOpen").addEventListener("click", () => $("#devDialog").showModal());
     $("#devClose").addEventListener("click", () => $("#devDialog").close());
