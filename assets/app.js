@@ -648,7 +648,7 @@
   const catFromHash = () => { const m = /^#cat=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
   // ---------- 만든 사람·조직 목록 ----------
-  let makerTab = "전체", makerShown = 24;
+  let makerTab = "전체", makerShown = 24, makerQ = "", makerCountry = "";
   // 이름순: 한글 → 영어 → 숫자·기타, 같은 묶음 안에서는 가나다·ABC 순
   const nameGroup = n => /^[가-힣]/.test(n) ? 0 : /^[A-Za-z]/.test(n) ? 1 : /^[0-9]/.test(n) ? 2 : 3;
   const byName = (a, b) => nameGroup(a.name) - nameGroup(b.name) || a.name.localeCompare(b.name, "ko", { sensitivity: "base" });
@@ -657,7 +657,16 @@
     $("#makers").hidden = false;
     const counts = {}; for (const c of cases) for (const id of c.orgIds || []) counts[id] = (counts[id] || 0) + 1;
     const types = ["전체", "공공기관", "기업", "학계·연구", "개인·커뮤니티"];
-    const pool = orgs.filter(o => counts[o.id] && (makerTab === "전체" || o.type === makerTab))
+    // 나라 목록: 처음 한 번 채운다 (사람·조직이 많은 나라 순, 국제는 끝)
+    const sel = $("#mkCountry");
+    if (sel.options.length === 1) {
+      const nc = {}; for (const o of orgs) if (counts[o.id]) nc[o.country] = (nc[o.country] || 0) + 1;
+      sel.insertAdjacentHTML("beforeend", Object.keys(nc).sort((a, b) => (a === "국제") - (b === "국제") || nc[b] - nc[a] || a.localeCompare(b, "ko"))
+        .map(c => `<option value="${esc(c)}">${esc(c)} (${nc[c]})</option>`).join(""));
+    }
+    const q = makerQ.toLowerCase().replace(/\s+/g, "");
+    const hit = o => !q || [o.name, o.nameKo, o.id, ...(o.links || []).map(l => l.url)].filter(Boolean).join(" ").toLowerCase().replace(/\s+/g, "").includes(q);
+    const pool = orgs.filter(o => counts[o.id] && (makerTab === "전체" || o.type === makerTab) && (!makerCountry || o.country === makerCountry) && hit(o))
       .sort(byName);
     $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳(명)과 그 주소를 모았습니다.`;
     $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
@@ -666,6 +675,7 @@
       <div class="mk-links">${(o.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
       <button class="mk-count" type="button" data-org="${esc(o.id)}">사례 ${counts[o.id]}건</button>
     </li>`).join("");
+    if (!pool.length) $("#makerList").innerHTML = `<li class="mk-empty">찾는 사람·조직이 없어요. 이름을 다르게 적거나 국가를 바꿔 보세요.</li>`;
     $("#makerMore").hidden = pool.length <= makerShown;
   }
   function showOrg(id) {
@@ -754,6 +764,9 @@
     $("#cpSort").addEventListener("change", e => { cp.sort = e.target.value; renderCat(); });
     $("#makerTabs").addEventListener("click", e => { const t = e.target.closest("[data-mtab]"); if (t) { makerTab = t.dataset.mtab; makerShown = 24; renderMakers(); } });
     $("#makerList").addEventListener("click", e => { const b = e.target.closest("[data-org]"); if (b) showOrg(b.dataset.org); });
+    $("#mkQ").addEventListener("input", e => { makerQ = e.target.value.trim(); makerShown = 24; renderMakers(); });
+    $("#mkForm").addEventListener("submit", e => { e.preventDefault(); $("#mkQ").blur(); });
+    $("#mkCountry").addEventListener("change", e => { makerCountry = e.target.value; makerShown = 24; renderMakers(); });
     $("#makerMore").addEventListener("click", () => { makerShown += 48; renderMakers(); });
     document.addEventListener("keydown", e => {
       // 입력 칸에서 타이핑할 때는 '/'를 그대로 두고, 그 밖에서만 검색창으로 이동한다

@@ -35,7 +35,7 @@
     <section class="hero" id="top">
       <div class="hero-head">
         <p class="eyebrow en">Archives &amp; Records Management × AI Transformation</p>
-        <h1>지금 가장 궁금한<br>기록관리 AX는 뭔가요?</h1>
+        <h1>지금 가장 궁금한<br><em class="hl">기록관리 AX</em>는 뭔가요?</h1>
         <p class="lede">국내외 공공기관, 기업, 연구자, 개인이<br>기록관리와 아카이브에 AI를 적용한 사례를 모았습니다.<br>서비스, GitHub 저장소, 논문, 보고서까지 한곳에서 찾아보세요.</p>
         <dl class="stats" id="stats"></dl>
       </div>
@@ -129,6 +129,16 @@
       <div class="section-head">
         <h2>만든 사람·조직</h2>
         <p id="makersInfo">사례를 만든 기관·회사·연구실·개인과 그 주소를 모았습니다.</p>
+      </div>
+      <div class="maker-find">
+        <form class="search glass mk-search" id="mkForm" role="search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="mkQ" type="search" placeholder="이름으로 찾기 (예: 국가기록원, NARA)" autocomplete="off" aria-label="만든 사람·조직 이름으로 찾기">
+        </form>
+        <div class="sort plain-select mk-country">
+          <label for="mkCountry" class="sr">국가</label>
+          <select id="mkCountry"><option value="">모든 국가</option></select>
+        </div>
       </div>
       <div class="maker-tabs" id="makerTabs" role="tablist"></div>
       <ul class="maker-list" id="makerList"></ul>
