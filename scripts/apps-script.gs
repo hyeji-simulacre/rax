@@ -11,6 +11,7 @@
  *   LLM_MODEL     : 모델 ID. 쉼표로 여러 개 적으면 앞 모델이 사라졌을 때 다음 모델을 쓴다. 맞는 ID는 아래 findModels()로 찾는다
  *   LLM_BASE_URL  : (선택) 기본값 https://integrate.api.nvidia.com/v1  — OpenAI 호환 주소면 무엇이든 된다
  *   CHAT_DAILY_MAX: (선택) 하루 최대 채팅 호출 수, 기본 300
+ *   NOTIFY_EMAIL  : (선택) 의견 알림 메일을 받을 주소. 스크립트를 실행하는 계정과 다른 주소여야 받은편지함에 온다
  *   SKILL_URL     : (선택) 답변 스킬 문서 주소. 기본은 저장소의 data/skill.md (고치면 30분 안에 반영, 다시 배포할 필요 없음)
  */
 const FIELDS = ["title", "url", "org", "category", "region", "summary", "contact"];
@@ -54,12 +55,14 @@ function submit(data) {
 }
 
 // 의견이 들어오면 운영자에게 메일로 알린다. 메일이 실패해도 시트 저장은 그대로 둔다.
-const NOTIFY_EMAIL = "arche.jhj@gmail.com";
+// 받을 주소는 스크립트 속성 NOTIFY_EMAIL에 넣는다(코드를 다시 붙여 넣어도 유지된다). 없으면 아래 기본 주소로 보낸다.
+// 주의: 이 스크립트를 실행하는 구글 계정과 같은 주소면 Gmail이 '보낸편지함'에만 넣으므로 다른 주소를 쓴다.
+const NOTIFY_EMAIL_DEFAULT = "arche.jhj@gmail.com";
 function notifyFeedback(row) {
   try {
     const kind = row.title.replace(/^'?\[의견\]\s*/, "") || "의견";
     MailApp.sendEmail({
-      to: NOTIFY_EMAIL,
+      to: PropertiesService.getScriptProperties().getProperty("NOTIFY_EMAIL") || NOTIFY_EMAIL_DEFAULT,
       subject: `[RAX] 새 의견: ${kind}`,
       body: [`종류: ${kind}`, `보낸 곳: ${row.org || "-"} · ${row.url || "-"}`, `연락처: ${row.contact || "(없음)"}`, "", row.summary || "(내용 없음)", "",
         "— RAX 의견 보내기 (시트 'RAX 사례 제보'에도 저장됨)"].join("\n"),
