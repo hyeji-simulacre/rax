@@ -52,6 +52,10 @@ jobs:
           mkdir -p _site
           cp -r index.html assets data .nojekyll _site/
           if [ -d thumbs ]; then cp -r thumbs _site/; fi
+          # 브라우저(특히 아이폰 사파리)가 예전 CSS·JS를 쓰지 않도록 배포마다 버전 표시를 붙인다
+          v="${GITHUB_SHA::8}"
+          sed -i "s|assets/style.css\"|assets/style.css?v=$v\"|; s|assets/app.js\"|assets/app.js?v=$v\"|" _site/index.html
+          grep -o 'assets/\(style.css\|app.js\)?v=[0-9a-f]*' _site/index.html
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
