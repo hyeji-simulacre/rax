@@ -211,7 +211,7 @@
       <div class="feature-info">
         <p class="kicker en">Case of the Week</p>
         <h2>${esc(titleOf(it))}</h2>
-        <p class="feature-by"><i style="background:${c.c[0]}"></i>by <b>${esc(it.org)}</b></p>
+        <p class="feature-by">by <b>${esc(it.org)}</b></p>
         <dl class="feature-meta">
           <div><dt>카테고리</dt><dd>${esc(it.category)}</dd></div>
           <div><dt>형식</dt><dd>${esc(it.apiType || it.format)}</dd></div>
@@ -311,7 +311,7 @@
         </div>
         <div class="body">
           <h3>${esc(titleOf(it))}</h3>
-          <div class="by"><i style="background:${(CAT[it.category] || CATS[0]).c[0]}"></i><span>by <b>${esc(shortOrg(it.org))}</b></span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
+          <div class="by"><span>by <b>${esc(shortOrg(it.org))}</b></span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
         </div>
       </article>`).join("");
   }

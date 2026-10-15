@@ -743,3 +743,53 @@ body.asking::before { height: 520px; }
 .site-head { background: rgba(255, 255, 255, .42); border-bottom-color: rgba(255, 255, 255, .55); }
 .hero .lede, .hero .stats dt { color: #3e4a55; }
 .feature { border-top-color: rgba(15, 17, 21, .08); }
+
+/* =====================================================================
+   v2.5: 반듯한 리퀴드 글래스 + 천천히 물결치는 연한 그라데이션
+   ===================================================================== */
+/* 덧붙인 빛줄기는 없애고, 테두리 그라데이션과 안쪽 위 하이라이트 한 줄만 남긴다 */
+.glass-btn::after, .search::after, .prompt::after, .chip::after { display: none !important; }
+.glass-btn, .search, .prompt, .chip, .glass-select, .av-form {
+  background: rgba(255, 255, 255, .5) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .95),
+    inset 0 0 0 1px rgba(255, 255, 255, .25),
+    0 1px 2px rgba(15, 17, 21, .05),
+    0 6px 20px -6px rgba(15, 17, 21, .1) !important;
+}
+.glass-btn:hover, .prompt:hover, .chip:hover {
+  background: rgba(255, 255, 255, .7) !important;
+  box-shadow: inset 0 1px 0 #fff, inset 0 0 0 1px rgba(255, 255, 255, .35), 0 2px 4px rgba(15, 17, 21, .05), 0 10px 26px -6px rgba(15, 17, 21, .14) !important; }
+.glass-btn::before, .search::before, .prompt::before, .chip::before, .glass-select::before, .av-form::before {
+  padding: 1px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .95) 0%, rgba(170, 177, 189, .55) 50%, rgba(255, 255, 255, .8) 100%) !important;
+}
+.glass-btn.solid, .chip[aria-pressed="true"] {
+  background: rgba(15, 17, 21, .9) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 6px 20px -6px rgba(15, 17, 21, .35) !important; }
+.glass-btn.solid::before, .chip[aria-pressed="true"]::before {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .45), rgba(255, 255, 255, .06) 55%, rgba(255, 255, 255, .18)) !important; }
+.glass-btn:hover, .prompt:hover, .chip:hover { transform: none; }
+
+/* 배경: 더 연하게, 아주 천천히 물결처럼 */
+body::before { opacity: .55; background-size: 140% 140%, 140% 140%, 220% 220%; animation: rax-wave 48s ease-in-out infinite alternate; }
+body::after {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: 0; height: min(1500px, 190vh); pointer-events: none; opacity: .35;
+  background:
+    radial-gradient(40% 35% at 30% 30%, rgba(192, 221, 220, .9), rgba(192, 221, 220, 0) 70%),
+    radial-gradient(38% 32% at 70% 40%, rgba(229, 228, 232, .9), rgba(229, 228, 232, 0) 70%);
+  -webkit-mask: linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%); mask: linear-gradient(to bottom, #000 0%, #000 40%, transparent 100%);
+  animation: rax-drift 64s ease-in-out infinite alternate;
+}
+body.asking::after { height: 520px; }
+@keyframes rax-wave {
+  0%   { background-position: 0% 0%, 100% 0%, 0% 50%; }
+  50%  { background-position: 20% 12%, 80% 18%, 60% 50%; }
+  100% { background-position: 8% 24%, 92% 6%, 100% 50%; }
+}
+@keyframes rax-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(4%, 3%, 0) scale(1.06); }
+  100% { transform: translate3d(-3%, 5%, 0) scale(1.02); }
+}
+@media (prefers-reduced-motion: reduce) { body::before, body::after { animation: none; } }
