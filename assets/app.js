@@ -183,6 +183,39 @@
     return s;
   }
 
+  // ---------- 이번 주의 사례 (Awwwards의 Site of the Day 자리) ----------
+  // 매주 바뀌는 질문 제시어의 '먼저 볼 사례' 가운데, 주차에 따라 하나를 고른다. 썸네일이 있는 사례를 먼저 쓴다.
+  function renderFeature() {
+    if (!guides.length) return;
+    const d = new Date(), week = Math.floor((d - new Date(d.getFullYear(), 0, 1)) / 6048e5);
+    const g = guides[week % guides.length];
+    const picks = picksFor(g);
+    const it = picks.find(p => imageFor(p)) || picks[0];
+    if (!it) return;
+    const c = CAT[it.category] || CATS[0];
+    const box = $("#feature");
+    box.innerHTML = `
+      <div class="feature-media" data-open="${esc(it.id)}">${cover(it)}</div>
+      <div class="feature-info">
+        <p class="kicker en">Case of the Week</p>
+        <h2>${esc(titleOf(it))}</h2>
+        <p class="feature-by"><i style="background:${c.c[0]}"></i>by <b>${esc(it.org)}</b></p>
+        <dl class="feature-meta">
+          <div><dt>카테고리</dt><dd>${esc(it.category)}</dd></div>
+          <div><dt>형식</dt><dd>${esc(it.apiType || it.format)}</dd></div>
+          <div><dt>지역</dt><dd>${esc(it.region === "국내" ? "국내" : it.country)}</dd></div>
+          <div><dt>연도</dt><dd>${it.year || "—"}</dd></div>
+        </dl>
+        <p class="feature-why">${esc(it._why || it.summary)}</p>
+        <div class="feature-actions">
+          <a class="glass-btn solid" href="${esc(it.url)}" target="_blank" rel="noopener">원문 보기 <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+          <button class="glass-btn" type="button" data-open="${esc(it.id)}">자세히</button>
+          <button class="glass-btn" type="button" data-guide="${esc(g.id)}">관련 질문: ${esc(g.q)}</button>
+        </div>
+      </div>`;
+    box.hidden = false;
+  }
+
   // ---------- 질문 제시어 · 안내 패널 ----------
   function renderPrompts() {
     $("#prompts").innerHTML = guides.map(g => {
@@ -266,9 +299,8 @@
           <div class="badges"><span class="pill">${esc(it.category)}</span><span class="pill">${esc(it.apiType || it.format)}</span></div>
         </div>
         <div class="body">
-          <div class="meta"><span>${esc(it.region === "국내" ? "국내" : it.country)}</span><i></i><span>${esc(shortOrg(it.org))}</span>${it.year ? `<i></i><span class="en">${it.year}</span>` : ""}</div>
           <h3>${esc(titleOf(it))}</h3>
-          <p>${esc(it.summary)}</p>
+          <div class="by"><i style="background:${(CAT[it.category] || CATS[0]).c[0]}"></i><span>by <b>${esc(shortOrg(it.org))}</b></span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
         </div>
       </article>`).join("");
   }
@@ -446,6 +478,8 @@
       const g = e.target.closest("[data-guide]");
       if (g) { e.preventDefault(); const gd = guides.find(x => x.id === g.dataset.guide); if (gd) startAsk(gd.q, gd); return; }
       const src = e.target.closest("[data-src]"); if (src) { openDetail(src.dataset.src); return; }
+      const op = e.target.closest("[data-open]"); if (op) { openDetail(op.dataset.open); return; }
+      if (e.target.closest("#headAsk")) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); setTimeout(() => $("#q").focus(), 300); return; }
       const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
       if (e.target.closest("#answer [data-close]")) {
         state.guide = null; state.cat = null; state.q = ""; $("#q").value = "";
@@ -545,7 +579,7 @@
       $("#resultInfo").textContent = "사례 데이터를 불러오지 못했습니다.";
       return;
     }
-    renderStats(); renderCategories(); renderPrompts();
+    renderStats(); renderCategories(); renderPrompts(); renderFeature();
     const gp = new URLSearchParams(location.search).get("guide");
     update();
     const g0 = guides.find(x => x.id === gp);
