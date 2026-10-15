@@ -681,7 +681,7 @@
     $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳(명)과 그 주소를 모았습니다.`;
     $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
     $("#makerList").innerHTML = pool.slice(0, makerShown).map(o => `<li>
-      <div class="mk-name"><b>${esc(o.name)}</b><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small></div>
+      <div class="mk-name"><button class="mk-title" type="button" data-org="${esc(o.id)}">${esc(o.name)}</button><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small></div>
       <div class="mk-links">${(o.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
       <button class="mk-count" type="button" data-org="${esc(o.id)}">사례 ${counts[o.id]}건</button>
     </li>`).join("");
@@ -693,6 +693,8 @@
     state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = ""; $("#arQ").value = "";
     for (const f of FACETS) state[f.field] = null;
     update(); goTo("#arBody");
+    // 일부 모바일 브라우저(사파리)에서 부드러운 스크롤이 움직이지 않으면 바로 이동한다
+    setTimeout(() => { const t = $("#arBody").getBoundingClientRect().top; if (Math.abs(t) > 200) $("#arBody").scrollIntoView(); }, 1300);
   }
 
   // ---------- events ----------

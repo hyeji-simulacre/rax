@@ -1118,3 +1118,13 @@ html.sheet-open, html.sheet-open body { overflow: hidden; }
 }
 @media (max-width: 370px) { .site-head #headAsk .ai-orb + * { display: none; } }
 main > section[id]:not(#archive) { scroll-margin-top: 76px; }
+
+/* 아이폰 사파리: 움직이는 배경이 화면 밖으로 커져 페이지 폭이 넓어지는 것을 막는다 */
+html { overflow-x: hidden; }
+html, body { overflow-x: clip; max-width: 100%; }
+body::before, body::after { max-width: 100%; }
+/* 만든 사람·조직: 이름을 누르면 그 곳의 사례로 */
+.mk-title { display: block; border: 0; background: none; padding: 0; text-align: left; cursor: pointer;
+  font: 700 17px/1.35 var(--ko); letter-spacing: -.02em; color: var(--ink); -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.mk-title:hover, .mk-count:hover { color: var(--red); }
+.mk-count { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
