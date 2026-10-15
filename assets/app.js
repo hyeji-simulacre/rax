@@ -107,7 +107,9 @@
 
   function goTo(target) {
     const el = typeof target === "string" ? $(target) : target;
-    if (lenis) return lenis.scrollTo(el || 0, { offset: el ? -80 : 0, duration: 1.1 });
+    // 사례 아카이브는 사진이 화면 맨 위부터 꽉 차도록 머리말 높이만큼 빼지 않는다
+    const off = !el ? 0 : el.id === "archive" ? 0 : -80;
+    if (lenis) return lenis.scrollTo(el || 0, { offset: off, duration: 1.1 });
     if (el) el.scrollIntoView({ behavior: "smooth" }); else window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
@@ -689,6 +691,10 @@
       showHome(false); history.pushState(null, "", location.pathname);
       const t = href && href.startsWith("#") && href.length > 1 ? $(href) : null;
       requestAnimationFrame(() => t ? goTo(t) : goTo(0));
+    }, true);
+    document.addEventListener("click", e => {
+      const a = e.target.closest('a[href="#archive"]'); if (!a || inView) return;
+      e.preventDefault(); e.stopPropagation(); goTo("#archive");
     }, true);
     // 카테고리 페이지
     $("#cpBack").addEventListener("click", closeCat);

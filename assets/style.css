@@ -1042,3 +1042,10 @@ body.in-view main > section:not(.view) { display: none !important; }
 .view > .case-back { margin-left: max(0px, calc((100% - 1120px) / 2)); }
 .cat-view > .case-back { margin-left: 0; }
 @media (max-width: 640px) { .view { padding-top: 84px; } }
+
+/* 사례 아카이브: 메뉴로 오면 사진이 화면 맨 위부터 꽉 차고, 제목·검색은 세로 가운데 */
+.archive { padding-top: 0; margin-top: 96px; scroll-margin-top: 0; }
+.ar-hero { align-items: center; height: 100vh; height: 100svh; min-height: 640px; }
+.ar-hero-inner { padding: 96px 24px 40px; }
+.ar-lede { margin-bottom: 32px; }
+@media (max-width: 760px) { .ar-hero { height: auto; min-height: 100svh; } .ar-hero-inner { padding: 104px 16px 48px; } }
