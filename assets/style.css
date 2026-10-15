@@ -1088,3 +1088,14 @@ body.in-view main > section:not(.view) { display: none !important; }
 
 /* 머리말 버튼 높이 맞춤: 질문 버튼(원)도 옆 버튼과 같은 36px */
 .site-head #headAsk { height: 36px; padding: 0 16px 0 9px; display: inline-flex; align-items: center; gap: 8px; width: auto; }
+
+/* 모바일 필터 판 (iOS Safari 대응): 실제 보이는 높이(dvh) 안에 들어오게, 닫기 버튼은 늘 위에, 뒤 화면은 고정 */
+.filter-sheet { max-height: 85vh; max-height: 85dvh; top: auto; bottom: 0; height: auto; overflow: hidden; touch-action: manipulation; }
+.fs-head { gap: 12px; position: sticky; top: 0; background: #fff; }
+.fs-head h3 { margin-right: auto; }
+.fs-close { width: 36px; height: 36px; display: grid; place-items: center; border: 0; border-radius: 50%; background: #f1f2f4; cursor: pointer; flex: none; }
+.fs-close svg { width: 18px; height: 18px; fill: none; stroke: var(--ink); stroke-width: 2; }
+.fs-body { flex: 1 1 auto; min-height: 0; overflow-y: auto; -webkit-overflow-scrolling: touch; overscroll-behavior: contain; }
+.fs-opts .chip { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+.fs-foot { flex: none; background: #fff; }
+html.sheet-open, html.sheet-open body { overflow: hidden; }

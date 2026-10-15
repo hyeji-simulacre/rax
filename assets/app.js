@@ -730,8 +730,15 @@
     document.addEventListener("keydown", e => { if (e.key === "Escape" && openFilter) { openFilter = null; renderChips(); } });
     $("#arForm").addEventListener("submit", e => { e.preventDefault(); $("#arQ").blur(); goTo("#grid"); });
     $("#arQ").addEventListener("input", e => { state.q = e.target.value.trim(); state.guide = null; update(); });
-    $("#filterOpen").addEventListener("click", () => { renderSheet(); $("#filterSheet").showModal(); });
-    $("#fsDone").addEventListener("click", () => { $("#filterSheet").close(); goTo("#grid"); });
+    // 모바일 필터 판: 열려 있는 동안 뒤 화면 스크롤(Lenis)을 멈춰 터치가 판 안에서만 동작하게 한다
+    const sheet = $("#filterSheet");
+    $("#filterOpen").addEventListener("click", () => {
+      renderSheet(); sheet.showModal();
+      document.documentElement.classList.add("sheet-open"); if (lenis) lenis.stop();
+    });
+    sheet.addEventListener("close", () => { document.documentElement.classList.remove("sheet-open"); if (lenis) lenis.start(); });
+    $("#fsClose").addEventListener("click", () => sheet.close());
+    $("#fsDone").addEventListener("click", () => { sheet.close(); goTo("#grid"); });
     $("#fsReset").addEventListener("click", () => clearFilter("all"));
     $("#filterSheet").addEventListener("click", e => { if (e.target === $("#filterSheet")) $("#filterSheet").close(); });
     $("#grid").addEventListener("click", e => { if (e.target.closest(".org-link")) return; const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
