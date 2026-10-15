@@ -11,6 +11,7 @@
  *   LLM_MODEL     : 모델 ID. 쉼표로 여러 개 적으면 앞 모델이 사라졌을 때 다음 모델을 쓴다. 맞는 ID는 아래 findModels()로 찾는다
  *   LLM_BASE_URL  : (선택) 기본값 https://integrate.api.nvidia.com/v1  — OpenAI 호환 주소면 무엇이든 된다
  *   CHAT_DAILY_MAX: (선택) 하루 최대 채팅 호출 수, 기본 300
+ *   SKILL_URL     : (선택) 답변 스킬 문서 주소. 기본은 저장소의 data/skill.md (고치면 30분 안에 반영, 다시 배포할 필요 없음)
  */
 const FIELDS = ["title", "url", "org", "category", "region", "summary", "contact"];
 const MAX_LEN = { title: 300, url: 1000, org: 200, category: 40, region: 40, summary: 2000, contact: 200 };
@@ -54,6 +55,20 @@ const SYSTEM_PROMPT = [
   "기록관리·아카이브·AI와 관계없는 요청에는 답하지 말고 RAX에서 다루는 주제를 안내한다.",
 ].join("\n");
 
+// 답변 스킬: 저장소의 data/skill.md를 읽어 30분 동안 캐시한다. 못 읽으면 위의 기본 규칙만 쓴다.
+const DEFAULT_SKILL_URL = "https://raw.githubusercontent.com/hyeji-simulacre/rax/main/data/skill.md";
+function getSkill(props) {
+  const cache = CacheService.getScriptCache();
+  const hit = cache.get("skill"); if (hit) return hit;
+  try {
+    const res = UrlFetchApp.fetch(props.getProperty("SKILL_URL") || DEFAULT_SKILL_URL, { muteHttpExceptions: true });
+    if (res.getResponseCode() !== 200) return "";
+    const text = res.getContentText().slice(0, 12000);
+    cache.put("skill", text, 1800);
+    return text;
+  } catch (e) { return ""; }
+}
+
 function chat(data) {
   const props = PropertiesService.getScriptProperties();
   const key = props.getProperty("LLM_API_KEY");
@@ -67,13 +82,14 @@ function chat(data) {
   if (!underDailyLimit(props)) return { ok: false, error: "daily_limit" };
 
   const cases = (Array.isArray(data.cases) ? data.cases : []).slice(0, 8).map((c, i) =>
-    `[${i + 1}] ${clean(c.title, 200)} — ${clean(c.org, 120)}${c.year ? ` (${clean(c.year, 4)})` : ""}\n${clean(c.summary, 700)}`);
+    `[${i + 1}] ${clean(c.title, 200)} — ${clean(c.org, 120)}${c.year ? ` (${clean(c.year, 4)})` : ""}\n` +
+    `형식: ${clean(c.format, 60) || "-"} · 분야: ${clean(c.category, 30) || "-"} · 나라: ${clean(c.country, 30) || "-"} · 주체: ${clean(c.orgType, 20) || "-"}\n${clean(c.summary, 700)}`);
   const history = (Array.isArray(data.history) ? data.history : []).slice(-6)
     .filter(m => m && (m.role === "user" || m.role === "assistant"))
     .map(m => ({ role: m.role, content: clean(m.content, 1200) }));
 
   const messages = [
-    { role: "system", content: `${SYSTEM_PROMPT}\n\n[사례]\n${cases.join("\n\n") || "(관련 사례 없음)"}` },
+    { role: "system", content: `${SYSTEM_PROMPT}\n\n${getSkill(props)}\n\n[사례]\n${cases.join("\n\n") || "(관련 사례 없음)"}` },
     ...history,
     { role: "user", content: question },
   ];
@@ -82,7 +98,7 @@ function chat(data) {
     method: "post",
     contentType: "application/json",
     headers: { Authorization: `Bearer ${key}` },
-    payload: JSON.stringify(Object.assign({ model, messages, temperature: 0.3, max_tokens: 700 }, extra)),
+    payload: JSON.stringify(Object.assign({ model, messages, temperature: 0.3, max_tokens: 800 }, extra)),
     muteHttpExceptions: true,
   });
   let res;

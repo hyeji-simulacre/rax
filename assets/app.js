@@ -342,23 +342,61 @@
   // ---------- 질문과 답 (왼쪽 대화 · 오른쪽 관련 사례) ----------
   const conv = { turns: [], ids: [], lastQ: "" };
 
+  // 질문에서 조건을 읽는다: 형식(MCP·API 등) · 주체(공공기관 등) · 나라 · '성공 사례'
+  const INTENT = {
+    format: [[/mcp|엠씨피|\bapi\b|에이피아이|오픈\s?api|openapi/i, "MCP·API"], [/github|깃허브|오픈소스|open.?source|설치해서|코드/i, "GitHub·오픈소스"],
+      [/논문|학술/, "논문"], [/보고서|리포트/, "보고서"]],
+    orgType: [[/공공|정부|국가기관|지자체|공기업/, "공공기관"], [/기업|회사|상용|솔루션/, "기업"], [/대학|학계|연구소|연구팀/, "학계·연구"], [/개인|커뮤니티|개발자/, "개인·커뮤니티"]],
+  };
+  const COUNTRY_ALIAS = { "한국": "대한민국", "국내": "대한민국", "우리나라": "대한민국", "미국": "미국", "영국": "영국", "일본": "일본", "중국": "중국" };
+  function intentOf(q) {
+    const pick = rules => (rules.find(([re]) => re.test(q)) || [])[1] || null;
+    let country = null;
+    for (const [k, v] of Object.entries(COUNTRY_ALIAS)) if (q.includes(k)) { country = v; break; }
+    if (!country) country = FACETS[0].values.find(c => c !== "국제" && q.includes(c)) || null;
+    return { format: pick(INTENT.format), orgType: pick(INTENT.orgType), country, abroad: /해외|외국|국외/.test(q) && !country,
+      success: /성공|성과|잘\s?된|운영\s?중|실제|도입한|효과/.test(q) };
+  }
+  // 실제 성과가 드러나는 사례(운영 서비스·도구·성과 기사)를 '성공 사례' 질문에서 앞에 둔다
+  const isOutcome = it => ["사이트·서비스", "MCP·API", "GitHub·오픈소스", "기사·발표"].includes(it.format);
+
+  // 조건을 나타내는 말(형식·주체·나라)과, 모든 사례에 해당해 검색에 도움이 안 되는 말은 주제어에서 뺀다
+  const COND_WORD = /^(mcp|엠씨피|api|오픈api|openapi|오픈소스|github|깃허브|공공|공공기관|정부|국가기관|기업|회사|상용|솔루션|논문|보고서|대학|개인|커뮤니티|개발자)/;
+  const FILLER = /^(국내|한국|우리나라|해외|외국|국외|만$|것만|기관|성공|성과|사례|있어|있나|있을|알려|추천|잘|하는|해주는|해줘|뭐|무엇|어떻게|어떤|기록관리|아카이브|ax|ai|인공지능|무료|쓸|수$|도구|툴|좋은|방법)/;
   function retrieve(q, prevQ) {
-    // '국내/해외'는 검색어가 아니라 지역 조건으로 읽는다
-    const region = /국내|한국|우리나라/.test(q) ? "국내" : /해외|외국|국외/.test(q) ? "해외" : null;
-    let toks = tokenize(q).filter(t => !/^(국내|한국|우리나라|해외|외국|국외|만|것만)/.test(t));
-    if (!toks.length && prevQ) toks = tokenize(prevQ);
-    const inRegion = list => region ? list.filter(it => it.region === region) : list;
+    const want = intentOf(q);
+    const topicOf = text => tokenize(text).filter(t => !COND_WORD.test(t) && !FILLER.test(t) && !(want.country && t.startsWith(want.country)));
+    let toks = topicOf(q);
+    const meets = it => (!want.format || it.format === want.format) && (!want.orgType || it.orgType === want.orgType)
+      && (!want.country || it.country === want.country) && (!want.abroad || it.region === "해외");
+    const hasCond = want.format || want.orgType || want.country || want.abroad;
+    let loose = []; // 점수가 조금이라도 있는 사례 전체 (조건과 함께 볼 때 쓴다)
     const rank = tk => {
       if (!tk.length) return [];
-      const scored = cases.map(it => ({ it, s: scoreOf(it, tk) })).filter(x => x.s > 0);
+      const scored = cases.map(it => ({ it, s: scoreOf(it, tk) })).filter(x => x.s > 0)
+        .sort((a, b) => b.s - a.s || (b.it.year || 0) - (a.it.year || 0));
       const top = Math.max(0, ...scored.map(x => x.s));
-      return scored.filter(x => x.s >= Math.max(1, top / 3))
-        .sort((a, b) => b.s - a.s || (b.it.year || 0) - (a.it.year || 0)).map(x => x.it);
+      loose = scored.map(x => x.it);
+      return scored.filter(x => x.s >= Math.max(1, top / 3)).map(x => x.it);
     };
-    let list = inRegion(rank(toks));
-    // 짧은 추가 질문은 앞 질문과 합쳐서 찾는다
-    if (list.length < 3 && prevQ) list = inRegion(rank([...new Set([...toks, ...tokenize(prevQ)])]));
-    if (!list.length && region && !toks.length) list = inRegion(cases);
+    // 짧은 추가 질문(조건만 바꾸는 말 포함)은 앞 질문의 주제어를 이어서 쓴다
+    if (!toks.length && prevQ && !hasCond) toks = topicOf(prevQ);
+    let list = rank(toks);
+    if (list.length < 3 && prevQ && toks.length) list = rank([...new Set([...toks, ...topicOf(prevQ)])]);
+    if (!toks.length && prevQ && hasCond) list = rank(topicOf(prevQ));
+    if (hasCond) {
+      // 조건만 있는 질문에서는 성과가 드러나는 사례 → 국내 → 최신 순
+      const pool = cases.filter(meets).sort((a, b) => (want.success ? isOutcome(b) - isOutcome(a) : 0)
+        || (b.country === "대한민국") - (a.country === "대한민국") || (b.year || 0) - (a.year || 0));
+      if (!toks.length && !(prevQ && topicOf(prevQ).length)) list = pool; // 예: '공공기관 성공 사례'
+      else {
+        const strict = loose.filter(meets);
+        // 주제와 조건을 함께 만족하는 게 적으면, 주제만 맞는 것과 조건만 맞는 것을 뒤에 붙여 AI가 '가장 가까운 것'을 안내하게 한다
+        list = strict.length >= 3 ? strict
+          : [...new Set([...strict, ...list.filter(it => !meets(it)).slice(0, 4), ...pool.slice(0, 3)])];
+      }
+    }
+    if (want.success) list = [...list.filter(isOutcome), ...list.filter(it => !isOutcome(it))];
     return list;
   }
 
@@ -415,7 +453,8 @@
       const res = await fetch(SUBMIT_ENDPOINT, {
         method: "POST", signal: ctl.signal,
         body: JSON.stringify({ action: "chat", question, history,
-          cases: list.map(it => ({ title: titleOf(it), org: it.org, year: it.year, summary: it.summary })) }),
+          cases: list.map(it => ({ title: titleOf(it), org: it.org, year: it.year, summary: it.summary,
+            format: it.apiType ? `${it.format} (${it.apiType})` : it.format, category: it.category, country: it.country, orgType: it.orgType })) }),
       });
       return await res.json();
     } catch (err) {
