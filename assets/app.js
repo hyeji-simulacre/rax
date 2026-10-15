@@ -89,6 +89,22 @@
   if (window.Lenis && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
     lenis = new window.Lenis({ autoRaf: true, anchors: { offset: -80 }, lerp: 0.09, wheelMultiplier: 0.95 });
   }
+  // 사례 아카이브 배경: 스크롤보다 천천히 움직이는 패럴랙스 (넓은 화면에서만, 움직임 줄이기 설정이면 끔)
+  (() => {
+    const hero = document.querySelector(".ar-hero"), bg = document.querySelector(".ar-bg");
+    if (!hero || !bg || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    let ticking = false;
+    const move = () => {
+      ticking = false;
+      if (innerWidth <= 760) { bg.style.transform = ""; return; }
+      const r = hero.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      bg.style.transform = `translate3d(0, ${(r.top * -0.22).toFixed(1)}px, 0)`;
+    };
+    addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(move); } }, { passive: true });
+    addEventListener("resize", move); move();
+  })();
+
   function goTo(target) {
     const el = typeof target === "string" ? $(target) : target;
     if (lenis) return lenis.scrollTo(el || 0, { offset: el ? -80 : 0, duration: 1.1 });
@@ -110,7 +126,7 @@
   function catalog(it) {
     const c = CAT[it.category] || CATS[0];
     return `<div class="catalog" style="--cat:${c.c[0]}">
-      <b class="org">${esc(shortOrg(it.org))}</b>
+      <b class="org">${esc(shortOrg((ORG[(it.orgIds || [])[0]] || {}).name || it.org))}</b>
       <span class="rules"></span>
       <span class="yr">${it.year || "—"}</span><span class="cc">${ccOf(it)}</span></div>`;
   }
@@ -153,21 +169,53 @@
     };
   }
 
+  // ---------- 필터: 버튼 4개(눌러서 펼침) + 적용된 조건 칩 + 모바일 아래 판 ----------
+  const GROUPS = [{ field: "cat", label: "카테고리", values: CATS.map(c => c.key) }, ...FACETS];
+  let openFilter = null;
+  const valOf = f => state[f] || null;
+  function optionsOf(g) {
+    const pool = filtered({ ignore: g.field });
+    const key = g.field === "cat" ? "category" : g.field;
+    return g.values.map(v => [v, pool.filter(x => x[key] === v).length]);
+  }
+  const chev = '<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
   function renderChips() {
-    const base = filtered({ ignore: "cat" });
-    const allBtn = `<button class="chip" data-cat="" aria-pressed="${!state.cat}">전체<span class="c">${base.length}</span></button>`;
-    $("#catChips").innerHTML = allBtn + CATS.map(c => {
-      const n = base.filter(x => x.category === c.key).length;
-      return `<button class="chip" data-cat="${esc(c.key)}" aria-pressed="${state.cat === c.key}">${esc(c.key)}<span class="c">${n}</span></button>`;
+    $("#filterBar").innerHTML = GROUPS.map(g => {
+      const v = valOf(g.field), open = openFilter === g.field;
+      return `<div class="fb-item${open ? " open" : ""}">
+        <button class="glass-btn fb-btn${v ? " on" : ""}" type="button" data-fb="${g.field}" aria-expanded="${open}">
+          <span>${esc(g.label)}</span>${v ? `<b>${esc(v)}</b>` : ""}${chev}</button>
+        <div class="fb-pop" role="listbox" aria-label="${esc(g.label)}"${open ? "" : " hidden"}>
+          <button type="button" role="option" data-ff="${g.field}" data-val="" aria-selected="${!v}">전체</button>
+          ${optionsOf(g).map(([o, n]) => `<button type="button" role="option" data-ff="${g.field}" data-val="${esc(o)}" aria-selected="${v === o}"${n || v === o ? "" : " disabled"}>${esc(o)}<span>${n}</span></button>`).join("")}
+        </div>
+      </div>`;
     }).join("");
 
-    $("#facetChips").innerHTML = FACETS.map((f, i) => {
-      const pool = filtered({ ignore: f.field });
-      return (i ? '<span class="sep"></span>' : "") + f.values.map(v => {
-        const n = pool.filter(x => x[f.field] === v).length;
-        return `<button class="chip" data-field="${f.field}" data-val="${esc(v)}" aria-pressed="${state[f.field] === v}">${esc(v)}<span class="c">${n}</span></button>`;
-      }).join("");
-    }).join("");
+    // 적용된 조건: 하나씩 지우거나 모두 지운다
+    const chips = [];
+    if (state.org && ORG[state.org]) chips.push(["org", ORG[state.org].name]);
+    for (const g of GROUPS) if (valOf(g.field)) chips.push([g.field, valOf(g.field)]);
+    if (state.q && !state.guide) chips.push(["q", `“${state.q}”`]);
+    $("#applied").innerHTML = chips.map(([f, v]) => `<button class="ap-chip" type="button" data-clear="${f}" aria-label="${esc(v)} 조건 지우기">${esc(v)}<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>`).join("")
+      + (chips.length > 1 ? `<button class="ap-reset" type="button" data-clear="all">모두 지우기</button>` : "");
+    const n = GROUPS.filter(g => valOf(g.field)).length + (state.org ? 1 : 0);
+    $("#filterN").hidden = !n; $("#filterN").textContent = n;
+
+    if ($("#filterSheet").open) renderSheet();
+  }
+  function renderSheet() {
+    $("#fsBody").innerHTML = GROUPS.map(g => `<div class="fs-group"><p>${esc(g.label)}</p><div class="fs-opts">
+      ${optionsOf(g).filter(([o, n]) => n || valOf(g.field) === o).map(([o, n]) => `<button class="chip" type="button" data-ff="${g.field}" data-val="${esc(o)}" data-toggle="1" aria-pressed="${valOf(g.field) === o}">${esc(o)}<span class="c">${n}</span></button>`).join("")}
+    </div></div>`).join("");
+    $("#fsDone").textContent = `${filtered().length}건 보기`;
+  }
+  function clearFilter(f) {
+    if (f === "all") { state.org = null; state.q = ""; for (const g of GROUPS) state[g.field] = null; }
+    else if (f === "q") state.q = "";
+    else state[f] = null;
+    if (!state.q) $("#arQ").value = "";
+    state.guide = null; update();
   }
 
   function filtered({ ignore } = {}) {
@@ -216,7 +264,7 @@
     for (const f of FACETS) state[f.field] = g.filter[f.field] || null;
     state.q = g.filter.q || ""; $("#q").value = state.q;
     update();
-    goTo("#archive");
+    goTo("#arBody");
   }
 
   // 먼저 볼 사례: 주간 작업이 고른 화제·흐름 사례를 쓰되, 3주 넘게 갱신이 없으면 해당 주제의 최신 사례로 대신한다
@@ -265,12 +313,7 @@
 
   function renderGrid() {
     const list = sorted(filtered());
-    const parts = [];
-    if (state.org && ORG[state.org]) parts.push(ORG[state.org].name);
-    if (state.cat) parts.push(state.cat);
-    for (const f of FACETS) if (state[f.field]) parts.push(state[f.field]);
-    if (state.q) parts.push(`“${state.q}”`);
-    $("#resultInfo").textContent = `${parts.length ? parts.join(" · ") + " — " : ""}${list.length}건의 사례`;
+    $("#resultInfo").textContent = `${list.length}건의 사례`; // 조건은 위의 칩으로 보여 준다
     $("#empty").hidden = list.length > 0;
 
     $("#grid").innerHTML = list.map(cardHTML).join("");
@@ -428,7 +471,7 @@
     });
     $("#avAll").addEventListener("click", () => {
       leaveGuide(); state.q = conv.lastQ; update();
-      goTo("#archive");
+      goTo("#arBody");
     });
     document.querySelector(".av-tabs").addEventListener("click", e => { const b = e.target.closest("[data-pane]"); if (b) setPane(b.dataset.pane); });
   }
@@ -568,9 +611,9 @@
   }
   function showOrg(id) {
     if ($("#catPage").open) { $("#catPage").close(); history.replaceState(null, "", location.pathname); }
-    state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = "";
+    state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = ""; $("#arQ").value = "";
     for (const f of FACETS) state[f.field] = null;
-    update(); goTo("#archive");
+    update(); goTo("#arBody");
   }
 
   // ---------- events ----------
@@ -586,20 +629,32 @@
       if (e.target.closest("#headAsk")) { e.preventDefault(); goTo(0); setTimeout(() => $("#q").focus(), 300); return; }
       const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
       if (e.target.closest("#answer [data-close]")) {
-        state.guide = null; state.cat = null; state.org = null; state.q = ""; $("#q").value = "";
+        state.guide = null; state.cat = null; state.org = null; state.q = ""; $("#q").value = ""; $("#arQ").value = "";
         for (const f of FACETS) state[f.field] = null;
         update();
       }
     });
     $("#sort").addEventListener("change", e => { state.sort = e.target.value; renderGrid(); });
-    $("#catChips").addEventListener("click", e => {
-      const b = e.target.closest(".chip"); if (!b) return;
-      state.cat = b.dataset.cat || null; if (!b.dataset.cat) state.org = null; state.guide = null; update();
+    document.addEventListener("click", e => {
+      const fb = e.target.closest("[data-fb]");
+      if (fb) { openFilter = openFilter === fb.dataset.fb ? null : fb.dataset.fb; renderChips(); return; }
+      const ff = e.target.closest("[data-ff]");
+      if (ff) {
+        const f = ff.dataset.ff, v = ff.dataset.val || null;
+        state[f] = ff.dataset.toggle && state[f] === v ? null : v;
+        if (!ff.dataset.toggle) openFilter = null;
+        state.guide = null; update(); return;
+      }
+      const cl = e.target.closest("[data-clear]"); if (cl) { clearFilter(cl.dataset.clear); return; }
+      if (openFilter && !e.target.closest(".fb-item")) { openFilter = null; renderChips(); }
     });
-    $("#facetChips").addEventListener("click", e => {
-      const b = e.target.closest(".chip"); if (!b) return;
-      const f = b.dataset.field; state[f] = state[f] === b.dataset.val ? null : b.dataset.val; state.guide = null; update();
-    });
+    document.addEventListener("keydown", e => { if (e.key === "Escape" && openFilter) { openFilter = null; renderChips(); } });
+    $("#arForm").addEventListener("submit", e => { e.preventDefault(); $("#arQ").blur(); goTo("#grid"); });
+    $("#arQ").addEventListener("input", e => { state.q = e.target.value.trim(); state.guide = null; update(); });
+    $("#filterOpen").addEventListener("click", () => { renderSheet(); $("#filterSheet").showModal(); });
+    $("#fsDone").addEventListener("click", () => { $("#filterSheet").close(); goTo("#grid"); });
+    $("#fsReset").addEventListener("click", () => clearFilter("all"));
+    $("#filterSheet").addEventListener("click", e => { if (e.target === $("#filterSheet")) $("#filterSheet").close(); });
     $("#grid").addEventListener("click", e => { if (e.target.closest(".org-link")) return; const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
     $("#grid").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
     $("#closeDetail").addEventListener("click", closeDetail);

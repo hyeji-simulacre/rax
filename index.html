@@ -87,31 +87,42 @@
       <div class="cat-grid" id="catGrid"></div>
     </section>
 
-    <section id="archive" class="section">
-      <div class="section-head row">
-        <div>
+    <section id="archive" class="archive">
+      <div class="ar-hero">
+        <div class="ar-bg" aria-hidden="true"></div>
+        <div class="ar-hero-inner">
+          <p class="ar-eyebrow en">The Archive</p>
           <h2>사례 아카이브</h2>
-          <p id="resultInfo">불러오는 중…</p>
-        </div>
-        <div class="sort plain-select">
-          <label for="sort" class="sr">정렬</label>
-          <select id="sort">
-            <option value="relevance">관련도순</option>
-            <option value="recent">최신순</option>
-            <option value="old">오래된순</option>
-            <option value="title">제목순</option>
-          </select>
+          <p class="ar-lede">국내외 기록관리·아카이브의 AI 전환 사례를 한곳에 모았습니다.</p>
+          <form class="search glass ar-search" id="arForm" role="search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="arQ" type="search" placeholder="제목·기관·주제로 사례 찾기" autocomplete="off" aria-label="사례 찾기">
+          </form>
+          <div class="filter-bar" id="filterBar" role="group" aria-label="사례 필터"></div>
+          <button class="glass-btn filter-open" type="button" id="filterOpen" aria-haspopup="dialog">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>필터<span class="fo-n" id="filterN" hidden></span>
+          </button>
         </div>
       </div>
 
-      <div class="filters">
-        <div class="chip-row" id="catChips" role="group" aria-label="카테고리"></div>
-        <div class="chip-row small" id="facetChips"></div>
+      <div class="ar-body" id="arBody">
+        <div class="ar-tools">
+          <div class="applied" id="applied" aria-live="polite"></div>
+          <p class="ar-count" id="resultInfo">불러오는 중…</p>
+          <div class="sort plain-select">
+            <label for="sort" class="sr">정렬</label>
+            <select id="sort">
+              <option value="relevance">관련도순</option>
+              <option value="recent">최신순</option>
+              <option value="old">오래된순</option>
+              <option value="title">제목순</option>
+            </select>
+          </div>
+        </div>
+        <section class="answer" id="answer" hidden aria-live="polite"></section>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>조건에 맞는 사례가 없습니다. 검색어나 필터를 바꿔 보세요.</p>
       </div>
-
-      <section class="answer" id="answer" hidden aria-live="polite"></section>
-      <div class="grid" id="grid"></div>
-      <p class="empty" id="empty" hidden>조건에 맞는 사례가 없습니다. 검색어나 필터를 바꿔 보세요.</p>
     </section>
 
     <section id="makers" class="section" hidden>
@@ -205,6 +216,15 @@
       <div class="grid" id="cpGrid"></div>
       <p class="empty" id="cpEmpty" hidden>조건에 맞는 사례가 없어요. 검색어나 조건을 바꿔 보세요.</p>
     </div>
+  </dialog>
+
+  <dialog data-lenis-prevent id="filterSheet" class="filter-sheet" aria-labelledby="fsTitle">
+    <div class="fs-head">
+      <h3 id="fsTitle">필터</h3>
+      <button class="fs-reset" type="button" id="fsReset">모두 지우기</button>
+    </div>
+    <div class="fs-body" id="fsBody"></div>
+    <div class="fs-foot"><button class="glass-btn solid" type="button" id="fsDone">결과 보기</button></div>
   </dialog>
 
   <dialog data-lenis-prevent id="submitDialog" class="detail submit">
