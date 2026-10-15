@@ -82,6 +82,18 @@
   }
   let cases = [];
 
+  // ---------- 부드러운 스크롤 (Lenis) ----------
+  // 움직임 줄이기를 켠 사용자에게는 쓰지 않는다. 내부 스크롤 영역과 창(dialog)은 data-lenis-prevent 로 제외한다.
+  let lenis = null;
+  if (window.Lenis && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    lenis = new window.Lenis({ autoRaf: true, anchors: { offset: -80 }, lerp: 0.09, wheelMultiplier: 0.95 });
+  }
+  function goTo(target) {
+    const el = typeof target === "string" ? $(target) : target;
+    if (lenis) return lenis.scrollTo(el || 0, { offset: el ? -80 : 0, duration: 1.1 });
+    if (el) el.scrollIntoView({ behavior: "smooth" }); else window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
   // ---------- 표지: 원문 화면 썸네일, 없으면 흰 카탈로그 카드 ----------
   let thumbs = {};
   const CC = { "대한민국": "KR", "미국": "US", "영국": "UK", "호주": "AU", "캐나다": "CA", "네덜란드": "NL", "일본": "JP", "중국": "CN", "대만": "TW",
@@ -137,7 +149,7 @@
     $("#catGrid").onclick = e => {
       const t = e.target.closest("[data-cat]"); if (!t) return;
       state.cat = t.dataset.cat; state.guide = null; update();
-      $("#archive").scrollIntoView({ behavior: "smooth" });
+      goTo("#archive");
     };
   }
 
@@ -236,7 +248,7 @@
     for (const f of FACETS) state[f.field] = g.filter[f.field] || null;
     state.q = g.filter.q || ""; $("#q").value = state.q;
     update();
-    $("#archive").scrollIntoView({ behavior: "smooth" });
+    goTo("#archive");
   }
 
   // 먼저 볼 사례: 주간 작업이 고른 화제·흐름 사례를 쓰되, 3주 넘게 갱신이 없으면 해당 주제의 최신 사례로 대신한다
@@ -346,7 +358,7 @@
     document.body.classList.add("asking");
     $("#q").value = guide ? "" : q;
     setPane("chat");
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    goTo(0);
     ask(q, guide);
   }
 
@@ -447,11 +459,11 @@
     });
     $("#avClose").addEventListener("click", () => {
       $("#askView").hidden = true; document.body.classList.remove("asking"); $("#q").value = "";
-      window.scrollTo({ top: 0, behavior: "smooth" });
+      goTo(0);
     });
     $("#avAll").addEventListener("click", () => {
       leaveGuide(); state.q = conv.lastQ; update();
-      $("#archive").scrollIntoView({ behavior: "smooth" });
+      goTo("#archive");
     });
     document.querySelector(".av-tabs").addEventListener("click", e => { const b = e.target.closest("[data-pane]"); if (b) setPane(b.dataset.pane); });
   }
@@ -480,7 +492,7 @@
       if (g) { e.preventDefault(); const gd = guides.find(x => x.id === g.dataset.guide); if (gd) startAsk(gd.q, gd); return; }
       const src = e.target.closest("[data-src]"); if (src) { openDetail(src.dataset.src); return; }
       const op = e.target.closest("[data-open]"); if (op) { openDetail(op.dataset.open); return; }
-      if (e.target.closest("#headAsk")) { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); setTimeout(() => $("#q").focus(), 300); return; }
+      if (e.target.closest("#headAsk")) { e.preventDefault(); goTo(0); setTimeout(() => $("#q").focus(), 300); return; }
       const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
       if (e.target.closest("#answer [data-close]")) {
         state.guide = null; state.cat = null; state.q = ""; $("#q").value = "";

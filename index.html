@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -61,7 +62,7 @@
             <p class="kicker en">Ask RAX</p>
             <button class="glass-btn icon" type="button" id="avClose" aria-label="대화 닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
           </div>
-          <div class="av-thread" id="avThread" aria-live="polite"></div>
+          <div class="av-thread" id="avThread" data-lenis-prevent aria-live="polite"></div>
           <div class="av-suggest" id="avSuggest"></div>
           <form class="av-form" id="avForm">
             <input id="avInput" type="text" placeholder="이어서 물어보세요" autocomplete="off" maxlength="500" aria-label="추가 질문">
@@ -71,7 +72,7 @@
         </div>
         <div class="av-list glass-panel" data-pane="list">
           <div class="av-head"><p class="kicker">관련 사례 <b id="avCount2">0</b>건</p></div>
-          <ol class="av-results" id="avResults"></ol>
+          <ol class="av-results" id="avResults" data-lenis-prevent></ol>
           <button class="glass-btn" type="button" id="avAll">아카이브에서 전체 보기</button>
         </div>
       </div>
@@ -140,7 +141,7 @@
     </div>
   </footer>
 
-  <dialog id="detail" class="detail">
+  <dialog data-lenis-prevent id="detail" class="detail">
     <div class="detail-inner">
       <button class="glass-btn icon close" id="closeDetail" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="detail-cover" id="dCover"></div>
@@ -155,7 +156,7 @@
     </div>
   </dialog>
 
-  <dialog id="submitDialog" class="detail submit">
+  <dialog data-lenis-prevent id="submitDialog" class="detail submit">
     <form id="submitForm" class="submit-inner" novalidate>
       <button class="glass-btn icon close" type="button" id="closeSubmit" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="submit-head">
@@ -186,7 +187,7 @@
     </div>
   </dialog>
 
-  <dialog id="devDialog" class="detail dev-dialog" aria-labelledby="devTitle">
+  <dialog data-lenis-prevent id="devDialog" class="detail dev-dialog" aria-labelledby="devTitle">
     <div class="dev-inner">
       <button class="glass-btn icon close" type="button" id="devClose" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <p class="eyebrow en">Developer</p>
@@ -207,7 +208,7 @@
     </div>
   </dialog>
 
-  <dialog id="feedbackDialog" class="detail submit feedback" aria-labelledby="fbTitle">
+  <dialog data-lenis-prevent id="feedbackDialog" class="detail submit feedback" aria-labelledby="fbTitle">
     <form id="feedbackForm" class="submit-inner" novalidate>
       <button class="glass-btn icon close" type="button" id="fbClose" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
       <div class="submit-head">
@@ -237,6 +238,7 @@
     </div>
   </dialog>
 
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
   <script src="assets/app.js"></script>
 </body>
 </html>

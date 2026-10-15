@@ -724,3 +724,22 @@ input[type=search]::-webkit-search-cancel-button { -webkit-appearance: none; dis
   background: linear-gradient(90deg, rgba(255, 255, 255, .18) 0%, rgba(255, 255, 255, .28) 24%, rgba(255, 255, 255, .9) 50%, rgba(255, 255, 255, .28) 76%, rgba(255, 255, 255, .18) 100%) !important; }
 .ask-go { position: relative; background: linear-gradient(180deg, rgba(42, 45, 51, .96), rgba(15, 17, 21, .96));
   box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16), inset 0 7px 10px -8px rgba(255, 255, 255, .45), 0 6px 16px -4px rgba(15, 17, 21, .35); }
+
+/* =====================================================================
+   v2.4: contexta 풍 그라데이션 배경 (푸른 회색 → 민트 → 연한 라벤더 회색)
+   첫 화면 위쪽에 깔고 아래로 갈수록 흰색으로 사라지게 한다.
+   ===================================================================== */
+:root { --g1: #c2d3df; --g2: #c0dddc; --g3: #cde3e1; --g4: #e3e6ea; --g5: #e5e4e8; }
+body { position: relative; background: #fff; }
+body::before {
+  content: ""; position: absolute; z-index: -1; left: 0; right: 0; top: 0; height: min(1500px, 190vh); pointer-events: none;
+  background:
+    radial-gradient(60% 50% at 18% 18%, rgba(194, 211, 223, .95), rgba(194, 211, 223, 0) 70%),
+    radial-gradient(55% 45% at 82% 22%, rgba(227, 230, 234, .95), rgba(227, 230, 234, 0) 70%),
+    linear-gradient(110deg, var(--g1) 0%, var(--g2) 38%, var(--g3) 58%, var(--g4) 82%, var(--g5) 100%);
+  -webkit-mask: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%); mask: linear-gradient(to bottom, #000 0%, #000 45%, transparent 100%);
+}
+body.asking::before { height: 520px; }
+.site-head { background: rgba(255, 255, 255, .42); border-bottom-color: rgba(255, 255, 255, .55); }
+.hero .lede, .hero .stats dt { color: #3e4a55; }
+.feature { border-top-color: rgba(15, 17, 21, .08); }

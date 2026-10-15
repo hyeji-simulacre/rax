@@ -116,3 +116,10 @@ function clean(v, max) {
 function json(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
 }
+
+// 처음 한 번, 편집기에서 이 함수를 골라 ▶실행하면 바깥 인터넷 호출(UrlFetchApp) 권한 승인 창이 뜬다.
+function authorize() {
+  UrlFetchApp.fetch("https://www.google.com", { muteHttpExceptions: true });
+  SpreadsheetApp.getActiveSpreadsheet();
+  return "권한 승인 완료";
+}
