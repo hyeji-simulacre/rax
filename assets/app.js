@@ -6,21 +6,21 @@
 
   // 카테고리: 색상 두 개(그라데이션)와 라인 아이콘
   const CATS = [
-    { key: "분류·평가", en: "Classification & Appraisal", c: ["#5b7cff", "#9fb4ff"],
+    { key: "분류·평가", en: "Classification & Appraisal", c: ["#5c1716", "#7e201f"],
       icon: '<rect x="3" y="4" width="18" height="5" rx="1.5"/><rect x="3" y="11" width="18" height="5" rx="1.5"/><path d="M8 20h8M7 6.5h3M7 13.5h3"/>' },
-    { key: "공개·비식별", en: "Access & Privacy", c: ["#ff6b93", "#ffb3c6"],
+    { key: "공개·비식별", en: "Access & Privacy", c: ["#7e201f", "#a02928"],
       icon: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 20 20 4"/>' },
-    { key: "OCR·고문서", en: "OCR & Manuscripts", c: ["#f59e0b", "#ffd27a"],
+    { key: "OCR·고문서", en: "OCR & Manuscripts", c: ["#a02928", "#c23634"],
       icon: '<path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h5"/>' },
-    { key: "메타데이터·기술", en: "Metadata & Description", c: ["#14b8a6", "#8ff0dc"],
+    { key: "메타데이터·기술", en: "Metadata & Description", c: ["#c23634", "#d54746"],
       icon: '<path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.5"/>' },
-    { key: "검색·챗봇", en: "Discovery & Chat", c: ["#8b5cf6", "#cdb6ff"],
+    { key: "검색·챗봇", en: "Discovery & Chat", c: ["#d54746", "#df6b6a"],
       icon: '<path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 11h.01M12 11h.01M15 11h.01"/>' },
-    { key: "음성·영상", en: "Audio & Video", c: ["#fb7a3c", "#ffc29e"],
+    { key: "음성·영상", en: "Audio & Video", c: ["#df6b6a", "#e88f8e"],
       icon: '<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>' },
-    { key: "보존·관리 자동화", en: "Preservation & Automation", c: ["#0ea5e9", "#9adcff"],
+    { key: "보존·관리 자동화", en: "Preservation & Automation", c: ["#e88f8e", "#efacab"],
       icon: '<ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/>' },
-    { key: "정책·가이드", en: "Policy & Guidance", c: ["#22a06b", "#a7e8c4"],
+    { key: "정책·가이드", en: "Policy & Guidance", c: ["#efacab", "#f5c9c8"],
       icon: '<path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 19V5M9 8h6M9 12h6"/>' },
   ];
   const CAT = Object.fromEntries(CATS.map(c => [c.key, c]));
@@ -506,6 +506,13 @@
       if (e.key === "/" && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); $("#q").focus(); }
     });
     bindSubmit(); bindAsk();
+    // 개발자 정보
+    $("#devOpen").addEventListener("click", () => $("#devDialog").showModal());
+    $("#devClose").addEventListener("click", () => $("#devDialog").close());
+    $("#devDialog").addEventListener("click", e => { if (e.target === $("#devDialog")) $("#devDialog").close(); });
+    $("#coffeeBtn").addEventListener("click", () => {
+      const qr = $("#coffeeQr"); qr.hidden = !qr.hidden; $("#coffeeBtn").setAttribute("aria-expanded", String(!qr.hidden));
+    });
   }
 
   // ---------- submit ----------
