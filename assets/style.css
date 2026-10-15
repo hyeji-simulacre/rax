@@ -140,6 +140,8 @@ main { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
 .answer .intro { margin: 0; max-width: 820px; font: 400 16px/1.8 var(--ko); color: var(--ink-2); word-break: keep-all; }
 .answer .close { position: absolute; top: 16px; right: 16px; }
 .answer .picks-title { margin: 22px 0 10px; font: 600 14px var(--ko); }
+.answer .picks-title span { font-weight: 400; color: var(--ink-3); font-size: 12.5px; }
+.pick em { display: block; margin-top: 4px; font: 500 12px/1.4 var(--ko); font-style: normal; color: var(--accent, #5b7cff); }
 .picks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
 .pick { display: flex; gap: 12px; align-items: center; padding: 10px; border-radius: var(--r-md); cursor: pointer; text-align: left;
   border: 1px solid var(--line); background: rgba(255, 255, 255, .7); font-family: var(--ko); transition: transform .15s, box-shadow .2s; }

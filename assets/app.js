@@ -203,13 +203,32 @@
     $("#archive").scrollIntoView({ behavior: "smooth" });
   }
 
+  // 먼저 볼 사례: 주간 작업이 고른 화제·흐름 사례를 쓰되, 3주 넘게 갱신이 없으면 해당 주제의 최신 사례로 대신한다
+  const STALE_DAYS = 21;
+  const isStale = g => !g.updated || (Date.now() - new Date(g.updated + "T00:00:00+09:00")) / 864e5 > STALE_DAYS;
+  function picksFor(g) {
+    if (!isStale(g)) {
+      return g.picks.map(p => typeof p === "string" ? { id: p } : p)
+        .map(p => { const it = cases.find(x => x.id === p.id); return it && { ...it, _why: p.why }; }).filter(Boolean);
+    }
+    return cases.filter(it => (!g.filter.cat || it.category === g.filter.cat) && (!g.filter.format || it.format === g.filter.format)
+        && (!g.filter.q || it._hay.includes(g.filter.q.toLowerCase())))
+      .sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 3)
+      .map(it => ({ ...it, _why: it.year ? `${it.year}년 사례` : "" }));
+  }
+  function picksLabel(g) {
+    if (isStale(g)) return "· 최신순";
+    const [, m, d] = g.updated.split("-").map(Number);
+    return `· ${m}월 ${d}일 기준, 매주 화제와 흐름에 맞춰 바뀌어요`;
+  }
+
   function renderAnswer(list) {
     const box = $("#answer");
     let g = state.guide && guides.find(x => x.id === state.guide), matched = false;
     if (!g && state.q.trim()) { g = guideFor(tokenize(state.q)); matched = !!g; }
     if (!g) { box.hidden = true; box.innerHTML = ""; return; }
     const c = CAT[g.filter.cat];
-    const picks = g.picks.map(id => cases.find(x => x.id === id)).filter(Boolean);
+    const picks = picksFor(g);
     const others = guides.filter(x => x.id !== g.id).slice(0, 10).sort((a, b) => hash(a.id + g.id) - hash(b.id + g.id)).slice(0, 3);
     box.style.setProperty("--accent", c ? c.c[0] : "#0f1115");
     box.innerHTML = `
@@ -217,11 +236,11 @@
       <h3>${esc(g.q)}</h3>
       ${state.guide ? `<button class="glass-btn icon close" type="button" data-close aria-label="안내 닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>` : ""}
       <p class="intro">${esc(g.intro)}</p>
-      ${picks.length ? `<p class="picks-title">먼저 볼 사례</p>
+      ${picks.length ? `<p class="picks-title">먼저 볼 사례 <span>${esc(picksLabel(g))}</span></p>
       <div class="picks">${picks.map(it => `
         <button class="pick" type="button" data-id="${esc(it.id)}">
           <span class="mini">${art(it.category, it.id)}</span>
-          <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
+          <span><b>${esc(titleOf(it))}</b>${it._why ? `<em>${esc(it._why)}</em>` : ""}<small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
         </button>`).join("")}</div>` : ""}
       <p class="more">${matched ? `<a href="#" data-guide="${esc(g.id)}">이 안내로 사례 모아 보기</a> · ` : ""}아래에서 관련 사례 ${list.length}건을 더 볼 수 있어요.</p>
       <div class="related">${others.map(o => `<button class="prompt" type="button" data-guide="${esc(o.id)}">${esc(o.q)}</button>`).join("")}</div>`;

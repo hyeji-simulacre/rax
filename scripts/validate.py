@@ -40,7 +40,8 @@ if guides_path.exists():
         for k in ["id", "q", "intro", "filter", "picks", "keywords"]:
             if k not in g:
                 errors.append(f"guide {g.get('id', '?')}: '{k}' 누락")
-        for pid in g.get("picks", []):
+        for pk in g.get("picks", []):
+            pid = pk.get("id") if isinstance(pk, dict) else pk
             if pid not in ids:
                 errors.append(f"guide {g.get('id')}: 없는 사례 id {pid}")
 
