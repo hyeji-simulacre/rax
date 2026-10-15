@@ -923,5 +923,20 @@
     "url": "https://www.mcst.go.kr/site/s_notice/press/pressView.jsp?pSeq=20833",
     "reason": "전시 해설 로봇 서비스 확대 보도: 기록·소장품 관리 AI 사례로 보기 어려움",
     "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/changgi/nara-ai-project",
+    "reason": "설계·시연 단계 프로토타입: 성능은 목표치이고 데모 데이터 30건 수준, 실제 운영·검증 결과 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/changgi/global-archive-research-monitor",
+    "reason": "범용 AI 에이전트 워크스페이스(여러 분야 모드, 데모 데이터 수준): 기록관리 AI 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/changgi/insta-carousel-skill",
+    "reason": "SNS 카드뉴스 제작 스킬: 기록관리 AI 사례로 보기 어려움(발굴 기능은 korea-archive 플러그인 사례에 포함)",
+    "date": "2026-10-15"
   }
 ]

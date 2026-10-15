@@ -5069,5 +5069,98 @@
    "실운영"
   ],
   "url": "https://1950census.archives.gov/"
+ },
+ {
+  "id": "f4a58f05e2",
+  "title": "Korea Archive MCP",
+  "titleKo": "국내외 기록 검색을 한데 묶은 원격 MCP 서버",
+  "org": "송창기 (GitHub changgi)",
+  "orgIds": [
+   "changgi"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "MCP·API",
+  "apiType": "MCP",
+  "category": "검색·챗봇",
+  "summary": "Claude 같은 AI 에이전트에 커넥터 주소 하나만 등록하면 국내외 기록 검색을 쓸 수 있도록 Vercel에 배포한 원격 MCP 서버다. 영국 TNA, 미국 NARA, archive.org, Gallica, Europeana와 국가기록원, 국립중앙도서관, 한국사데이터베이스, 서울기록원, 6·25전쟁 아카이브센터 등을 검색하는 도구에 교차검색·권리 판정 같은 보조 도구를 더해 모두 20개 도구를 제공한다. 국내 기관 사이트가 해외 데이터센터 접속을 막는 문제를 피하려고 함수 실행 지역을 서울로 고정했다.",
+  "tags": [
+   "MCP",
+   "통합검색",
+   "해외기록",
+   "AI에이전트"
+  ],
+  "url": "https://github.com/changgi/korea-archive-mcp"
+ },
+ {
+  "id": "5c36b934db",
+  "title": "Korea Archive — Claude Plugin Marketplace",
+  "titleKo": "한국 관련 기록 발굴용 Claude 플러그인 마켓플레이스",
+  "org": "송창기 (GitHub changgi)",
+  "orgIds": [
+   "changgi"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "GitHub·오픈소스",
+  "category": "검색·챗봇",
+  "summary": "1860~1960년 한국 관련 기록을 국내외 15개 아카이브에서 Claude 대화로 찾도록 묶은 플러그인 배포 저장소다. 서울이 'Keijo', 부산이 'Fusan'으로 색인된 것처럼 당대 표기 때문에 검색에서 빠지는 기록을 찾으려고, 표기 변형 키워드와 검색 전략을 담은 스킬을 MCP 검색 도구 20종과 함께 제공한다. 찾은 기록을 OCR·VLM으로 교차 판독하고 RiC-O·CIDOC-CRM 온톨로지로 바꾸는 후속 파이프라인 스킬도 들어 있다.",
+  "tags": [
+   "Claude플러그인",
+   "에이전트스킬",
+   "표기변형검색",
+   "RiC-O"
+  ],
+  "url": "https://github.com/changgi/korea-archive-marketplace"
+ },
+ {
+  "id": "59fe74cfb2",
+  "title": "정보공개포털(open.go.kr) 문서 수집 시스템",
+  "org": "송창기 (GitHub changgi)",
+  "orgIds": [
+   "changgi"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "MCP·API",
+  "apiType": "MCP",
+  "category": "검색·챗봇",
+  "summary": "정보공개포털의 사전정보공표 문서를 Python 수집기로 모아 Supabase에 저장하고, MCP 서버로 AI 에이전트가 검색·조회하게 만든 오픈소스 시스템이다. MCP 도구는 키워드·날짜·기관·공개구분 검색, 원문등록번호별 상세·첨부파일 조회, 수집 실행, 수집 통계를 지원한다. GitHub Actions로 6시간마다 자동 수집하고 Next.js 대시보드로 현황을 보여 준다.",
+  "tags": [
+   "정보공개",
+   "MCP",
+   "자동수집",
+   "공공문서"
+  ],
+  "url": "https://github.com/changgi/open-go-kr-archive"
+ },
+ {
+  "id": "acfd3e8ae3",
+  "title": "Archives Restoration Korea",
+  "titleKo": "국가기록원 기록물 복원 사례를 다시 엮은 인터랙티브 아카이브",
+  "org": "송창기 (GitHub changgi)",
+  "orgIds": [
+   "changgi"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "GitHub·오픈소스",
+  "category": "음성·영상",
+  "summary": "국가기록원이 표 형태로 공개한 기록물 복원 사례 45건을 전후 비교 슬라이더, 전시형 이야기, 연표, 갤러리로 재구성한 웹 서비스다. 복원 교육 영상 8편은 Whisper 음성인식과 Tesseract OCR로 자막 192구간을 만들고 영상별 요약과 요점을 AI로 뽑았다. 13개 언어 번역과 브라우저 음성합성을 이용한 실시간 더빙도 지원한다.",
+  "tags": [
+   "복원",
+   "Whisper",
+   "자막",
+   "다국어"
+  ],
+  "url": "https://github.com/changgi/archives-restore-kr"
  }
 ]
