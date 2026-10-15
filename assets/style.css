@@ -683,3 +683,44 @@ input[type=search]::-webkit-search-cancel-button { -webkit-appearance: none; dis
 .fb-types input:checked + span { background: #0f1115; color: #fff; border-color: #0f1115; }
 .fb-types input:focus-visible + span { outline: 3px solid rgba(213, 71, 70, .35); outline-offset: 2px; }
 @media (max-width: 640px) { #feedbackOpen { display: none; } }
+
+/* =====================================================================
+   v2.3: 리퀴드 글래스 테두리
+   - 은빛 얇은 림, 위·아래 가운데에 빛이 맺히는 하이라이트(스페큘러)
+   - 안쪽 위는 밝게, 아래는 살짝 어둡게 해서 유리 두께를 표현
+   ===================================================================== */
+.glass-btn, .search, .prompt, .chip, .glass-select, .av-form {
+  background: linear-gradient(180deg, rgba(255, 255, 255, .62), rgba(255, 255, 255, .34)) !important;
+  backdrop-filter: blur(18px) saturate(190%) brightness(1.04); -webkit-backdrop-filter: blur(18px) saturate(190%) brightness(1.04);
+  box-shadow:
+    inset 0 7px 12px -9px rgba(255, 255, 255, .95),
+    inset 0 -8px 14px -10px rgba(15, 17, 21, .1),
+    inset 0 0 0 1px rgba(255, 255, 255, .35),
+    0 1px 2px rgba(15, 17, 21, .06),
+    0 10px 28px -8px rgba(15, 17, 21, .12) !important;
+}
+/* 림: 옆은 은회색, 위·아래 가운데는 하얗게 빛나는 그라데이션 */
+.glass-btn::before, .search::before, .prompt::before, .chip::before, .glass-select::before, .av-form::before {
+  padding: 1.25px;
+  background:
+    linear-gradient(90deg, rgba(140, 147, 160, .62) 0%, rgba(176, 182, 193, .55) 24%, rgba(255, 255, 255, 1) 50%, rgba(176, 182, 193, .55) 76%, rgba(140, 147, 160, .62) 100%) !important;
+}
+/* 스페큘러: 위 가운데 굵은 빛줄기, 아래 가운데 옅은 빛줄기 */
+.glass-btn::after, .search::after, .prompt::after, .chip::after {
+  left: 14%; right: 14%; top: -1px; height: calc(100% + 2px); border-radius: 0;
+  background:
+    radial-gradient(50% 1.6px at 50% 0, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0)) top / 100% 3px no-repeat,
+    radial-gradient(42% 1.2px at 50% 100%, rgba(255, 255, 255, .95), rgba(255, 255, 255, 0)) bottom / 100% 3px no-repeat !important;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, .9));
+}
+.glass-btn:hover, .prompt:hover, .chip:hover { box-shadow:
+    inset 0 7px 12px -9px #fff, inset 0 -8px 14px -10px rgba(15, 17, 21, .12), inset 0 0 0 1px rgba(255, 255, 255, .45),
+    0 2px 4px rgba(15, 17, 21, .06), 0 14px 32px -8px rgba(15, 17, 21, .16) !important; }
+/* 진한 유리 (검정 버튼, 선택된 칩) */
+.glass-btn.solid, .chip[aria-pressed="true"] {
+  background: linear-gradient(180deg, rgba(42, 45, 51, .96), rgba(15, 17, 21, .96)) !important;
+  box-shadow: inset 0 7px 12px -9px rgba(255, 255, 255, .35), inset 0 -8px 14px -10px rgba(0, 0, 0, .5), 0 10px 28px -8px rgba(15, 17, 21, .35) !important; }
+.glass-btn.solid::before, .chip[aria-pressed="true"]::before {
+  background: linear-gradient(90deg, rgba(255, 255, 255, .18) 0%, rgba(255, 255, 255, .28) 24%, rgba(255, 255, 255, .9) 50%, rgba(255, 255, 255, .28) 76%, rgba(255, 255, 255, .18) 100%) !important; }
+.ask-go { position: relative; background: linear-gradient(180deg, rgba(42, 45, 51, .96), rgba(15, 17, 21, .96));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .16), inset 0 7px 10px -8px rgba(255, 255, 255, .45), 0 6px 16px -4px rgba(15, 17, 21, .35); }
