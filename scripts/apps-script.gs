@@ -42,7 +42,22 @@ function submit(data) {
   } finally {
     lock.releaseLock();
   }
+  if (row.title.indexOf("[의견]") === 0 || row.title.indexOf("'[의견]") === 0) notifyFeedback(row);
   return { ok: true };
+}
+
+// 의견이 들어오면 운영자에게 메일로 알린다. 메일이 실패해도 시트 저장은 그대로 둔다.
+const NOTIFY_EMAIL = "arche.jhj@gmail.com";
+function notifyFeedback(row) {
+  try {
+    const kind = row.title.replace(/^'?\[의견\]\s*/, "") || "의견";
+    MailApp.sendEmail({
+      to: NOTIFY_EMAIL,
+      subject: `[RAX] 새 의견: ${kind}`,
+      body: [`종류: ${kind}`, `보낸 곳: ${row.org || "-"} · ${row.url || "-"}`, `연락처: ${row.contact || "(없음)"}`, "", row.summary || "(내용 없음)", "",
+        "— RAX 의견 보내기 (시트 'RAX 사례 제보'에도 저장됨)"].join("\n"),
+    });
+  } catch (e) { console.warn("의견 메일 실패: " + e); }
 }
 
 // ---------- 추가질문 채팅 ----------
@@ -148,6 +163,7 @@ function json(obj) {
 function authorize() {
   UrlFetchApp.fetch("https://www.google.com", { muteHttpExceptions: true });
   SpreadsheetApp.getActiveSpreadsheet();
+  MailApp.getRemainingDailyQuota(); // 의견 알림 메일 보내기 권한
   return "권한 승인 완료";
 }
 
