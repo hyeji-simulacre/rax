@@ -7,13 +7,27 @@
  },
  "0127e3dca3": "thumbs/0127e3dca3.jpg",
  "0173d92777": "thumbs/0173d92777.jpg",
+ "074f25bb88": "thumbs/074f25bb88.jpg",
+ "0828a2aea7": "thumbs/0828a2aea7.jpg",
  "0940451683": "thumbs/0940451683.jpg",
  "0a9b4e937f": "thumbs/0a9b4e937f.jpg",
+ "0ab6a55549": "thumbs/0ab6a55549.jpg",
  "0c2c3b428d": "thumbs/0c2c3b428d.jpg",
  "0d2fcc3957": "thumbs/0d2fcc3957.jpg",
+ "0d37007db0": "thumbs/0d37007db0.jpg",
+ "0dbd215376": "thumbs/0dbd215376.jpg",
  "0dfc4b382c": "thumbs/0dfc4b382c.jpg",
  "0e3733ed08": "thumbs/0e3733ed08.jpg",
+ "0e5d5e7590": "thumbs/0e5d5e7590.jpg",
+ "0f7358e855": "thumbs/0f7358e855.jpg",
  "10709e7875": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 403"
+ },
+ "1303019f6d": "thumbs/1303019f6d.jpg",
+ "1313b6f49c": "thumbs/1313b6f49c.jpg",
+ "1602843b78": {
   "fail": true,
   "date": "2026-10-15",
   "reason": "status 403"
@@ -21,18 +35,22 @@
  "1666f62567": "thumbs/1666f62567.jpg",
  "1904ca4291": "thumbs/1904ca4291.jpg",
  "1a2b1bf0fd": "thumbs/1a2b1bf0fd.jpg",
+ "1a68a89044": "thumbs/1a68a89044.jpg",
  "1ab8ced277": {
   "fail": true,
   "date": "2026-10-15",
   "reason": "not html: application/xml;charset=UTF-8"
  },
  "1c889fac41": "thumbs/1c889fac41.jpg",
+ "1f429469b7": "thumbs/1f429469b7.jpg",
+ "2055cf77b6": "thumbs/2055cf77b6.jpg",
  "23cabb331f": {
   "fail": true,
   "date": "2026-10-15",
   "reason": "status 403"
  },
  "267d2bf9b3": "thumbs/267d2bf9b3.jpg",
+ "269134bd07": "thumbs/269134bd07.jpg",
  "26abf03846": {
   "fail": true,
   "date": "2026-10-15",
@@ -42,37 +60,66 @@
  "289044de88": "thumbs/289044de88.jpg",
  "28b74b06e0": "thumbs/28b74b06e0.jpg",
  "28edf36c9f": "thumbs/28edf36c9f.jpg",
+ "2a3f370ec3": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 403"
+ },
+ "2d7ecfc24e": "thumbs/2d7ecfc24e.jpg",
+ "2ead3b0f7e": "thumbs/2ead3b0f7e.jpg",
  "31fb1e30f0": "thumbs/31fb1e30f0.jpg",
  "3250ce7b21": "thumbs/3250ce7b21.jpg",
  "32defe3f5e": "thumbs/32defe3f5e.jpg",
+ "33317d7e25": "thumbs/33317d7e25.jpg",
  "34e9f63fe0": "thumbs/34e9f63fe0.jpg",
+ "3723036e1c": "thumbs/3723036e1c.jpg",
  "377f8d8d07": "thumbs/377f8d8d07.jpg",
+ "3844509a25": "thumbs/3844509a25.jpg",
  "38ac89b0dd": "thumbs/38ac89b0dd.jpg",
  "39b3f2125f": "thumbs/39b3f2125f.jpg",
+ "3a5da520ac": "thumbs/3a5da520ac.jpg",
+ "3b3a113272": "thumbs/3b3a113272.jpg",
  "3cccc30a98": "thumbs/3cccc30a98.jpg",
  "3d804ceada": "thumbs/3d804ceada.jpg",
  "3da7a6762b": "thumbs/3da7a6762b.jpg",
+ "3e5396bfbd": "thumbs/3e5396bfbd.jpg",
  "4240b2f4dc": "thumbs/4240b2f4dc.jpg",
+ "42a9002140": "thumbs/42a9002140.jpg",
+ "44abf7a6d3": "thumbs/44abf7a6d3.jpg",
  "44de5df076": "thumbs/44de5df076.jpg",
  "4539d7aade": "thumbs/4539d7aade.jpg",
  "464ee4603d": "thumbs/464ee4603d.jpg",
  "475102805c": "thumbs/475102805c.jpg",
+ "4985f2cb32": "thumbs/4985f2cb32.jpg",
  "4aebc165e4": {
   "fail": true,
   "date": "2026-10-15",
   "reason": "status 403"
  },
  "4b47a2734a": "thumbs/4b47a2734a.jpg",
+ "4c1bc38f8e": "thumbs/4c1bc38f8e.jpg",
+ "4c2b0fc45c": "thumbs/4c2b0fc45c.jpg",
  "4ca8b53fb1": "thumbs/4ca8b53fb1.jpg",
  "4d0773a9cb": "thumbs/4d0773a9cb.jpg",
+ "4d13ec4b44": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 403"
+ },
  "4fd594cc14": "thumbs/4fd594cc14.jpg",
  "4ffa1dae25": "thumbs/4ffa1dae25.jpg",
  "501ad8e04d": "thumbs/501ad8e04d.jpg",
  "522081bd02": "thumbs/522081bd02.jpg",
  "523cc51c15": "thumbs/523cc51c15.jpg",
+ "531ffd7ada": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 429"
+ },
  "547dfb87ec": "thumbs/547dfb87ec.jpg",
  "54c309c4c0": "thumbs/54c309c4c0.jpg",
  "54d1c6b477": "thumbs/54d1c6b477.jpg",
+ "54d7de09bc": "thumbs/54d7de09bc.jpg",
  "55745d36b6": "thumbs/55745d36b6.jpg",
  "564a6a2803": "thumbs/564a6a2803.jpg",
  "56ab381339": "thumbs/56ab381339.jpg",
@@ -83,11 +130,18 @@
  },
  "581290d680": "thumbs/581290d680.jpg",
  "583ab66c12": "thumbs/583ab66c12.jpg",
+ "5a33a0636e": "thumbs/5a33a0636e.jpg",
+ "5a8cfd1f09": "thumbs/5a8cfd1f09.jpg",
  "5eb2998126": "thumbs/5eb2998126.jpg",
  "5f2096c5a4": "thumbs/5f2096c5a4.jpg",
  "5f479cf051": "thumbs/5f479cf051.jpg",
+ "60794c3060": "thumbs/60794c3060.jpg",
+ "60e935d3a7": "thumbs/60e935d3a7.jpg",
  "61f646bee5": "thumbs/61f646bee5.jpg",
+ "621b6e2d1f": "thumbs/621b6e2d1f.jpg",
+ "63e6aabf2c": "thumbs/63e6aabf2c.jpg",
  "63ebf9a346": "thumbs/63ebf9a346.jpg",
+ "65ade1623d": "thumbs/65ade1623d.jpg",
  "666d10e30c": {
   "fail": true,
   "date": "2026-10-15",
@@ -128,6 +182,7 @@
   "reason": "status 404"
  },
  "7545dc787e": "thumbs/7545dc787e.jpg",
+ "783f777c8f": "thumbs/783f777c8f.jpg",
  "7ab63db407": "thumbs/7ab63db407.jpg",
  "7cce13ff5d": "thumbs/7cce13ff5d.jpg",
  "7fe45fba45": "thumbs/7fe45fba45.jpg",
@@ -138,10 +193,12 @@
   "date": "2026-10-15",
   "reason": "status 403"
  },
+ "83414178da": "thumbs/83414178da.jpg",
  "854831d12a": "thumbs/854831d12a.jpg",
  "8549f24ce8": "thumbs/8549f24ce8.jpg",
  "8752879ac1": "thumbs/8752879ac1.jpg",
  "883f4cf0c7": "thumbs/883f4cf0c7.jpg",
+ "89ba99964f": "thumbs/89ba99964f.jpg",
  "8a8a813e3c": "thumbs/8a8a813e3c.jpg",
  "8b62fc5c88": {
   "fail": true,
@@ -157,12 +214,15 @@
  "8d7bbc92c1": "thumbs/8d7bbc92c1.jpg",
  "8d89b07bdc": "thumbs/8d89b07bdc.jpg",
  "8e625b5954": "thumbs/8e625b5954.jpg",
+ "8fa58ffe06": "thumbs/8fa58ffe06.jpg",
  "90c2d9d844": "thumbs/90c2d9d844.jpg",
  "93132d19c2": "thumbs/93132d19c2.jpg",
  "9593127d9f": "thumbs/9593127d9f.jpg",
  "9934c33f8c": "thumbs/9934c33f8c.jpg",
  "9c3539934d": "thumbs/9c3539934d.jpg",
  "9d3c620ae0": "thumbs/9d3c620ae0.jpg",
+ "9d5a5938d0": "thumbs/9d5a5938d0.jpg",
+ "9f76ba3619": "thumbs/9f76ba3619.jpg",
  "9ffd304f1f": {
   "fail": true,
   "date": "2026-10-15",
@@ -174,6 +234,7 @@
   "date": "2026-10-15",
   "reason": "status 403"
  },
+ "a20857ee5d": "thumbs/a20857ee5d.jpg",
  "a4f167f01b": "thumbs/a4f167f01b.jpg",
  "a56bee5be0": "thumbs/a56bee5be0.jpg",
  "a5dcc51f77": "thumbs/a5dcc51f77.jpg",
@@ -185,8 +246,17 @@
   "reason": "status 403"
  },
  "aa6153e39a": "thumbs/aa6153e39a.jpg",
+ "ac36e86ddf": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 403"
+ },
+ "ac7133c1c2": "thumbs/ac7133c1c2.jpg",
  "ad615a4cf3": "thumbs/ad615a4cf3.jpg",
  "ad7bd01974": "thumbs/ad7bd01974.jpg",
+ "adbe2387d0": "thumbs/adbe2387d0.jpg",
+ "b122fcdf91": "thumbs/b122fcdf91.jpg",
+ "b154f0560e": "thumbs/b154f0560e.jpg",
  "b347964ef6": "thumbs/b347964ef6.jpg",
  "b416958508": {
   "fail": true,
@@ -198,14 +268,19 @@
   "date": "2026-10-15",
   "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.accesson.kr/jksarm/v.24/3/145/44799\", wait"
  },
+ "b4a8252b60": "thumbs/b4a8252b60.jpg",
+ "b50eed1453": "thumbs/b50eed1453.jpg",
  "b5f8da6298": "thumbs/b5f8da6298.jpg",
+ "b66c6480e4": "thumbs/b66c6480e4.jpg",
  "b9027b544f": "thumbs/b9027b544f.jpg",
  "b90ae3b8c4": "thumbs/b90ae3b8c4.jpg",
+ "bb0e37143c": "thumbs/bb0e37143c.jpg",
  "bcf92f9da2": {
   "fail": true,
   "date": "2026-10-15",
   "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.accesson.kr/jksarm/v.25/3/259/57117\", wait"
  },
+ "bd90165c13": "thumbs/bd90165c13.jpg",
  "c0d8da3023": {
   "fail": true,
   "date": "2026-10-15",
@@ -217,6 +292,7 @@
  "ca513ed863": "thumbs/ca513ed863.jpg",
  "cc18c20253": "thumbs/cc18c20253.jpg",
  "cd9450ba84": "thumbs/cd9450ba84.jpg",
+ "ceb9894f8a": "thumbs/ceb9894f8a.jpg",
  "cf2e0971a3": "thumbs/cf2e0971a3.jpg",
  "cfb1b15712": "thumbs/cfb1b15712.jpg",
  "d06808d299": {
@@ -224,11 +300,25 @@
   "date": "2026-10-15",
   "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.accesson.kr/jksarm/v.25/3/243/57125\", wait"
  },
+ "d072116444": "thumbs/d072116444.jpg",
+ "d1e4e41fa2": "thumbs/d1e4e41fa2.jpg",
+ "d207e17e7c": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "status 403"
+ },
  "d223ea4d54": "thumbs/d223ea4d54.jpg",
  "d40aaa3994": "thumbs/d40aaa3994.jpg",
  "d4555d39be": "thumbs/d4555d39be.jpg",
  "d5cbffd928": "thumbs/d5cbffd928.jpg",
  "d5e688a7b9": "thumbs/d5e688a7b9.jpg",
+ "d8a32035a4": "thumbs/d8a32035a4.jpg",
+ "da73eb2988": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://accesson.kr/jksarm/v.19/4/221/1465\", waiting u"
+ },
+ "da799be993": "thumbs/da799be993.jpg",
  "daf63afdbc": "thumbs/daf63afdbc.jpg",
  "db1c26d627": "thumbs/db1c26d627.jpg",
  "db2adea7a6": {
@@ -237,7 +327,11 @@
   "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.accesson.kr/jksarm/v.26/1/59/58652\", waiti"
  },
  "dba29cbb03": "thumbs/dba29cbb03.jpg",
+ "dd2ef75ef7": "thumbs/dd2ef75ef7.jpg",
  "dedc4e9456": "thumbs/dedc4e9456.jpg",
+ "e0844102ec": "thumbs/e0844102ec.jpg",
+ "e0a7881b76": "thumbs/e0a7881b76.jpg",
+ "e5c780aaa3": "thumbs/e5c780aaa3.jpg",
  "e62af76f37": "thumbs/e62af76f37.jpg",
  "e815529df1": {
   "fail": true,
@@ -246,18 +340,32 @@
  },
  "e94d59f80d": "thumbs/e94d59f80d.jpg",
  "eb7c1e92ba": "thumbs/eb7c1e92ba.jpg",
+ "ebcf716047": "thumbs/ebcf716047.jpg",
  "f07cb214cf": "thumbs/f07cb214cf.jpg",
  "f2566911bd": "thumbs/f2566911bd.jpg",
+ "f36eda1798": "thumbs/f36eda1798.jpg",
  "f40ee41370": "thumbs/f40ee41370.jpg",
  "f43b158ef5": "thumbs/f43b158ef5.jpg",
+ "f4d4670274": "thumbs/f4d4670274.jpg",
  "f521b4d8aa": "thumbs/f521b4d8aa.jpg",
  "f63ac1c4a8": "thumbs/f63ac1c4a8.jpg",
  "f6b7cca92a": "thumbs/f6b7cca92a.jpg",
+ "f7a4b6792d": "thumbs/f7a4b6792d.jpg",
  "f821a69187": "thumbs/f821a69187.jpg",
  "f8fa3ce1cc": "thumbs/f8fa3ce1cc.jpg",
+ "f9923009d5": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://labs.loc.gov/work/experiments/newspaper-naviga"
+ },
  "f9ed303bd5": "thumbs/f9ed303bd5.jpg",
  "fa476e9d09": "thumbs/fa476e9d09.jpg",
  "fb771af6b9": "thumbs/fb771af6b9.jpg",
+ "fbdbc3fb29": {
+  "fail": true,
+  "date": "2026-10-15",
+  "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.shda.gov.cn/dayw/ywjs/202602/t20260224_764"
+ },
  "fc08b628e9": "thumbs/fc08b628e9.jpg",
  "fec6d30adc": "thumbs/fec6d30adc.jpg"
 }
