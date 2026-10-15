@@ -181,7 +181,8 @@ function findModels() {
 
 // ---------- 처리상태 맞추기 ----------
 // 사이트 데이터(GitHub의 cases.json·excluded.json)를 읽어 시트 I열 '처리상태'를 '반영' 또는 '제외'로 바꾸고,
-// 제외 사유를 J열 '처리메모'에 적는다. 이미 '반영'·'제외'인 행과 [의견] 행은 건드리지 않는다.
+// 제외 사유를 J열 '처리메모'에 적는다. 사이트 데이터가 기준이라, 나중에 제외→반영(또는 반대)으로 바뀐 행도 다시 맞춘다.
+// [의견] 행과, 사이트 데이터에 아직 없는(검토 전) 행은 건드리지 않는다.
 // 편집기에서 syncStatus를 골라 ▶실행하면 바로 맞춰지고, installDailySync를 한 번 실행해 두면 매일 새벽 자동으로 돈다.
 const DATA_BASE = "https://raw.githubusercontent.com/hyeji-simulacre/rax/main/data/";
 function normUrl(u) {
@@ -197,14 +198,17 @@ function syncStatus() {
   const rows = sheet.getRange(2, 1, last - 1, 10).getValues();
   let done = 0, skip = 0;
   const out = rows.map(r => {
-    const title = String(r[1] || ""), status = String(r[8] || ""), key = normUrl(r[2]);
-    if (title.startsWith("[의견]") || status === "반영" || status === "제외") return [r[8], r[9]];
-    if (added.has(key)) { done++; return ["반영", r[9] || "사이트에 게재됨"]; }
-    if (excluded.has(key)) { done++; return ["제외", excluded.get(key)]; }
-    skip++; return [r[8], r[9]];
+    const title = String(r[1] || ""), key = normUrl(r[2]);
+    if (title.startsWith("[의견]")) return [r[8], r[9]];
+    let next = null;
+    if (added.has(key)) next = ["반영", "사이트에 게재됨"];
+    else if (excluded.has(key)) next = ["제외", excluded.get(key)];
+    if (!next) { skip++; return [r[8], r[9]]; }
+    if (r[8] !== next[0] || r[9] !== next[1]) done++;
+    return next;
   });
   sheet.getRange(2, 9, out.length, 2).setValues(out);
-  const msg = `처리상태 갱신 ${done}행 · 아직 검토 전 ${skip}행`;
+  const msg = `처리상태 바뀐 행 ${done}개 · 아직 검토 전 ${skip}행`;
   Logger.log(msg); return msg;
 }
 function installDailySync() {
