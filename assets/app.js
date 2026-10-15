@@ -34,7 +34,52 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const hash = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
 
-  const state = { q: "", cat: null, region: null, format: null, orgType: null, sort: "recent" };
+  const state = { q: "", cat: null, region: null, format: null, orgType: null, sort: "relevance", guide: null };
+  let guides = [];
+
+  // ---------- 문장형 질문 검색 ----------
+  // 질문 문장에서 조사·어미·군더더기를 떼고, 기록관리 용어의 동의어로 넓혀 관련도를 매긴다
+  const STOP = new Set(["ai", "인공지능", "기록", "기록관리", "사례", "관련", "대한", "대해", "어디", "어디서", "무엇", "뭐", "뭘", "어떤", "어떻게",
+    "알려", "알려줘", "알려주세요", "있나요", "있을까", "있는", "있어", "하는", "하고", "싶어", "궁금", "궁금해", "곳", "좀", "쓰는", "쓴", "쓰고", "써서",
+    "활용", "적용", "도입", "방법", "가능", "할까", "수", "것", "등", "및", "the", "and", "for", "how", "what"]);
+  const ENDINGS = ["해주세요", "하려면", "하려고", "되나요", "인가요", "있나요", "에서는", "으로는", "해줘", "하는", "하기", "했던", "되는", "할까",
+    "에서", "으로", "에게", "까지", "부터", "처럼", "이나", "은", "는", "이", "가", "을", "를", "에", "의", "로", "도", "와", "과", "요"];
+  const SYN = {
+    "손글씨": ["필기체", "htr", "필사"], "필기체": ["손글씨", "htr"], "한문": ["한자", "고문헌", "고문서"], "한자": ["한문", "고문헌"],
+    "고문서": ["고문헌", "htr", "한문", "ocr"], "글자": ["ocr", "문자인식"], "문자인식": ["ocr"], "스캔": ["ocr", "디지털화"],
+    "챗봇": ["rag", "질의응답", "대화형", "에이전트"], "검색": ["rag", "시맨틱", "의미 검색", "통합검색"], "질문": ["챗봇", "rag"],
+    "녹음": ["음성", "전사", "stt", "whisper", "구술"], "구술": ["구술사", "전사", "whisper"], "전사": ["stt", "whisper", "음성인식", "asr"],
+    "음성": ["stt", "asr", "음성인식", "whisper"], "영상": ["시청각", "방송", "얼굴 인식"], "회의록": ["전사", "속기", "음성"],
+    "비공개": ["공개재분류", "비밀해제", "공개 전환", "비식별"], "개인정보": ["비식별", "pii", "가림", "민감정보"], "재분류": ["공개재분류"],
+    "폐기": ["평가", "선별", "처분"], "평가": ["선별", "폐기"], "분류": ["자동분류", "분류기"], "보존기간": ["보존 레이블", "처분"],
+    "메타데이터": ["기술", "색인", "목록", "태그"], "목록": ["카탈로그", "서지", "메타데이터"], "태그": ["태깅", "주석"],
+    "보존": ["디지털 보존", "웹아카이빙"], "웹": ["웹아카이빙", "wayback"], "연결": ["mcp", "api"], "무료": ["오픈소스"],
+    "정책": ["지침", "가이드", "거버넌스"], "윤리": ["책임", "투명성"], "생성형": ["llm", "gpt", "생성형ai"], "llm": ["대형언어모델", "gpt", "rag"],
+  };
+  const stripEnding = t => { for (const e of ENDINGS) if (t.endsWith(e) && t.length - e.length >= 2) return t.slice(0, -e.length); return t; };
+  const tokenize = q => [...new Set(String(q).toLowerCase().split(/[^0-9a-z가-힣]+/).map(stripEnding)
+    .filter(t => t.length >= 2 && !STOP.has(t)))];
+  function scoreOf(it, toks) {
+    let score = 0, hit = 0;
+    for (const t of toks) {
+      let best = 0;
+      for (const v of [t, ...(SYN[t] || [])]) {
+        if (it._title.includes(v)) best = Math.max(best, 3);
+        else if (it._tags.includes(v)) best = Math.max(best, 2);
+        else if (it._hay.includes(v)) best = Math.max(best, 1);
+      }
+      score += best; if (best) hit++;
+    }
+    return hit ? score + hit * 2 : 0;
+  }
+  function guideFor(toks) {
+    let best = null, top = 0;
+    for (const g of guides) {
+      const n = g.keywords.filter(k => toks.some(t => t.includes(k) || (t.length >= 2 && k.includes(t)))).length;
+      if (n > top) { top = n; best = g; }
+    }
+    return best;
+  }
   let cases = [];
 
   // ---------- cover art ----------
@@ -87,7 +132,7 @@
     }).join("");
     $("#catGrid").onclick = e => {
       const t = e.target.closest("[data-cat]"); if (!t) return;
-      state.cat = t.dataset.cat; update();
+      state.cat = t.dataset.cat; state.guide = null; update();
       $("#archive").scrollIntoView({ behavior: "smooth" });
     };
   }
@@ -110,24 +155,77 @@
   }
 
   function filtered({ ignore } = {}) {
-    const q = state.q.trim().toLowerCase();
-    const terms = q ? q.split(/\s+/) : [];
-    return cases.filter(it => {
+    const toks = tokenize(state.q);
+    const pool = cases.filter(it => {
       if (ignore !== "cat" && state.cat && it.category !== state.cat) return false;
       for (const f of FACETS) if (ignore !== f.field && state[f.field] && it[f.field] !== state[f.field]) return false;
-      if (terms.length) {
-        const hay = it._hay;
-        return terms.every(t => hay.includes(t));
-      }
+      it._score = toks.length ? scoreOf(it, toks) : 0;
       return true;
     });
+    if (!toks.length) return pool;
+    // 가장 잘 맞는 사례의 1/3에도 못 미치는 약한 일치는 뺀다
+    const top = Math.max(0, ...pool.map(it => it._score));
+    const cut = Math.max(1, top / 3);
+    return pool.filter(it => it._score >= cut);
   }
 
   function sorted(list) {
     const s = [...list];
+    const byYear = (a, b) => (b.year || 0) - (a.year || 0) || titleOf(a).localeCompare(titleOf(b), "ko");
     if (state.sort === "title") s.sort((a, b) => titleOf(a).localeCompare(titleOf(b), "ko"));
-    else s.sort((a, b) => ((state.sort === "old" ? 1 : -1) * ((a.year || 0) - (b.year || 0))) || titleOf(a).localeCompare(titleOf(b), "ko"));
+    else if (state.sort === "old") s.sort((a, b) => -byYear(a, b));
+    else if (state.sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
+    else s.sort(byYear);
     return s;
+  }
+
+  // ---------- 질문 제시어 · 안내 패널 ----------
+  function renderPrompts() {
+    $("#prompts").innerHTML = guides.map(g => {
+      const c = CAT[g.filter.cat];
+      return `<button class="prompt" type="button" data-guide="${esc(g.id)}"><span class="dot" style="background:${c ? c.c[0] : "#0f1115"}"></span>${esc(g.q)}</button>`;
+    }).join("");
+  }
+
+  // 제시어로 걸린 필터는 새 질문을 쓰면 함께 풀어 준다 (직접 고른 필터는 그대로 둔다)
+  function leaveGuide() {
+    if (!state.guide) return;
+    state.guide = null; state.cat = null;
+    for (const f of FACETS) state[f.field] = null;
+  }
+
+  function applyGuide(id) {
+    const g = guides.find(x => x.id === id); if (!g) return;
+    state.guide = g.id; state.cat = g.filter.cat || null;
+    for (const f of FACETS) state[f.field] = g.filter[f.field] || null;
+    state.q = g.filter.q || ""; $("#q").value = state.q;
+    update();
+    $("#archive").scrollIntoView({ behavior: "smooth" });
+  }
+
+  function renderAnswer(list) {
+    const box = $("#answer");
+    let g = state.guide && guides.find(x => x.id === state.guide), matched = false;
+    if (!g && state.q.trim()) { g = guideFor(tokenize(state.q)); matched = !!g; }
+    if (!g) { box.hidden = true; box.innerHTML = ""; return; }
+    const c = CAT[g.filter.cat];
+    const picks = g.picks.map(id => cases.find(x => x.id === id)).filter(Boolean);
+    const others = guides.filter(x => x.id !== g.id).slice(0, 10).sort((a, b) => hash(a.id + g.id) - hash(b.id + g.id)).slice(0, 3);
+    box.style.setProperty("--accent", c ? c.c[0] : "#0f1115");
+    box.innerHTML = `
+      <p class="kicker">${matched ? "이 질문과 가까운 안내" : "Quick answer"}</p>
+      <h3>${esc(g.q)}</h3>
+      ${state.guide ? `<button class="glass-btn icon close" type="button" data-close aria-label="안내 닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>` : ""}
+      <p class="intro">${esc(g.intro)}</p>
+      ${picks.length ? `<p class="picks-title">먼저 볼 사례</p>
+      <div class="picks">${picks.map(it => `
+        <button class="pick" type="button" data-id="${esc(it.id)}">
+          <span class="mini">${art(it.category, it.id)}</span>
+          <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
+        </button>`).join("")}</div>` : ""}
+      <p class="more">${matched ? `<a href="#" data-guide="${esc(g.id)}">이 안내로 사례 모아 보기</a> · ` : ""}아래에서 관련 사례 ${list.length}건을 더 볼 수 있어요.</p>
+      <div class="related">${others.map(o => `<button class="prompt" type="button" data-guide="${esc(o.id)}">${esc(o.q)}</button>`).join("")}</div>`;
+    box.hidden = false;
   }
 
   function renderGrid() {
@@ -138,6 +236,7 @@
     if (state.q) parts.push(`“${state.q}”`);
     $("#resultInfo").textContent = `${parts.length ? parts.join(" · ") + " — " : ""}${list.length}건의 사례`;
     $("#empty").hidden = list.length > 0;
+    renderAnswer(list);
     $("#grid").innerHTML = list.map(it => `
       <article class="card" tabindex="0" data-id="${esc(it.id)}">
         <div class="thumb">${cover(it)}
@@ -155,8 +254,11 @@
     renderChips(); renderGrid();
     const p = new URLSearchParams();
     if (state.q) p.set("q", state.q);
-    if (state.cat) p.set("cat", state.cat);
-    for (const f of FACETS) if (state[f.field]) p.set(f.field, state[f.field]);
+    if (state.guide) p.set("guide", state.guide);
+    else {
+      if (state.cat) p.set("cat", state.cat);
+      for (const f of FACETS) if (state[f.field]) p.set(f.field, state[f.field]);
+    }
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
@@ -177,15 +279,28 @@
   // ---------- events ----------
   function bind() {
     let t;
-    $("#q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; update(); }, 120); });
+    $("#q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; leaveGuide(); update(); }, 150); });
+    $("#askForm").addEventListener("submit", e => {
+      e.preventDefault(); state.q = $("#q").value; leaveGuide(); update();
+      $("#archive").scrollIntoView({ behavior: "smooth" });
+    });
+    document.addEventListener("click", e => {
+      const g = e.target.closest("[data-guide]"); if (g) { e.preventDefault(); applyGuide(g.dataset.guide); return; }
+      const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
+      if (e.target.closest("#answer [data-close]")) {
+        state.guide = null; state.cat = null; state.q = ""; $("#q").value = "";
+        for (const f of FACETS) state[f.field] = null;
+        update();
+      }
+    });
     $("#sort").addEventListener("change", e => { state.sort = e.target.value; renderGrid(); });
     $("#catChips").addEventListener("click", e => {
       const b = e.target.closest(".chip"); if (!b) return;
-      state.cat = b.dataset.cat || null; update();
+      state.cat = b.dataset.cat || null; state.guide = null; update();
     });
     $("#facetChips").addEventListener("click", e => {
       const b = e.target.closest(".chip"); if (!b) return;
-      const f = b.dataset.field; state[f] = state[f] === b.dataset.val ? null : b.dataset.val; update();
+      const f = b.dataset.field; state[f] = state[f] === b.dataset.val ? null : b.dataset.val; state.guide = null; update();
     });
     $("#grid").addEventListener("click", e => { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
     $("#grid").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
@@ -252,16 +367,29 @@
   async function init() {
     bind(); readParams();
     try {
-      const res = await fetch("data/cases.json", { cache: "no-cache" });
+      const [res, gres] = await Promise.all([
+        fetch("data/cases.json", { cache: "no-cache" }),
+        fetch("data/guides.json", { cache: "no-cache" }).catch(() => null),
+      ]);
       cases = (await res.json()).map(c => ({
         ...c,
+        _title: [c.title, c.titleKo].join(" ").toLowerCase(),
+        _tags: (c.tags || []).join(" ").toLowerCase(),
         _hay: [c.title, c.titleKo, c.org, c.country, c.category, c.format, c.orgType, c.apiType, c.summary, ...(c.tags || [])].join(" ").toLowerCase(),
       }));
+      guides = gres && gres.ok ? await gres.json() : [];
     } catch (err) {
       $("#resultInfo").textContent = "사례 데이터를 불러오지 못했습니다.";
       return;
     }
-    renderStats(); renderCategories(); update();
+    renderStats(); renderCategories(); renderPrompts();
+    const gp = new URLSearchParams(location.search).get("guide");
+    if (gp && guides.some(g => g.id === gp)) {
+      const g = guides.find(x => x.id === gp);
+      state.guide = gp; state.cat = g.filter.cat || null; state.q = g.filter.q || ""; $("#q").value = state.q;
+      for (const f of FACETS) state[f.field] = g.filter[f.field] || null;
+    }
+    update();
   }
   init();
 })();

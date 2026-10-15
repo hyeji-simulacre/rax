@@ -34,6 +34,16 @@ for i, c in enumerate(cases):
     ids.add(c.get("id"))
     urls.add(c.get("url"))
 
+guides_path = Path("data/guides.json")
+if guides_path.exists():
+    for g in json.loads(guides_path.read_text(encoding="utf-8")):
+        for k in ["id", "q", "intro", "filter", "picks", "keywords"]:
+            if k not in g:
+                errors.append(f"guide {g.get('id', '?')}: '{k}' 누락")
+        for pid in g.get("picks", []):
+            if pid not in ids:
+                errors.append(f"guide {g.get('id')}: 없는 사례 id {pid}")
+
 if errors:
     print("\n".join(errors))
     sys.exit(1)
