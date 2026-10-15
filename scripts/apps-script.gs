@@ -178,3 +178,37 @@ function findModels() {
     .forEach(x => Logger.log(`${x.sec.toFixed(1)}초  ${x.id}  →  ${x.reply}`));
   Logger.log(`응답 없음: ${results.filter(x => x.code !== 200).map(x => `${x.id}(${x.code})`).join(", ") || "없음"}`);
 }
+
+// ---------- 처리상태 맞추기 ----------
+// 사이트 데이터(GitHub의 cases.json·excluded.json)를 읽어 시트 I열 '처리상태'를 '반영' 또는 '제외'로 바꾸고,
+// 제외 사유를 J열 '처리메모'에 적는다. 이미 '반영'·'제외'인 행과 [의견] 행은 건드리지 않는다.
+// 편집기에서 syncStatus를 골라 ▶실행하면 바로 맞춰지고, installDailySync를 한 번 실행해 두면 매일 새벽 자동으로 돈다.
+const DATA_BASE = "https://raw.githubusercontent.com/hyeji-simulacre/rax/main/data/";
+function normUrl(u) {
+  return String(u || "").trim().toLowerCase().replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/#.*$/, "").replace(/\/+$/, "");
+}
+function syncStatus() {
+  const get = name => JSON.parse(UrlFetchApp.fetch(DATA_BASE + name + "?t=" + Date.now(), { muteHttpExceptions: true }).getContentText());
+  const added = new Set(get("cases.json").map(c => normUrl(c.url)));
+  const excluded = new Map(get("excluded.json").map(e => [normUrl(e.url), e.reason || ""]));
+  const sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+  const last = sheet.getLastRow(); if (last < 2) return "행 없음";
+  if (!sheet.getRange(1, 10).getValue()) sheet.getRange(1, 10).setValue("처리메모");
+  const rows = sheet.getRange(2, 1, last - 1, 10).getValues();
+  let done = 0, skip = 0;
+  const out = rows.map(r => {
+    const title = String(r[1] || ""), status = String(r[8] || ""), key = normUrl(r[2]);
+    if (title.startsWith("[의견]") || status === "반영" || status === "제외") return [r[8], r[9]];
+    if (added.has(key)) { done++; return ["반영", r[9] || "사이트에 게재됨"]; }
+    if (excluded.has(key)) { done++; return ["제외", excluded.get(key)]; }
+    skip++; return [r[8], r[9]];
+  });
+  sheet.getRange(2, 9, out.length, 2).setValues(out);
+  const msg = `처리상태 갱신 ${done}행 · 아직 검토 전 ${skip}행`;
+  Logger.log(msg); return msg;
+}
+function installDailySync() {
+  ScriptApp.getProjectTriggers().filter(t => t.getHandlerFunction() === "syncStatus").forEach(t => ScriptApp.deleteTrigger(t));
+  ScriptApp.newTrigger("syncStatus").timeBased().everyDays(1).atHour(5).create();
+  return "매일 새벽 5시에 syncStatus가 자동 실행됩니다.";
+}
