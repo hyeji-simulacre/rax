@@ -82,31 +82,34 @@
   }
   let cases = [];
 
-  // ---------- cover art ----------
-  function art(cat, seed, word) {
-    const c = CAT[cat] || CATS[0];
-    const h = hash(seed);
-    const a = 100 + (h % 80), x1 = 10 + (h % 50), y1 = 10 + ((h >> 3) % 50), x2 = 50 + ((h >> 5) % 40);
-    return `<div class="art" style="background:linear-gradient(${a}deg, ${c.c[0]}, ${c.c[1]})">
-      <span class="blob" style="width:60%;height:80%;left:${x1}%;top:${y1 - 30}%;background:${c.c[1]};opacity:.9"></span>
-      <span class="blob" style="width:45%;height:60%;left:${x2}%;top:${40 + (h % 30)}%;background:#fff;opacity:.35"></span>
-      <svg class="icon" viewBox="0 0 24 24">${c.icon}</svg>
-      ${word ? `<span class="word">${esc(word)}</span>` : ""}
-      <span class="grain"></span></div>`;
-  }
-
+  // ---------- 표지: 원문 화면 썸네일, 없으면 흰 카탈로그 카드 ----------
+  let thumbs = {};
+  const CC = { "대한민국": "KR", "미국": "US", "영국": "UK", "호주": "AU", "캐나다": "CA", "네덜란드": "NL", "일본": "JP", "중국": "CN", "대만": "TW",
+    "독일": "DE", "프랑스": "FR", "스웨덴": "SE", "핀란드": "FI", "덴마크": "DK", "에스토니아": "EE", "뉴질랜드": "NZ", "노르웨이": "NO", "오스트리아": "AT",
+    "벨기에": "BE", "스위스": "CH", "싱가포르": "SG", "슬로베니아": "SI", "국제": "INT" };
+  const ccOf = it => CC[it.country] || (it.region === "국내" ? "KR" : "INT");
   function imageFor(item) {
+    if (thumbs[item.id]) return thumbs[item.id];
     if (item.image) return item.image;
     const m = /^https?:\/\/github\.com\/([^/]+)\/([^/#?]+)/.exec(item.url || "");
     return m ? `https://opengraph.githubassets.com/1/${m[1]}/${m[2]}` : null;
   }
-
+  function catalog(it) {
+    const c = CAT[it.category] || CATS[0];
+    return `<div class="catalog" style="--cat:${c.c[0]}">
+      <b class="org">${esc(shortOrg(it.org))}</b>
+      <span class="rules"></span>
+      <span class="yr">${it.year || "—"}</span><span class="cc">${ccOf(it)}</span></div>`;
+  }
   function cover(item) {
     const img = imageFor(item);
-    const fallback = art(item.category, item.id, shortOrg(item.org));
-    if (!img) return fallback;
-    // 이미지가 실패하면 생성 커버로 대체
-    return `${fallback}<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">`;
+    // 이미지가 실패하면 카탈로그 카드가 그대로 남는다
+    return catalog(item) + (img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "");
+  }
+  function mini(it) {
+    const c = CAT[it.category] || CATS[0], img = imageFor(it);
+    const initials = shortOrg(it.org).replace(/[^0-9A-Za-z가-힣]/g, "").slice(0, 2).toUpperCase();
+    return `<span class="mini-art" style="--cat:${c.c[0]}"><i></i>${esc(initials)}${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
   }
 
   const shortOrg = o => { const s = String(o || "").split(/[·,(/]/)[0].trim(); return s.length > 22 ? s.slice(0, 21) + "…" : s; };
@@ -125,9 +128,10 @@
   function renderCategories() {
     $("#catGrid").innerHTML = CATS.map(c => {
       const n = cases.filter(x => x.category === c.key).length;
-      return `<button class="cat-tile" data-cat="${esc(c.key)}">
-        ${art(c.key, c.key)}
-        <span class="label"><span><b>${esc(c.key)}</b><small>${esc(c.en)}</small></span><span class="n">${n}</span></span>
+      return `<button class="cat-tile" data-cat="${esc(c.key)}" style="--cat:${c.c[0]}">
+        <svg class="ic" viewBox="0 0 24 24">${c.icon}</svg>
+        <span class="n">${n}</span>
+        <span class="label"><b>${esc(c.key)}</b><small>${esc(c.en)}</small></span>
       </button>`;
     }).join("");
     $("#catGrid").onclick = e => {
@@ -239,7 +243,7 @@
       ${picks.length ? `<p class="picks-title">먼저 볼 사례 <span>${esc(picksLabel(g))}</span></p>
       <div class="picks">${picks.map(it => `
         <button class="pick" type="button" data-id="${esc(it.id)}">
-          <span class="mini">${art(it.category, it.id)}</span>
+          <span class="mini">${mini(it)}</span>
           <span><b>${esc(titleOf(it))}</b>${it._why ? `<em>${esc(it._why)}</em>` : ""}<small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
         </button>`).join("")}</div>` : ""}
       <p class="more">${matched ? `<a href="#" data-guide="${esc(g.id)}">이 안내로 사례 모아 보기</a> · ` : ""}아래에서 관련 사례 ${list.length}건을 더 볼 수 있어요.</p>
@@ -388,7 +392,7 @@
     $("#avCount").textContent = $("#avCount2").textContent = list.length;
     $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
       <li><button type="button" data-src="${esc(it.id)}">
-        <span class="mini">${art(it.category, it.id)}${i < 8 ? `<span class="num">${i + 1}</span>` : ""}</span>
+        <span class="mini">${mini(it)}${i < 8 ? `<span class="num">${i + 1}</span>` : ""}</span>
         <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
       </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
   }
@@ -528,6 +532,7 @@
       const [res, gres] = await Promise.all([
         fetch("data/cases.json", { cache: "no-cache" }),
         fetch("data/guides.json", { cache: "no-cache" }).catch(() => null),
+        fetch("data/thumbs.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).then(t => { thumbs = Object.fromEntries(Object.entries(t).filter(([, v]) => typeof v === "string")); }).catch(() => {}),
       ]);
       cases = (await res.json()).map(c => ({
         ...c,
