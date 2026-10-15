@@ -34,7 +34,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const hash = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
 
-  const state = { q: "", cat: null, region: null, format: null, orgType: null, sort: "relevance", guide: null };
+  const state = { q: "", org: null, cat: null, region: null, format: null, orgType: null, sort: "relevance", guide: null };
   let guides = [];
 
   // ---------- 문장형 질문 검색 ----------
@@ -81,6 +81,7 @@
     return best;
   }
   let cases = [];
+  let orgs = [], ORG = {}; // 만든 곳(기관·사람): data/orgs.json
 
   // ---------- 부드러운 스크롤 (Lenis) ----------
   // 움직임 줄이기를 켠 사용자에게는 쓰지 않는다. 내부 스크롤 영역과 창(dialog)은 data-lenis-prevent 로 제외한다.
@@ -120,12 +121,17 @@
   }
   function mini(it) {
     const c = CAT[it.category] || CATS[0], img = imageFor(it);
-    const initials = shortOrg(it.org).replace(/[^0-9A-Za-z가-힣]/g, "").slice(0, 2).toUpperCase();
-    return `<span class="mini-art" style="--cat:${c.c[0]}"><i></i>${esc(initials)}${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
+    return `<span class="mini-art" style="--cat:${c.c[0]}">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
   }
 
   const shortOrg = o => { const s = String(o || "").split(/[·,(/]/)[0].trim(); return s.length > 22 ? s.slice(0, 21) + "…" : s; };
   const titleOf = it => it.titleKo || it.title;
+  const makersOf = it => (it.orgIds || []).map(id => ORG[id]).filter(Boolean);
+  // by 뒤 이름: 만든 곳의 대표 주소가 있으면 그 주소로 연결한다
+  function byLink(it) {
+    const o = makersOf(it)[0], name = esc(o ? shortOrg(o.name) : shortOrg(it.org)), url = o && o.links && o.links[0] && o.links[0].url;
+    return url ? `<a class="org-link" href="${esc(url)}" target="_blank" rel="noopener"><b>${name}</b></a>` : `<b>${name}</b>`;
+  }
 
   // ---------- render ----------
   function renderStats() {
@@ -141,9 +147,8 @@
     $("#catGrid").innerHTML = CATS.map(c => {
       const n = cases.filter(x => x.category === c.key).length;
       return `<button class="cat-tile" data-cat="${esc(c.key)}" style="--cat:${c.c[0]}">
-        <svg class="ic" viewBox="0 0 24 24">${c.icon}</svg>
-        <span class="n">${n}</span>
         <span class="label"><b>${esc(c.key)}</b><small>${esc(c.en)}</small></span>
+        <span class="n">${n}<small>건</small></span>
       </button>`;
     }).join("");
     $("#catGrid").onclick = e => {
@@ -158,7 +163,7 @@
     const allBtn = `<button class="chip" data-cat="" aria-pressed="${!state.cat}">전체<span class="c">${base.length}</span></button>`;
     $("#catChips").innerHTML = allBtn + CATS.map(c => {
       const n = base.filter(x => x.category === c.key).length;
-      return `<button class="chip" data-cat="${esc(c.key)}" aria-pressed="${state.cat === c.key}"><span class="dot" style="background:${c.c[0]}"></span>${esc(c.key)}<span class="c">${n}</span></button>`;
+      return `<button class="chip" data-cat="${esc(c.key)}" aria-pressed="${state.cat === c.key}">${esc(c.key)}<span class="c">${n}</span></button>`;
     }).join("");
 
     $("#facetChips").innerHTML = FACETS.map((f, i) => {
@@ -173,6 +178,7 @@
   function filtered({ ignore } = {}) {
     const toks = tokenize(state.q);
     const pool = cases.filter(it => {
+      if (state.org && !(it.orgIds || []).includes(state.org)) return false;
       if (ignore !== "cat" && state.cat && it.category !== state.cat) return false;
       for (const f of FACETS) if (ignore !== f.field && state[f.field] && it[f.field] !== state[f.field]) return false;
       it._score = toks.length ? scoreOf(it, toks) : 0;
@@ -193,39 +199,6 @@
     else if (state.sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
     else s.sort(byYear);
     return s;
-  }
-
-  // ---------- 이번 주의 사례 (Awwwards의 Site of the Day 자리) ----------
-  // 매주 바뀌는 질문 제시어의 '먼저 볼 사례' 가운데, 주차에 따라 하나를 고른다. 썸네일이 있는 사례를 먼저 쓴다.
-  function renderFeature() {
-    if (!guides.length) return;
-    const d = new Date(), week = Math.floor((d - new Date(d.getFullYear(), 0, 1)) / 6048e5);
-    const g = guides[week % guides.length];
-    const picks = picksFor(g);
-    const it = picks.find(p => imageFor(p)) || picks[0];
-    if (!it) return;
-    const c = CAT[it.category] || CATS[0];
-    const box = $("#feature");
-    box.innerHTML = `
-      <div class="feature-media" data-open="${esc(it.id)}">${cover(it)}</div>
-      <div class="feature-info">
-        <p class="kicker en">Case of the Week</p>
-        <h2>${esc(titleOf(it))}</h2>
-        <p class="feature-by">by <b>${esc(it.org)}</b></p>
-        <dl class="feature-meta">
-          <div><dt>카테고리</dt><dd>${esc(it.category)}</dd></div>
-          <div><dt>형식</dt><dd>${esc(it.apiType || it.format)}</dd></div>
-          <div><dt>지역</dt><dd>${esc(it.region === "국내" ? "국내" : it.country)}</dd></div>
-          <div><dt>연도</dt><dd>${it.year || "—"}</dd></div>
-        </dl>
-        <p class="feature-why">${esc(it._why || it.summary)}</p>
-        <div class="feature-actions">
-          <a class="glass-btn solid" href="${esc(it.url)}" target="_blank" rel="noopener">원문 보기 <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-          <button class="glass-btn" type="button" data-open="${esc(it.id)}">자세히</button>
-          <button class="glass-btn" type="button" data-guide="${esc(g.id)}">관련 질문: ${esc(g.q)}</button>
-        </div>
-      </div>`;
-    box.hidden = false;
   }
 
   // ---------- 질문 제시어 · 안내 패널 ----------
@@ -298,6 +271,7 @@
   function renderGrid() {
     const list = sorted(filtered());
     const parts = [];
+    if (state.org && ORG[state.org]) parts.push(ORG[state.org].name);
     if (state.cat) parts.push(state.cat);
     for (const f of FACETS) if (state[f.field]) parts.push(state[f.field]);
     if (state.q) parts.push(`“${state.q}”`);
@@ -311,7 +285,7 @@
         </div>
         <div class="body">
           <h3>${esc(titleOf(it))}</h3>
-          <div class="by"><span>by <b>${esc(shortOrg(it.org))}</b></span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
+          <div class="by"><span>by ${byLink(it)}</span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
         </div>
       </article>`).join("");
   }
@@ -430,7 +404,7 @@
     $("#avCount").textContent = $("#avCount2").textContent = list.length;
     $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
       <li><button type="button" data-src="${esc(it.id)}">
-        <span class="mini">${mini(it)}${i < 8 ? `<span class="num">${i + 1}</span>` : ""}</span>
+        <span class="rank${i < 8 ? " cited" : ""}">${i + 1}</span>
         <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
       </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
   }
@@ -462,9 +436,23 @@
   }
 
   // ---------- detail ----------
-  function openDetail(id) {
+  // ---------- 사례 상세 페이지 (전체 화면, 주소 #case=아이디) ----------
+  function relatedOf(it) {
+    const toks = tokenize([titleOf(it), ...(it.tags || [])].join(" "));
+    const mine = new Set(it.orgIds || []);
+    return cases.filter(c => c.id !== it.id).map(c => ({ c,
+      s: (c.tags || []).filter(t => (it.tags || []).includes(t)).length * 3 + scoreOf(c, toks) + (c.format === it.format ? 1 : 0),
+      org: (c.orgIds || []).some(id => mine.has(id)) }));
+  }
+  function relList(title, list, note) {
+    return `<div class="rel-head"><h2>${esc(title)}</h2>${note ? `<p>${note}</p>` : ""}</div>
+      <ul class="rel-grid">${list.map(c => `<li><button type="button" data-rel="${esc(c.id)}">
+        <span class="rel-thumb">${mini(c)}</span>
+        <span class="rel-text"><em>${esc(c.category)}</em><b>${esc(titleOf(c))}</b><small>${esc(shortOrg(makersOf(c)[0]?.name || c.org))}${c.year ? ` · ${c.year}` : ""}</small></span>
+      </button></li>`).join("")}</ul>`;
+  }
+  function openDetail(id, { push = true } = {}) {
     const it = cases.find(c => c.id === id); if (!it) return;
-    // 상세 창: 실제 썸네일이 있을 때만 그림 영역을 보여 준다 (불러오지 못하면 숨긴다)
     const img = imageFor(it), dc = $("#dCover");
     dc.hidden = !img;
     dc.innerHTML = img ? `<img src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.parentNode.hidden=true">` : "";
@@ -475,7 +463,64 @@
     $("#dSummary").textContent = it.summary;
     $("#dTags").innerHTML = (it.tags || []).map(t => `<span>${esc(t)}</span>`).join("");
     $("#dLink").href = it.url;
-    $("#detail").showModal();
+
+    // 만든 곳: 이름, 종류·나라, 모아 둔 주소들, 이 곳의 사례 보기
+    const makers = makersOf(it);
+    $("#dMakers").innerHTML = makers.length ? `<p class="side-label">만든 곳</p>` + makers.map(o => {
+      const n = cases.filter(c => (c.orgIds || []).includes(o.id)).length;
+      return `<div class="maker">
+        <b>${esc(o.name)}</b><small>${esc([o.type, o.country].filter(Boolean).join(" · "))}</small>
+        ${(o.links || []).length ? `<ul class="maker-links">${o.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}<span>${esc(l.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</span></a></li>`).join("")}</ul>` : ""}
+        ${n > 1 ? `<button class="maker-cases" type="button" data-org="${esc(o.id)}">이 곳의 사례 ${n}건 보기 →</button>` : ""}
+      </div>`;
+    }).join("") : `<p class="side-label">만든 곳</p><div class="maker"><b>${esc(it.org)}</b></div>`;
+
+    // 관련 사례: 같은 곳 → 같은 카테고리 → 다른 카테고리
+    const rel = relatedOf(it);
+    const sameOrg = rel.filter(r => r.org).sort((a, b) => b.s - a.s).map(r => r.c).slice(0, 6);
+    const used = new Set(sameOrg.map(c => c.id));
+    const rest = rel.filter(r => !used.has(r.c.id) && r.s > 0).sort((a, b) => b.s - a.s || (b.c.year || 0) - (a.c.year || 0));
+    const sameCat = rest.filter(r => r.c.category === it.category).map(r => r.c).slice(0, 6);
+    const otherCat = rest.filter(r => r.c.category !== it.category).map(r => r.c).slice(0, 6);
+    const put = (el, list, title, note) => { el.hidden = !list.length; el.innerHTML = list.length ? relList(title, list, note) : ""; };
+    put($("#dSameOrg"), sameOrg, "같은 곳의 다른 사례");
+    put($("#dSameCat"), sameCat, `${it.category}의 다른 사례`);
+    put($("#dOtherCat"), otherCat, "다른 카테고리의 관련 사례", "주제가 겹치는 다른 업무 영역의 사례예요.");
+
+    const d = $("#detail");
+    if (!d.open) d.showModal();
+    d.scrollTop = 0;
+    if (push) history.pushState({ case: id }, "", `#case=${encodeURIComponent(id)}`);
+  }
+  function closeDetail() {
+    if (!$("#detail").open) return;
+    if (history.state && history.state.case) history.back(); // 브라우저 뒤로 가기와 같게
+    else { $("#detail").close(); history.replaceState(null, "", location.pathname); }
+  }
+  const caseFromHash = () => { const m = /^#case=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
+
+  // ---------- 만든 곳 목록 ----------
+  let makerTab = "전체", makerShown = 24;
+  function renderMakers() {
+    if (!orgs.length) return;
+    $("#makers").hidden = false;
+    const counts = {}; for (const c of cases) for (const id of c.orgIds || []) counts[id] = (counts[id] || 0) + 1;
+    const types = ["전체", "공공기관", "기업", "학계·연구", "개인·커뮤니티"];
+    const pool = orgs.filter(o => counts[o.id] && (makerTab === "전체" || o.type === makerTab))
+      .sort((a, b) => counts[b.id] - counts[a.id] || a.name.localeCompare(b.name, "ko"));
+    $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳과 그 주소를 모았습니다.`;
+    $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
+    $("#makerList").innerHTML = pool.slice(0, makerShown).map(o => `<li>
+      <div class="mk-name"><b>${esc(o.name)}</b><small>${esc([o.type, o.country].filter(Boolean).join(" · "))}</small></div>
+      <div class="mk-links">${(o.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
+      <button class="mk-count" type="button" data-org="${esc(o.id)}">사례 ${counts[o.id]}건</button>
+    </li>`).join("");
+    $("#makerMore").hidden = pool.length <= makerShown;
+  }
+  function showOrg(id) {
+    state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = "";
+    for (const f of FACETS) state[f.field] = null;
+    update(); goTo("#archive");
   }
 
   // ---------- events ----------
@@ -491,7 +536,7 @@
       if (e.target.closest("#headAsk")) { e.preventDefault(); goTo(0); setTimeout(() => $("#q").focus(), 300); return; }
       const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
       if (e.target.closest("#answer [data-close]")) {
-        state.guide = null; state.cat = null; state.q = ""; $("#q").value = "";
+        state.guide = null; state.cat = null; state.org = null; state.q = ""; $("#q").value = "";
         for (const f of FACETS) state[f.field] = null;
         update();
       }
@@ -499,16 +544,27 @@
     $("#sort").addEventListener("change", e => { state.sort = e.target.value; renderGrid(); });
     $("#catChips").addEventListener("click", e => {
       const b = e.target.closest(".chip"); if (!b) return;
-      state.cat = b.dataset.cat || null; state.guide = null; update();
+      state.cat = b.dataset.cat || null; if (!b.dataset.cat) state.org = null; state.guide = null; update();
     });
     $("#facetChips").addEventListener("click", e => {
       const b = e.target.closest(".chip"); if (!b) return;
       const f = b.dataset.field; state[f] = state[f] === b.dataset.val ? null : b.dataset.val; state.guide = null; update();
     });
-    $("#grid").addEventListener("click", e => { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
+    $("#grid").addEventListener("click", e => { if (e.target.closest(".org-link")) return; const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); });
     $("#grid").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
-    $("#closeDetail").addEventListener("click", () => $("#detail").close());
-    $("#detail").addEventListener("click", e => { if (e.target === $("#detail")) $("#detail").close(); });
+    $("#closeDetail").addEventListener("click", closeDetail);
+    $("#detail").addEventListener("cancel", e => { e.preventDefault(); closeDetail(); });
+    $("#detail").addEventListener("click", e => {
+      const r = e.target.closest("[data-rel]"); if (r) { openDetail(r.dataset.rel); return; }
+      const o = e.target.closest("[data-org]"); if (o) { const id = o.dataset.org; closeDetail(); setTimeout(() => showOrg(id), 60); }
+    });
+    window.addEventListener("popstate", () => {
+      const id = caseFromHash();
+      if (id) openDetail(id, { push: false }); else if ($("#detail").open) $("#detail").close();
+    });
+    $("#makerTabs").addEventListener("click", e => { const t = e.target.closest("[data-mtab]"); if (t) { makerTab = t.dataset.mtab; makerShown = 24; renderMakers(); } });
+    $("#makerList").addEventListener("click", e => { const b = e.target.closest("[data-org]"); if (b) showOrg(b.dataset.org); });
+    $("#makerMore").addEventListener("click", () => { makerShown += 48; renderMakers(); });
     document.addEventListener("keydown", e => {
       // 입력 칸에서 타이핑할 때는 '/'를 그대로 두고, 그 밖에서만 검색창으로 이동한다
       const typing = e.target.closest("input, textarea, select, [contenteditable]");
@@ -603,6 +659,7 @@
       const [res, gres] = await Promise.all([
         fetch("data/cases.json", { cache: "no-cache" }),
         fetch("data/guides.json", { cache: "no-cache" }).catch(() => null),
+        fetch("data/orgs.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : []).then(o => { orgs = o; ORG = Object.fromEntries(o.map(x => [x.id, x])); }).catch(() => {}),
         fetch("data/thumbs.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).then(t => { thumbs = Object.fromEntries(Object.entries(t).filter(([, v]) => typeof v === "string")); }).catch(() => {}),
       ]);
       cases = (await res.json()).map(c => ({
@@ -616,13 +673,14 @@
       $("#resultInfo").textContent = "사례 데이터를 불러오지 못했습니다.";
       return;
     }
-    renderStats(); renderCategories(); renderPrompts(); renderFeature();
+    renderStats(); renderCategories(); renderPrompts(); renderMakers();
     const gp = new URLSearchParams(location.search).get("guide");
     update();
     // 공유 링크(?q=, ?region= 등)는 처음 한 번만 읽고 주소창은 깨끗하게 비운다
     if (location.search) history.replaceState(null, "", location.pathname + location.hash);
     const g0 = guides.find(x => x.id === gp);
     if (g0) startAsk(g0.q, g0);
+    const c0 = caseFromHash(); if (c0) { history.replaceState(null, "", location.pathname); openDetail(c0); }
   }
   init();
 })();

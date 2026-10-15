@@ -20,9 +20,9 @@
   <header class="site-head">
     <a class="logo" href="./" aria-label="RAX 처음으로">RAX<span>.</span></a>
     <nav class="links" aria-label="주요 메뉴">
-      <a href="#feature">이번 주</a>
       <a href="#categories">카테고리</a>
       <a href="#archive">사례 아카이브</a>
+      <a href="#makers">만든 곳</a>
     </nav>
     <div class="head-actions">
       <a class="glass-btn icon" href="#top" id="headAsk" aria-label="질문하기"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
@@ -79,8 +79,6 @@
     </section>
 
 
-    <section id="feature" class="feature" aria-label="이번 주의 사례" hidden></section>
-
     <section id="categories" class="section">
       <div class="section-head">
         <h2>카테고리</h2>
@@ -95,7 +93,7 @@
           <h2>사례 아카이브</h2>
           <p id="resultInfo">불러오는 중…</p>
         </div>
-        <div class="sort glass-select">
+        <div class="sort plain-select">
           <label for="sort" class="sr">정렬</label>
           <select id="sort">
             <option value="relevance">관련도순</option>
@@ -115,6 +113,16 @@
       <div class="grid" id="grid"></div>
       <p class="empty" id="empty" hidden>조건에 맞는 사례가 없습니다. 검색어나 필터를 바꿔 보세요.</p>
     </section>
+
+    <section id="makers" class="section" hidden>
+      <div class="section-head">
+        <h2>만든 곳</h2>
+        <p id="makersInfo">사례를 만든 기관·회사·연구실·개인과 그 주소를 모았습니다.</p>
+      </div>
+      <div class="maker-tabs" id="makerTabs" role="tablist"></div>
+      <ul class="maker-list" id="makerList"></ul>
+      <button class="glass-btn maker-more" type="button" id="makerMore" hidden>더 보기</button>
+    </section>
   </main>
 
   <footer class="footer">
@@ -131,7 +139,7 @@
       <p class="foot-label">만든 사람</p>
       <button class="dev-card glass-btn" id="devOpen" type="button" aria-haspopup="dialog">
         <span class="dev-avatar" aria-hidden="true">혲</span>
-        <span class="dev-name"><b>혲이</b><small class="en">tolerance · 기록관리 AX 아카이브 개발자</small></span>
+        <span class="dev-name"><b>혲이</b><small>기록관리 AX 아카이브 개발자</small></span>
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
       </button>
     </div>
@@ -141,19 +149,30 @@
     </div>
   </footer>
 
-  <dialog data-lenis-prevent id="detail" class="detail">
-    <div class="detail-inner">
-      <button class="glass-btn icon close" id="closeDetail" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-      <div class="detail-cover" id="dCover"></div>
-      <div class="detail-body">
-        <div class="meta-line" id="dMeta"></div>
-        <h3 id="dTitle"></h3>
-        <p class="sub" id="dSub"></p>
-        <p id="dSummary"></p>
-        <div class="tags" id="dTags"></div>
-        <a class="glass-btn solid" id="dLink" href="#" target="_blank" rel="noopener">원문 보기 <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
-      </div>
+  <dialog data-lenis-prevent id="detail" class="detail case-page" aria-labelledby="dTitle">
+    <div class="case-bar">
+      <button class="case-back" type="button" id="closeDetail"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>목록으로</button>
+      <a class="logo en" href="./">RAX<span>.</span></a>
     </div>
+    <article class="case-inner" id="caseInner">
+      <header class="case-head">
+        <div class="meta-line" id="dMeta"></div>
+        <h1 id="dTitle"></h1>
+        <p class="sub" id="dSub"></p>
+      </header>
+      <div class="detail-cover" id="dCover"></div>
+      <div class="case-cols">
+        <div class="case-main">
+          <p class="case-summary" id="dSummary"></p>
+          <div class="tags" id="dTags"></div>
+          <a class="glass-btn solid" id="dLink" href="#" target="_blank" rel="noopener">원문 보기 <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <aside class="case-side" id="dMakers"></aside>
+      </div>
+      <section class="case-rel" id="dSameOrg" hidden></section>
+      <section class="case-rel" id="dSameCat" hidden></section>
+      <section class="case-rel" id="dOtherCat" hidden></section>
+    </article>
   </dialog>
 
   <dialog data-lenis-prevent id="submitDialog" class="detail submit">
@@ -193,7 +212,7 @@
       <p class="eyebrow en">Developer</p>
       <div class="dev-head">
         <span class="dev-avatar lg" aria-hidden="true">혲</span>
-        <div><h3 id="devTitle">혲이</h3><p class="en">tolerance</p></div>
+        <div><h3 id="devTitle">혲이</h3></div>
       </div>
       <p class="dev-bio">기록관리 영역에서 AX를 일하는 아키비스트. RAX를 만들고 매주 업데이트합니다.</p>
       <dl class="dev-meta">
