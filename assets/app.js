@@ -463,7 +463,9 @@
     $("#closeDetail").addEventListener("click", () => $("#detail").close());
     $("#detail").addEventListener("click", e => { if (e.target === $("#detail")) $("#detail").close(); });
     document.addEventListener("keydown", e => {
-      if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
+      // 입력 칸에서 타이핑할 때는 '/'를 그대로 두고, 그 밖에서만 검색창으로 이동한다
+      const typing = e.target.closest("input, textarea, select, [contenteditable]");
+      if (e.key === "/" && !typing && !e.ctrlKey && !e.metaKey && !e.altKey) { e.preventDefault(); $("#q").focus(); }
     });
     bindSubmit(); bindAsk();
   }
