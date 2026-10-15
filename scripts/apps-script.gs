@@ -35,14 +35,21 @@ function submit(data) {
 
   const lock = LockService.getScriptLock();
   lock.waitLock(10000);
+  let rowNo = 0;
   try {
-    SpreadsheetApp.getActiveSpreadsheet().getSheets()[0].appendRow([
+    const sh = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
+    sh.appendRow([
       new Date(), row.title, row.url, row.org, row.category, row.region, row.summary, row.contact, "접수",
     ]);
+    rowNo = sh.getLastRow();
   } finally {
     lock.releaseLock();
   }
-  if (row.title.indexOf("[의견]") === 0 || row.title.indexOf("'[의견]") === 0) notifyFeedback(row);
+  if (row.title.indexOf("[의견]") === 0 || row.title.indexOf("'[의견]") === 0) {
+    // 메일 결과를 그 행의 '처리메모'(J열)에 남겨, 시트만 봐도 알 수 있게 한다
+    const result = notifyFeedback(row);
+    if (rowNo) SpreadsheetApp.getActiveSpreadsheet().getSheets()[0].getRange(rowNo, 10).setValue(result);
+  }
   return { ok: true };
 }
 
@@ -57,7 +64,17 @@ function notifyFeedback(row) {
       body: [`종류: ${kind}`, `보낸 곳: ${row.org || "-"} · ${row.url || "-"}`, `연락처: ${row.contact || "(없음)"}`, "", row.summary || "(내용 없음)", "",
         "— RAX 의견 보내기 (시트 'RAX 사례 제보'에도 저장됨)"].join("\n"),
     });
-  } catch (e) { console.warn("의견 메일 실패: " + e); }
+    return "메일 알림 보냄 " + Utilities.formatDate(new Date(), "Asia/Seoul", "MM-dd HH:mm");
+  } catch (e) {
+    console.warn("의견 메일 실패: " + e);
+    return "메일 알림 실패: " + String(e).slice(0, 150);
+  }
+}
+
+// 편집기에서 ▶실행하면 운영자에게 시험 메일을 보낸다. 이 메일이 오면 메일 기능은 정상이다.
+function testMail() {
+  const r = notifyFeedback({ title: "[의견] 시험", org: "편집기", url: "-", contact: "", summary: "RAX 의견 알림 시험 메일입니다." });
+  Logger.log(r); return r;
 }
 
 // ---------- 추가질문 채팅 ----------
