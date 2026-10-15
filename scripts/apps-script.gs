@@ -75,17 +75,21 @@ function chat(data) {
     ...history,
     { role: "user", content: question },
   ];
-  const res = UrlFetchApp.fetch(`${base}/chat/completions`, {
+  // DeepSeek·Qwen 같은 추론 모델은 '생각' 단계를 끄면 훨씬 빨리 답한다. 이 옵션을 모르는 모델이면 빼고 한 번 더 보낸다.
+  const send = extra => UrlFetchApp.fetch(`${base}/chat/completions`, {
     method: "post",
     contentType: "application/json",
     headers: { Authorization: `Bearer ${key}` },
-    payload: JSON.stringify({ model, messages, temperature: 0.3, max_tokens: 700 }),
+    payload: JSON.stringify(Object.assign({ model, messages, temperature: 0.3, max_tokens: 700 }, extra)),
     muteHttpExceptions: true,
   });
+  let res = send({ chat_template_kwargs: { thinking: false, enable_thinking: false } });
+  if (res.getResponseCode() === 400) res = send({});
   // 실패하면 응답 앞부분을 함께 돌려줘서 원인(모델 이름 오류 등)을 화면에서 바로 볼 수 있게 한다
   if (res.getResponseCode() !== 200) return { ok: false, error: `llm_${res.getResponseCode()} ${res.getContentText().slice(0, 160)}` };
   const out = JSON.parse(res.getContentText());
-  let answer = (out.choices && out.choices[0] && out.choices[0].message && out.choices[0].message.content) || "";
+  const msg = (out.choices && out.choices[0] && out.choices[0].message) || {};
+  let answer = msg.content || "";
   answer = answer.replace(/<think>[\s\S]*?<\/think>/g, "").trim(); // 추론 모델의 생각 과정은 버린다
   return { ok: true, answer };
 }

@@ -387,7 +387,7 @@
     wait.remove();
     if (out.ok) return addBot(out.answer, ids, "AI 답변", true);
     // AI를 쓸 수 없으면: 가까운 안내 또는 관련 사례 요약으로 답한다
-    const why = { daily_limit: "오늘 AI 답변 한도를 다 썼어요", not_configured: "" }[out.error] ?? `AI 답변 오류: ${out.error}`;
+    const why = { daily_limit: "오늘 AI 답변 한도를 다 썼어요", timeout: "AI 답변이 너무 오래 걸려요", not_configured: "" }[out.error] ?? `AI 답변 오류: ${out.error}`;
     if (why) $("#avNote").textContent = `${why} — 검색 결과로 안내해요.`;
     if (g && !prevQ) return addBot(`${g.intro}`, ids, "가까운 안내");
     if (!list.length) return addBot("RAX에 실린 사례 중에서는 딱 맞는 것을 찾지 못했어요. 아래 질문으로 시작해 보거나, 다른 표현으로 물어보세요.", [], "", false, true);
@@ -399,7 +399,7 @@
   async function callChat(question, list) {
     if (!SUBMIT_ENDPOINT) return { ok: false, error: "not_configured" };
     const history = conv.turns.slice(0, -1).slice(-6);
-    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 30000);
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 75000);
     try {
       const res = await fetch(SUBMIT_ENDPOINT, {
         method: "POST", signal: ctl.signal,
@@ -408,7 +408,7 @@
       });
       return await res.json();
     } catch (err) {
-      return { ok: false, error: String(err) };
+      return { ok: false, error: err && err.name === "AbortError" ? "timeout" : String(err) };
     } finally { clearTimeout(timer); }
   }
 
