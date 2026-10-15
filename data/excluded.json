@@ -415,11 +415,6 @@
     "date": "2026-10-15"
   },
   {
-    "url": "https://meta-archives.xyz/2026busan/",
-    "reason": "확인 불가: 발표 자료와 서비스 내용을 검색으로 확인하지 못함",
-    "date": "2026-10-15"
-  },
-  {
     "url": "https://link.springer.com/10.1007/s10502-022-09390-7",
     "reason": "설문·면담 조사 연구: 구현 사례가 아님",
     "date": "2026-10-15"
@@ -462,11 +457,6 @@
   {
     "url": "https://iptc.org/media-provenance/",
     "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
-    "date": "2026-10-15"
-  },
-  {
-    "url": "https://cliox.org/",
-    "reason": "확인 불가: 공개 서비스로 운영 중인지 확인되지 않음(연구 시제품 단계)",
     "date": "2026-10-15"
   },
   {
@@ -582,11 +572,6 @@
   {
     "url": "https://edgee.org/lab/rex/",
     "reason": "역사 건축물 방문객 안내 챗봇 시제품: 기록·소장품 사례로 보기 어려움",
-    "date": "2026-10-15"
-  },
-  {
-    "url": "https://honestabes.info/fireside-chats/",
-    "reason": "확인 불가: 프로젝트와 서비스를 검색으로 확인하지 못함",
     "date": "2026-10-15"
   },
   {
@@ -735,16 +720,6 @@
     "date": "2026-10-15"
   },
   {
-    "url": "https://uconn.theirstory.io/discover",
-    "reason": "확인 불가: 구술사 플랫폼의 AI 질의 기능을 검색으로 확인하지 못함",
-    "date": "2026-10-15"
-  },
-  {
-    "url": "https://fossda.theirstory.io/discover",
-    "reason": "확인 불가: 구술사 플랫폼의 AI 질의 기능을 검색으로 확인하지 못함",
-    "date": "2026-10-15"
-  },
-  {
     "url": "https://fairbank.fas.harvard.edu/news/digital-china-initiative-launches-digital-china-worldwide-chatbot/",
     "reason": "디지털 자원 안내 챗봇: 기록·소장품 사례로 보기 어려움",
     "date": "2026-10-15"
@@ -842,11 +817,6 @@
   {
     "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2025/html/vol_158/sub01.html",
     "reason": "기사·발표: 업무계획 발표 — 실제 구현 성과가 아님",
-    "date": "2026-10-15"
-  },
-  {
-    "url": "https://www.archives.go.jp/news/20260326.html",
-    "reason": "확인 불가: FAQ 자동응답 챗봇의 AI 적용 여부를 확인하지 못함",
     "date": "2026-10-15"
   },
   {

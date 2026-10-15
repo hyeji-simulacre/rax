@@ -2255,5 +2255,89 @@
     "url": "https://pametnovin.cz/"
    }
   ]
+ },
+ {
+  "id": "seoul-institute",
+  "name": "서울연구원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.si.re.kr"
+   },
+   {
+    "label": "서울연구데이터서비스",
+    "url": "https://data.si.re.kr"
+   }
+  ]
+ },
+ {
+  "id": "skunkworks-studio",
+  "name": "스컹크웍스스튜디오",
+  "type": "기업",
+  "country": "대한민국",
+  "links": []
+ },
+ {
+  "id": "daniel-hutchinson",
+  "name": "Daniel Hutchinson",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://honestabes.info"
+   }
+  ]
+ },
+ {
+  "id": "uconn",
+  "name": "University of Connecticut",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://uconn.edu"
+   }
+  ]
+ },
+ {
+  "id": "theirstory",
+  "name": "TheirStory",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://theirstory.io"
+   }
+  ]
+ },
+ {
+  "id": "fossda",
+  "name": "Free & Open Source Stories Digital Archive (FOSSDA)",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://fossda.org"
+   }
+  ]
+ },
+ {
+  "id": "national-archives-of-japan",
+  "name": "国立公文書館",
+  "nameKo": "일본 국립공문서관",
+  "type": "공공기관",
+  "country": "일본",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives.go.jp"
+   }
+  ]
  }
 ]

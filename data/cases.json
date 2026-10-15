@@ -5185,5 +5185,145 @@
    "시범 서비스"
   ],
   "url": "https://pametnovin.cz/"
+ },
+ {
+  "id": "9803fb7633",
+  "title": "검색 경험의 확장과 정보구조 재설계",
+  "org": "서울연구원 서울연구데이터서비스 / 스컹크웍스스튜디오",
+  "orgIds": [
+   "seoul-institute",
+   "skunkworks-studio"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "제14회 대한민국 기록전문가 포럼에서 발표된 서울연구원 서울연구데이터서비스의 AI 통합검색 구축 사례다. 기존 Elasticsearch 검색을 그대로 두고 GPT-4o API를 질의 확장과 검색 결과 해석에 붙였으며, LLM 호출은 프록시를 거쳐 호출량과 하루 예산 상한을 관리했다. 정보구조와 분류 체계를 다시 설계해 패싯 필터와 AI 답변의 출처 표시에 반영했다. 발표 자료로만 확인했다.",
+  "tags": [
+   "AI 통합검색",
+   "GPT-4o",
+   "정보구조",
+   "택소노미"
+  ],
+  "url": "https://meta-archives.xyz/2026busan/"
+ },
+ {
+  "id": "35e4adb9dd",
+  "title": "Clio-X",
+  "titleKo": "Clio-X: 윤리적 AI 기반 아카이브 참조·접근 플랫폼",
+  "org": "InterPARES Trust AI (Clio-X 개발팀)",
+  "orgIds": [
+   "interpares-trust-ai"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2025,
+  "format": "사이트·서비스",
+  "category": "공개·비식별",
+  "summary": "InterPARES Trust AI 연구에 참여한 학생 개발자와 교수진이 만든 오픈소스 플랫폼으로, 2025년 국제 기록의 주간에 공개됐다. 기관이 디지털 소장 데이터의 관리권을 넘기지 않은 채 AI가 데이터에 접근해 분석·시각화 결과만 연구자에게 내보내는 방식으로, 민감정보를 보호하면서 열람과 참조를 돕는다. 연구 시제품 단계로, 정식 운영 여부는 확인하지 못했다.",
+  "tags": [
+   "프라이버시 보호",
+   "참조 서비스",
+   "오픈소스",
+   "시제품"
+  ],
+  "url": "https://cliox.org/"
+ },
+ {
+  "id": "edb9f842d2",
+  "title": "Project: Fireside Chats (Nicolay)",
+  "titleKo": "링컨 연설 기록 기반 역사 챗봇 Nicolay",
+  "org": "Daniel Hutchinson (Honest Abe's Information Emporium)",
+  "orgIds": [
+   "daniel-hutchinson"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "미국",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "역사학자 Daniel Hutchinson이 에이브러햄 링컨의 글과 연설 코퍼스를 근거로 답하도록 만든 AI 챗봇 Nicolay를 소개한 프로젝트 페이지다. 생성형 AI가 지어낸 글이 진짜 사료로 오인될 위험을 경계해 기록에 충실한 답을 우선하도록 설계했다고 밝힌다. 앱, GitHub 저장소, 소개 영상, 코퍼스 시각화 자료를 함께 공개한다.",
+  "tags": [
+   "RAG",
+   "역사 챗봇",
+   "링컨",
+   "사료"
+  ],
+  "url": "https://honestabes.info/fireside-chats/"
+ },
+ {
+  "id": "c1c186293a",
+  "title": "Discover | Audiovisual Collections",
+  "titleKo": "코네티컷대학교 시청각 컬렉션 구술사 대화형 탐색",
+  "org": "University of Connecticut (TheirStory 플랫폼)",
+  "orgIds": [
+   "uconn",
+   "theirstory"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "음성·영상",
+  "summary": "코네티컷 지역 공동체의 구술사, 포커스그룹, 강연 녹음을 모은 코네티컷대학교 시청각 컬렉션 탐색 사이트다. TheirStory 플랫폼으로 만들었고, 컬렉션 전체에 자연어로 질문하는 기능을 제공해 AI4LAM의 RAG 사례 목록에 구술사 사례로 올라 있다. AI 질의 기능의 세부 방식은 공개 자료로 확인하지 못했다.",
+  "tags": [
+   "구술사",
+   "RAG",
+   "대화형 탐색",
+   "TheirStory"
+  ],
+  "url": "https://uconn.theirstory.io/discover"
+ },
+ {
+  "id": "998e68d433",
+  "title": "Discover | Free & Open Source Stories Digital Archive",
+  "titleKo": "오픈소스 구술 아카이브(FOSSDA) 대화형 탐색",
+  "org": "Free & Open Source Stories Digital Archive (TheirStory 플랫폼)",
+  "orgIds": [
+   "fossda",
+   "theirstory"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "미국",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "음성·영상",
+  "summary": "오픈소스 소프트웨어 운동의 초기 개척자와 공동체의 이야기를 모으는 구술 아카이브다. TheirStory 플랫폼으로 만들었고, 인터뷰 컬렉션 전체에 자연어로 묻는 'Ask about the interviews' 기능을 제공해 AI4LAM의 RAG 사례 목록에 구술사 사례로 올라 있다. AI 질의 기능의 세부 방식은 공개 자료로 확인하지 못했다.",
+  "tags": [
+   "구술사",
+   "RAG",
+   "오픈소스",
+   "TheirStory"
+  ],
+  "url": "https://fossda.theirstory.io/discover"
+ },
+ {
+  "id": "dad418ad5b",
+  "title": "国立公文書館チャットボットの運用を開始しました",
+  "titleKo": "일본 국립공문서관 챗봇 운영 시작",
+  "org": "国立公文書館 (National Archives of Japan)",
+  "orgIds": [
+   "national-archives-of-japan"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "일본",
+  "year": 2026,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "일본 국립공문서관이 2026년 3월 이용안내 페이지에 이용 방법과 자주 묻는 질문을 24시간 자동으로 안내하는 챗봇을 열었다. 이용자가 필요한 정보를 빨리 찾게 하고, 직원은 전문성이 필요한 레퍼런스 응대에 집중하게 하려는 목적이다. 생성형 AI를 쓰는지, 정해진 답을 고르는 방식인지는 공지에서 확인하지 못했다.",
+  "tags": [
+   "챗봇",
+   "이용안내",
+   "FAQ",
+   "레퍼런스"
+  ],
+  "url": "https://www.archives.go.jp/news/20260326.html"
  }
 ]
