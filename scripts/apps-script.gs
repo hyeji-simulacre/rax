@@ -8,7 +8,7 @@
  *
  * 채팅을 켜려면: 프로젝트 설정(톱니바퀴) → 스크립트 속성에 아래를 추가한다.
  *   LLM_API_KEY   : NVIDIA(build.nvidia.com) 등에서 받은 API 키
- *   LLM_MODEL     : 모델 ID (예: build.nvidia.com 모델 페이지의 코드 예시에 있는 model 값)
+ *   LLM_MODEL     : 모델 ID. 쉼표로 여러 개 적으면 앞 모델이 사라졌을 때 다음 모델을 쓴다. 맞는 ID는 아래 findModels()로 찾는다
  *   LLM_BASE_URL  : (선택) 기본값 https://integrate.api.nvidia.com/v1  — OpenAI 호환 주소면 무엇이든 된다
  *   CHAT_DAILY_MAX: (선택) 하루 최대 채팅 호출 수, 기본 300
  */
@@ -56,8 +56,10 @@ const SYSTEM_PROMPT = [
 
 function chat(data) {
   const props = PropertiesService.getScriptProperties();
-  const key = props.getProperty("LLM_API_KEY"), model = props.getProperty("LLM_MODEL");
-  if (!key || !model) return { ok: false, error: "not_configured" };
+  const key = props.getProperty("LLM_API_KEY");
+  // LLM_MODEL에 쉼표로 여러 개를 적으면, 앞 모델이 없어졌을 때(404·410) 다음 모델로 넘어간다
+  const models = String(props.getProperty("LLM_MODEL") || "").split(",").map(m => m.trim()).filter(Boolean);
+  if (!key || !models.length) return { ok: false, error: "not_configured" };
   const base = (props.getProperty("LLM_BASE_URL") || "https://integrate.api.nvidia.com/v1").replace(/\/$/, "");
 
   const question = clean(data.question, 500);
@@ -76,15 +78,19 @@ function chat(data) {
     { role: "user", content: question },
   ];
   // DeepSeek·Qwen 같은 추론 모델은 '생각' 단계를 끄면 훨씬 빨리 답한다. 이 옵션을 모르는 모델이면 빼고 한 번 더 보낸다.
-  const send = extra => UrlFetchApp.fetch(`${base}/chat/completions`, {
+  const send = (model, extra) => UrlFetchApp.fetch(`${base}/chat/completions`, {
     method: "post",
     contentType: "application/json",
     headers: { Authorization: `Bearer ${key}` },
     payload: JSON.stringify(Object.assign({ model, messages, temperature: 0.3, max_tokens: 700 }, extra)),
     muteHttpExceptions: true,
   });
-  let res = send({ chat_template_kwargs: { thinking: false, enable_thinking: false } });
-  if (res.getResponseCode() === 400) res = send({});
+  let res;
+  for (const model of models) {
+    res = send(model, { chat_template_kwargs: { thinking: false, enable_thinking: false } });
+    if (res.getResponseCode() === 400) res = send(model, {});
+    if (res.getResponseCode() !== 404 && res.getResponseCode() !== 410) break;
+  }
   // 실패하면 응답 앞부분을 함께 돌려줘서 원인(모델 이름 오류 등)을 화면에서 바로 볼 수 있게 한다
   if (res.getResponseCode() !== 200) return { ok: false, error: `llm_${res.getResponseCode()} ${res.getContentText().slice(0, 160)}` };
   const out = JSON.parse(res.getContentText());
@@ -127,4 +133,32 @@ function authorize() {
   UrlFetchApp.fetch("https://www.google.com", { muteHttpExceptions: true });
   SpreadsheetApp.getActiveSpreadsheet();
   return "권한 승인 완료";
+}
+
+// 편집기에서 이 함수를 골라 ▶실행하면, 지금 NVIDIA에서 쓸 수 있는 대화 모델을 찾아 짧게 말을 걸고
+// 응답 시간을 '실행 로그'에 빠른 순서로 보여 준다. 맨 위 모델 ID를 스크립트 속성 LLM_MODEL에 넣으면 된다.
+function findModels() {
+  const props = PropertiesService.getScriptProperties();
+  const key = props.getProperty("LLM_API_KEY");
+  const base = (props.getProperty("LLM_BASE_URL") || "https://integrate.api.nvidia.com/v1").replace(/\/$/, "");
+  const list = JSON.parse(UrlFetchApp.fetch(`${base}/models`, { headers: { Authorization: `Bearer ${key}` }, muteHttpExceptions: true }).getContentText());
+  const ids = (list.data || []).map(m => m.id)
+    .filter(id => /instruct|chat|deepseek|qwen|gemma|kimi|glm|exaone|gpt-oss/i.test(id))
+    .filter(id => !/embed|rerank|guard|safety|reward|vision|vl\b|coder|math|parse|ocr|nemoretriever|clip/i.test(id));
+  Logger.log(`대화 모델 후보 ${ids.length}개를 시험합니다 (최대 25개)`);
+  const results = [];
+  for (const id of ids.slice(0, 25)) {
+    const t = Date.now();
+    const r = UrlFetchApp.fetch(`${base}/chat/completions`, {
+      method: "post", contentType: "application/json", headers: { Authorization: `Bearer ${key}` }, muteHttpExceptions: true,
+      payload: JSON.stringify({ model: id, messages: [{ role: "user", content: "기록관리를 한 문장으로 설명해 주세요." }], max_tokens: 60 }),
+    });
+    const sec = (Date.now() - t) / 1000;
+    let reply = "";
+    try { reply = (JSON.parse(r.getContentText()).choices[0].message.content || "").replace(/<think>[\s\S]*?<\/think>/g, "").trim().slice(0, 50); } catch (e) {}
+    results.push({ id, code: r.getResponseCode(), sec, reply });
+  }
+  results.filter(x => x.code === 200).sort((a, b) => a.sec - b.sec)
+    .forEach(x => Logger.log(`${x.sec.toFixed(1)}초  ${x.id}  →  ${x.reply}`));
+  Logger.log(`응답 없음: ${results.filter(x => x.code !== 200).map(x => `${x.id}(${x.code})`).join(", ") || "없음"}`);
 }
