@@ -75,3 +75,7 @@ python3 -m http.server 8000
 ## 주의
 
 각 사례의 요약은 공개된 원문을 바탕으로 새로 쓴 글입니다. 연도나 수치는 원문 보도 기준이므로, 인용할 때는 원문을 확인해 주세요.
+
+## 라이선스
+
+© 2026 정혜지. 사례 데이터와 글은 [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/deed.ko)(출처 표시, 비영리) 조건으로 이용할 수 있습니다. 자세한 내용은 [LICENSE.md](LICENSE.md)를 보세요.
