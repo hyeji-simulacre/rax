@@ -22,15 +22,19 @@
 
   <header class="site-head">
     <a class="logo" href="./" aria-label="RAX 처음으로">RAX<span>.</span></a>
-    <nav class="links" aria-label="주요 메뉴">
+    <nav class="links" id="siteNav" aria-label="주요 메뉴">
       <a href="#categories">카테고리</a>
       <a href="#archive">사례 아카이브</a>
       <a href="#makers">만든 사람·조직</a>
+      <a href="#feedback" class="menu-only" id="menuFeedback">의견 보내기</a>
     </nav>
     <div class="head-actions">
       <a class="glass-btn" href="#top" id="headAsk"><span class="ai-orb sm" aria-hidden="true"></span>AI 검색하기</a>
       <button class="glass-btn" id="feedbackOpen" type="button">의견 보내기</button>
       <button class="glass-btn solid" id="submitLink" type="button">사례 제보</button>
+      <button class="glass-btn menu-btn" id="menuBtn" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="siteNav">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </header>
 

@@ -794,6 +794,14 @@
     // 의견 보내기: 제보와 같은 구글 시트로, 제목 앞에 [의견]을 붙여 구분한다
     const openFb = e => { e?.preventDefault(); $("#feedbackForm").hidden = false; $("#fbDone").hidden = true; $("#fbMsg").textContent = ""; $("#feedbackDialog").showModal(); $("#feedbackForm [name=message]").focus(); };
     $("#feedbackOpen").addEventListener("click", openFb);
+    $("#menuFeedback").addEventListener("click", openFb);
+    // 좁은 화면 메뉴: ☰를 누르면 메뉴가 펼쳐지고, 메뉴를 고르거나 바깥을 누르면 닫힌다
+    const head = $(".site-head"), menuBtn = $("#menuBtn");
+    const setMenu = open => { head.classList.toggle("menu-open", open); menuBtn.setAttribute("aria-expanded", String(open)); menuBtn.setAttribute("aria-label", open ? "메뉴 닫기" : "메뉴 열기"); };
+    menuBtn.addEventListener("click", e => { e.stopPropagation(); setMenu(!head.classList.contains("menu-open")); });
+    $("#siteNav").addEventListener("click", e => { if (e.target.closest("a")) setMenu(false); });
+    document.addEventListener("click", e => { if (head.classList.contains("menu-open") && !e.target.closest(".site-head")) setMenu(false); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
     $("#footerFeedback").addEventListener("click", openFb);
     if (location.hash === "#feedback") setTimeout(openFb, 300);
     $("#fbClose").addEventListener("click", () => $("#feedbackDialog").close());

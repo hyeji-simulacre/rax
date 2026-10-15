@@ -1099,3 +1099,22 @@ body.in-view main > section:not(.view) { display: none !important; }
 .fs-opts .chip { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 .fs-foot { flex: none; background: #fff; }
 html.sheet-open, html.sheet-open body { overflow: hidden; }
+
+/* 좁은 화면 메뉴(☰): 머리말 아래로 펼쳐지는 판 */
+.menu-btn, .links .menu-only { display: none; }
+@media (max-width: 960px) {
+  .menu-btn { display: inline-grid; place-items: center; width: 36px; height: 36px; padding: 0; }
+  .menu-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .site-head.menu-open .links { display: flex; flex-direction: column; gap: 0; position: absolute; left: 0; right: 0; top: 100%;
+    padding: 8px var(--gutter) 16px; background: #fff; border-bottom: 1px solid var(--line);
+    box-shadow: 0 18px 40px rgba(15, 17, 21, .1); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); animation: pop-in .18s ease-out; }
+  .site-head.menu-open .links a { display: block; padding: 14px 4px; font: 600 17px var(--ko); border-bottom: 1px solid var(--line); }
+  .site-head.menu-open .links a:last-child { border-bottom: 0; }
+}
+@media (max-width: 640px) {
+  .head-actions { gap: 6px; }
+  .site-head #headAsk { padding: 0 12px 0 8px; font-size: 14px; }
+  #submitLink { padding-left: 14px; padding-right: 14px; }
+}
+@media (max-width: 370px) { .site-head #headAsk .ai-orb + * { display: none; } }
+main > section[id]:not(#archive) { scroll-margin-top: 76px; }
