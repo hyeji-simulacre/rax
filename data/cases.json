@@ -5162,5 +5162,28 @@
    "다국어"
   ],
   "url": "https://github.com/changgi/archives-restore-kr"
+ },
+ {
+  "id": "044c56bcb4",
+  "title": "Paměť novin",
+  "titleKo": "신문의 기억: 체코 역사 신문 RAG 시범 서비스",
+  "org": "Paměť novin",
+  "orgIds": [
+   "pamet-novin"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "체코",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "디지털화된 체코 역사 신문을 자연어 질문으로 탐색하는 RAG 시범 서비스다. AI4LAM 사례 목록에 따르면 1880~1914년 신문 25종, 약 50만 쪽을 1천만 개가량의 텍스트 조각으로 나눠 벡터화했고, LLM이 답할 때 근거 기사 출처를 함께 보여 준다. 체코 디지털 도서관과의 통합을 계획하고 있다고 밝혔으며, 운영 주체는 공개 자료로 확인하지 못했다.",
+  "tags": [
+   "RAG",
+   "역사 신문",
+   "체코",
+   "시범 서비스"
+  ],
+  "url": "https://pametnovin.cz/"
  }
 ]
