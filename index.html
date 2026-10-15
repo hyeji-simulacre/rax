@@ -25,7 +25,7 @@
       <a href="#makers">만든 사람·조직</a>
     </nav>
     <div class="head-actions">
-      <a class="glass-btn icon" href="#top" id="headAsk" aria-label="질문하기"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg></a>
+      <a class="glass-btn icon" href="#top" id="headAsk" aria-label="질문하기"><span class="ai-orb sm" aria-hidden="true"></span></a>
       <button class="glass-btn" id="feedbackOpen" type="button">의견 보내기</button>
       <button class="glass-btn solid" id="submitLink" type="button">사례 제보</button>
     </div>
@@ -42,7 +42,7 @@
 
       <div class="ask">
         <form class="search glass" id="askForm" role="search">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="ai-orb" aria-hidden="true"></span>
           <input id="q" type="search" placeholder="AI에게 질문하기" autocomplete="off" aria-label="AI에게 질문하기">
           <button class="ask-go" type="submit" aria-label="질문 보내기"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </form>
@@ -65,6 +65,7 @@
           <div class="av-thread" id="avThread" data-lenis-prevent aria-live="polite"></div>
           <div class="av-suggest" id="avSuggest"></div>
           <form class="av-form" id="avForm">
+            <span class="ai-orb" aria-hidden="true"></span>
             <input id="avInput" type="text" placeholder="이어서 물어보세요" autocomplete="off" maxlength="500" aria-label="추가 질문">
             <button class="ask-go" type="submit" aria-label="보내기"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
           </form>
