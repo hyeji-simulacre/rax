@@ -3,5 +3,105 @@
     "url": "http://ddd.dd",
     "reason": "실제 사례가 아닌 테스트성 제보(제목·설명이 \"dd\", 유효하지 않은 도메인). 확인할 원문 없음",
     "date": "2026-10-15"
+  },
+  {
+    "url": "https://newsseoul.co.kr/news/view/1065601822001611",
+    "reason": "기사·발표: 업무협약과 시범 검증 착수 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.kairnews.com/news/480188",
+    "reason": "기사·발표: 2차년도 착수보고회의 사업 계획 발표(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://byline.network/2025/07/708143/",
+    "reason": "기사·발표: 사업 수주 소식과 목표치(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.fnnews.com/news/202605131818250036",
+    "reason": "기사·발표: 기관 비전·추진 계획(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.syu.ac.kr/rnd/%ec%88%98%ec%9a%94%ec%a1%b0%ec%82%ac-%ea%b5%ad%ea%b0%80%ea%b8%b0%eb%a1%9d%ec%9b%90-2027%eb%85%84-%ea%b5%ad%ea%b0%80%ea%b8%b0%eb%a1%9d%ea%b4%80%eb%a6%ac-%ed%99%9c%ec%9a%a9%ea%b8%b0%ec%88%a0-%ec%97%b0-2/",
+    "reason": "기사·발표: R&D 수요조사 공고(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2024/html/vol_153/sub01.html",
+    "reason": "기사·발표: 정책포럼 발표·토론(성과 아님) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2026/html/vol_170/sub01.html",
+    "reason": "기사·발표: 연간 업무 추진계획(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.segye.com/newsView/20190915506577",
+    "reason": "기사·발표: 공모 사업 선정 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://v.daum.net/v/H9jRjT0HZF",
+    "reason": "기사·발표: AI 적용 계획 발표(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://v.daum.net/v/20260522013936313",
+    "reason": "기사·발표: 연구자 대회의 문제 제기·주장(성과 아님) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://federalnewsnetwork.com/it-modernization/2024/11/nara-to-launch-ai-tool-to-improve-customer-experience/",
+    "reason": "기사·발표: AI 도구 도입 예정 보도(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.nationalarchives.gov.uk/blogs/research-projects/from-our-students",
+    "reason": "기사·발표: 박사과정 연구 프로토타입, 아직 연구 단계(시험) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.recordpoint.com/customers/automated-records-management-system-national-archives",
+    "reason": "기사·발표: 솔루션 기능 평가(시험) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://blogs.loc.gov/thesignal/2024/11/could-artificial-intelligence-help-catalog-thousands-of-digital-library-books-an-interview-with-abigail-potter-and-caroline-saccucci/",
+    "reason": "기사·발표: 머신러닝 실험 경과 인터뷰(시험) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://nationalmuseums.org.uk/news/british-library-and-turing-institute-will-revolutionise-historical-research-92m-data-scienc",
+    "reason": "기사·발표: 연구 프로젝트 출범 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.dpconline.org/blog/aeolian-paul-gooding",
+    "reason": "기사·발표: 연구 네트워크·워크숍 소개(성과 아님) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://blogs.opentext.com/whats-new-in-opentext-content-aviator/",
+    "reason": "기사·발표: 제품 신기능 소개(도입 성과 아님) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://itbrief.com.au/story/hyland-named-idc-leader-for-intelligent-document-ai",
+    "reason": "기사·발표: 시장조사 기관 평가·수상 기사(도입 성과 아님) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://2025.code4lib.org/talks/whisper-speech-to-text-for-digitized-historical-audiovisual-materials",
+    "reason": "기사·발표: Whisper 적용 가능성 시험·평가(시험) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.kakaocorp.com/page/detail/8789",
+    "reason": "기사·발표: 업무협약(MOU) 체결 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-15"
   }
 ]

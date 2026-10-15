@@ -1,75 +1,5 @@
 [
  {
-  "id": "a5dcc51f77",
-  "title": "일일이 누리집 안 찾아도 된다… 국가 기록·역사 자료, 인공지능으로 한곳에서 검색",
-  "org": "행정안전부 국가기록원·국사편찬위원회",
-  "orgIds": [
-   "national-archives-of-korea",
-   "nihk"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "검색·챗봇",
-  "summary": "국가기록원과 국사편찬위원회가 2026년 9월 18일 기록정보·역사자료를 연계해 함께 쓰기로 업무협약을 맺었고, AI 에이전트 기반 '범국가 기록정보 통합활용체계' 시범 검증에 들어갔다. 자료를 한곳에 모으지 않고 기관별 시스템을 그대로 둔 채 AI가 여러 기관을 통합 검색하고, 출처와 원문 위치까지 안내하는 방식이다. 두 기관은 과기정통부 사업으로 AI 검색·요약·추천 서비스와 근대 다문자 자료 인식·번역 서비스를 각각 개발하고 있다.",
-  "tags": [
-   "AI에이전트",
-   "통합검색",
-   "업무협약",
-   "국사편찬위원회"
-  ],
-  "url": "https://newsseoul.co.kr/news/view/1065601822001611"
- },
- {
-  "id": "547dfb87ec",
-  "title": "나라지식정보, 2026년 공공AX 2차년도 착수보고회서 '한국 근대 다문자 자료 AI 솔루션 개발 및 실증' 사업 발표",
-  "org": "나라지식정보 (국사편찬위원회 실증)",
-  "orgIds": [
-   "nara-knowledge-information",
-   "nihk"
-  ],
-  "orgType": "기업",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "OCR·고문서",
-  "summary": "공공AX 프로젝트 2차년도에 근대자료 20만 건 이상을 더 확보하고, 한문·일본어·국한문 혼용, 세로쓰기, 필기체를 읽는 AI OCR을 고도화하는 계획이다. 전처리 자동화와 LLM 기반 보정으로 인식 정확도를 높인다. 번역·요약 모델과 RAG 의미검색을 구축해 국사편찬위원회 역사정보시스템과 연계 실증하고, 이용자 참여형 플랫폼도 만든다.",
-  "tags": [
-   "AI OCR",
-   "근대자료",
-   "국한문혼용",
-   "RAG",
-   "공공AX"
-  ],
-  "url": "https://www.kairnews.com/news/480188"
- },
- {
-  "id": "267d2bf9b3",
-  "title": "솔트룩스, 국가기록원 지능형 검색 환경 구축 사업 수주",
-  "org": "솔트룩스 / 국가기록원",
-  "orgIds": [
-   "saltlux",
-   "national-archives-of-korea"
-  ],
-  "orgType": "기업",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2025,
-  "format": "기사·발표",
-  "category": "검색·챗봇",
-  "summary": "솔트룩스가 국가기록원의 'AI 기반 지능형 기록정보 검색 솔루션 개발 및 실증' 과제를 주관기관으로 맡아 2025~2026년에 수행한다. LLM·VLM·임베딩 의미검색을 결합한 멀티모달 검색에 하이브리드 RAG를 적용하며, 검색 정확도 90% 이상이 목표다. 이 사업은 전체 로드맵의 1단계다.",
-  "tags": [
-   "RAG",
-   "LLM",
-   "멀티모달검색",
-   "NIPA"
-  ],
-  "url": "https://byline.network/2025/07/708143/"
- },
- {
   "id": "fb771af6b9",
   "title": "국가기록원, 타자기록 인공지능 문자인식(OCR) 기술 개발",
   "org": "국가기록원",
@@ -135,94 +65,6 @@
    "TTA"
   ],
   "url": "https://m.etnews.com/20230214000270"
- },
- {
-  "id": "464ee4603d",
-  "title": "국회기록원 'AI 네이티브 아카이브' 추진",
-  "org": "국회기록원",
-  "orgIds": [
-   "national-assembly-archives"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "2026년 출범한 국회기록원(곽건홍 초대 원장)이 기록의 생산부터 서비스까지 전 과정을 AI 환경에 맞춘 'AI 네이티브 아카이브'를 비전으로 내세웠다. 홈페이지를 아카이브 플랫폼으로 바꾸고 AI 도구로 기록 열람을 편하게 하며, 흩어진 국가 기록을 잇는 허브 역할을 하겠다는 계획이다.",
-  "tags": [
-   "국회기록원",
-   "AI네이티브",
-   "의정기록",
-   "아카이브플랫폼"
-  ],
-  "url": "https://www.fnnews.com/news/202605131818250036"
- },
- {
-  "id": "55745d36b6",
-  "title": "국가기록원 2027년 국가기록관리 활용기술 연구개발 수요조사",
-  "org": "행정안전부 국가기록원",
-  "orgIds": [
-   "national-archives-of-korea"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "보존·관리 자동화",
-  "summary": "국가기록원이 'AI 기반 기록물관리 지능형 자동화 구현을 위한 기술개발'을 주제로 2027년 R&D 수요조사를 진행했다(2026.9.2~10.2). 연구 분야는 전자기록물 이관·공개재분류, 행정정보 데이터세트·웹기록 관리, 기록물 평가·폐기 기술 등이다.",
-  "tags": [
-   "R&D",
-   "공개재분류",
-   "평가·폐기",
-   "자동화"
-  ],
-  "url": "https://www.syu.ac.kr/rnd/%ec%88%98%ec%9a%94%ec%a1%b0%ec%82%ac-%ea%b5%ad%ea%b0%80%ea%b8%b0%eb%a1%9d%ec%9b%90-2027%eb%85%84-%ea%b5%ad%ea%b0%80%ea%b8%b0%eb%a1%9d%ea%b4%80%eb%a6%ac-%ed%99%9c%ec%9a%a9%ea%b8%b0%ec%88%a0-%ec%97%b0-2/"
- },
- {
-  "id": "28edf36c9f",
-  "title": "2024 기록관리 정책포럼",
-  "org": "국가기록원",
-  "orgIds": [
-   "national-archives-of-korea"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2024,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "국가기록원 2024 정책포럼은 AI 등 디지털 기술이 국가기록 관리·서비스에 미치는 영향을 다뤘다. 공공부문 AI 활용 사례와 지능형 국가기록정보서비스 모델 설계가 발표됐고, 종합토론에서는 AI 서비스를 위한 개인정보 비식별화와 종이기록 OCR 문제가 논의됐다.",
-  "tags": [
-   "정책포럼",
-   "지능형서비스",
-   "비식별화",
-   "OCR"
-  ],
-  "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2024/html/vol_153/sub01.html"
- },
- {
-  "id": "475102805c",
-  "title": "국가기록원 2026년 주요업무 추진계획",
-  "org": "국가기록원",
-  "orgIds": [
-   "national-archives-of-korea"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "국가기록원이 '신뢰받는 기록관리, 투명한 정부'를 목표로 2026년 4대 과제를 발표했다. AI 기반 지능형 기록정보 검색 서비스 구축, 비공개 기록물의 선제적 공개 전환, 공공기록물 이관·보존 체계 전면 개편이 핵심이다.",
-  "tags": [
-   "업무계획",
-   "지능형검색",
-   "공개전환",
-   "AX"
-  ],
-  "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2026/html/vol_170/sub01.html"
  },
  {
   "id": "d40aaa3994",
@@ -451,29 +293,6 @@
   "url": "https://m.etnews.com/20180416000283"
  },
  {
-  "id": "f821a69187",
-  "title": "클라우드 기반 고문헌 자동번역 확산 서비스 구축",
-  "org": "한국고전번역원·한국천문연구원",
-  "orgIds": [
-   "itkc",
-   "kasi"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2019,
-  "format": "기사·발표",
-  "category": "OCR·고문서",
-  "summary": "한국고전번역원과 한국천문연구원이 공동 응모한 '클라우드 기반 고문헌 자동번역 확산 서비스 구축'이 ICT 기반 공공서비스 촉진사업에 선정됐다. 승정원일기용 AI 번역 모델을 천문 고문헌 등 다른 분야로 넓히려는 시도다.",
-  "tags": [
-   "클라우드",
-   "자동번역",
-   "천문고문헌",
-   "확산"
-  ],
-  "url": "https://www.segye.com/newsView/20190915506577"
- },
- {
   "id": "a4f167f01b",
   "title": "중앙대, AI 모델 기반 승정원일기 복원·초벌번역",
   "org": "중앙대 김영빈 교수 연구팀",
@@ -655,50 +474,6 @@
   "url": "https://byline.network/2022/08/0802-2/"
  },
  {
-  "id": "5f2096c5a4",
-  "title": "국립중앙도서관, 'AI 기반 미래형 도서관' 혁신 가속화 박차",
-  "org": "국립중앙도서관",
-  "orgIds": [
-   "nlk"
-  ],
-  "orgType": "공공기관",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "국립중앙도서관은 2026년을 AI를 서비스 전반에 적용하는 원년으로 정했다. 저작권 문제가 정리된 소장자료로 AI 학습용 텍스트 데이터를 만들어 '독자 AI 파운데이션 모델' 프로젝트에 제공하고, '공유서재'로 민간에도 개방할 계획이다.",
-  "tags": [
-   "AI학습데이터",
-   "디지털컬렉션",
-   "독자AI",
-   "공유서재"
-  ],
-  "url": "https://v.daum.net/v/H9jRjT0HZF"
- },
- {
-  "id": "cf2e0971a3",
-  "title": "아날로그 5·18 기록물, AI 아카이브 구축 시급하다",
-  "org": "광주일보 (5·18연구자대회)",
-  "orgIds": [
-   "chonnam-national-university"
-  ],
-  "orgType": "학계·연구",
-  "region": "국내",
-  "country": "대한민국",
-  "year": 2026,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "제3회 5·18연구자 대회에서 연구자들이 5·18 기록물을 단순 전산화를 넘어 맥락 검증과 해석을 돕는 AI 아카이브로 바꿔야 한다고 주장했다. 전남대 5·18연구소 기초자료 1만 4,500건 중 상당수가 아직 단행본, 자료집, 마이크로필름 같은 아날로그 형태다.",
-  "tags": [
-   "5·18기록물",
-   "AI아카이브",
-   "디지털화",
-   "세계기록유산"
-  ],
-  "url": "https://v.daum.net/v/20260522013936313"
- },
- {
   "id": "ad615a4cf3",
   "title": "고문헌 원문이미지 한자 서순정렬 라인분할 알고리즘",
   "org": "한국전자통신연구원(ETRI)",
@@ -742,29 +517,6 @@
    "FOIA"
   ],
   "url": "https://www.archives.gov/data/ai-inventory"
- },
- {
-  "id": "8e625b5954",
-  "title": "NARA to launch AI tool to improve customer experience",
-  "titleKo": "NARA, 이용자 경험 개선을 위한 AI 도구 도입 예정",
-  "org": "NARA (Federal News Network 보도)",
-  "orgIds": [
-   "nara-us"
-  ],
-  "orgType": "공공기관",
-  "region": "해외",
-  "country": "미국",
-  "year": 2024,
-  "format": "기사·발표",
-  "category": "검색·챗봇",
-  "summary": "NARA가 기록 이용자 서비스를 개선하려고 AI 도구 도입을 준비한다는 2024년 11월 보도다. 미국 연방 기록관이 이용자 접점 서비스에 AI를 들이는 흐름을 보여준다.",
-  "tags": [
-   "NARA",
-   "이용자 서비스",
-   "AI 도구",
-   "연방정부"
-  ],
-  "url": "https://federalnewsnetwork.com/it-modernization/2024/11/nara-to-launch-ai-tool-to-improve-customer-experience/"
  },
  {
   "id": "4e8ddd41c0",
@@ -858,53 +610,6 @@
    "TNA"
   ],
   "url": "https://www.nationalarchives.gov.uk/about/our-research-and-academic-collaboration/our-research-projects/open-access-research-from-our-staff/alexa-is-this-a-historical-record/"
- },
- {
-  "id": "a7b9c00292",
-  "title": "Prototyping semantic search for case law",
-  "titleKo": "판례 의미 검색 프로토타입 개발",
-  "org": "The National Archives (UK)",
-  "orgIds": [
-   "tna-uk"
-  ],
-  "orgType": "공공기관",
-  "region": "해외",
-  "country": "영국",
-  "year": null,
-  "format": "기사·발표",
-  "category": "검색·챗봇",
-  "summary": "TNA가 2022년부터 운영하는 판례 공개 서비스 Find Case Law에 의미 기반 검색을 붙이려는 박사과정 연구의 결과를 소개한 글이다. 일반 이용자도 판례를 쉽게 찾을 수 있게 하는 것이 목표이며, 아직 연구 단계다.",
-  "tags": [
-   "Find Case Law",
-   "시맨틱 검색",
-   "판례",
-   "접근성"
-  ],
-  "url": "https://www.nationalarchives.gov.uk/blogs/research-projects/from-our-students"
- },
- {
-  "id": "f43b158ef5",
-  "title": "TNA evaluates Records365 Classification Intelligence",
-  "titleKo": "TNA의 Records365 분류 인텔리전스 평가",
-  "org": "RecordPoint",
-  "orgIds": [
-   "recordpoint",
-   "tna-uk"
-  ],
-  "orgType": "기업",
-  "region": "해외",
-  "country": "영국",
-  "year": null,
-  "format": "기사·발표",
-  "category": "분류·평가",
-  "summary": "RecordPoint가 영국 국립기록관의 AI 선별 프로젝트에서 자사 Records365의 머신러닝 분류 기능을 평가받은 사례를 정리한 고객 사례다. 상용 기록관리 솔루션이 공공기록 선별에 실제로 시험된 예다.",
-  "tags": [
-   "Records365",
-   "자동분류",
-   "벤더 사례",
-   "TNA"
-  ],
-  "url": "https://www.recordpoint.com/customers/automated-records-management-system-national-archives"
  },
  {
   "id": "c0d8da3023",
@@ -1283,29 +988,6 @@
   "url": "https://labs.loc.gov/work/experiments/ECD"
  },
  {
-  "id": "c96bcada4d",
-  "title": "Could Artificial Intelligence Help Catalog Thousands of Digital Library Books?",
-  "titleKo": "AI가 수천 권의 디지털 도서 목록 작업을 도울 수 있을까?",
-  "org": "Library of Congress (The Signal blog)",
-  "orgIds": [
-   "library-of-congress"
-  ],
-  "orgType": "공공기관",
-  "region": "해외",
-  "country": "미국",
-  "year": 2024,
-  "format": "기사·발표",
-  "category": "메타데이터·기술",
-  "summary": "LC Labs 담당자들이 전자책 목록 작업 적체를 해소하려고 머신러닝을 시험한 ECD 실험의 경과와 교훈을 설명하는 인터뷰다. 품질 기준과 사람 검토의 역할을 함께 다룬다.",
-  "tags": [
-   "목록 적체",
-   "머신러닝",
-   "인터뷰",
-   "의회도서관"
-  ],
-  "url": "https://blogs.loc.gov/thesignal/2024/11/could-artificial-intelligence-help-catalog-thousands-of-digital-library-books-an-interview-with-abigail-potter-and-caroline-saccucci/"
- },
- {
   "id": "83074f8390",
   "title": "Developing responsible AI practices at the Smithsonian Institution",
   "titleKo": "스미스소니언 협회의 책임 있는 AI 실천 만들기",
@@ -1327,30 +1009,6 @@
    "소장품"
   ],
   "url": "https://riojournal.com/article_preview.php?id=113334"
- },
- {
-  "id": "377f8d8d07",
-  "title": "British Library and Turing Institute will 'revolutionise historical research' with £9.2m project",
-  "titleKo": "영국도서관·앨런튜링연구소, 920만 파운드 규모 'Living with Machines' 프로젝트",
-  "org": "British Library / The Alan Turing Institute",
-  "orgIds": [
-   "british-library",
-   "alan-turing-institute"
-  ],
-  "orgType": "공공기관",
-  "region": "해외",
-  "country": "영국",
-  "year": 2019,
-  "format": "기사·발표",
-  "category": "메타데이터·기술",
-  "summary": "영국도서관과 앨런튜링연구소 등이 UKRI 자금 920만 파운드로 추진한 'Living with Machines' 프로젝트의 출범 소식이다. 수백만 쪽의 디지털화 신문과 인구조사 자료를 데이터과학·AI로 분석해 1780~1918년 산업화 시대를 연구했다.",
-  "tags": [
-   "Living with Machines",
-   "디지털화 신문",
-   "데이터과학",
-   "영국도서관"
-  ],
-  "url": "https://nationalmuseums.org.uk/news/british-library-and-turing-institute-will-revolutionise-historical-research-92m-data-scienc"
  },
  {
   "id": "6cd8b2bfa7",
@@ -1399,30 +1057,6 @@
    "기록학 원칙"
   ],
   "url": "https://uu.se/en/department/alm/research/research-projects/ongoing-projects/interpares-trust-ai"
- },
- {
-  "id": "6992716891",
-  "title": "AEOLIAN (Artificial Intelligence for Cultural Organisations)",
-  "titleKo": "AEOLIAN: 문화기관을 위한 인공지능 네트워크",
-  "org": "AEOLIAN Network (Loughborough Univ. / Univ. of Illinois)",
-  "orgIds": [
-   "loughborough-university",
-   "university-of-illinois"
-  ],
-  "orgType": "학계·연구",
-  "region": "해외",
-  "country": "국제",
-  "year": null,
-  "format": "기사·발표",
-  "category": "정책·가이드",
-  "summary": "영국 AHRC와 미국 NEH가 공동 지원한 연구 네트워크로, 본래 디지털인 기록과 디지털화된 문화기록에 AI를 적용해 접근성을 높이는 방안을 다룬다. 워크숍과 영미 기관 사례연구(첫 사례가 영국 TNA)를 내놓았다.",
-  "tags": [
-   "AEOLIAN",
-   "영미 협력",
-   "사례연구",
-   "전자기록"
-  ],
-  "url": "https://www.dpconline.org/blog/aeolian-paul-gooding"
  },
  {
   "id": "0dfc4b382c",
@@ -1608,52 +1242,6 @@
    "벤더"
   ],
   "url": "https://preservica.com/resources/blogs-and-news/preservica-takes-ai-for-digital-preservation-to-the-next-level-with-powerful-new-ai-editions"
- },
- {
-  "id": "e62af76f37",
-  "title": "What's new in OpenText Content Aviator",
-  "titleKo": "OpenText Content Aviator 새 기능",
-  "org": "OpenText",
-  "orgIds": [
-   "opentext"
-  ],
-  "orgType": "기업",
-  "region": "해외",
-  "country": "캐나다",
-  "year": null,
-  "format": "기사·발표",
-  "category": "검색·챗봇",
-  "summary": "OpenText 콘텐츠 관리 플랫폼의 생성형 AI 비서 Content Aviator가 검색·요약을 넘어 에이전트, 지식 그래프 등으로 콘텐츠에 직접 작업을 수행하도록 확장된 내용을 소개한다. 기록관리자가 대화창에서 보존 보류나 처분을 실행하는 기능도 언급된다.",
-  "tags": [
-   "생성형 AI 비서",
-   "ECM",
-   "에이전트",
-   "처분"
-  ],
-  "url": "https://blogs.opentext.com/whats-new-in-opentext-content-aviator/"
- },
- {
-  "id": "34e9f63fe0",
-  "title": "Hyland named IDC leader for intelligent document AI",
-  "titleKo": "Hyland, IDC 지능형 문서처리 부문 리더 선정",
-  "org": "Hyland",
-  "orgIds": [
-   "hyland"
-  ],
-  "orgType": "기업",
-  "region": "해외",
-  "country": "미국",
-  "year": null,
-  "format": "기사·발표",
-  "category": "분류·평가",
-  "summary": "Hyland의 Content Innovation Cloud가 문서 수집, 분리, AI 분류, 데이터 추출, 맥락화를 하나의 흐름으로 처리하는 지능형 문서처리(IDP) 플랫폼으로 평가받았다는 기사다. 자연어 프롬프트로 업무 흐름을 설정할 수 있다는 점도 소개한다.",
-  "tags": [
-   "IDP",
-   "문서 분류",
-   "콘텐츠 서비스",
-   "Hyland"
-  ],
-  "url": "https://itbrief.com.au/story/hyland-named-idc-leader-for-intelligent-document-ai"
  },
  {
   "id": "6ca8b45f0b",
@@ -2982,29 +2570,6 @@
   "url": "https://libraries.indiana.edu/audiovisual-metadata-platform"
  },
  {
-  "id": "daf63afdbc",
-  "title": "Whisper Speech-to-Text for Digitized Historical Audiovisual Materials",
-  "titleKo": "디지털화된 역사 시청각 자료에 대한 Whisper 음성-텍스트 변환",
-  "org": "Indiana University Libraries (Code4Lib 2025)",
-  "orgIds": [
-   "indiana-university-libraries"
-  ],
-  "orgType": "학계·연구",
-  "region": "해외",
-  "country": "미국",
-  "year": 2025,
-  "format": "기사·발표",
-  "category": "음성·영상",
-  "summary": "인디애나대 도서관이 왁스실린더부터 VHS까지 35만 점이 넘는 디지털화 자료를 대상으로 여러 Whisper 모델을 시험해, 대량 전사가 가능한지 평가한 발표다. 오래된 매체의 음질에서 오픈소스 STT를 실제로 써 본 결과를 다룬다.",
-  "tags": [
-   "Whisper",
-   "대량 전사",
-   "역사 음원",
-   "성능 평가"
-  ],
-  "url": "https://2025.code4lib.org/talks/whisper-speech-to-text-for-digitized-historical-audiovisual-materials"
- },
- {
   "id": "74804363ff",
   "title": "Speech recognition (Sound and Vision archive)",
   "titleKo": "네덜란드 시청각연구소 아카이브 음성인식",
@@ -3303,29 +2868,6 @@
    "KBS"
   ],
   "url": "https://isplus.com/article/view/isp202607300022"
- },
- {
-  "id": "8752879ac1",
-  "title": "카카오엔터프라이즈, KBS와 인공지능과 클라우드 디지털 사업협력 MOU 체결",
-  "org": "카카오엔터프라이즈·KBS",
-  "orgIds": [
-   "kakao-enterprise",
-   "kbs"
-  ],
-  "orgType": "기업",
-  "region": "국내",
-  "country": "대한민국",
-  "year": null,
-  "format": "기사·발표",
-  "category": "음성·영상",
-  "summary": "카카오엔터프라이즈가 '카카오 i' 시각 엔진으로 KBS 영상 콘텐츠에서 인물·주제·키워드를 자동으로 뽑아 분류하고, 편집·검색·관리 시스템 개선을 돕기로 한 협약이다. AI 기반 재난방송 시스템 구현도 협력 범위에 들어간다.",
-  "tags": [
-   "영상 분석",
-   "인물 인식",
-   "방송사",
-   "업무협약"
-  ],
-  "url": "https://www.kakaocorp.com/page/detail/8789"
  },
  {
   "id": "d06808d299",

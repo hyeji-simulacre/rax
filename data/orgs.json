@@ -36,18 +36,6 @@
   ]
  },
  {
-  "id": "saltlux",
-  "name": "솔트룩스",
-  "type": "기업",
-  "country": "대한민국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.saltlux.com"
-   }
-  ]
- },
- {
   "id": "lomin",
   "name": "로민",
   "type": "기업",
@@ -70,13 +58,6 @@
     "url": "https://www.jinsil.go.kr"
    }
   ]
- },
- {
-  "id": "national-assembly-archives",
-  "name": "국회기록원",
-  "type": "공공기관",
-  "country": "대한민국",
-  "links": []
  },
  {
   "id": "ksarm",
@@ -166,18 +147,6 @@
    {
     "label": "홈페이지",
     "url": "https://www.itkc.or.kr"
-   }
-  ]
- },
- {
-  "id": "kasi",
-  "name": "한국천문연구원",
-  "type": "학계·연구",
-  "country": "대한민국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.kasi.re.kr"
    }
   ]
  },
@@ -278,18 +247,6 @@
   ]
  },
  {
-  "id": "chonnam-national-university",
-  "name": "전남대학교",
-  "type": "학계·연구",
-  "country": "대한민국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.jnu.ac.kr"
-   }
-  ]
- },
- {
   "id": "etri",
   "name": "한국전자통신연구원(ETRI)",
   "type": "학계·연구",
@@ -334,18 +291,6 @@
    {
     "label": "홈페이지",
     "url": "https://www.kbs.co.kr"
-   }
-  ]
- },
- {
-  "id": "kakao-enterprise",
-  "name": "카카오엔터프라이즈",
-  "type": "기업",
-  "country": "대한민국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.kakaoenterprise.com"
    }
   ]
  },
@@ -474,30 +419,6 @@
    {
     "label": "홈페이지",
     "url": "https://www.microsoft.com"
-   }
-  ]
- },
- {
-  "id": "hyland",
-  "name": "Hyland",
-  "type": "기업",
-  "country": "미국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.hyland.com"
-   }
-  ]
- },
- {
-  "id": "recordpoint",
-  "name": "RecordPoint",
-  "type": "기업",
-  "country": "미국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.recordpoint.com"
    }
   ]
  },
@@ -698,18 +619,6 @@
   ]
  },
  {
-  "id": "university-of-illinois",
-  "name": "University of Illinois Urbana-Champaign",
-  "type": "학계·연구",
-  "country": "미국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://illinois.edu"
-   }
-  ]
- },
- {
   "id": "nyu",
   "name": "New York University",
   "type": "학계·연구",
@@ -818,30 +727,6 @@
   ]
  },
  {
-  "id": "british-library",
-  "name": "British Library",
-  "type": "공공기관",
-  "country": "영국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.bl.uk"
-   }
-  ]
- },
- {
-  "id": "alan-turing-institute",
-  "name": "The Alan Turing Institute",
-  "type": "학계·연구",
-  "country": "영국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.turing.ac.uk"
-   }
-  ]
- },
- {
   "id": "jisc",
   "name": "Jisc",
   "type": "공공기관",
@@ -854,18 +739,6 @@
    {
     "label": "Archives Hub",
     "url": "https://archiveshub.jisc.ac.uk"
-   }
-  ]
- },
- {
-  "id": "loughborough-university",
-  "name": "Loughborough University",
-  "type": "학계·연구",
-  "country": "영국",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.lboro.ac.uk"
    }
   ]
  },
@@ -1002,18 +875,6 @@
    {
     "label": "홈페이지",
     "url": "https://crkn-rcdr.ca"
-   }
-  ]
- },
- {
-  "id": "opentext",
-  "name": "OpenText",
-  "type": "기업",
-  "country": "캐나다",
-  "links": [
-   {
-    "label": "홈페이지",
-    "url": "https://www.opentext.com"
    }
   ]
  },
