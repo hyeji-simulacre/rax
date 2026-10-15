@@ -255,7 +255,7 @@
     if (state.q) parts.push(`“${state.q}”`);
     $("#resultInfo").textContent = `${parts.length ? parts.join(" · ") + " — " : ""}${list.length}건의 사례`;
     $("#empty").hidden = list.length > 0;
-    renderAnswer(list);
+
     $("#grid").innerHTML = list.map(it => `
       <article class="card" tabindex="0" data-id="${esc(it.id)}">
         <div class="thumb">${cover(it)}
@@ -281,6 +281,144 @@
     history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
+  // ---------- 질문과 답 (왼쪽 대화 · 오른쪽 관련 사례) ----------
+  const conv = { turns: [], ids: [], lastQ: "" };
+
+  function retrieve(q, prevQ) {
+    // '국내/해외'는 검색어가 아니라 지역 조건으로 읽는다
+    const region = /국내|한국|우리나라/.test(q) ? "국내" : /해외|외국|국외/.test(q) ? "해외" : null;
+    let toks = tokenize(q).filter(t => !/^(국내|한국|우리나라|해외|외국|국외|만|것만)/.test(t));
+    if (!toks.length && prevQ) toks = tokenize(prevQ);
+    const inRegion = list => region ? list.filter(it => it.region === region) : list;
+    const rank = tk => {
+      if (!tk.length) return [];
+      const scored = cases.map(it => ({ it, s: scoreOf(it, tk) })).filter(x => x.s > 0);
+      const top = Math.max(0, ...scored.map(x => x.s));
+      return scored.filter(x => x.s >= Math.max(1, top / 3))
+        .sort((a, b) => b.s - a.s || (b.it.year || 0) - (a.it.year || 0)).map(x => x.it);
+    };
+    let list = inRegion(rank(toks));
+    // 짧은 추가 질문은 앞 질문과 합쳐서 찾는다
+    if (list.length < 3 && prevQ) list = inRegion(rank([...new Set([...toks, ...tokenize(prevQ)])]));
+    if (!list.length && region && !toks.length) list = inRegion(cases);
+    return list;
+  }
+
+  function startAsk(q, guide) {
+    conv.turns = []; conv.lastQ = "";
+    $("#avThread").innerHTML = "";
+    $("#askView").hidden = false;
+    document.body.classList.add("asking");
+    $("#q").value = guide ? "" : q;
+    setPane("chat");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    ask(q, guide);
+  }
+
+  async function ask(q, guide) {
+    const prevQ = conv.lastQ; conv.lastQ = q;
+    addMsg("user", esc(q));
+    let list = retrieve(q, prevQ);
+    const g = guide || (!prevQ && guideFor(tokenize(q)));
+    if (guide) {
+      const picks = picksFor(guide);
+      list = [...picks, ...list.filter(it => !picks.some(p => p.id === it.id))];
+    }
+    const ids = list.slice(0, 8).map(it => it.id);
+    renderResults(list, guide ? guide.q : q);
+    $("#askView").style.setProperty("--accent", (g && CAT[g.filter.cat]) ? CAT[g.filter.cat].c[0] : "#5b7cff");
+    renderSuggest(g);
+
+    // 제시어를 고른 경우: 큐레이션된 안내를 바로 보여 준다 (AI 호출 없음)
+    if (guide) {
+      const n = picksFor(guide).length;
+      const refs = Array.from({ length: n }, (_, i) => `[${i + 1}]`).join("");
+      return addBot(`${guide.intro}\n\n먼저 볼 사례 ${refs}`, ids, "RAX 안내");
+    }
+    const wait = addMsg("bot", '<span class="typing"><i></i><i></i><i></i></span>');
+    const out = await callChat(q, list.slice(0, 8));
+    wait.remove();
+    if (out.ok) return addBot(out.answer, ids, "AI 답변", true);
+    // AI를 쓸 수 없으면: 가까운 안내 또는 관련 사례 요약으로 답한다
+    if (g && !prevQ) return addBot(`${g.intro}`, ids, "가까운 안내");
+    if (!list.length) return addBot("RAX에 실린 사례 중에서는 딱 맞는 것을 찾지 못했어요. 아래 질문으로 시작해 보거나, 다른 표현으로 물어보세요.", [], "", false, true);
+    const top = list.slice(0, 3).map((it, i) => `${titleOf(it)} [${i + 1}]`).join(", ");
+    addBot(`관련 사례 ${list.length}건을 찾았어요. 가장 가까운 사례는 ${top}예요. 오른쪽 목록에서 자세히 볼 수 있어요.`, ids, "검색 요약");
+    if (out.error && out.error !== "not_configured") $("#avNote").textContent = "지금은 AI 답변을 쓸 수 없어 검색 결과로 안내해요.";
+  }
+
+  async function callChat(question, list) {
+    if (!SUBMIT_ENDPOINT) return { ok: false, error: "not_configured" };
+    const history = conv.turns.slice(0, -1).slice(-6);
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 30000);
+    try {
+      const res = await fetch(SUBMIT_ENDPOINT, {
+        method: "POST", signal: ctl.signal,
+        body: JSON.stringify({ action: "chat", question, history,
+          cases: list.map(it => ({ title: titleOf(it), org: it.org, year: it.year, summary: it.summary })) }),
+      });
+      return await res.json();
+    } catch (err) {
+      return { ok: false, error: String(err) };
+    } finally { clearTimeout(timer); }
+  }
+
+  function addMsg(role, html) {
+    const el = document.createElement("div");
+    el.className = `msg ${role}`; el.innerHTML = html;
+    $("#avThread").appendChild(el);
+    el.scrollIntoView({ block: "nearest" });
+    if (role === "user") conv.turns.push({ role: "user", content: el.textContent });
+    return el;
+  }
+
+  // 답변 글은 이스케이프한 뒤 **굵게**, 줄바꿈, [n] 출처 번호만 살린다
+  function addBot(text, ids, label, isAI, isErr) {
+    conv.turns.push({ role: "assistant", content: text });
+    conv.ids = ids;
+    const html = esc(text).replace(/^#+\s*/gm, "").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>")
+      .replace(/\[(\d{1,2})\]/g, (m, n) => ids[n - 1] ? `<button class="src" type="button" data-src="${esc(ids[n - 1])}" title="${esc(titleOf(cases.find(c => c.id === ids[n - 1])))}">${n}</button>` : "");
+    const el = addMsg("bot", `${label ? `<span class="label">${esc(label)}</span>` : ""}${html}`);
+    if (isErr) el.classList.add("err");
+    return el;
+  }
+
+  function renderResults(list, q) {
+    conv.listQ = q;
+    $("#avCount").textContent = $("#avCount2").textContent = list.length;
+    $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
+      <li><button type="button" data-src="${esc(it.id)}">
+        <span class="mini">${art(it.category, it.id)}${i < 8 ? `<span class="num">${i + 1}</span>` : ""}</span>
+        <span><b>${esc(titleOf(it))}</b><small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
+      </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
+  }
+
+  function renderSuggest(g) {
+    const others = guides.filter(x => !g || x.id !== g.id).sort((a, b) => hash(a.id + conv.lastQ) - hash(b.id + conv.lastQ)).slice(0, 3);
+    $("#avSuggest").innerHTML = others.map(o => `<button class="prompt" type="button" data-guide="${esc(o.id)}">${esc(o.q)}</button>`).join("");
+  }
+
+  function setPane(name) {
+    for (const el of document.querySelectorAll(".av-grid > [data-pane]")) el.classList.toggle("on", el.dataset.pane === name);
+    for (const b of document.querySelectorAll(".av-tabs [data-pane]")) b.setAttribute("aria-pressed", b.dataset.pane === name);
+  }
+
+  function bindAsk() {
+    $("#avForm").addEventListener("submit", e => {
+      e.preventDefault(); const q = $("#avInput").value.trim(); if (!q) return;
+      $("#avInput").value = ""; ask(q);
+    });
+    $("#avClose").addEventListener("click", () => {
+      $("#askView").hidden = true; document.body.classList.remove("asking"); $("#q").value = "";
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+    $("#avAll").addEventListener("click", () => {
+      leaveGuide(); state.q = conv.lastQ; update();
+      $("#archive").scrollIntoView({ behavior: "smooth" });
+    });
+    document.querySelector(".av-tabs").addEventListener("click", e => { const b = e.target.closest("[data-pane]"); if (b) setPane(b.dataset.pane); });
+  }
+
   // ---------- detail ----------
   function openDetail(id) {
     const it = cases.find(c => c.id === id); if (!it) return;
@@ -297,14 +435,13 @@
 
   // ---------- events ----------
   function bind() {
-    let t;
-    $("#q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => { state.q = e.target.value; leaveGuide(); update(); }, 150); });
     $("#askForm").addEventListener("submit", e => {
-      e.preventDefault(); state.q = $("#q").value; leaveGuide(); update();
-      $("#archive").scrollIntoView({ behavior: "smooth" });
+      e.preventDefault(); const q = $("#q").value.trim(); if (q) startAsk(q);
     });
     document.addEventListener("click", e => {
-      const g = e.target.closest("[data-guide]"); if (g) { e.preventDefault(); applyGuide(g.dataset.guide); return; }
+      const g = e.target.closest("[data-guide]");
+      if (g) { e.preventDefault(); const gd = guides.find(x => x.id === g.dataset.guide); if (gd) startAsk(gd.q, gd); return; }
+      const src = e.target.closest("[data-src]"); if (src) { openDetail(src.dataset.src); return; }
       const pk = e.target.closest(".pick"); if (pk) { openDetail(pk.dataset.id); return; }
       if (e.target.closest("#answer [data-close]")) {
         state.guide = null; state.cat = null; state.q = ""; $("#q").value = "";
@@ -328,7 +465,7 @@
     document.addEventListener("keydown", e => {
       if (e.key === "/" && document.activeElement !== $("#q")) { e.preventDefault(); $("#q").focus(); }
     });
-    bindSubmit();
+    bindSubmit(); bindAsk();
   }
 
   // ---------- submit ----------
@@ -403,12 +540,9 @@
     }
     renderStats(); renderCategories(); renderPrompts();
     const gp = new URLSearchParams(location.search).get("guide");
-    if (gp && guides.some(g => g.id === gp)) {
-      const g = guides.find(x => x.id === gp);
-      state.guide = gp; state.cat = g.filter.cat || null; state.q = g.filter.q || ""; $("#q").value = state.q;
-      for (const f of FACETS) state[f.field] = g.filter[f.field] || null;
-    }
     update();
+    const g0 = guides.find(x => x.id === gp);
+    if (g0) startAsk(g0.q, g0);
   }
   init();
 })();

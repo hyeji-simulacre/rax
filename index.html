@@ -50,6 +50,34 @@
       <dl class="stats" id="stats"></dl>
     </section>
 
+    <section id="askView" class="ask-view" hidden aria-label="질문과 답">
+      <div class="av-tabs" role="tablist">
+        <button class="chip" role="tab" data-pane="chat" aria-pressed="true">답변</button>
+        <button class="chip" role="tab" data-pane="list" aria-pressed="false">관련 사례 <span id="avCount">0</span></button>
+      </div>
+      <div class="av-grid">
+        <div class="av-chat glass-panel" data-pane="chat">
+          <div class="av-head">
+            <p class="kicker en">Ask RAX</p>
+            <button class="glass-btn icon" type="button" id="avClose" aria-label="대화 닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+          </div>
+          <div class="av-thread" id="avThread" aria-live="polite"></div>
+          <div class="av-suggest" id="avSuggest"></div>
+          <form class="av-form" id="avForm">
+            <input id="avInput" type="text" placeholder="이어서 물어보세요" autocomplete="off" maxlength="500" aria-label="추가 질문">
+            <button class="ask-go" type="submit" aria-label="보내기"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          </form>
+          <p class="av-note" id="avNote">답변은 RAX에 실린 사례를 근거로 AI가 만들어요. 중요한 내용은 원문으로 확인하세요.</p>
+        </div>
+        <div class="av-list glass-panel" data-pane="list">
+          <div class="av-head"><p class="kicker">관련 사례 <b id="avCount2">0</b>건</p></div>
+          <ol class="av-results" id="avResults"></ol>
+          <button class="glass-btn" type="button" id="avAll">아카이브에서 전체 보기</button>
+        </div>
+      </div>
+    </section>
+
+
     <section id="categories" class="section">
       <div class="section-head">
         <h2>카테고리</h2>
