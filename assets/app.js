@@ -34,7 +34,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const hash = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
 
-  const state = { q: "", org: null, cat: null, country: null, format: null, orgType: null, sort: "recent", guide: null };
+  const state = { q: "", org: null, cat: null, country: null, format: null, orgType: null, sort: "added", guide: null };
   let guides = [];
 
   // ---------- 문장형 질문 검색 ----------
@@ -241,10 +241,10 @@
     const byYear = (a, b) => (b.year || 0) - (a.year || 0) || titleOf(a).localeCompare(titleOf(b), "ko");
     if (sort === "title") s.sort((a, b) => titleOf(a).localeCompare(titleOf(b), "ko"));
     else if (sort === "old") s.sort((a, b) => -byYear(a, b));
+    else if (sort === "added") s.sort((a, b) => b._i - a._i); // 올린 순: cases.json 맨 뒤(가장 최근에 올린 것)부터
     else if (sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
     else s.sort(byYear);
-    // MCP·API 사례를 언제나 맨 앞에 둔다 (나머지 순서는 그대로)
-    return [...s.filter(x => x.format === "MCP·API"), ...s.filter(x => x.format !== "MCP·API")];
+    return s;
   }
 
   // ---------- 질문 제시어 · 안내 패널 ----------
@@ -579,7 +579,7 @@
   const caseFromHash = () => { const m = /^#case=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
   // ---------- 카테고리 페이지 (전체 화면, 주소 #cat=이름) ----------
-  const cp = { cat: null, q: "", country: null, format: null, orgType: null, sort: "recent" };
+  const cp = { cat: null, q: "", country: null, format: null, orgType: null, sort: "added" };
   function cpList({ ignore } = {}) {
     const toks = tokenize(cp.q);
     return cases.filter(it => {
@@ -864,7 +864,8 @@
         fetch("data/orgs.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : []).then(o => { orgs = o; ORG = Object.fromEntries(o.map(x => [x.id, x])); }).catch(() => {}),
         fetch("data/thumbs.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : {}).then(t => { thumbs = Object.fromEntries(Object.entries(t).filter(([, v]) => typeof v === "string")); }).catch(() => {}),
       ]);
-      cases = (await res.json()).map(c => ({
+      cases = (await res.json()).map((c, i) => ({
+        _i: i,
         ...c,
         _title: [c.title, c.titleKo].join(" ").toLowerCase(),
         _tags: (c.tags || []).join(" ").toLowerCase(),
