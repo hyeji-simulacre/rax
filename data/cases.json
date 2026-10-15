@@ -3,6 +3,10 @@
   "id": "a5dcc51f77",
   "title": "일일이 누리집 안 찾아도 된다… 국가 기록·역사 자료, 인공지능으로 한곳에서 검색",
   "org": "행정안전부 국가기록원·국사편찬위원회",
+  "orgIds": [
+   "national-archives-of-korea",
+   "nihk"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -22,6 +26,10 @@
   "id": "547dfb87ec",
   "title": "나라지식정보, 2026년 공공AX 2차년도 착수보고회서 '한국 근대 다문자 자료 AI 솔루션 개발 및 실증' 사업 발표",
   "org": "나라지식정보 (국사편찬위원회 실증)",
+  "orgIds": [
+   "nara-knowledge-information",
+   "nihk"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -42,6 +50,10 @@
   "id": "267d2bf9b3",
   "title": "솔트룩스, 국가기록원 지능형 검색 환경 구축 사업 수주",
   "org": "솔트룩스 / 국가기록원",
+  "orgIds": [
+   "saltlux",
+   "national-archives-of-korea"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -61,6 +73,9 @@
   "id": "fb771af6b9",
   "title": "국가기록원, 타자기록 인공지능 문자인식(OCR) 기술 개발",
   "org": "국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -80,6 +95,10 @@
   "id": "0c2c3b428d",
   "title": "\"오래된 영문 타자체까지 인식\" 로민, 공공기록 디지털전환 기여",
   "org": "로민 (진실화해를위한과거사정리위원회)",
+  "orgIds": [
+   "lomin",
+   "truth-reconciliation-commission-korea"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -99,6 +118,9 @@
   "id": "4240b2f4dc",
   "title": "로민 '텍스트스코프' 공공행정문서 인식 정밀도 99%, 인식 까다로운 필기체도 98%에 달해",
   "org": "로민",
+  "orgIds": [
+   "lomin"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -118,6 +140,9 @@
   "id": "464ee4603d",
   "title": "국회기록원 'AI 네이티브 아카이브' 추진",
   "org": "국회기록원",
+  "orgIds": [
+   "national-assembly-archives"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -137,6 +162,9 @@
   "id": "55745d36b6",
   "title": "국가기록원 2027년 국가기록관리 활용기술 연구개발 수요조사",
   "org": "행정안전부 국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -156,6 +184,9 @@
   "id": "28edf36c9f",
   "title": "2024 기록관리 정책포럼",
   "org": "국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -175,6 +206,9 @@
   "id": "475102805c",
   "title": "국가기록원 2026년 주요업무 추진계획",
   "org": "국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -194,6 +228,9 @@
   "id": "d40aaa3994",
   "title": "인공지능을 활용한 지능형 기록관리 방안",
   "org": "한국기록관리학회지 17(4)",
+  "orgIds": [
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -213,6 +250,9 @@
   "id": "b347964ef6",
   "title": "지능형 기록정보서비스를 위한 선진 기술 현황 분석 및 적용 방안",
   "org": "한국기록관리학회지 18(4)",
+  "orgIds": [
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -232,6 +272,11 @@
   "id": "a56bee5be0",
   "title": "지능형 아카이브 솔루션을 활용한 공개재분류 연구: 2020년 국가기록원 공개재분류 사업을 중심으로",
   "org": "송주형 (㈜디앤디기술) / 한국기록관리학회지 21(4)",
+  "orgIds": [
+   "dnd-tech",
+   "national-archives-of-korea",
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -251,6 +296,10 @@
   "id": "a88d30cf2e",
   "title": "전자기록관리 업무 및 기록정보서비스에서의 생성형 AI 기술 활용",
   "org": "강윤아·오효정 / 한국기록관리학회지 23(4)",
+  "orgIds": [
+   "jeonbuk-national-university",
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -270,6 +319,10 @@
   "id": "bcf92f9da2",
   "title": "지능형 기록정보서비스 챗봇을 위한 논항구조 의미역 분석 기반 응답 논리 구조 설계",
   "org": "최유리·이예은·오효정 / 한국기록관리학회지 25(3)",
+  "orgIds": [
+   "jeonbuk-national-university",
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -289,6 +342,10 @@
   "id": "db2adea7a6",
   "title": "기록정보서비스 지능화를 위한 논항구조 기반 챗봇 PoC 구현 및 이중 평가를 통한 검증",
   "org": "최유리·오효정 (전북대) / 한국기록관리학회지 26(1)",
+  "orgIds": [
+   "jeonbuk-national-university",
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -308,6 +365,10 @@
   "id": "b469d6877e",
   "title": "문화유산 기록관리 분야 AI기술 적용 사례 -'문화유산 찾아-ZOOM'을 중심으로-",
   "org": "백주현 (국립문화유산연구원) / 한국기록관리학회지 24(3)",
+  "orgIds": [
+   "nrich",
+   "ksarm"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -327,6 +388,9 @@
   "id": "e815529df1",
   "title": "원문정보공개 지원을 위한 민감정보 필터링 요건에 관한 연구",
   "org": "오진관 외 / 한국기록관리학회지 17(1)",
+  "orgIds": [
+   "ksarm"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -346,6 +410,9 @@
   "id": "26abf03846",
   "title": "기계학습을 이용한 기록 텍스트 자동분류 사례 연구",
   "org": "정보관리학회지 34(4)",
+  "orgIds": [
+   "kosim"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -365,6 +432,9 @@
   "id": "289044de88",
   "title": "조선왕조실록도 AI로 자동번역...고전문헌 활용 높인다",
   "org": "한국고전번역원",
+  "orgIds": [
+   "itkc"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -384,6 +454,10 @@
   "id": "f821a69187",
   "title": "클라우드 기반 고문헌 자동번역 확산 서비스 구축",
   "org": "한국고전번역원·한국천문연구원",
+  "orgIds": [
+   "itkc",
+   "kasi"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -403,6 +477,9 @@
   "id": "a4f167f01b",
   "title": "중앙대, AI 모델 기반 승정원일기 복원·초벌번역",
   "org": "중앙대 김영빈 교수 연구팀",
+  "orgIds": [
+   "chung-ang-university"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -423,6 +500,9 @@
   "title": "HUE: Pretrained Model and Dataset for Understanding Hanja Documents of Ancient Korea",
   "titleKo": "HUE: 한국 고문헌 한문 이해를 위한 사전학습 모델과 데이터셋",
   "org": "KAIST 등",
+  "orgIds": [
+   "kaist"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -443,6 +523,11 @@
   "title": "HERITAGE: An End-to-End Web Platform for Processing Korean Historical Documents in Hanja",
   "titleKo": "HERITAGE: 한문 고문헌 처리를 위한 통합 웹 플랫폼",
   "org": "KAIST·NYU (한국학중앙연구원 전문가 협업)",
+  "orgIds": [
+   "kaist",
+   "nyu",
+   "aks"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -462,6 +547,9 @@
   "id": "5eb2998126",
   "title": "인공신경망을 통한 조선왕조실록 신역 및 영문 번역 (H2KE)",
   "org": "KAIST",
+  "orgIds": [
+   "kaist"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -482,6 +570,9 @@
   "title": "Nara-Lab History_NER · History_LM",
   "titleKo": "나라랩 한문 개체명 인식·언어모델 (Hugging Face)",
   "org": "나라지식정보 연구소(NARA.Labs)",
+  "orgIds": [
+   "nara-knowledge-information"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -501,6 +592,9 @@
   "id": "f6b7cca92a",
   "title": "한국국학진흥원, 고도서 한자 인식 프로그램 공개",
   "org": "한국국학진흥원",
+  "orgIds": [
+   "koreastudy"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -520,6 +614,9 @@
   "id": "9d3c620ae0",
   "title": "법원 판결문 내 개인정보를 비식별화하는 AI 개발 (SNU Thunder-DeID)",
   "org": "서울대 컴퓨터공학부 이재진 교수 연구팀",
+  "orgIds": [
+   "seoul-national-university"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -539,6 +636,9 @@
   "id": "54c309c4c0",
   "title": "파수, 비식별 솔루션에 개인정보 탐지 AI 탑재",
   "org": "파수",
+  "orgIds": [
+   "fasoo"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -558,6 +658,9 @@
   "id": "5f2096c5a4",
   "title": "국립중앙도서관, 'AI 기반 미래형 도서관' 혁신 가속화 박차",
   "org": "국립중앙도서관",
+  "orgIds": [
+   "nlk"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -577,6 +680,9 @@
   "id": "cf2e0971a3",
   "title": "아날로그 5·18 기록물, AI 아카이브 구축 시급하다",
   "org": "광주일보 (5·18연구자대회)",
+  "orgIds": [
+   "chonnam-national-university"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -596,6 +702,9 @@
   "id": "ad615a4cf3",
   "title": "고문헌 원문이미지 한자 서순정렬 라인분할 알고리즘",
   "org": "한국전자통신연구원(ETRI)",
+  "orgIds": [
+   "etri"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -616,6 +725,9 @@
   "title": "Inventory of NARA Artificial Intelligence (AI) Use Cases",
   "titleKo": "미국 국립기록관리청(NARA) AI 활용 사례 목록",
   "org": "U.S. National Archives and Records Administration (NARA)",
+  "orgIds": [
+   "nara-us"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -636,6 +748,9 @@
   "title": "NARA to launch AI tool to improve customer experience",
   "titleKo": "NARA, 이용자 경험 개선을 위한 AI 도구 도입 예정",
   "org": "NARA (Federal News Network 보도)",
+  "orgIds": [
+   "nara-us"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -656,6 +771,10 @@
   "title": "State AI Pilot Results (June 24, 2024)",
   "titleKo": "미 국무부 AI 비밀해제 심사 시범사업 결과",
   "org": "U.S. Department of State (NARA 기밀분류 혁신 블로그 게재)",
+  "orgIds": [
+   "us-department-of-state",
+   "nara-us"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -676,6 +795,9 @@
   "title": "How the State Department used AI and machine learning to revolutionize records management",
   "titleKo": "미 국무부는 AI와 머신러닝으로 기록관리를 어떻게 바꿨나",
   "org": "U.S. Department of State (FedScoop 보도)",
+  "orgIds": [
+   "us-department-of-state"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -696,6 +818,9 @@
   "title": "Using AI for digital selection in government",
   "titleKo": "정부 전자기록 선별에 AI 활용하기",
   "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -716,6 +841,9 @@
   "title": "Alexa, is this a historical record?",
   "titleKo": "알렉사, 이건 역사기록인가요?",
   "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -736,6 +864,9 @@
   "title": "Prototyping semantic search for case law",
   "titleKo": "판례 의미 검색 프로토타입 개발",
   "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -756,6 +887,10 @@
   "title": "TNA evaluates Records365 Classification Intelligence",
   "titleKo": "TNA의 Records365 분류 인텔리전스 평가",
   "org": "RecordPoint",
+  "orgIds": [
+   "recordpoint",
+   "tna-uk"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "영국",
@@ -776,6 +911,9 @@
   "title": "Artificial Intelligence (AI) transparency statement",
   "titleKo": "호주 국립기록관 AI 투명성 성명",
   "org": "National Archives of Australia",
+  "orgIds": [
+   "naa"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -796,6 +934,9 @@
   "title": "AI Research Paper October 2023",
   "titleKo": "AI와 기록관리 연구 보고서(2023년 10월)",
   "org": "Public Record Office Victoria (PROV)",
+  "orgIds": [
+   "prov"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -816,6 +957,9 @@
   "title": "AI Technologies and Recordkeeping Policy v1.0",
   "titleKo": "AI 기술과 기록관리 정책 1.0",
   "org": "Public Record Office Victoria (PROV)",
+  "orgIds": [
+   "prov"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -836,6 +980,9 @@
   "title": "Artificial intelligence and public and local authority records",
   "titleKo": "인공지능과 공공·지방기관 기록",
   "org": "Archives New Zealand",
+  "orgIds": [
+   "archives-nz"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "뉴질랜드",
@@ -856,6 +1003,10 @@
   "title": "CRKN and Library and Archives Canada partner to improve access to digitized handwritten materials",
   "titleKo": "CRKN·캐나다 국립도서관기록관, 디지털화된 손글씨 자료 접근성 개선 협력",
   "org": "Library and Archives Canada / CRKN",
+  "orgIds": [
+   "lac",
+   "crkn"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "캐나다",
@@ -876,6 +1027,10 @@
   "title": "National Archives releases first version of a Dutch handwriting model",
   "titleKo": "네덜란드 국립기록관, 첫 네덜란드어 손글씨 인식 모델 공개",
   "org": "Nationaal Archief / READ-COOP (Transkribus)",
+  "orgIds": [
+   "nationaal-archief",
+   "read-coop"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "네덜란드",
@@ -896,6 +1051,10 @@
   "title": "6000 ground truth of VOC and notarial deeds; 3.000.000 HTR of VOC, WIC and notarial deeds",
   "titleKo": "VOC·공증문서 정답 데이터 6천 건과 300만 건 HTR 결과 데이터셋",
   "org": "Nationaal Archief / Noord-Hollands Archief",
+  "orgIds": [
+   "nationaal-archief",
+   "noord-hollands-archief"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "네덜란드",
@@ -916,6 +1075,10 @@
   "title": "Photographic Glass Plates and Birthdates: Secrets to Optimizing AI-Generated Metadata Accuracy with the National Archives of Estonia",
   "titleKo": "사진 유리건판과 생년월일: 에스토니아 국립기록관의 AI 생성 메타데이터 정확도 최적화",
   "org": "National Archives of Estonia / Digital Transitions",
+  "orgIds": [
+   "national-archives-of-estonia",
+   "digital-transitions"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "에스토니아",
@@ -936,6 +1099,9 @@
   "title": "Rahvusarhiiv (National Archives of Estonia) on Hugging Face",
   "titleKo": "에스토니아 국립기록관 허깅페이스 페이지",
   "org": "National Archives of Estonia (Rahvusarhiiv)",
+  "orgIds": [
+   "national-archives-of-estonia"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "에스토니아",
@@ -956,6 +1122,11 @@
   "title": "ArchXAI",
   "titleKo": "ArchXAI: 언어 장벽 없는 AI 기록 접근 프로젝트",
   "org": "Xamk / 에스토니아·핀란드·라트비아 국립기록관",
+  "orgIds": [
+   "xamk",
+   "national-archives-of-estonia",
+   "national-archives-of-finland"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "국제",
@@ -976,6 +1147,10 @@
   "title": "National Archives of Finland takes first steps towards handwritten text recognition",
   "titleKo": "핀란드 국립기록관, 손글씨 인식의 첫걸음",
   "org": "National Archives of Finland / READ-COOP",
+  "orgIds": [
+   "national-archives-of-finland",
+   "read-coop"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "핀란드",
@@ -996,6 +1171,9 @@
   "title": "RA-Data-Science (Rigsarkivet Data Lab) on Hugging Face",
   "titleKo": "덴마크 국립기록관 데이터랩 허깅페이스 페이지",
   "org": "Rigsarkivet (Danish National Archives)",
+  "orgIds": [
+   "rigsarkivet"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "덴마크",
@@ -1016,6 +1194,9 @@
   "title": "Swedish National Archives releases open source HTR/OCR (HTRflow)",
   "titleKo": "스웨덴 국립기록관, 오픈소스 손글씨·문자인식 도구 HTRflow 공개",
   "org": "Riksarkivet (Swedish National Archives) AI-lab",
+  "orgIds": [
+   "riksarkivet"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "스웨덴",
@@ -1036,6 +1217,10 @@
   "title": "Europeana Translate",
   "titleKo": "유로피아나 메타데이터 자동번역 프로젝트",
   "org": "Netherlands Institute for Sound & Vision / Europeana",
+  "orgIds": [
+   "sound-and-vision",
+   "europeana"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "국제",
@@ -1056,6 +1241,9 @@
   "title": "About Transkribus",
   "titleKo": "Transkribus 소개",
   "org": "READ-COOP SCE",
+  "orgIds": [
+   "read-coop"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "오스트리아",
@@ -1076,6 +1264,9 @@
   "title": "Exploring Computational Description (ECD)",
   "titleKo": "전산 기술(記述) 탐색 실험",
   "org": "Library of Congress – LC Labs",
+  "orgIds": [
+   "library-of-congress"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1096,6 +1287,9 @@
   "title": "Could Artificial Intelligence Help Catalog Thousands of Digital Library Books?",
   "titleKo": "AI가 수천 권의 디지털 도서 목록 작업을 도울 수 있을까?",
   "org": "Library of Congress (The Signal blog)",
+  "orgIds": [
+   "library-of-congress"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1116,6 +1310,9 @@
   "title": "Developing responsible AI practices at the Smithsonian Institution",
   "titleKo": "스미스소니언 협회의 책임 있는 AI 실천 만들기",
   "org": "Smithsonian Institution – OCIO Data Science Lab",
+  "orgIds": [
+   "smithsonian"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1136,6 +1333,10 @@
   "title": "British Library and Turing Institute will 'revolutionise historical research' with £9.2m project",
   "titleKo": "영국도서관·앨런튜링연구소, 920만 파운드 규모 'Living with Machines' 프로젝트",
   "org": "British Library / The Alan Turing Institute",
+  "orgIds": [
+   "british-library",
+   "alan-turing-institute"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -1156,6 +1357,9 @@
   "title": "Archives Hub Labs: Machine Learning",
   "titleKo": "아카이브즈 허브 랩: 머신러닝 실험",
   "org": "Jisc – Archives Hub",
+  "orgIds": [
+   "jisc"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -1176,6 +1380,11 @@
   "title": "InterPARES Trust AI",
   "titleKo": "InterPARES Trust AI 국제 공동연구",
   "org": "University of British Columbia / Uppsala University 외",
+  "orgIds": [
+   "interpares-trust-ai",
+   "ubc",
+   "uppsala-university"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "국제",
@@ -1196,6 +1405,10 @@
   "title": "AEOLIAN (Artificial Intelligence for Cultural Organisations)",
   "titleKo": "AEOLIAN: 문화기관을 위한 인공지능 네트워크",
   "org": "AEOLIAN Network (Loughborough Univ. / Univ. of Illinois)",
+  "orgIds": [
+   "loughborough-university",
+   "university-of-illinois"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "국제",
@@ -1216,6 +1429,9 @@
   "title": "ndlocr_cli (NDLOCR)",
   "titleKo": "NDLOCR: 국립국회도서관 일본어 OCR 도구",
   "org": "National Diet Library (NDL Lab)",
+  "orgIds": [
+   "ndl"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "일본",
@@ -1236,6 +1452,9 @@
   "title": "ndlocr-lite",
   "titleKo": "NDLOCR-Lite: GPU가 필요 없는 경량 OCR",
   "org": "National Diet Library (NDL Lab)",
+  "orgIds": [
+   "ndl"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "일본",
@@ -1256,6 +1475,9 @@
   "title": "E2891 – NDLOCR-Liteの公開とその背景",
   "titleKo": "NDLOCR-Lite 공개와 그 배경",
   "org": "National Diet Library (カレントアウェアネス)",
+  "orgIds": [
+   "ndl"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "일본",
@@ -1276,6 +1498,10 @@
   "title": "Overview of NDL Kotenseki OCR: The Key to Early Modern Japanese Archives?",
   "titleKo": "NDL 고전적 OCR 개관: 근세 일본 기록을 여는 열쇠일까?",
   "org": "The Digital Orientalist",
+  "orgIds": [
+   "digital-orientalist",
+   "ndl"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "일본",
@@ -1296,6 +1522,9 @@
   "title": "林口檔案館參訪破50萬人次 今邀請美、加專家齊聚交流",
   "titleKo": "대만 기록관리국, 폐기·이관 심사에 RAG 기반 LLM 도입",
   "org": "대만 國家發展委員會檔案管理局 (udn 보도)",
+  "orgIds": [
+   "taiwan-national-archives-administration"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "대만",
@@ -1316,6 +1545,9 @@
   "title": "国家档案局办公室关于组织开展档案行业人工智能应用试点工作的通知",
   "titleKo": "중국 국가당안국, 기록관리 분야 인공지능 응용 시범사업 추진 통지",
   "org": "国家档案局 (National Archives Administration of China)",
+  "orgIds": [
+   "saac-china"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "중국",
@@ -1336,6 +1568,9 @@
   "title": "Get started with trainable classifiers (Microsoft Purview)",
   "titleKo": "Microsoft Purview 학습형 분류기 시작하기",
   "org": "Microsoft",
+  "orgIds": [
+   "microsoft"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "미국",
@@ -1356,6 +1591,9 @@
   "title": "Preservica takes AI for Digital Preservation to the next level with powerful new AI Editions",
   "titleKo": "Preservica, 새 AI 에디션으로 디지털 보존 AI 고도화",
   "org": "Preservica",
+  "orgIds": [
+   "preservica"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "영국",
@@ -1376,6 +1614,9 @@
   "title": "What's new in OpenText Content Aviator",
   "titleKo": "OpenText Content Aviator 새 기능",
   "org": "OpenText",
+  "orgIds": [
+   "opentext"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "캐나다",
@@ -1396,6 +1637,9 @@
   "title": "Hyland named IDC leader for intelligent document AI",
   "titleKo": "Hyland, IDC 지능형 문서처리 부문 리더 선정",
   "org": "Hyland",
+  "orgIds": [
+   "hyland"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "미국",
@@ -1416,6 +1660,9 @@
   "title": "Ask iManage delivers an AI-powered search experience with trusted answers across firm knowledge",
   "titleKo": "Ask iManage, 조직 지식 전반에서 출처 있는 답을 주는 AI 검색",
   "org": "iManage",
+  "orgIds": [
+   "imanage"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "영국",
@@ -1436,6 +1683,9 @@
   "title": "kraken – OCR/HTR engine for all the languages",
   "titleKo": "kraken: 모든 언어를 위한 OCR·손글씨 인식 엔진",
   "org": "Benjamin Kiessling (mittagessen)",
+  "orgIds": [
+   "mittagessen"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -1456,6 +1706,10 @@
   "title": "eScriptorium",
   "titleKo": "eScriptorium: 오픈소스 손글씨 전사 플랫폼",
   "org": "EPHE-PSL / Inria (Scripta)",
+  "orgIds": [
+   "ephe-psl",
+   "inria"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "프랑스",
@@ -1476,6 +1730,9 @@
   "title": "New Resource: AI and Archival Practice On-Line Tutorials",
   "titleKo": "AI와 기록 실무 온라인 튜토리얼",
   "org": "International Council on Archives (ICA)",
+  "orgIds": [
+   "ica"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "국제",
@@ -1496,6 +1753,9 @@
   "title": "ICA response to WIPO Conversation on Intellectual Property and Artificial Intelligence",
   "titleKo": "WIPO 지식재산·인공지능 논의에 대한 ICA 입장",
   "org": "International Council on Archives (ICA)",
+  "orgIds": [
+   "ica"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "국제",
@@ -1516,6 +1776,9 @@
   "title": "AI Task Force (SAA Governance Handbook)",
   "titleKo": "미국기록관리자협회(SAA) AI 태스크포스",
   "org": "Society of American Archivists (SAA)",
+  "orgIds": [
+   "saa"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -1536,6 +1799,9 @@
   "title": "Artificial intelligence and records management (Records Management Journal, Vol. 35 No. 2)",
   "titleKo": "인공지능과 기록관리: 정보문화 관점의 통합 방안",
   "org": "Records Management Journal (Emerald)",
+  "orgIds": [
+   "emerald-publishing"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "영국",
@@ -1556,6 +1822,9 @@
   "title": "ArcGPT: A Large Language Model Tailored for Real-world Archival Applications",
   "titleKo": "ArcGPT: 실제 기록관리 업무에 맞춘 대형언어모델",
   "org": "Wuhan University (Shitou Zhang et al.)",
+  "orgIds": [
+   "wuhan-university"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "중국",
@@ -1576,6 +1845,9 @@
   "title": "Archives Meet GPT: A Pilot Study on Enhancing Archival Workflows with Large Language Models",
   "titleKo": "기록관이 GPT를 만나다: 대형언어모델로 기록 업무 흐름을 개선하는 시범연구",
   "org": "Wuhan University 연구진 (iConference 2024)",
+  "orgIds": [
+   "wuhan-university"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "중국",
@@ -1596,6 +1868,9 @@
   "title": "AI in Archival Science -- A Systematic Review",
   "titleKo": "기록학 분야 AI 활용에 관한 체계적 문헌고찰",
   "org": "San José State University (Shinde, Kirstein, Ghosh, Franks)",
+  "orgIds": [
+   "sjsu"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -1616,6 +1891,9 @@
   "title": "Archives and AI: An Overview of Current Debates and Future Perspectives",
   "titleKo": "기록과 AI: 현재 논쟁과 미래 전망 개관",
   "org": "University of Amsterdam (Colavizza, Blanke, Jeurgens, Noordegraaf)",
+  "orgIds": [
+   "university-of-amsterdam"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "네덜란드",
@@ -1636,6 +1914,10 @@
   "title": "Automated Archival Descriptions with Federated Intelligence of LLMs",
   "titleKo": "여러 LLM의 연합 지능을 활용한 기록 기술 자동화",
   "org": "Groppe, Marquet, Walz, Groppe",
+  "orgIds": [
+   "university-of-luebeck",
+   "friedrich-ebert-stiftung"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "독일",
@@ -1656,6 +1938,9 @@
   "title": "Web Archives Metadata Generation with GPT-4o: Challenges and Insights",
   "titleKo": "GPT-4o를 활용한 웹 아카이브 메타데이터 생성: 과제와 시사점",
   "org": "National Library Board Singapore",
+  "orgIds": [
+   "nlb-singapore"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "싱가포르",
@@ -1676,6 +1961,9 @@
   "title": "Applicability of General-Purpose Language Models for Archival Description: Practical Insights and Lessons Learned",
   "titleKo": "범용 언어모델의 기록 기술 적용 가능성: 실무적 통찰과 교훈",
   "org": "Luka Hribar (Atlanti, Alma Mater Europaea)",
+  "orgIds": [
+   "alma-mater-europaea"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "슬로베니아",
@@ -1696,6 +1984,9 @@
   "title": "National Archives Catalog API (v2)",
   "titleKo": "미국 국립기록관리청(NARA) 카탈로그 API v2",
   "org": "U.S. National Archives and Records Administration",
+  "orgIds": [
+   "nara-us"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1717,6 +2008,9 @@
   "title": "DPLA API Codex",
   "titleKo": "미국 디지털공공도서관(DPLA) API",
   "org": "Digital Public Library of America",
+  "orgIds": [
+   "dpla"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1738,6 +2032,9 @@
   "title": "loc.gov JSON/YAML API",
   "titleKo": "미국 의회도서관 loc.gov JSON API",
   "org": "Library of Congress",
+  "orgIds": [
+   "library-of-congress"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1759,6 +2056,9 @@
   "title": "Smithsonian Open Access API",
   "titleKo": "스미소니언 오픈액세스 API",
   "org": "Smithsonian Institution",
+  "orgIds": [
+   "smithsonian"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -1780,6 +2080,9 @@
   "title": "Discovery API",
   "titleKo": "영국 국립기록원(TNA) Discovery API",
   "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -1801,6 +2104,9 @@
   "title": "The Find Case Law API",
   "titleKo": "영국 국립기록원 판례검색(Find Case Law) API",
   "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -1822,6 +2128,9 @@
   "title": "Europeana APIs",
   "titleKo": "유로피아나 API (Search·Record·IIIF)",
   "org": "Europeana Foundation",
+  "orgIds": [
+   "europeana"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "국제",
@@ -1843,6 +2152,9 @@
   "title": "Trove API (v3)",
   "titleKo": "호주 국립도서관 Trove API v3",
   "org": "National Library of Australia",
+  "orgIds": [
+   "nla"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -1864,6 +2176,9 @@
   "title": "DigitalNZ API",
   "titleKo": "뉴질랜드 DigitalNZ API",
   "org": "DigitalNZ (National Library of New Zealand)",
+  "orgIds": [
+   "natlib-nz"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "뉴질랜드",
@@ -1885,6 +2200,9 @@
   "title": "Internet Archive Developer Portal",
   "titleKo": "인터넷 아카이브 개발자 API",
   "org": "Internet Archive",
+  "orgIds": [
+   "internet-archive"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -1906,6 +2224,10 @@
   "title": "Wikidata Query Service",
   "titleKo": "위키데이터 SPARQL 질의 서비스",
   "org": "Wikimedia Foundation / Wikimedia Deutschland",
+  "orgIds": [
+   "wikimedia-foundation",
+   "wikimedia-deutschland"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -1927,6 +2249,9 @@
   "title": "IIIF API Specifications",
   "titleKo": "IIIF 국제 이미지 상호운용 프레임워크 API",
   "org": "IIIF Consortium",
+  "orgIds": [
+   "iiif-consortium"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "국제",
@@ -1947,6 +2272,9 @@
   "id": "9c3539934d",
   "title": "나라기록물 검색서비스 OpenAPI",
   "org": "행정안전부 국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -1967,6 +2295,9 @@
   "id": "ad7bd01974",
   "title": "행정안전부 국가기록원_나라기록물정보 서비스",
   "org": "행정안전부 국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -1987,6 +2318,9 @@
   "id": "1666f62567",
   "title": "국립중앙도서관 Open API (국가자료종합목록 KOLIS-NET 검색)",
   "org": "국립중앙도서관",
+  "orgIds": [
+   "nlk"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2007,6 +2341,10 @@
   "id": "8d89b07bdc",
   "title": "도서관 정보나루 Open API",
   "org": "국립중앙도서관·문화체육관광부",
+  "orgIds": [
+   "nlk",
+   "mcst"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2027,6 +2365,9 @@
   "id": "afaf3c9ad4",
   "title": "국회도서관 Open API (국회법률도서관 서비스)",
   "org": "국회도서관",
+  "orgIds": [
+   "nanet"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2047,6 +2388,9 @@
   "id": "7329aec211",
   "title": "국가유산청 Open API 개방목록 (국가유산정보)",
   "org": "국가유산청",
+  "orgIds": [
+   "khs"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2067,6 +2411,9 @@
   "id": "1ab8ced277",
   "title": "국사편찬위원회 한국사데이터베이스 공공데이터 (중추원조사자료 등)",
   "org": "국사편찬위원회",
+  "orgIds": [
+   "nihk"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2088,6 +2435,9 @@
   "title": "zotero-mcp",
   "titleKo": "Zotero MCP 서버",
   "org": "54yyyu",
+  "orgIds": [
+   "54yyyu"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2109,6 +2459,9 @@
   "title": "arxiv-mcp-server",
   "titleKo": "arXiv MCP 서버",
   "org": "blazickjp",
+  "orgIds": [
+   "blazickjp"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2130,6 +2483,9 @@
   "title": "WikidataMCP",
   "titleKo": "위키데이터 공식 MCP",
   "org": "Wikimedia Deutschland (wmde)",
+  "orgIds": [
+   "wikimedia-deutschland"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "독일",
@@ -2151,6 +2507,9 @@
   "title": "mcp-wikidata",
   "titleKo": "위키데이터 MCP 서버(커뮤니티)",
   "org": "zzaebok",
+  "orgIds": [
+   "zzaebok"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2172,6 +2531,9 @@
   "title": "mcp-wayback-machine",
   "titleKo": "Wayback Machine MCP 서버",
   "org": "Mearman",
+  "orgIds": [
+   "mearman"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2193,6 +2555,9 @@
   "title": "internet-archive-mcp-server",
   "titleKo": "인터넷 아카이브 MCP 서버",
   "org": "cyanheads",
+  "orgIds": [
+   "cyanheads"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2214,6 +2579,9 @@
   "title": "mcp-open-library",
   "titleKo": "Open Library MCP 서버",
   "org": "8enSmith",
+  "orgIds": [
+   "8ensmith"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2235,6 +2603,9 @@
   "title": "loc-mcp-server",
   "titleKo": "미국 의회도서관 MCP 서버",
   "org": "wmo4buva",
+  "orgIds": [
+   "wmo4buva"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2256,6 +2627,9 @@
   "title": "lc-vocabularies-mcp",
   "titleKo": "미국 의회도서관 통제어휘 MCP",
   "org": "msuicaut",
+  "orgIds": [
+   "msuicaut"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2277,6 +2651,9 @@
   "title": "nara-catalog-mcp",
   "titleKo": "NARA 카탈로그 MCP 서버",
   "org": "ianderso",
+  "orgIds": [
+   "ianderso"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2298,6 +2675,9 @@
   "title": "tna-discovery-mcp",
   "titleKo": "영국 국립기록원 Discovery MCP 서버",
   "org": "ianderso",
+  "orgIds": [
+   "ianderso"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "영국",
@@ -2319,6 +2699,9 @@
   "title": "ra-mcp",
   "titleKo": "스웨덴 국립기록원(Riksarkivet) MCP",
   "org": "AI-Riksarkivet (Swedish National Archives)",
+  "orgIds": [
+   "riksarkivet"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "스웨덴",
@@ -2340,6 +2723,9 @@
   "title": "smithsonian-mcp",
   "titleKo": "스미소니언 오픈액세스 MCP 서버",
   "org": "molanojustin",
+  "orgIds": [
+   "molanojustin"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -2361,6 +2747,9 @@
   "title": "open-museum-mcp",
   "titleKo": "오픈 뮤지엄 통합 MCP",
   "org": "cfpramod",
+  "orgIds": [
+   "cfpramod"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2382,6 +2771,9 @@
   "title": "mcp-europeana",
   "titleKo": "유로피아나 MCP",
   "org": "Kryzo",
+  "orgIds": [
+   "kryzo"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "국제",
@@ -2403,6 +2795,9 @@
   "title": "IIIF_MCP",
   "titleKo": "IIIF MCP 서버",
   "org": "Code for History (code4history)",
+  "orgIds": [
+   "code4history"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "일본",
@@ -2424,6 +2819,9 @@
   "title": "omeka-s-mcp-sample",
   "titleKo": "Omeka S MCP 샘플",
   "org": "nakamura196",
+  "orgIds": [
+   "nakamura196"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "일본",
@@ -2445,6 +2843,9 @@
   "title": "data-go-mcp-servers",
   "titleKo": "공공데이터포털(data.go.kr) MCP 서버 모음",
   "org": "Koomook",
+  "orgIds": [
+   "koomook"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "국내",
   "country": "대한민국",
@@ -2466,6 +2867,9 @@
   "title": "data4library-mcp",
   "titleKo": "도서관 정보나루 MCP 서버",
   "org": "isnow890",
+  "orgIds": [
+   "isnow890"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "국내",
   "country": "대한민국",
@@ -2487,6 +2891,9 @@
   "title": "na-openapi-mcp",
   "titleKo": "국회도서관 자료검색 OpenAPI MCP",
   "org": "rubatoyd",
+  "orgIds": [
+   "rubatoyd"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "국내",
   "country": "대한민국",
@@ -2508,6 +2915,9 @@
   "title": "assembly-api-mcp",
   "titleKo": "국회 API MCP",
   "org": "hollobit",
+  "orgIds": [
+   "hollobit"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "국내",
   "country": "대한민국",
@@ -2529,6 +2939,9 @@
   "title": "nk-history-timeline",
   "titleKo": "통일부 북한 역사 타임라인 MCP",
   "org": "YoungjuSeo",
+  "orgIds": [
+   "youngjuseo"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "국내",
   "country": "대한민국",
@@ -2550,6 +2963,9 @@
   "title": "Audiovisual Metadata Platform (AMP)",
   "titleKo": "시청각 메타데이터 플랫폼(AMP)",
   "org": "Indiana University Libraries (with AVP, UT Austin, NYPL)",
+  "orgIds": [
+   "indiana-university-libraries"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -2570,6 +2986,9 @@
   "title": "Whisper Speech-to-Text for Digitized Historical Audiovisual Materials",
   "titleKo": "디지털화된 역사 시청각 자료에 대한 Whisper 음성-텍스트 변환",
   "org": "Indiana University Libraries (Code4Lib 2025)",
+  "orgIds": [
+   "indiana-university-libraries"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -2590,6 +3009,9 @@
   "title": "Speech recognition (Sound and Vision archive)",
   "titleKo": "네덜란드 시청각연구소 아카이브 음성인식",
   "org": "Netherlands Institute for Sound & Vision (Beeld en Geluid)",
+  "orgIds": [
+   "sound-and-vision"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "네덜란드",
@@ -2610,6 +3032,9 @@
   "title": "noScribe",
   "titleKo": "noScribe: 로컬 AI 인터뷰 전사 도구",
   "org": "Kai Dröge (kaixxx)",
+  "orgIds": [
+   "kaixxx"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "독일",
@@ -2630,6 +3055,9 @@
   "title": "aTrain",
   "titleKo": "aTrain: 오프라인 인터뷰 전사 도구",
   "org": "University of Graz (BANDAS-Center)",
+  "orgIds": [
+   "university-of-graz"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "오스트리아",
@@ -2650,6 +3078,9 @@
   "title": "Speech to Text Viewer",
   "titleKo": "음성-텍스트 뷰어 실험",
   "org": "Library of Congress – LC Labs / American Folklife Center",
+  "orgIds": [
+   "library-of-congress"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -2670,6 +3101,9 @@
   "title": "With BUIOH Support, St. Mary's University (TX) Instructor Finds \"Voice in the Whirlwind\"",
   "titleKo": "베일러대 구술사연구소 지원으로 Whisper 초벌 전사 활용",
   "org": "Baylor University Institute for Oral History",
+  "orgIds": [
+   "baylor-university"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -2690,6 +3124,9 @@
   "title": "Artificial intelligence aids cultural heritage researchers documenting and teaching oral histories",
   "titleKo": "AI가 구술사 기록·교육을 돕다(RIT)",
   "org": "Rochester Institute of Technology",
+  "orgIds": [
+   "rit"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -2710,6 +3147,11 @@
   "title": "Speech Technology Services for Oral History Research",
   "titleKo": "구술사 연구를 위한 음성기술 서비스",
   "org": "arXiv (구술사·음성기술 연구진)",
+  "orgIds": [
+   "lmu-munich",
+   "radboud-university",
+   "university-of-west-bohemia"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "국제",
@@ -2730,6 +3172,9 @@
   "title": "Vanderbilt Television News Archive: AI-driven metadata",
   "titleKo": "밴더빌트 TV 뉴스 아카이브의 AI 기반 메타데이터 사례연구",
   "org": "Vanderbilt University Television News Archive",
+  "orgIds": [
+   "vanderbilt-tv-news-archive"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -2750,6 +3195,9 @@
   "title": "Shared AI metadata enrichment for the media sector",
   "titleKo": "미디어 분야 공동 AI 메타데이터 보강(Shared AI)",
   "org": "meemoo (Flemish Institute for Archives)",
+  "orgIds": [
+   "meemoo"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "벨기에",
@@ -2770,6 +3218,9 @@
   "title": "Mapping 10 years of French broadcast news: INA's use of AI to make media coverage visible",
   "titleKo": "프랑스 방송뉴스 10년 지도화: INA의 AI 활용",
   "org": "INA (Institut national de l'audiovisuel)",
+  "orgIds": [
+   "ina"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "프랑스",
@@ -2790,6 +3241,9 @@
   "title": "Next steps after artificial intelligence pilot projects in the media archives at Yle, the Finnish Broadcasting Company",
   "titleKo": "핀란드 공영방송 Yle 미디어 아카이브의 AI 시범사업 이후 과제",
   "org": "Yle (Finnish Broadcasting Company)",
+  "orgIds": [
+   "yle"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "핀란드",
@@ -2810,6 +3264,9 @@
   "title": "Using automatic speech recognition and topic identification to tag the BBC World Service archive",
   "titleKo": "BBC 월드서비스 아카이브의 음성인식 기반 자동 태깅",
   "org": "BBC Research & Development",
+  "orgIds": [
+   "bbc"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "영국",
@@ -2829,6 +3286,9 @@
   "id": "3d804ceada",
   "title": "KBS 카이로스(KAIROS) AI 포털 – 음악 프로그램 아카이브 멀티모달 검색",
   "org": "KBS AI혁신단·미디어기술연구부",
+  "orgIds": [
+   "kbs"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2848,6 +3308,10 @@
   "id": "8752879ac1",
   "title": "카카오엔터프라이즈, KBS와 인공지능과 클라우드 디지털 사업협력 MOU 체결",
   "org": "카카오엔터프라이즈·KBS",
+  "orgIds": [
+   "kakao-enterprise",
+   "kbs"
+  ],
   "orgType": "기업",
   "region": "국내",
   "country": "대한민국",
@@ -2867,6 +3331,10 @@
   "id": "d06808d299",
   "title": "오픈소스 기반의 AI 음성·텍스트 변환 기능 개발 및 대통령 음성을 통한 성능 분석",
   "org": "대통령기록관 (배민수·유영문, 한국기록관리학회지 25(3))",
+  "orgIds": [
+   "presidential-archives",
+   "ksarm"
+  ],
   "orgType": "공공기관",
   "region": "국내",
   "country": "대한민국",
@@ -2886,6 +3354,10 @@
   "id": "576bddd6a6",
   "title": "구술자료 기록화를 위한 지능화 방안 연구",
   "org": "김군도·이진성·박진영·오효정 (한국비블리아학회지 36(4))",
+  "orgIds": [
+   "jeonbuk-national-university",
+   "kbiblia"
+  ],
   "orgType": "학계·연구",
   "region": "국내",
   "country": "대한민국",
@@ -2906,6 +3378,9 @@
   "title": "ANN: Finto AI, automated subject indexing service based on Annif",
   "titleKo": "Finto AI: Annif 기반 자동 주제색인 서비스 공개",
   "org": "National Library of Finland (핀란드 국립도서관)",
+  "orgIds": [
+   "national-library-of-finland"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "핀란드",
@@ -2926,6 +3401,9 @@
   "title": "Automatic Subject Cataloguing at the German National Library",
   "titleKo": "독일 국립도서관의 자동 주제목록 작업",
   "org": "Deutsche Nationalbibliothek (독일 국립도서관)",
+  "orgIds": [
+   "dnb"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "독일",
@@ -2946,6 +3424,9 @@
   "title": "Automation of subject indexing using methods from artificial intelligence (AutoSE)",
   "titleKo": "AI를 이용한 주제색인 자동화(AutoSE)",
   "org": "ZBW – Leibniz Information Centre for Economics",
+  "orgIds": [
+   "zbw"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "독일",
@@ -2966,6 +3447,9 @@
   "title": "Using the Oral History collection | National Library of Australia",
   "titleKo": "호주 국립도서관 구술사 컬렉션의 AI 음성-텍스트 전사",
   "org": "National Library of Australia (호주 국립도서관)",
+  "orgIds": [
+   "nla"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -2986,6 +3470,9 @@
   "title": "CIO50 2018 #26-50: Robin Phua, State Library of New South Wales (Amplify)",
   "titleKo": "뉴사우스웨일스 주립도서관 Amplify: 기계 전사와 시민 교정을 결합한 구술사 플랫폼",
   "org": "State Library of New South Wales",
+  "orgIds": [
+   "sl-nsw"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "호주",
@@ -3006,6 +3493,9 @@
   "title": "Promised too much? AI in use in the image archive of the ETH Library",
   "titleKo": "과대약속이었나? ETH 도서관 이미지 아카이브의 AI 실제 운용",
   "org": "ETH Library Zurich (ETH 도서관 이미지 아카이브)",
+  "orgIds": [
+   "eth-library"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "스위스",
@@ -3026,6 +3516,10 @@
   "title": "A Transformative New Chapter: Translating The Entire Quarter-Century TV News Archive Through Gemini For Just $54K",
   "titleKo": "인터넷 아카이브 TV 뉴스 아카이브 25년치 전량 AI 번역",
   "org": "GDELT Project / Internet Archive TV News Archive",
+  "orgIds": [
+   "gdelt",
+   "internet-archive"
+  ],
   "orgType": "개인·커뮤니티",
   "region": "해외",
   "country": "미국",
@@ -3046,6 +3540,9 @@
   "title": "About the AI Explorer",
   "titleKo": "하버드 미술관 AI Explorer: 소장품 기계 생성 주석",
   "org": "Harvard Art Museums",
+  "orgIds": [
+   "harvard-art-museums"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -3066,6 +3563,9 @@
   "title": "Harvard Library Launches Collections Explorer MVP",
   "titleKo": "하버드 도서관 Collections Explorer 공개",
   "org": "Harvard Library",
+  "orgIds": [
+   "harvard-library"
+  ],
   "orgType": "학계·연구",
   "region": "해외",
   "country": "미국",
@@ -3086,6 +3586,10 @@
   "title": "Identifying Art through Machine Learning (MoMA Exhibition History)",
   "titleKo": "MoMA, 머신러닝으로 전시 기록사진 속 작품 식별",
   "org": "The Museum of Modern Art (MoMA) & Google Arts & Culture",
+  "orgIds": [
+   "moma",
+   "google-arts-culture"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -3106,6 +3610,9 @@
   "title": "Rijksmuseum takes first steps in AI to help make connections in 800,000-strong collection",
   "titleKo": "레이크스뮤지엄, AI 'Art Explorer'로 소장품 탐색 서비스 시작",
   "org": "Rijksmuseum",
+  "orgIds": [
+   "rijksmuseum"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "네덜란드",
@@ -3126,6 +3633,9 @@
   "title": "Digital memorial to the victims of Nazism: AI helps reconstruct individual fates",
   "titleKo": "아롤젠 아카이브: AI로 나치 피해자 개인 기록 재구성",
   "org": "Arolsen Archives",
+  "orgIds": [
+   "arolsen-archives"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "독일",
@@ -3146,6 +3656,9 @@
   "title": "AI-Powered Full-Text Search of Handwritten Text at FamilySearch",
   "titleKo": "FamilySearch AI 기반 필사 기록 전문검색",
   "org": "FamilySearch",
+  "orgIds": [
+   "familysearch"
+  ],
   "orgType": "기업",
   "region": "해외",
   "country": "미국",
@@ -3166,6 +3679,9 @@
   "title": "Riksarkivet gör en miljon handskrivna dokument sökbara",
   "titleKo": "스웨덴 국립기록원, 손글씨 문서 100만 건을 AI로 검색 가능하게",
   "org": "Riksarkivet (스웨덴 국립기록원)",
+  "orgIds": [
+   "riksarkivet"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "스웨덴",
@@ -3186,6 +3702,9 @@
   "title": "How the Smithsonian is using AI to connect artifacts from the American Revolution",
   "titleKo": "스미스소니언, AI로 미국 독립혁명 유물 연결(Revolution Crossroads)",
   "org": "Smithsonian Institution",
+  "orgIds": [
+   "smithsonian"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -3206,6 +3725,9 @@
   "title": "National Archives Embraces AI to Modernize Its Museum",
   "titleKo": "미국 국립기록관리청, 상설전 'The American Story'에 AI 추천 도입",
   "org": "U.S. National Archives and Records Administration (NARA)",
+  "orgIds": [
+   "nara-us"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -3226,6 +3748,9 @@
   "title": "Whisper at High Volumes: How to transcribe an Archive",
   "titleKo": "대량 Whisper 전사: 공영방송 아카이브 전체를 전사하는 법(AAPB)",
   "org": "GBH / American Archive of Public Broadcasting",
+  "orgIds": [
+   "gbh"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "미국",
@@ -3246,6 +3771,9 @@
   "title": "Poster Gallica Snoop",
   "titleKo": "GallicaSnoop: BnF 직원용 시각 유사도 이미지 검색 도구",
   "org": "Bibliothèque nationale de France (프랑스 국립도서관)",
+  "orgIds": [
+   "bnf"
+  ],
   "orgType": "공공기관",
   "region": "해외",
   "country": "프랑스",

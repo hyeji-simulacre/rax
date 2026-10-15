@@ -1,0 +1,1707 @@
+[
+ {
+  "id": "national-archives-of-korea",
+  "name": "국가기록원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "nihk",
+  "name": "국사편찬위원회",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.history.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "nara-knowledge-information",
+  "name": "나라지식정보",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/Nara-Lab"
+   }
+  ]
+ },
+ {
+  "id": "saltlux",
+  "name": "솔트룩스",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.saltlux.com"
+   }
+  ]
+ },
+ {
+  "id": "lomin",
+  "name": "로민",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://lomin.ai"
+   }
+  ]
+ },
+ {
+  "id": "truth-reconciliation-commission-korea",
+  "name": "진실·화해를위한과거사정리위원회",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.jinsil.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "national-assembly-archives",
+  "name": "국회기록원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": []
+ },
+ {
+  "id": "ksarm",
+  "name": "한국기록관리학회",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "학술지",
+    "url": "https://jksarm.accesson.kr"
+   }
+  ]
+ },
+ {
+  "id": "kosim",
+  "name": "한국정보관리학회",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "학술지",
+    "url": "https://kosim.accesson.kr"
+   }
+  ]
+ },
+ {
+  "id": "kbiblia",
+  "name": "한국비블리아학회",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "학술지",
+    "url": "https://www.accesson.kr/kbiblia"
+   }
+  ]
+ },
+ {
+  "id": "dnd-tech",
+  "name": "디앤디기술",
+  "type": "기업",
+  "country": "대한민국",
+  "links": []
+ },
+ {
+  "id": "jeonbuk-national-university",
+  "name": "전북대학교",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.jbnu.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "nrich",
+  "name": "국립문화유산연구원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nrich.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "presidential-archives",
+  "name": "대통령기록관",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.pa.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "itkc",
+  "name": "한국고전번역원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.itkc.or.kr"
+   }
+  ]
+ },
+ {
+  "id": "kasi",
+  "name": "한국천문연구원",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kasi.re.kr"
+   }
+  ]
+ },
+ {
+  "id": "chung-ang-university",
+  "name": "중앙대학교",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.cau.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "kaist",
+  "name": "KAIST",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kaist.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "aks",
+  "name": "한국학중앙연구원",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.aks.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "koreastudy",
+  "name": "한국국학진흥원",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.koreastudy.or.kr"
+   }
+  ]
+ },
+ {
+  "id": "seoul-national-university",
+  "name": "서울대학교",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.snu.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "fasoo",
+  "name": "파수",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.fasoo.com"
+   }
+  ]
+ },
+ {
+  "id": "nlk",
+  "name": "국립중앙도서관",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nl.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "mcst",
+  "name": "문화체육관광부",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.mcst.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "chonnam-national-university",
+  "name": "전남대학교",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.jnu.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "etri",
+  "name": "한국전자통신연구원(ETRI)",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.etri.re.kr"
+   }
+  ]
+ },
+ {
+  "id": "nanet",
+  "name": "국회도서관",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nanet.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "khs",
+  "name": "국가유산청",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.khs.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "kbs",
+  "name": "KBS",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kbs.co.kr"
+   }
+  ]
+ },
+ {
+  "id": "kakao-enterprise",
+  "name": "카카오엔터프라이즈",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kakaoenterprise.com"
+   }
+  ]
+ },
+ {
+  "id": "koomook",
+  "name": "Koomook",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/Koomook"
+   }
+  ]
+ },
+ {
+  "id": "isnow890",
+  "name": "isnow890",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/isnow890"
+   }
+  ]
+ },
+ {
+  "id": "rubatoyd",
+  "name": "rubatoyd",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/rubatoyd"
+   }
+  ]
+ },
+ {
+  "id": "hollobit",
+  "name": "hollobit",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/hollobit"
+   }
+  ]
+ },
+ {
+  "id": "youngjuseo",
+  "name": "YoungjuSeo",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/YoungjuSeo"
+   }
+  ]
+ },
+ {
+  "id": "nara-us",
+  "name": "U.S. National Archives and Records Administration (NARA)",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives.gov"
+   }
+  ]
+ },
+ {
+  "id": "us-department-of-state",
+  "name": "U.S. Department of State",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.state.gov"
+   }
+  ]
+ },
+ {
+  "id": "library-of-congress",
+  "name": "Library of Congress",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.loc.gov"
+   },
+   {
+    "label": "LC Labs",
+    "url": "https://labs.loc.gov"
+   }
+  ]
+ },
+ {
+  "id": "smithsonian",
+  "name": "Smithsonian Institution",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.si.edu"
+   },
+   {
+    "label": "Data Science Lab",
+    "url": "https://datascience.si.edu"
+   }
+  ]
+ },
+ {
+  "id": "microsoft",
+  "name": "Microsoft",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.microsoft.com"
+   }
+  ]
+ },
+ {
+  "id": "hyland",
+  "name": "Hyland",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.hyland.com"
+   }
+  ]
+ },
+ {
+  "id": "recordpoint",
+  "name": "RecordPoint",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.recordpoint.com"
+   }
+  ]
+ },
+ {
+  "id": "imanage",
+  "name": "iManage",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://imanage.com"
+   }
+  ]
+ },
+ {
+  "id": "dpla",
+  "name": "Digital Public Library of America",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://dp.la"
+   }
+  ]
+ },
+ {
+  "id": "internet-archive",
+  "name": "Internet Archive",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://archive.org"
+   }
+  ]
+ },
+ {
+  "id": "sjsu",
+  "name": "San José State University",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.sjsu.edu"
+   }
+  ]
+ },
+ {
+  "id": "indiana-university-libraries",
+  "name": "Indiana University Libraries",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://libraries.indiana.edu"
+   }
+  ]
+ },
+ {
+  "id": "baylor-university",
+  "name": "Baylor University Institute for Oral History",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "Baylor University",
+    "url": "https://www.baylor.edu"
+   }
+  ]
+ },
+ {
+  "id": "rit",
+  "name": "Rochester Institute of Technology",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.rit.edu"
+   }
+  ]
+ },
+ {
+  "id": "vanderbilt-tv-news-archive",
+  "name": "Vanderbilt Television News Archive",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://tvnews.vanderbilt.edu"
+   }
+  ]
+ },
+ {
+  "id": "gdelt",
+  "name": "GDELT Project",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.gdeltproject.org"
+   }
+  ]
+ },
+ {
+  "id": "harvard-art-museums",
+  "name": "Harvard Art Museums",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://harvardartmuseums.org"
+   }
+  ]
+ },
+ {
+  "id": "harvard-library",
+  "name": "Harvard Library",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://library.harvard.edu"
+   }
+  ]
+ },
+ {
+  "id": "moma",
+  "name": "The Museum of Modern Art (MoMA)",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.moma.org"
+   }
+  ]
+ },
+ {
+  "id": "google-arts-culture",
+  "name": "Google Arts & Culture",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://artsandculture.google.com"
+   }
+  ]
+ },
+ {
+  "id": "familysearch",
+  "name": "FamilySearch",
+  "type": "기업",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.familysearch.org"
+   }
+  ]
+ },
+ {
+  "id": "gbh",
+  "name": "GBH",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.wgbh.org"
+   },
+   {
+    "label": "American Archive of Public Broadcasting",
+    "url": "https://americanarchive.org"
+   }
+  ]
+ },
+ {
+  "id": "saa",
+  "name": "Society of American Archivists (SAA)",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www2.archivists.org"
+   }
+  ]
+ },
+ {
+  "id": "university-of-illinois",
+  "name": "University of Illinois Urbana-Champaign",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://illinois.edu"
+   }
+  ]
+ },
+ {
+  "id": "nyu",
+  "name": "New York University",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nyu.edu"
+   }
+  ]
+ },
+ {
+  "id": "54yyyu",
+  "name": "54yyyu",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/54yyyu"
+   }
+  ]
+ },
+ {
+  "id": "blazickjp",
+  "name": "blazickjp",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/blazickjp"
+   }
+  ]
+ },
+ {
+  "id": "wmo4buva",
+  "name": "wmo4buva",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/wmo4buva"
+   }
+  ]
+ },
+ {
+  "id": "msuicaut",
+  "name": "msuicaut",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/msuicaut"
+   }
+  ]
+ },
+ {
+  "id": "ianderso",
+  "name": "ianderso",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/ianderso"
+   }
+  ]
+ },
+ {
+  "id": "molanojustin",
+  "name": "molanojustin",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/molanojustin"
+   }
+  ]
+ },
+ {
+  "id": "tna-uk",
+  "name": "The National Archives (UK)",
+  "type": "공공기관",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nationalarchives.gov.uk"
+   }
+  ]
+ },
+ {
+  "id": "preservica",
+  "name": "Preservica",
+  "type": "기업",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://preservica.com"
+   }
+  ]
+ },
+ {
+  "id": "british-library",
+  "name": "British Library",
+  "type": "공공기관",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.bl.uk"
+   }
+  ]
+ },
+ {
+  "id": "alan-turing-institute",
+  "name": "The Alan Turing Institute",
+  "type": "학계·연구",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.turing.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "jisc",
+  "name": "Jisc",
+  "type": "공공기관",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.jisc.ac.uk"
+   },
+   {
+    "label": "Archives Hub",
+    "url": "https://archiveshub.jisc.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "loughborough-university",
+  "name": "Loughborough University",
+  "type": "학계·연구",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.lboro.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "bbc",
+  "name": "BBC",
+  "type": "공공기관",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.bbc.co.uk"
+   },
+   {
+    "label": "BBC R&D",
+    "url": "https://www.bbc.co.uk/rd"
+   }
+  ]
+ },
+ {
+  "id": "emerald-publishing",
+  "name": "Emerald Publishing",
+  "type": "기업",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.emerald.com"
+   },
+   {
+    "label": "학술지",
+    "url": "https://www.emerald.com/rmj"
+   }
+  ]
+ },
+ {
+  "id": "naa",
+  "name": "National Archives of Australia",
+  "type": "공공기관",
+  "country": "호주",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.naa.gov.au"
+   }
+  ]
+ },
+ {
+  "id": "prov",
+  "name": "Public Record Office Victoria (PROV)",
+  "type": "공공기관",
+  "country": "호주",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://prov.vic.gov.au"
+   }
+  ]
+ },
+ {
+  "id": "nla",
+  "name": "National Library of Australia",
+  "type": "공공기관",
+  "country": "호주",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.library.gov.au"
+   },
+   {
+    "label": "Trove",
+    "url": "https://trove.nla.gov.au"
+   }
+  ]
+ },
+ {
+  "id": "sl-nsw",
+  "name": "State Library of New South Wales",
+  "type": "공공기관",
+  "country": "호주",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.sl.nsw.gov.au"
+   }
+  ]
+ },
+ {
+  "id": "archives-nz",
+  "name": "Archives New Zealand",
+  "type": "공공기관",
+  "country": "뉴질랜드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives.govt.nz"
+   }
+  ]
+ },
+ {
+  "id": "natlib-nz",
+  "name": "National Library of New Zealand",
+  "type": "공공기관",
+  "country": "뉴질랜드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://natlib.govt.nz"
+   },
+   {
+    "label": "DigitalNZ",
+    "url": "https://digitalnz.org"
+   }
+  ]
+ },
+ {
+  "id": "lac",
+  "name": "Library and Archives Canada",
+  "type": "공공기관",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://library-archives.canada.ca"
+   }
+  ]
+ },
+ {
+  "id": "crkn",
+  "name": "Canadian Research Knowledge Network (CRKN)",
+  "type": "학계·연구",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://crkn-rcdr.ca"
+   }
+  ]
+ },
+ {
+  "id": "opentext",
+  "name": "OpenText",
+  "type": "기업",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.opentext.com"
+   }
+  ]
+ },
+ {
+  "id": "ubc",
+  "name": "University of British Columbia",
+  "type": "학계·연구",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ubc.ca"
+   }
+  ]
+ },
+ {
+  "id": "interpares-trust-ai",
+  "name": "InterPARES Trust AI",
+  "type": "학계·연구",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://interparestrustai.org"
+   }
+  ]
+ },
+ {
+  "id": "nationaal-archief",
+  "name": "Nationaal Archief",
+  "type": "공공기관",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nationaalarchief.nl"
+   }
+  ]
+ },
+ {
+  "id": "noord-hollands-archief",
+  "name": "Noord-Hollands Archief",
+  "type": "공공기관",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://noord-hollandsarchief.nl"
+   }
+  ]
+ },
+ {
+  "id": "sound-and-vision",
+  "name": "Netherlands Institute for Sound & Vision (Beeld en Geluid)",
+  "type": "공공기관",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.beeldengeluid.nl"
+   }
+  ]
+ },
+ {
+  "id": "university-of-amsterdam",
+  "name": "University of Amsterdam",
+  "type": "학계·연구",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uva.nl"
+   }
+  ]
+ },
+ {
+  "id": "rijksmuseum",
+  "name": "Rijksmuseum",
+  "type": "공공기관",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.rijksmuseum.nl"
+   }
+  ]
+ },
+ {
+  "id": "radboud-university",
+  "name": "Radboud University",
+  "type": "학계·연구",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ru.nl"
+   }
+  ]
+ },
+ {
+  "id": "read-coop",
+  "name": "READ-COOP SCE",
+  "type": "기업",
+  "country": "오스트리아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://readcoop.eu"
+   },
+   {
+    "label": "Transkribus",
+    "url": "https://www.transkribus.org"
+   }
+  ]
+ },
+ {
+  "id": "university-of-graz",
+  "name": "University of Graz",
+  "type": "학계·연구",
+  "country": "오스트리아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uni-graz.at"
+   }
+  ]
+ },
+ {
+  "id": "national-archives-of-estonia",
+  "name": "Rahvusarhiiv (National Archives of Estonia)",
+  "type": "공공기관",
+  "country": "에스토니아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ra.ee"
+   }
+  ]
+ },
+ {
+  "id": "digital-transitions",
+  "name": "Digital Transitions",
+  "type": "기업",
+  "country": "미국",
+  "links": []
+ },
+ {
+  "id": "xamk",
+  "name": "Xamk (South-Eastern Finland University of Applied Sciences)",
+  "type": "학계·연구",
+  "country": "핀란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.xamk.fi"
+   }
+  ]
+ },
+ {
+  "id": "national-archives-of-finland",
+  "name": "Kansallisarkisto (National Archives of Finland)",
+  "type": "공공기관",
+  "country": "핀란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://kansallisarkisto.fi"
+   }
+  ]
+ },
+ {
+  "id": "national-library-of-finland",
+  "name": "Kansalliskirjasto (National Library of Finland)",
+  "type": "공공기관",
+  "country": "핀란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kansalliskirjasto.fi"
+   },
+   {
+    "label": "Annif",
+    "url": "https://annif.org"
+   }
+  ]
+ },
+ {
+  "id": "yle",
+  "name": "Yle",
+  "type": "공공기관",
+  "country": "핀란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://yle.fi"
+   }
+  ]
+ },
+ {
+  "id": "rigsarkivet",
+  "name": "Rigsarkivet (Danish National Archives)",
+  "type": "공공기관",
+  "country": "덴마크",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://en.rigsarkivet.dk"
+   },
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/RA-Data-Science"
+   }
+  ]
+ },
+ {
+  "id": "riksarkivet",
+  "name": "Riksarkivet (Swedish National Archives)",
+  "type": "공공기관",
+  "country": "스웨덴",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://riksarkivet.se"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/AI-Riksarkivet"
+   }
+  ]
+ },
+ {
+  "id": "uppsala-university",
+  "name": "Uppsala University",
+  "type": "학계·연구",
+  "country": "스웨덴",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uu.se"
+   }
+  ]
+ },
+ {
+  "id": "europeana",
+  "name": "Europeana Foundation",
+  "type": "공공기관",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.europeana.eu"
+   },
+   {
+    "label": "API",
+    "url": "https://apis.europeana.eu"
+   }
+  ]
+ },
+ {
+  "id": "ephe-psl",
+  "name": "EPHE – PSL",
+  "type": "학계·연구",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ephe.psl.eu"
+   }
+  ]
+ },
+ {
+  "id": "inria",
+  "name": "Inria",
+  "type": "학계·연구",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.inria.fr"
+   }
+  ]
+ },
+ {
+  "id": "ina",
+  "name": "INA (Institut national de l'audiovisuel)",
+  "type": "공공기관",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ina.fr"
+   }
+  ]
+ },
+ {
+  "id": "bnf",
+  "name": "Bibliothèque nationale de France",
+  "type": "공공기관",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.bnf.fr"
+   },
+   {
+    "label": "Gallica",
+    "url": "https://gallica.bnf.fr"
+   }
+  ]
+ },
+ {
+  "id": "mittagessen",
+  "name": "Benjamin Kiessling (mittagessen)",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/mittagessen"
+   }
+  ]
+ },
+ {
+  "id": "ica",
+  "name": "International Council on Archives (ICA)",
+  "type": "공공기관",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ica.org"
+   }
+  ]
+ },
+ {
+  "id": "meemoo",
+  "name": "meemoo (Flemish Institute for Archives)",
+  "type": "공공기관",
+  "country": "벨기에",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://meemoo.be"
+   }
+  ]
+ },
+ {
+  "id": "dnb",
+  "name": "Deutsche Nationalbibliothek",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.dnb.de"
+   }
+  ]
+ },
+ {
+  "id": "zbw",
+  "name": "ZBW – Leibniz Information Centre for Economics",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.zbw.eu"
+   }
+  ]
+ },
+ {
+  "id": "arolsen-archives",
+  "name": "Arolsen Archives",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://arolsen-archives.org"
+   }
+  ]
+ },
+ {
+  "id": "university-of-luebeck",
+  "name": "Universität zu Lübeck",
+  "type": "학계·연구",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uni-luebeck.de"
+   }
+  ]
+ },
+ {
+  "id": "friedrich-ebert-stiftung",
+  "name": "Friedrich-Ebert-Stiftung",
+  "type": "학계·연구",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.fes.de"
+   }
+  ]
+ },
+ {
+  "id": "lmu-munich",
+  "name": "Ludwig-Maximilians-Universität München",
+  "type": "학계·연구",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.lmu.de"
+   }
+  ]
+ },
+ {
+  "id": "wikimedia-deutschland",
+  "name": "Wikimedia Deutschland",
+  "type": "개인·커뮤니티",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.wikimedia.de"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/wmde"
+   }
+  ]
+ },
+ {
+  "id": "kaixxx",
+  "name": "Kai Dröge (kaixxx)",
+  "type": "개인·커뮤니티",
+  "country": "독일",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/kaixxx"
+   }
+  ]
+ },
+ {
+  "id": "university-of-west-bohemia",
+  "name": "University of West Bohemia",
+  "type": "학계·연구",
+  "country": "체코",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.zcu.cz"
+   }
+  ]
+ },
+ {
+  "id": "eth-library",
+  "name": "ETH Library Zurich",
+  "type": "학계·연구",
+  "country": "스위스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://library.ethz.ch"
+   }
+  ]
+ },
+ {
+  "id": "alma-mater-europaea",
+  "name": "Alma Mater Europaea",
+  "type": "학계·연구",
+  "country": "슬로베니아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://almamater.si"
+   },
+   {
+    "label": "학술지",
+    "url": "https://journal.almamater.si"
+   }
+  ]
+ },
+ {
+  "id": "wikimedia-foundation",
+  "name": "Wikimedia Foundation",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://wikimediafoundation.org"
+   }
+  ]
+ },
+ {
+  "id": "iiif-consortium",
+  "name": "IIIF Consortium",
+  "type": "학계·연구",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://iiif.io"
+   }
+  ]
+ },
+ {
+  "id": "zzaebok",
+  "name": "zzaebok",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/zzaebok"
+   }
+  ]
+ },
+ {
+  "id": "mearman",
+  "name": "Mearman",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/Mearman"
+   }
+  ]
+ },
+ {
+  "id": "cyanheads",
+  "name": "cyanheads",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/cyanheads"
+   }
+  ]
+ },
+ {
+  "id": "8ensmith",
+  "name": "8enSmith",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/8enSmith"
+   }
+  ]
+ },
+ {
+  "id": "cfpramod",
+  "name": "cfpramod",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/cfpramod"
+   }
+  ]
+ },
+ {
+  "id": "kryzo",
+  "name": "Kryzo",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/Kryzo"
+   }
+  ]
+ },
+ {
+  "id": "ndl",
+  "name": "国立国会図書館 (National Diet Library)",
+  "type": "공공기관",
+  "country": "일본",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ndl.go.jp"
+   },
+   {
+    "label": "NDL Lab",
+    "url": "https://lab.ndl.go.jp"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/ndl-lab"
+   },
+   {
+    "label": "カレントアウェアネス",
+    "url": "https://current.ndl.go.jp"
+   }
+  ]
+ },
+ {
+  "id": "digital-orientalist",
+  "name": "The Digital Orientalist",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "블로그",
+    "url": "https://digitalorientalist.com"
+   }
+  ]
+ },
+ {
+  "id": "code4history",
+  "name": "Code for History (code4history)",
+  "type": "개인·커뮤니티",
+  "country": "일본",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/code4history"
+   }
+  ]
+ },
+ {
+  "id": "nakamura196",
+  "name": "nakamura196",
+  "type": "개인·커뮤니티",
+  "country": "일본",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/nakamura196"
+   }
+  ]
+ },
+ {
+  "id": "taiwan-national-archives-administration",
+  "name": "國家發展委員會檔案管理局",
+  "type": "공공기관",
+  "country": "대만",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives.gov.tw"
+   }
+  ]
+ },
+ {
+  "id": "saac-china",
+  "name": "国家档案局",
+  "type": "공공기관",
+  "country": "중국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.saac.gov.cn"
+   }
+  ]
+ },
+ {
+  "id": "wuhan-university",
+  "name": "Wuhan University (武汉大学)",
+  "type": "학계·연구",
+  "country": "중국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.whu.edu.cn"
+   }
+  ]
+ },
+ {
+  "id": "nlb-singapore",
+  "name": "National Library Board Singapore",
+  "type": "공공기관",
+  "country": "싱가포르",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nlb.gov.sg"
+   }
+  ]
+ }
+]
