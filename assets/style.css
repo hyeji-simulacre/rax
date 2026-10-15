@@ -913,3 +913,34 @@ body.asking::after { height: 520px; }
   .maker-list li { grid-template-columns: 1fr auto; gap: 8px 12px; }
   .mk-links { grid-column: 1 / -1; grid-row: 2; }
 }
+
+/* 카테고리 페이지: 상자를 누르면 그 카테고리 사례만 모아 보고, 안에서 더 좁힌다 */
+.cp-inner { max-width: 1320px; padding-top: 28px; }
+.cp-cats { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+.cp-cats::-webkit-scrollbar { display: none; }
+.cp-cats button { flex: none; border: 0; background: none; padding: 10px 0; font: 600 15px var(--ko); color: var(--ink-3); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.cp-cats button[aria-pressed="true"] { color: var(--ink); border-bottom-color: var(--ink); }
+.cp-en { margin: 0; font: 500 14px var(--en); color: var(--ink-3); }
+.cp-head h1 { margin: 6px 0 0; font: 800 clamp(40px, 6vw, 80px)/1.05 var(--ko); letter-spacing: -.05em; }
+.cp-head h1 span { margin-left: 14px; font: 500 clamp(18px, 2vw, 24px) var(--en); color: var(--ink-3); letter-spacing: 0; vertical-align: .9em; }
+.cp-search { margin: 32px 0 20px; max-width: 640px; }
+.cp-filters { display: grid; gap: 10px; }
+.cp-row { display: flex; gap: 16px; align-items: baseline; }
+.cp-label { flex: none; width: 36px; font: 600 13px var(--ko); color: var(--ink-3); }
+.cp-opts { display: flex; flex-wrap: wrap; gap: 8px; }
+.cp-tools { display: flex; align-items: center; justify-content: space-between; margin: 36px 0 24px; padding-top: 18px; border-top: 1px solid var(--line); }
+.cp-tools p { margin: 0; font: 500 15px var(--ko); color: var(--ink-2); }
+@media (max-width: 640px) {
+  .cp-cats { margin-bottom: 28px; }
+  .cp-row { flex-direction: column; gap: 6px; }
+  .cp-opts { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 2px; }
+  .cp-opts::-webkit-scrollbar { display: none; }
+  .cp-opts .chip { flex: none; }
+}
+
+/* 썸네일 규칙: 사진이 없으면 카탈로그 카드, 작은 목록은 번호 */
+.rel-thumb { border: 1px solid var(--line); background: #fff; }
+.rel-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+.rel-thumb .catalog .org { font-size: clamp(18px, 1.8vw, 24px); }
+.pick .rank { flex: none; width: 64px; height: 64px; display: grid; place-items: center; border-radius: 14px; background: #fff; border: 1px solid var(--line);
+  font: 700 26px/1 var(--en); letter-spacing: -.03em; color: var(--red); }

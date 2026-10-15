@@ -119,10 +119,6 @@
     // 이미지가 실패하면 카탈로그 카드가 그대로 남는다
     return catalog(item) + (img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : "");
   }
-  function mini(it) {
-    const c = CAT[it.category] || CATS[0], img = imageFor(it);
-    return `<span class="mini-art" style="--cat:${c.c[0]}">${img ? `<img src="${esc(img)}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ""}</span>`;
-  }
 
   const shortOrg = o => { const s = String(o || "").split(/[·,(/]/)[0].trim(); return s.length > 22 ? s.slice(0, 21) + "…" : s; };
   const titleOf = it => it.titleKo || it.title;
@@ -153,8 +149,7 @@
     }).join("");
     $("#catGrid").onclick = e => {
       const t = e.target.closest("[data-cat]"); if (!t) return;
-      state.cat = t.dataset.cat; state.guide = null; update();
-      goTo("#archive");
+      openCat(t.dataset.cat);
     };
   }
 
@@ -191,12 +186,12 @@
     return pool.filter(it => it._score >= cut);
   }
 
-  function sorted(list) {
+  function sorted(list, sort = state.sort) {
     const s = [...list];
     const byYear = (a, b) => (b.year || 0) - (a.year || 0) || titleOf(a).localeCompare(titleOf(b), "ko");
-    if (state.sort === "title") s.sort((a, b) => titleOf(a).localeCompare(titleOf(b), "ko"));
-    else if (state.sort === "old") s.sort((a, b) => -byYear(a, b));
-    else if (state.sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
+    if (sort === "title") s.sort((a, b) => titleOf(a).localeCompare(titleOf(b), "ko"));
+    else if (sort === "old") s.sort((a, b) => -byYear(a, b));
+    else if (sort === "relevance") s.sort((a, b) => (b._score || 0) - (a._score || 0) || byYear(a, b));
     else s.sort(byYear);
     return s;
   }
@@ -258,9 +253,9 @@
       ${state.guide ? `<button class="glass-btn icon close" type="button" data-close aria-label="안내 닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>` : ""}
       <p class="intro">${esc(g.intro)}</p>
       ${picks.length ? `<p class="picks-title">먼저 볼 사례 <span>${esc(picksLabel(g))}</span></p>
-      <div class="picks">${picks.map(it => `
+      <div class="picks">${picks.map((it, i) => `
         <button class="pick" type="button" data-id="${esc(it.id)}">
-          <span class="mini">${mini(it)}</span>
+          <span class="rank cited">${i + 1}</span>
           <span><b>${esc(titleOf(it))}</b>${it._why ? `<em>${esc(it._why)}</em>` : ""}<small>${esc(it.region === "국내" ? "국내" : it.country)} · ${esc(shortOrg(it.org))}</small></span>
         </button>`).join("")}</div>` : ""}
       <p class="more">${matched ? `<a href="#" data-guide="${esc(g.id)}">이 안내로 사례 모아 보기</a> · ` : ""}아래에서 관련 사례 ${list.length}건을 더 볼 수 있어요.</p>
@@ -278,7 +273,10 @@
     $("#resultInfo").textContent = `${parts.length ? parts.join(" · ") + " — " : ""}${list.length}건의 사례`;
     $("#empty").hidden = list.length > 0;
 
-    $("#grid").innerHTML = list.map(it => `
+    $("#grid").innerHTML = list.map(cardHTML).join("");
+  }
+  function cardHTML(it) {
+    return `
       <article class="card" tabindex="0" data-id="${esc(it.id)}">
         <div class="thumb">${cover(it)}
           <div class="badges"><span class="pill">${esc(it.category)}</span><span class="pill">${esc(it.apiType || it.format)}</span></div>
@@ -287,7 +285,7 @@
           <h3>${esc(titleOf(it))}</h3>
           <div class="by"><span>by ${byLink(it)}</span><span class="where">${esc(it.region === "국내" ? "국내" : it.country)}${it.year ? ` · ${it.year}` : ""}</span></div>
         </div>
-      </article>`).join("");
+      </article>`;
   }
 
   // 필터는 주소창에 남기지 않는다. 새로고침하면 항상 처음 화면으로 돌아간다.
@@ -447,7 +445,7 @@
   function relList(title, list, note) {
     return `<div class="rel-head"><h2>${esc(title)}</h2>${note ? `<p>${note}</p>` : ""}</div>
       <ul class="rel-grid">${list.map(c => `<li><button type="button" data-rel="${esc(c.id)}">
-        <span class="rel-thumb">${mini(c)}</span>
+        <span class="rel-thumb">${cover(c)}</span>
         <span class="rel-text"><em>${esc(c.category)}</em><b>${esc(titleOf(c))}</b><small>${esc(shortOrg(makersOf(c)[0]?.name || c.org))}${c.year ? ` · ${c.year}` : ""}</small></span>
       </button></li>`).join("")}</ul>`;
   }
@@ -499,6 +497,57 @@
   }
   const caseFromHash = () => { const m = /^#case=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
+  // ---------- 카테고리 페이지 (전체 화면, 주소 #cat=이름) ----------
+  const cp = { cat: null, q: "", region: null, format: null, orgType: null, sort: "recent" };
+  function cpList({ ignore } = {}) {
+    const toks = tokenize(cp.q);
+    return cases.filter(it => {
+      if (it.category !== cp.cat) return false;
+      for (const f of FACETS) if (ignore !== f.field && cp[f.field] && it[f.field] !== cp[f.field]) return false;
+      if (toks.length) { it._score = scoreOf(it, toks); return it._score > 0; }
+      return true;
+    });
+  }
+  function renderCat() {
+    const c = CAT[cp.cat]; if (!c) return;
+    const total = cases.filter(it => it.category === cp.cat).length;
+    $("#cpEn").textContent = c.en;
+    $("#cpTitle").innerHTML = `${esc(cp.cat)}<span>${total}</span>`;
+    $("#cpCats").innerHTML = CATS.map(x => `<button type="button" data-cpcat="${esc(x.key)}" aria-pressed="${x.key === cp.cat}">${esc(x.key)}</button>`).join("");
+    // 상세 조건: 지역 · 형식 · 주체. 고를 수 있는 것만, 건수와 함께
+    $("#cpFilters").innerHTML = FACETS.map(f => {
+      const pool = cpList({ ignore: f.field });
+      const opts = f.values.map(v => [v, pool.filter(x => x[f.field] === v).length]).filter(([v, n]) => n || cp[f.field] === v);
+      if (!opts.length) return "";
+      return `<div class="cp-row"><span class="cp-label">${esc(f.label)}</span><div class="cp-opts">
+        <button class="chip" type="button" data-cpf="${f.field}" data-val="" aria-pressed="${!cp[f.field]}">전체</button>
+        ${opts.map(([v, n]) => `<button class="chip" type="button" data-cpf="${f.field}" data-val="${esc(v)}" aria-pressed="${cp[f.field] === v}">${esc(v)}<span class="c">${n}</span></button>`).join("")}
+      </div></div>`;
+    }).join("");
+    const list = sorted(cpList(), cp.q ? "relevance" : cp.sort);
+    const parts = FACETS.map(f => cp[f.field]).filter(Boolean);
+    if (cp.q) parts.push(`“${cp.q}”`);
+    $("#cpCount").textContent = `${parts.length ? parts.join(" · ") + " — " : ""}${list.length}건`;
+    $("#cpGrid").innerHTML = list.map(cardHTML).join("");
+    $("#cpEmpty").hidden = list.length > 0;
+  }
+  function openCat(key, { push = true } = {}) {
+    if (!CAT[key]) return;
+    Object.assign(cp, { cat: key, q: "", region: null, format: null, orgType: null });
+    $("#cpQ").value = "";
+    renderCat();
+    const d = $("#catPage");
+    if (!d.open) d.showModal();
+    d.scrollTop = 0;
+    if (push) history.pushState({ cat: key }, "", `#cat=${encodeURIComponent(key)}`);
+  }
+  function closeCat() {
+    if (!$("#catPage").open) return;
+    if (history.state && history.state.cat) history.back();
+    else { $("#catPage").close(); history.replaceState(null, "", location.pathname); }
+  }
+  const catFromHash = () => { const m = /^#cat=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
+
   // ---------- 만든 곳 목록 ----------
   let makerTab = "전체", makerShown = 24;
   function renderMakers() {
@@ -518,6 +567,7 @@
     $("#makerMore").hidden = pool.length <= makerShown;
   }
   function showOrg(id) {
+    if ($("#catPage").open) { $("#catPage").close(); history.replaceState(null, "", location.pathname); }
     state.org = id; state.cat = null; state.guide = null; state.q = ""; $("#q").value = "";
     for (const f of FACETS) state[f.field] = null;
     update(); goTo("#archive");
@@ -559,9 +609,26 @@
       const o = e.target.closest("[data-org]"); if (o) { const id = o.dataset.org; closeDetail(); setTimeout(() => showOrg(id), 60); }
     });
     window.addEventListener("popstate", () => {
-      const id = caseFromHash();
+      const id = caseFromHash(), cat = catFromHash();
       if (id) openDetail(id, { push: false }); else if ($("#detail").open) $("#detail").close();
+      if (cat && !id) { if (!$("#catPage").open || cp.cat !== cat) openCat(cat, { push: false }); }
+      else if (!id && $("#catPage").open) $("#catPage").close();
     });
+    // 카테고리 페이지
+    $("#cpBack").addEventListener("click", closeCat);
+    $("#catPage").addEventListener("cancel", e => { e.preventDefault(); closeCat(); });
+    $("#catPage").addEventListener("click", e => {
+      if (e.target.closest(".org-link")) return;
+      const k = e.target.closest("[data-cpcat]");
+      if (k) { Object.assign(cp, { cat: k.dataset.cpcat, q: "", region: null, format: null, orgType: null }); $("#cpQ").value = "";
+        history.replaceState({ cat: cp.cat }, "", `#cat=${encodeURIComponent(cp.cat)}`); renderCat(); $("#catPage").scrollTop = 0; return; }
+      const f = e.target.closest("[data-cpf]"); if (f) { cp[f.dataset.cpf] = f.dataset.val || null; renderCat(); return; }
+      const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id);
+    });
+    $("#catPage").addEventListener("keydown", e => { if (e.key === "Enter") { const c = e.target.closest(".card"); if (c) openDetail(c.dataset.id); } });
+    $("#cpForm").addEventListener("submit", e => { e.preventDefault(); $("#cpQ").blur(); });
+    $("#cpQ").addEventListener("input", e => { cp.q = e.target.value.trim(); renderCat(); });
+    $("#cpSort").addEventListener("change", e => { cp.sort = e.target.value; renderCat(); });
     $("#makerTabs").addEventListener("click", e => { const t = e.target.closest("[data-mtab]"); if (t) { makerTab = t.dataset.mtab; makerShown = 24; renderMakers(); } });
     $("#makerList").addEventListener("click", e => { const b = e.target.closest("[data-org]"); if (b) showOrg(b.dataset.org); });
     $("#makerMore").addEventListener("click", () => { makerShown += 48; renderMakers(); });
@@ -680,7 +747,9 @@
     if (location.search) history.replaceState(null, "", location.pathname + location.hash);
     const g0 = guides.find(x => x.id === gp);
     if (g0) startAsk(g0.q, g0);
-    const c0 = caseFromHash(); if (c0) { history.replaceState(null, "", location.pathname); openDetail(c0); }
+    const c0 = caseFromHash(), k0 = catFromHash();
+    if (c0) { history.replaceState(null, "", location.pathname); openDetail(c0); }
+    else if (k0) { history.replaceState(null, "", location.pathname); openCat(k0); }
   }
   init();
 })();

@@ -175,6 +175,38 @@
     </article>
   </dialog>
 
+  <dialog data-lenis-prevent id="catPage" class="detail case-page cat-page" aria-labelledby="cpTitle">
+    <div class="case-bar">
+      <button class="case-back" type="button" id="cpBack"><svg viewBox="0 0 24 24"><path d="M15 6l-6 6 6 6"/></svg>처음으로</button>
+      <a class="logo en" href="./">RAX<span>.</span></a>
+    </div>
+    <div class="case-inner cp-inner">
+      <nav class="cp-cats" id="cpCats" aria-label="다른 카테고리"></nav>
+      <header class="cp-head">
+        <p class="cp-en en" id="cpEn"></p>
+        <h1 id="cpTitle"></h1>
+      </header>
+      <form class="search glass cp-search" id="cpForm" role="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="cpQ" type="search" placeholder="이 카테고리 안에서 검색" autocomplete="off" aria-label="이 카테고리 안에서 검색">
+      </form>
+      <div class="cp-filters" id="cpFilters"></div>
+      <div class="cp-tools">
+        <p id="cpCount"></p>
+        <div class="sort plain-select">
+          <label for="cpSort" class="sr">정렬</label>
+          <select id="cpSort">
+            <option value="recent">최신순</option>
+            <option value="old">오래된순</option>
+            <option value="title">제목순</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="cpGrid"></div>
+      <p class="empty" id="cpEmpty" hidden>조건에 맞는 사례가 없어요. 검색어나 조건을 바꿔 보세요.</p>
+    </div>
+  </dialog>
+
   <dialog data-lenis-prevent id="submitDialog" class="detail submit">
     <form id="submitForm" class="submit-inner" novalidate>
       <button class="glass-btn icon close" type="button" id="closeSubmit" aria-label="닫기"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
