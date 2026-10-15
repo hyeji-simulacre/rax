@@ -610,13 +610,16 @@
 
   // ---------- 만든 곳 목록 ----------
   let makerTab = "전체", makerShown = 24;
+  // 이름순: 한글 → 영어 → 숫자·기타, 같은 묶음 안에서는 가나다·ABC 순
+  const nameGroup = n => /^[가-힣]/.test(n) ? 0 : /^[A-Za-z]/.test(n) ? 1 : /^[0-9]/.test(n) ? 2 : 3;
+  const byName = (a, b) => nameGroup(a.name) - nameGroup(b.name) || a.name.localeCompare(b.name, "ko", { sensitivity: "base" });
   function renderMakers() {
     if (!orgs.length) return;
     $("#makers").hidden = false;
     const counts = {}; for (const c of cases) for (const id of c.orgIds || []) counts[id] = (counts[id] || 0) + 1;
     const types = ["전체", "공공기관", "기업", "학계·연구", "개인·커뮤니티"];
     const pool = orgs.filter(o => counts[o.id] && (makerTab === "전체" || o.type === makerTab))
-      .sort((a, b) => counts[b.id] - counts[a.id] || a.name.localeCompare(b.name, "ko"));
+      .sort(byName);
     $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳과 그 주소를 모았습니다.`;
     $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
     $("#makerList").innerHTML = pool.slice(0, makerShown).map(o => `<li>
