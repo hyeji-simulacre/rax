@@ -1087,5 +1087,4 @@ body.in-view main > section:not(.view) { display: none !important; }
 .av-form .ai-orb { margin-left: 4px; }
 
 /* 머리말 버튼 높이 맞춤: 질문 버튼(원)도 옆 버튼과 같은 36px */
-.site-head #headAsk { width: 36px; height: 36px; min-width: 36px; padding: 0; display: inline-grid; place-items: center; }
-@media (max-width: 640px) { .site-head #headAsk { width: 36px; height: 36px; } }
+.site-head #headAsk { height: 36px; padding: 0 16px 0 9px; display: inline-flex; align-items: center; gap: 8px; width: auto; }

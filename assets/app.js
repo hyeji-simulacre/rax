@@ -34,7 +34,7 @@
   const esc = s => String(s ?? "").replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
   const hash = s => { let h = 0; for (const ch of String(s)) h = (h * 31 + ch.charCodeAt(0)) | 0; return Math.abs(h); };
 
-  const state = { q: "", org: null, cat: null, country: null, format: null, orgType: null, sort: "relevance", guide: null };
+  const state = { q: "", org: null, cat: null, country: null, format: null, orgType: null, sort: "recent", guide: null };
   let guides = [];
 
   // ---------- 문장형 질문 검색 ----------
