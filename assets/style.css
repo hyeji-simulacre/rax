@@ -1049,3 +1049,20 @@ body.in-view main > section:not(.view) { display: none !important; }
 .ar-hero-inner { padding: 96px 24px 40px; }
 .ar-lede { margin-bottom: 32px; }
 @media (max-width: 760px) { .ar-hero { height: auto; min-height: 100svh; } .ar-hero-inner { padding: 104px 16px 48px; } }
+
+/* 개발자: 버튼 대신 한 줄로 */
+.foot-dev { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 10px; margin: 0; padding: 22px 0; border-top: 1px solid var(--line);
+  font: 400 14px/1.6 var(--ko); color: var(--ink-2); }
+.foot-dev .en { font-family: var(--en); }
+.foot-dev .fd-by > .en { color: var(--ink-3); }
+.foot-dev b { font-weight: 700; color: var(--ink); }
+.foot-dev i { font-style: normal; color: #c3c7ce; }
+.foot-dev a, .foot-dev button { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(15, 17, 21, .3); }
+.foot-dev button { border: 0; background: none; padding: 0; font: 600 14px var(--en); cursor: pointer; }
+.foot-dev a:hover, .foot-dev button:hover { color: var(--red); text-decoration-color: currentColor; }
+.coffee-dialog { width: min(360px, calc(100% - 32px)); }
+.coffee-inner { position: relative; padding: 36px 28px 28px; text-align: center; }
+.coffee-inner h3 { margin: 0 0 18px; font: 700 22px var(--en); letter-spacing: -.02em; }
+.coffee-inner img { display: block; width: 220px; height: 220px; margin: 0 auto; border-radius: 14px; }
+.coffee-inner p { margin: 16px 0 0; font: 400 14px/1.6 var(--ko); color: var(--ink-3); word-break: keep-all; }
+@media (max-width: 640px) { .foot-dev i { display: none; } .foot-dev { flex-direction: column; gap: 4px; } }

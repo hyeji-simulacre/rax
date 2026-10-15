@@ -743,13 +743,10 @@
       finally { btn.disabled = false; btn.textContent = "보내기"; }
     });
 
-    // 개발자 정보
-    $("#devOpen").addEventListener("click", () => $("#devDialog").showModal());
-    $("#devClose").addEventListener("click", () => $("#devDialog").close());
-    $("#devDialog").addEventListener("click", e => { if (e.target === $("#devDialog")) $("#devDialog").close(); });
-    $("#coffeeBtn").addEventListener("click", () => {
-      const qr = $("#coffeeQr"); qr.hidden = !qr.hidden; $("#coffeeBtn").setAttribute("aria-expanded", String(!qr.hidden));
-    });
+    // 개발자 한 줄: Buy me a coffee를 누르면 송금 QR 팝업
+    $("#coffeeOpen").addEventListener("click", () => $("#coffeeDialog").showModal());
+    $("#coffeeClose").addEventListener("click", () => $("#coffeeDialog").close());
+    $("#coffeeDialog").addEventListener("click", e => { if (e.target === $("#coffeeDialog")) $("#coffeeDialog").close(); });
   }
 
   // ---------- submit ----------
