@@ -316,16 +316,9 @@
       </article>`).join("");
   }
 
+  // 필터는 주소창에 남기지 않는다. 새로고침하면 항상 처음 화면으로 돌아간다.
   function update() {
     renderChips(); renderGrid();
-    const p = new URLSearchParams();
-    if (state.q) p.set("q", state.q);
-    if (state.guide) p.set("guide", state.guide);
-    else {
-      if (state.cat) p.set("cat", state.cat);
-      for (const f of FACETS) if (state[f.field]) p.set(f.field, state[f.field]);
-    }
-    history.replaceState(null, "", p.toString() ? `?${p}` : location.pathname);
   }
 
   // ---------- 질문과 답 (왼쪽 대화 · 오른쪽 관련 사례) ----------
@@ -626,6 +619,8 @@
     renderStats(); renderCategories(); renderPrompts(); renderFeature();
     const gp = new URLSearchParams(location.search).get("guide");
     update();
+    // 공유 링크(?q=, ?region= 등)는 처음 한 번만 읽고 주소창은 깨끗하게 비운다
+    if (location.search) history.replaceState(null, "", location.pathname + location.hash);
     const g0 = guides.find(x => x.id === gp);
     if (g0) startAsk(g0.q, g0);
   }
