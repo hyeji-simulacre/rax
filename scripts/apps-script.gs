@@ -82,7 +82,8 @@ function chat(data) {
     payload: JSON.stringify({ model, messages, temperature: 0.3, max_tokens: 700 }),
     muteHttpExceptions: true,
   });
-  if (res.getResponseCode() !== 200) return { ok: false, error: `llm_${res.getResponseCode()}` };
+  // 실패하면 응답 앞부분을 함께 돌려줘서 원인(모델 이름 오류 등)을 화면에서 바로 볼 수 있게 한다
+  if (res.getResponseCode() !== 200) return { ok: false, error: `llm_${res.getResponseCode()} ${res.getContentText().slice(0, 160)}` };
   const out = JSON.parse(res.getContentText());
   let answer = (out.choices && out.choices[0] && out.choices[0].message && out.choices[0].message.content) || "";
   answer = answer.replace(/<think>[\s\S]*?<\/think>/g, "").trim(); // 추론 모델의 생각 과정은 버린다

@@ -793,3 +793,9 @@ body.asking::after { height: 520px; }
   100% { transform: translate3d(-3%, 5%, 0) scale(1.02); }
 }
 @media (prefers-reduced-motion: reduce) { body::before, body::after { animation: none; } }
+
+/* 카탈로그 카드 맨 위 색 줄 없애기, 상세 창은 썸네일이 없으면 그림 영역 없이 */
+.catalog::before { display: none; }
+.detail-cover[hidden] { display: none; }
+.detail-cover img { object-position: top center; }
+.detail-inner:has(.detail-cover[hidden]) .detail-body { padding-top: 40px; }

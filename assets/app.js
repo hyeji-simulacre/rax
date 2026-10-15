@@ -471,7 +471,10 @@
   // ---------- detail ----------
   function openDetail(id) {
     const it = cases.find(c => c.id === id); if (!it) return;
-    $("#dCover").innerHTML = cover(it);
+    // 상세 창: 실제 썸네일이 있을 때만 그림 영역을 보여 준다 (불러오지 못하면 숨긴다)
+    const img = imageFor(it), dc = $("#dCover");
+    dc.hidden = !img;
+    dc.innerHTML = img ? `<img src="${esc(img)}" alt="" referrerpolicy="no-referrer" onerror="this.parentNode.hidden=true">` : "";
     $("#dMeta").innerHTML = [it.category, it.format, it.apiType, it.orgType, it.region === "국내" ? "국내" : it.country, it.year]
       .filter(Boolean).map(v => `<span class="pill">${esc(v)}</span>`).join("");
     $("#dTitle").textContent = titleOf(it);
