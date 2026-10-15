@@ -1128,3 +1128,11 @@ body::before, body::after { max-width: 100%; }
   font: 700 17px/1.35 var(--ko); letter-spacing: -.02em; color: var(--ink); -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
 .mk-title:hover, .mk-count:hover { color: var(--red); }
 .mk-count { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+
+/* 사진 없는 카탈로그 카드: 연한 빨강 바탕 + 진한 회색 글자 (아래 제목과 구분) */
+.catalog { background: rgba(213, 71, 70, .09); }
+.catalog .org { color: #4a505c; font-weight: 700; }
+.catalog .rules { background: repeating-linear-gradient(to bottom, rgba(213, 71, 70, .16) 0 1px, transparent 1px 22px); }
+.catalog .yr { color: #6b7180; }
+.catalog .cc { color: rgba(213, 71, 70, .18); }
+.card .thumb:has(.catalog:only-child), .rel-thumb:has(.catalog:only-child) { border-color: rgba(213, 71, 70, .14); }
