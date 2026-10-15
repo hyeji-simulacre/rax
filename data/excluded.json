@@ -103,5 +103,825 @@
     "url": "https://www.kakaocorp.com/page/detail/8789",
     "reason": "기사·발표: 업무협약(MOU) 체결 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
     "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.gov/files/nara-2025-ai-compliance-plan-final-v1-09-18-2025.pdf",
+    "reason": "기사·발표: NARA의 AI 준수계획(계획·거버넌스 문서) — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://questions-statements.parliament.uk/written-questions/detail/2025-01-27/26414",
+    "reason": "의회 서면답변: 시범·조사 단계 활용 위주로 운영 중인 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://questions-statements.parliament.uk/written-questions/detail/2025-11-05/88200",
+    "reason": "의회 서면답변: 하원 직원 AI 활용 일반 현황(시험 단계 다수), 기록관리 AI 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/AI4LAM/awesome-ai4lam",
+    "reason": "자료 목록(awesome list): 개별 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.gov/news/articles/new-strategic-framework-artificial-intelligence",
+    "reason": "기사·발표: 전략 프레임워크 발표(비전·계획) — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://resources.ironmountain.com/en-gb/case-studies/t/the-national-archives-case-study",
+    "reason": "기존 사례(TNA 전자기록 선별 AI 시험, 32defe3f5e)와 같은 사업의 벤더 홍보성 사례 연구",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://interparestrustai.org/assets/public/dissemination/AD_01_Module3_v_1_0_20250414.pdf",
+    "reason": "교육 자료(학습 모듈): 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://link.springer.com/article/10.1007/s00146-025-02194-0",
+    "reason": "AI 리터러시·역량 체계 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.org.uk/news/the-archives-and-records-association-uk-amp-ireland-ara-has-awarded-two-grants-to-projects-investigating-ai-and-their-application-within-the-recordkeeping-sector",
+    "reason": "기사·발표: 연구비 지원(공모 선정) 소식 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://link.springer.com/article/10.1007/s00146-025-02374-y",
+    "reason": "특집호 편집자 서문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.clir.org/2024/10/ai-meets-archives-the-future-of-machine-learning-in-cultural-heritage/",
+    "reason": "기사·발표: 문화유산 분야 AI 논의 소개 글 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://zenodo.org/records/15878902",
+    "reason": "학술행사 발표 자료: 적용 방안 제안 중심, 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://anr.fr/Project-ANR-19-CE38-0011",
+    "reason": "연구비 지원 사업 소개 페이지(진행 중·결과물 미확인): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/augmenting-archival-access-through",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://valuepast.hypotheses.org/4289",
+    "reason": "학술대회·행사 소개 또는 토론 정리: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://interparestrustai.org/assets/public/dissemination/RA03-InterPARESAI-Survey_Report_FINAL.pdf",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archivists.or.kr/2077",
+    "reason": "기사·발표: 정책 제안 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://dspace.hansung.ac.kr/bitstream/2024.oak/10383/2/AR_E1A1A3_%EB%94%94%EC%A7%80%ED%84%B8%EA%B8%B0%EB%A1%9D%EA%B4%80%EB%A6%AC%EC%97%90%EC%84%9C%EC%9D%98%20AI%20OCR%20%EB%8D%B0%EC%9D%B4%ED%84%B0%20%ED%99%9C%EC%9A%A9%20%EB%B0%8F%20%ED%99%95%EC%9E%A5%EB%B0%A9%EC%95%88%20%EC%97%B0%EA%B5%AC.pdf",
+    "reason": "면담 분석과 개선 방향 제안 논문: 구현·적용 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://socface.site.ined.fr/en/",
+    "reason": "진행 중 연구 사업: 인구조사 데이터베이스 공개 등 결과물 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://lustre-network.net",
+    "reason": "연구 협력망(워크숍·강연) 사업: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://community.mozilladatacollective.com/cultural-heritage-and-ai-how-institutions-can-reclaim-control-of-their-data/",
+    "reason": "데이터 거버넌스 논평 글: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives-nationales.culture.gouv.fr/innovation-et-recherche/lintelligence-artificielle-au-service-des-manuscrits",
+    "reason": "HTR 사업 소개 모음 페이지: 개별 사례(Simara·LECTAUREP 등)로 따로 반영",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.glamelab.org/products/are-ai-bots-knocking-cultural-heritage-offline/",
+    "reason": "AI 수집 봇 피해 설문 보고서: 기록관리 AI 적용 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.itnews.com.au/news/national-archives-identifies-four-areas-of-interest-for-ai-620846",
+    "reason": "기사·발표: AI 시험 관심 분야 발표(계획 단계) — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.canada.ca/en/library-archives/corporate/about-us/strategies-initiatives/artificial-intelligence.html",
+    "reason": "기관 AI 입장·원칙 문서: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://htr-united.github.io/",
+    "reason": "정답 데이터 목록(디렉터리): 개별 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.etnews.com/20250623000148",
+    "reason": "기사·발표: 디지털화 협업 시범사업 착수 소식, AI 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www2.archivists.org/american-archivist/AI-statement",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www2.archivists.org/sites/all/files/Publications%20Board_AIstatement_0.pdf",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://digital-strategy.ec.europa.eu/en/library/ai-digital-archiving-highlights-conference-held-budapest",
+    "reason": "학술대회·행사 소개 또는 토론 정리: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://interparestrustai.org/assets/public/dissemination/AA01-EmployingAIforRDinTDRRs-FinalReport.pdf",
+    "reason": "보존·처분 AI 문헌검토·업체 목록·설문 보고서: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://icabarcelona2025.cat/unlocking-the-future-of-archives-keynote-themes-revealed-for-the-international-archives-congress-ica-barcelona-2025/",
+    "reason": "학술대회·행사 소개 또는 토론 정리: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://blogs.loc.gov/thesignal/2025/07/c2pa-glam/",
+    "reason": "실천공동체 출범 소식: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ntis.go.kr/rndgate/eg/un/ra/view.do?roRndUid=1194993",
+    "reason": "R&D 수요조사 공고: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://archives.go.kr/next/newdata/researchReportDetail.do?seq=97101",
+    "reason": "기획연구(로드맵 제시): 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART002713273",
+    "reason": "지능형 문서처리 도입 전망 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://fastcompanyme.com/impact/how-the-middle-east-is-preserving-priceless-storied-records-at-national-archives/",
+    "reason": "중동 기록관 일반 소개 기사: AI 적용은 단편 언급, 구체적 구현 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://revista.profesionaldelainformacion.com/index.php/EPI/article/view/87392",
+    "reason": "국제 사례·설문 분석 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://pro.europeana.eu/project/ai-in-relation-to-glams",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.arabnews.com/saudi-arabia/king-abdulaziz-foundation-launches-darah-documents-initiative-for-greater-accessibility-to-records-2605647",
+    "reason": "기사·발표: 사업 출범 소식 — AI 검색·번역은 예정 기능으로 확인됨",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-api-as-archivist",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://ai4lam.github.io/metadata-working-group/README.html",
+    "reason": "워킹그룹 활동 페이지(회의 기록 모음): 개별 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://jmail.world/",
+    "reason": "공개기록 패러디성 탐색 사이트(제작자 스스로 기술 패러디로 설명): 기록관리 AX 사례로 부적합",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://librarycarpentry.github.io/lc-machine-learning/",
+    "reason": "교육 과정: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.cenl.org/networkgroups/ai-in-libraries-network-group/",
+    "reason": "네트워크 그룹 소개 페이지: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://alriyadhdaily.com/article/28418166218c4d90b58afd057925f1d7",
+    "reason": "기사·발표: 업무협약(MOU) — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://artsandculture.google.com/experiment/8AGlfzgsYmBeIA",
+    "reason": "스트리트뷰 명소 음성 해설 실험: 기록·소장품과 무관",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://retv-project.eu/",
+    "reason": "방송 콘텐츠 재활용 EU 연구 과제: 기록관리 AI 구현 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://openlibrary.org/developers/dumps",
+    "reason": "데이터 일괄 파일 제공: AI 적용 없음",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://data.nls.uk/",
+    "reason": "공개 데이터 플랫폼: AI 적용 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://themuseumsai.network/",
+    "reason": "박물관 AI 윤리 연구 네트워크: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://repository.ifla.org/items/8c05d706-498b-42c2-a93a-3d47f69f7646",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.muchaduabout.com/post/what-ethics-do-i-need-to-consider-when-using-ai",
+    "reason": "AI 윤리 입문 글: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ai4libraries.org/",
+    "reason": "학술대회·행사 소개 또는 토론 정리: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.bnf.fr/fr/captations-et-supports-de-la-conference-2021",
+    "reason": "학술대회·행사 소개 또는 토론 정리: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://revisionsjournal.com/en/page/how-much-can-we-trust-the-archive",
+    "reason": "아카이브 신뢰에 관한 에세이: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://news.hada.io/topic?id=27889",
+    "reason": "개인 가족사진 위키 제작기 소개 글: 기관 기록관리 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://archive.org/details/preserving-the-web-in-the-age-of-ai",
+    "reason": "웨비나 녹화(웹 보존과 AI 접근 제한 논의): 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ablenews.co.kr/news/articleView.html?idxno=230795",
+    "reason": "AI 코딩 도구로 만든 게시판 아카이브 웹사이트: 기록 기능에 AI를 적용한 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://catalog.data.gov/dataset/archival-descriptions-from-the-national-archives-catalog",
+    "reason": "기록 기술 데이터셋 제공: AI 적용 없음",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-library-that-ai-cannot-see",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.org.uk/ai-preparedness-guidelines-for-archivists",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://meta-archives.xyz/2026busan/",
+    "reason": "확인 불가: 발표 자료와 서비스 내용을 검색으로 확인하지 못함",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://link.springer.com/10.1007/s10502-022-09390-7",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.tandfonline.com/doi/full/10.1080/23257962.2026.2675937",
+    "reason": "AI 준비 방법론 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-economics-of-irreversible-simplification",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/when-records-no-longer-explain-themselves",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/provenance-without-context",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/mediaarea/cap-environmental-review",
+    "reason": "시청각 진본성·출처 기술 환경 조사 문서: AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.doawg.org/",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.gen-ai.witness.org/",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://iptc.org/media-provenance/",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://cliox.org/",
+    "reason": "확인 불가: 공개 서비스로 운영 중인지 확인되지 않음(연구 시제품 단계)",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/eight-mentions",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/when-ai-acts-for-government",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-corpus-is-not-the-archive",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-two-machines",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/respect-des-fonds-after-the-filing",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-archive-becomes-infrastructure",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-readers-are-machines-now",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/the-machine-arrives-at-appraisal",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/search-without-evidence",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://metaarchivist.substack.com/p/provenance-lab-01-can-ric-follow",
+    "reason": "개인 블로그 시제품 실험 글: 기관 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://futureknowledge.transistor.fm/episodes/open-for-whom",
+    "reason": "팟캐스트 대담: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+    "reason": "UN 통계 데이터 플랫폼: 기록·아카이브와 무관",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://ai-collaboratory.net/cas/",
+    "reason": "연구 분야 소개 포털: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://doi.org/10.1016/j.teler.2024.100135",
+    "reason": "이론 논문(파라데이터 보존 틀): 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7278760",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/sjsu-library/kingbotgpt",
+    "reason": "도서관 이용 안내 챗봇: 기록·소장품 관련 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://library2.sdsu.edu/research-help/",
+    "reason": "사서 찾기 RAG 도구: 기록·소장품 관련 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://aiinfra.anu.edu.au/",
+    "reason": "진행 중 연구 사업 소개: 결과물 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://scholar.kyobobook.co.kr/article/detail/4010072080525",
+    "reason": "지역 아카이브 AI 도입 조건 검토 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://linkedjazz.org/",
+    "reason": "링크드 오픈 데이터 프로젝트: AI 적용 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://link.springer.com/10.1007/s00146-021-01367-x",
+    "reason": "접근성 개선 논의 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://link.springer.com/10.1007/s10502-026-09553-w",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://edgee.org/lab/rex/",
+    "reason": "역사 건축물 방문객 안내 챗봇 시제품: 기록·소장품 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://honestabes.info/fireside-chats/",
+    "reason": "확인 불가: 프로젝트와 서비스를 검색으로 확인하지 못함",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://hnlab.huma-num.fr/blog/2026/05/04/MCP-isidore/",
+    "reason": "인문사회 학술 검색 플랫폼의 MCP 실험 글: 기록·아카이브 사례가 아니며 실험 단계",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ajol.info/index.php/jsasa/article/view/235732",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://dl.acm.org/doi/10.1145/3631125",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://dcpapers.dublincore.org/article/952583208",
+    "reason": "도서관 목록 저장소 설계 보고(AI 에이전트는 계획 단계): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/ai4lam/metadata-working-group/blob/main/notebooks/2025-08-12.ipynb",
+    "reason": "실습 노트북(작업 세션 자료): 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://docs.google.com/presentation/d/12sN1yqOjKypzURMbj8ai3VGKOwPMsaLp1A0WRih_4SY/edit",
+    "reason": "범용 LLM 위치 식별 시험 발표 슬라이드: 실험 경과 자료",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://ai4lam.org/evaluating-chatbot-generated-summaries-of-academic-papers/",
+    "reason": "학술 논문 요약 품질 평가: 기록·아카이브 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://drive.google.com/file/d/1VMkNDcY1KBH1YV0QOVGs38o6eetUTddj/view",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://zenodo.org/records/21287085",
+    "reason": "전사본 출처 메타데이터 표준(지침 문서): 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://drive.google.com/file/d/1JjgZRzVK7_25IZiGK69adEt4ItR-4tGQ/view",
+    "reason": "수목원 상담용 RAG 도구: 기록·아카이브와 무관",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.oed.com/information/using-the-oed/ai-search-assistant/",
+    "reason": "사전 검색 도우미: 기록·아카이브와 무관",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://ai-bridges.org/about/",
+    "reason": "연구 사업 소개(진행 중): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.kcl.ac.uk/research/issa",
+    "reason": "진행 중 연구개발 사업 소개: 결과물 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://hnlab.huma-num.fr/blog/tags/rag/",
+    "reason": "인문사회 학술 검색엔진 RAG 실험 기록: 기록·아카이브 사례가 아니며 실험 단계",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ina.fr/institut-national-audiovisuel/research/argimi-project",
+    "reason": "진행 중 컨소시엄 사업: 공개 모델 등 결과물 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://anr.fr/Projet-ANR-23-IAS1-0007",
+    "reason": "연구비 지원 사업 소개 페이지(진행 중·결과물 미확인): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.bnf.fr/fr/les-grands-projets-industriels",
+    "reason": "진행 중 산업화 사업: 공개 데이터베이스 미완(베타 시연 단계)",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.bnf.fr/fr/de-lia-dans-le-moteur",
+    "reason": "연구 진행 인터뷰 기사: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.bnf.fr/fr/lintelligence-artificielle-un-axe-strategique",
+    "reason": "AI 로드맵(전략) 소개: 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.bnf.fr/fr/les-experimentations-internes-dia",
+    "reason": "내부 AI 실험 공모 프로그램 소개: 시제품·실험 단계",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://anr.fr/Projet-ANR-20-CE27-0012",
+    "reason": "연구비 지원 사업 소개 페이지(진행 중·결과물 미확인): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://anr.fr/Projet-ANR-23-IAS1-0001",
+    "reason": "연구비 지원 사업 소개 페이지(진행 중·결과물 미확인): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://anr.fr/Projet-ANR-25-CE38-2633",
+    "reason": "연구비 지원 사업 소개 페이지(진행 중·결과물 미확인): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.ina.fr/institut-national-audiovisuel/research/gem-project",
+    "reason": "연구 사업 소개 페이지: 성과 도구는 inaSpeechSegmenter·inaFaceAnalyzer로 따로 반영",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://github.com/ArchivesNationalesFR/rico-converter",
+    "reason": "EAD→RiC-O 변환 도구: AI 적용 없음",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://sites.google.com/view/llms4subjects",
+    "reason": "공유 태스크 안내 사이트: 같은 성과는 TIB-SID 데이터셋으로 반영",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://indico.global/event/15085/contributions/139390/",
+    "reason": "진행 중 사업 발표(1단계 시험 경과): 실험 경과 자료",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://koreascience.kr/article/JAKO202605457631892.page",
+    "reason": "지능화 방안 제안 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://docs.google.com/document/d/1-D6mxlrgDM_BccvuOkWIfb7S47j1Jx1HeGf5meigTvs/edit",
+    "reason": "사례 목록(디렉터리): 개별 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://pametnovin.cz/",
+    "reason": "확인 불가: 서비스와 운영 기관을 검색으로 확인하지 못함(제보에도 '추정'으로 표기)",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://uconn.theirstory.io/discover",
+    "reason": "확인 불가: 구술사 플랫폼의 AI 질의 기능을 검색으로 확인하지 못함",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://fossda.theirstory.io/discover",
+    "reason": "확인 불가: 구술사 플랫폼의 AI 질의 기능을 검색으로 확인하지 못함",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://fairbank.fas.harvard.edu/news/digital-china-initiative-launches-digital-china-worldwide-chatbot/",
+    "reason": "디지털 자원 안내 챗봇: 기록·소장품 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://edgee.org/lab/hyperlocal/",
+    "reason": "시범 앱(결과 미공개): 실험 단계로 성과 확인 불가",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.authorsalliance.org/2026/03/16/library-and-archives-101-ai-and-the-false-promise-of-control/",
+    "reason": "개인 블로그 에세이·논평: 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.dpconline.org/news/cyber-security-twgn-series-gen-release",
+    "reason": "디지털 보존 사이버보안 지침: AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.jinfowar.com/node/2402",
+    "reason": "합성 영상 위험 분석 논문: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://amianet.org/wp-content/uploads/Archives-and-Gen-AI-Session-01-Real.pdf",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://docs.google.com/presentation/d/1OOwZaqHFe2_J66qQxu1KzGDV-2x_2RVZWVHw_Wp4AJU/edit?usp=sharing",
+    "reason": "웹 아카이브 AI 과제·계획 소개 발표: 실제 구현 성과로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.doawg.org/wp-content/uploads/2026/03/ThreePillarsofAuthenticityforHeritageDigitization_2026-02-24.pdf",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://cawg.io/",
+    "reason": "AI 시대 콘텐츠 진본성·출처(C2PA 등) 논의·표준 작업: 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://arxiv.org/abs/2504.21489",
+    "reason": "AI 탐지 벤치마크: 기록·아카이브 AI 적용 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.magnetforensics.com/blog/introducing-magnet-verify-the-next-evolution-of-medex/",
+    "reason": "포렌식 기업 제품 소개: 광고성 글",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.eyefilm.nl/en/whats-on/ai-and-the-archive/1611162",
+    "reason": "예술 전시·토론 프로그램: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://amianet.org/wp-content/uploads/Archives-and-GenAI-Session-03-Periscope-Nick-Spark.pdf",
+    "reason": "라이선스 계약 문구 발표: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://creativecommons.org/cc-signals/",
+    "reason": "AI 이용 신호 체계(개발 중): 기록관리 AI 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archivalproducersalliance.com/apa-genai-initiative",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.trustarchives.org/tai-toolkit/",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://doi.org/10.14324/111.9781800088375",
+    "reason": "편저 단행본(쟁점·사례 논의): 개별 구현 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.aitimes.kr/news/articleView.html?idxno=28942",
+    "reason": "기사·발표: 학습데이터·시범 서비스 구축 착수 보도(도입 예정) — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.etnews.com/20260622000193",
+    "reason": "기사·발표: 사업 수주·착수 소식 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://theme.archives.go.kr/next/pages/new_newsletter/2025/html/vol_158/sub01.html",
+    "reason": "기사·발표: 업무계획 발표 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.go.jp/news/20260326.html",
+    "reason": "확인 불가: FAQ 자동응답 챗봇의 AI 적용 여부를 확인하지 못함",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.saac.gov.cn/daj/tzgg/202604/12aa9fabc60c4dbeab5444f03e78bdb9.shtml",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님 (같은 시기 시범사업 통지 4539d7aade로 이미 반영)",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.saac.gov.cn/daj/yaow/202106/899650c1b1ec4c0e9ad3c2ca7310eca4.shtml",
+    "reason": "발전계획(정책 문서): 실제 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.archives.gov/files/records-mgmt/policy/nara-fra-ai-guidance.pdf",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://academic.oup.com/dsh/article/38/2/571/6832097",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://gtr.ukri.org/project/DB6CF56A-8FFA-445B-A7A4-EF79B8329F52",
+    "reason": "연구비 과제 정보 페이지(진행 중): 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.kci.go.kr/kciportal/landing/article.kci?arti_id=ART003133031",
+    "reason": "설문·면담 조사 연구: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.youtube.com/watch?v=gJYsq_BjxrQ",
+    "reason": "심포지엄 세션 영상: 구현 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://archives.go.kr/next/newdata/researchReportDetail.do?seq=102186",
+    "reason": "서비스 모델 제안 연구: 실제 구현·운영 사례로 확인되지 않음",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.nl.go.kr/NL/contents/N50603000000.do?schM=view&id=50581&schBcid=normal0302",
+    "reason": "도서 추천 체험 서비스: 기록·아카이브 AI 사례로 보기 어려움",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://aikorea.go.kr/web/board/brdDetail.do?menu_cd=000012&num=363",
+    "reason": "기사·발표: 문서 작성 방식 개선 계획 발표 — 실제 구현 성과가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://ai4lam.org/",
+    "reason": "공동체 홈페이지: 개별 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.digitizationguidelines.gov/guidelines/tcr-cap.html",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님 (공개 의견수렴 초안)",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://library.virginia.edu/ai/shared-practice",
+    "reason": "정책·지침 문서: 실제 구현·운영 사례가 아님",
+    "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.mcst.go.kr/site/s_notice/press/pressView.jsp?pSeq=20833",
+    "reason": "전시 해설 로봇 서비스 확대 보도: 기록·소장품 관리 AI 사례로 보기 어려움",
+    "date": "2026-10-15"
   }
 ]

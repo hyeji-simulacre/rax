@@ -3330,5 +3330,1744 @@
    "실운영"
   ],
   "url": "https://www.bnf.fr/sites/default/files/2022-05/Poster_Gallica_Snoop.pdf"
+ },
+ {
+  "id": "0d37007db0",
+  "title": "kordoc",
+  "titleKo": "한글 공문서(HWP·HWPX) 변환 라이브러리·CLI·MCP 서버",
+  "org": "chrisryugj (광진구청 공무원 개인 프로젝트)",
+  "orgIds": [
+   "chrisryugj"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "광진구청 공무원이 개인 프로젝트로 공개한 문서 변환 도구로, HWP·HWPX·PDF·오피스 문서를 마크다운과 구조화 데이터로 바꾼다. 라이브러리·CLI·MCP 서버로 제공돼 Claude 같은 AI 에이전트가 한글 공문서를 직접 읽고 비교·생성할 수 있다. 저장소에는 HWPX 문서 2,424건의 표 10,342개 구조가 원본과 모두 일치했다는 검증 결과가 실려 있다.",
+  "tags": [
+   "HWP",
+   "공문서",
+   "MCP",
+   "문서변환",
+   "오픈소스"
+  ],
+  "url": "https://github.com/chrisryugj/kordoc"
+ },
+ {
+  "id": "b66c6480e4",
+  "title": "Government of Canada AI Register (Minimum Viable Product)",
+  "titleKo": "캐나다 연방정부 AI 등록부(캐나다 도서관·기록관 항목 포함)",
+  "org": "Treasury Board of Canada Secretariat / Library and Archives Canada",
+  "orgIds": [
+   "lac",
+   "tbs-canada"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "캐나다",
+  "year": 2025,
+  "format": "보고서",
+  "category": "정책·가이드",
+  "summary": "캐나다 재무위원회 사무국이 연방기관이 쓰는 AI 시스템을 모아 공개한 등록부 데이터셋이다. 캐나다 도서관·기록관(LAC)은 8건을 올렸는데, Transkribus 기반 필기체 전사, 1931년 인구조사 이름 색인, 관보 정보 추출, 공유 드라이브 문서 자동 분류 같은 사업을 운영 상태와 함께 적었다. 국가기록기관의 AI 활용 현황을 공식 목록으로 확인할 수 있는 자료다.",
+  "tags": [
+   "AI 사용사례 목록",
+   "LAC",
+   "필기체 전사",
+   "자동 분류"
+  ],
+  "url": "https://open.canada.ca/data/dataset/fcbc0200-79ba-4fa4-94a6-00e32facea6b"
+ },
+ {
+  "id": "61a2594813",
+  "title": "Archives of the European Parliament 2025 annual report",
+  "titleKo": "유럽의회 기록보관소 2025 연차보고서('Ask the EP Archives' AI 질의응답 운영)",
+  "org": "Archives of the European Parliament",
+  "orgIds": [
+   "european-parliament-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "국제",
+  "year": 2025,
+  "format": "보고서",
+  "category": "검색·챗봇",
+  "summary": "유럽의회 기록보관소의 2025년 활동 보고서다. 생성형 AI 질의응답 서비스 'Ask the EP Archives'에 의미 검색과 키워드 검색을 함께 넣고 유럽산 LLM Mistral로 바꿨으며, 이 서비스가 한 해 9,811회 쓰였다고 밝혔다. 아키비스트 업무를 돕는 'EP Archives Tools' 시험판과 의회 문서를 자동 요약·EuroVoc 분류한 대시보드도 소개한다.",
+  "tags": [
+   "질의응답",
+   "RAG",
+   "의회기록",
+   "Mistral",
+   "실운영"
+  ],
+  "url": "https://historicalarchives.europarl.europa.eu/files/live/sites/historicalarchive/files/03_PUBLICATIONS/05_Annual-Report-of-the-Archive/01_Documents/annual-report-2025-en.pdf"
+ },
+ {
+  "id": "0ab6a55549",
+  "title": "서울시립미술관 소장품 정보",
+  "org": "서울시립미술관 (서울 열린데이터광장)",
+  "orgIds": [
+   "sema"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": null,
+  "format": "MCP·API",
+  "apiType": "REST API",
+  "category": "메타데이터·기술",
+  "summary": "서울시립미술관 소장 작품의 작가명, 작품명, 제작연도, 규격, 재질·기법을 서울 열린데이터광장에서 OpenAPI와 파일로 내려받을 수 있게 한 공공데이터다. 미술관 소장품 메타데이터를 AI 에이전트나 MCP 서버에 연결하는 통로로 쓸 수 있으며, 공공누리 제4유형(출처표시·상업적 이용금지·변경금지) 조건이 붙는다.",
+  "tags": [
+   "소장품",
+   "미술관",
+   "OpenAPI",
+   "서울열린데이터광장"
+  ],
+  "url": "https://data.seoul.go.kr/dataList/OA-15321/S/1/datasetView.do"
+ },
+ {
+  "id": "adbe2387d0",
+  "title": "Explainable AI, LLM, and digitized archival cultural heritage: a case study of the Grand Ducal Archive of the Medici",
+  "titleKo": "설명 가능한 AI와 LLM으로 디지털 기록유산 다루기: 메디치 대공 아카이브 사례",
+  "org": "Gabor Mihaly Toth·Richard Albrecht·Cedric Pruski (LIST, AI & SOCIETY)",
+  "orgIds": [
+   "list-luxembourg",
+   "ai-and-society"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "룩셈부르크",
+  "year": 2025,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "메디치 아카이브 프로젝트가 만든 메디치 대공 아카이브 서신 전자 목록을 생성형 AI로 후처리한 사례 연구다. LLM으로 주제·서술 키워드를 뽑아 메타데이터를 보강하고, 이를 인터랙티브 시각화와 묶어 시각적 검색도구(visual finding aid) 시제품을 만들었다. 저자들은 결과를 설명 가능성 관점에서 비판적으로 검토하고 GLAM 기관에 소장 데이터 공개를 권했다.",
+  "tags": [
+   "LLM",
+   "메타데이터 보강",
+   "서신",
+   "시각적 검색도구"
+  ],
+  "url": "https://link.springer.com/article/10.1007/s00146-025-02238-5"
+ },
+ {
+  "id": "4d13ec4b44",
+  "title": "Bowerbird",
+  "titleKo": "바우어버드: 호주 국립영상음향기록관의 대량 음성·영상 전사 엔진",
+  "org": "National Film and Sound Archive of Australia (NFSA)",
+  "orgIds": [
+   "nfsa"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "호주",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "음성·영상",
+  "summary": "호주 국립영상음향기록관(NFSA)이 직접 개발한 머신러닝 기반 대량 전사 엔진으로, 소장 음성·영상 수십만 시간을 전사해 직원과 연구자가 자료를 찾을 수 있게 한다. 미국 영어로 학습한 상용 엔진 대신 호주 영어로 학습한 자체 도구를 만들었고, 원주민 지명과 호주 구어 표현을 인식하도록 조정하고 있다.",
+  "tags": [
+   "음성인식",
+   "시청각아카이브",
+   "대량전사",
+   "호주영어"
+  ],
+  "url": "https://www.nfsa.gov.au/research/bowerbird"
+ },
+ {
+  "id": "63e6aabf2c",
+  "title": "Digital Collections Explorer: An Open-Source, Multimodal Viewer for Searching Digital Collections",
+  "titleKo": "Digital Collections Explorer: 디지털 컬렉션 검색용 오픈소스 멀티모달 뷰어",
+  "org": "Ying-Hsiang Huang, Benjamin Charles Germain Lee (University of Washington)",
+  "orgIds": [
+   "university-of-washington"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2025,
+  "format": "논문",
+  "category": "검색·챗봇",
+  "summary": "CLIP 임베딩으로 디지털 컬렉션을 자연어 질의와 역이미지 검색으로 찾게 해 주는 오픈소스 웹 탐색 도구를 소개한 논문이다. 메타데이터가 빈약한 컬렉션도 시각 특징으로 찾을 수 있게 하는 것이 목표로, 지도·사진·웹 아카이브 PDF에 적용한 사례를 보였다. 노트북 한 대에서 수십만 장 규모까지 처리할 수 있음을 확인했다.",
+  "tags": [
+   "CLIP",
+   "멀티모달검색",
+   "오픈소스",
+   "디지털컬렉션"
+  ],
+  "url": "https://arxiv.org/html/2507.00961v1"
+ },
+ {
+  "id": "54d7de09bc",
+  "title": "CLAMS (Computational Linguistics Applications for Multimedia Services)",
+  "titleKo": "CLAMS: 시청각 아카이브용 오픈소스 AI 분석 플랫폼",
+  "org": "Brandeis University · GBH Archives",
+  "orgIds": [
+   "brandeis-university",
+   "gbh"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": null,
+  "format": "GitHub·오픈소스",
+  "category": "음성·영상",
+  "summary": "브랜다이스대학교가 GBH 아카이브와 함께 만든 문화유산기관용 오픈소스 AI 플랫폼이다. 영상·음성·텍스트 분석 도구를 워크플로로 엮어 시청각 기록의 메타데이터를 생성·보정하며, 멀티모달 주석 교환 형식(MMIF)과 Python SDK, 공개 앱 목록을 함께 운영한다.",
+  "tags": [
+   "시청각기록",
+   "MMIF",
+   "메타데이터 생성",
+   "오픈소스"
+  ],
+  "url": "https://clams.ai/home/"
+ },
+ {
+  "id": "fb021cd533",
+  "title": "Artificial Intelligence Meets Cultural Heritage. The Transformative Power of AI for and through National Libraries",
+  "titleKo": "AI와 문화유산의 만남: 국립도서관을 위한, 국립도서관을 통한 AI(CENL 보고서)",
+  "org": "Conference of European National Librarians (CENL)",
+  "orgIds": [
+   "cenl"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "국제",
+  "year": null,
+  "format": "보고서",
+  "category": "정책·가이드",
+  "summary": "유럽 국립도서관장회의(CENL)가 엮은 보고서로, 각국 국립도서관의 AI 적용 경험을 담은 기고문 18편을 실었다. 노르웨이 국립도서관의 언어모델 제공, 납본 자료 목록 자동화, 룩셈부르크 국립도서관의 AI 목록 작성, 디지털화 신문 1면 인식 같은 실제 사례와 책임 있는 AI 원칙을 함께 다룬다.",
+  "tags": [
+   "국립도서관",
+   "사례모음",
+   "목록자동화",
+   "CENL"
+  ],
+  "url": "https://www.cenl.org/wp-content/uploads/2026/01/ArtificialIntelligenceMeetsCulturalHeritage.pdf"
+ },
+ {
+  "id": "83414178da",
+  "title": "Simara : convertir en données les inventaires manuscrits avec l'aide de l'IA",
+  "titleKo": "Simara: AI로 손글씨 목록을 데이터로 바꾸는 프랑스 국립기록원 플랫폼",
+  "org": "Archives nationales (프랑스 국립기록원) / Teklia",
+  "orgIds": [
+   "archives-nationales-france",
+   "teklia"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "프랑스 국립기록원이 18세기부터 20세기 중반까지 손으로 쓴 목록 카드와 등록부를 데이터로 바꾸려고 만든 플랫폼이다. 필기체 인식(HTR)과 개체명 인식으로 내용을 EAD 구조로 정리하고, 아키비스트는 검토와 교정에 집중한다. 앙시앵 레짐 기록 목록만 카드 80만 장, 10만 쪽 규모이며 Teklia가 혁신 조달로 개발했다.",
+  "tags": [
+   "HTR",
+   "목록 데이터화",
+   "EAD",
+   "개체명인식"
+  ],
+  "url": "https://www.archives-nationales.culture.gouv.fr/innovation-et-recherche/simara-convertir-en-donnees-les-inventaires-manuscrits-avec-laide-de-lia"
+ },
+ {
+  "id": "60e935d3a7",
+  "title": "LECTAUREP (LECTure Automatique de REPertoires)",
+  "titleKo": "LECTAUREP: 파리 공증 증서 목록 자동 판독 사업",
+  "org": "Archives nationales (Minutier central) / Inria ALMAnaCH / EPHE",
+  "orgIds": [
+   "archives-nationales-france",
+   "inria",
+   "ephe-psl"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2018,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "프랑스 국립기록원 파리 공증인 중앙문서고의 공증 증서 목록을 자동으로 읽기 위해 2018년 시작한 사업이다. Inria, EPHE와 함께 필기체 인식과 개체명 인식을 적용했고 2020년부터 eScriptorium·Kraken으로 작업했다. 2022년 전사 모델과 정답 데이터(ground truth)를 공개했다.",
+  "tags": [
+   "HTR",
+   "공증기록",
+   "eScriptorium",
+   "정답데이터"
+  ],
+  "url": "https://lectaurep.hypotheses.org"
+ },
+ {
+  "id": "9d5a5938d0",
+  "title": "BnF API et jeux de données",
+  "titleKo": "프랑스 국립도서관(BnF) API·데이터셋 포털",
+  "org": "Bibliothèque nationale de France (BnF)",
+  "orgIds": [
+   "bnf"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": null,
+  "format": "MCP·API",
+  "apiType": "SPARQL",
+  "category": "메타데이터·기술",
+  "summary": "프랑스 국립도서관이 Gallica, 일반 목록, data.bnf.fr, 웹 납본 등 원천별 API와 일괄 데이터를 모아 안내하는 포털이다. data.bnf.fr는 Wikidata·DBpedia와 연결된 RDF로 내려받거나 SPARQL로 질의할 수 있어, AI 에이전트가 서지·전거 데이터를 쓰는 통로가 된다.",
+  "tags": [
+   "BnF",
+   "SPARQL",
+   "Gallica",
+   "전거데이터"
+  ],
+  "url": "https://api.bnf.fr/fr"
+ },
+ {
+  "id": "3844509a25",
+  "title": "열린국회정보 Open API",
+  "org": "국회사무처",
+  "orgIds": [
+   "national-assembly-secretariat"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": null,
+  "format": "MCP·API",
+  "apiType": "REST API",
+  "category": "검색·챗봇",
+  "summary": "국회의원, 의안, 본회의·위원회 회의 정보, 국회 발간물 등을 Open API로 제공하는 국회 공공데이터 포털이다. 인증키를 받아 호출하며, 입법 기록을 AI 에이전트에 잇는 MCP 서버(assembly-api-mcp)의 데이터원으로 쓰인다.",
+  "tags": [
+   "국회",
+   "입법기록",
+   "OpenAPI",
+   "의안"
+  ],
+  "url": "https://open.assembly.go.kr/portal/openapi/main.do"
+ },
+ {
+  "id": "65ade1623d",
+  "title": "New Search Feature: Optical Character Recognition (OCR)",
+  "titleKo": "NARA 국가기록 카탈로그에 OCR 전문 검색 도입",
+  "org": "U.S. National Archives and Records Administration (NARA)",
+  "orgIds": [
+   "nara-us"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2019,
+  "format": "기사·발표",
+  "category": "OCR·고문서",
+  "summary": "NARA가 국가기록 카탈로그에 OCR을 넣어 디지털화 기록 이미지 속 글자로도 검색할 수 있게 했다고 알린 글이다. 이전에는 아키비스트가 쓴 제목·설명이나 시민 참여 태그·전사로만 찾을 수 있었다. 2019년 6월 이후 올라온 JPG·PDF 기록에 적용했으며, 당시 카탈로그의 디지털화 기록은 9,200만 쪽이 넘었다.",
+  "tags": [
+   "OCR",
+   "전문검색",
+   "카탈로그",
+   "실운영"
+  ],
+  "url": "https://narations.blogs.archives.gov/2019/09/09/new-search-feature-optical-character-recognition-ocr/"
+ },
+ {
+  "id": "9f76ba3619",
+  "title": "inaSpeechSegmenter",
+  "titleKo": "inaSpeechSegmenter: 방송 음성·음악 구간 분할 도구",
+  "org": "Institut national de l'audiovisuel (INA)",
+  "orgIds": [
+   "ina"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2018,
+  "format": "GitHub·오픈소스",
+  "category": "음성·영상",
+  "summary": "프랑스 국립시청각연구소(INA)가 공개한 CNN 기반 오디오 분할 도구로, 방송 자료에서 말소리·음악·잡음과 화자 성별을 구분한다. MIREX 2018 음성 검출 과제에서 우승했고, 프랑스 시청각 규제기관의 연례 성평등 보고서 작성에 쓰이고 있다. MIT 라이선스로 공개됐다.",
+  "tags": [
+   "음성구간검출",
+   "방송아카이브",
+   "성별분석",
+   "오픈소스"
+  ],
+  "url": "https://github.com/ina-foss/inaSpeechSegmenter"
+ },
+ {
+  "id": "b0be7a2b33",
+  "title": "The role of AI for records management: findings from case studies (CU05)",
+  "titleKo": "기록관리에서 AI의 역할: 사례연구 결과(InterPARES Trust AI CU05)",
+  "org": "InterPARES Trust AI",
+  "orgIds": [
+   "interpares-trust-ai"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2026,
+  "format": "보고서",
+  "category": "분류·평가",
+  "summary": "InterPARES Trust AI의 CU05 연구가 내놓은 사례연구 보고서다. NATO 기록관의 자동 분류, 메타데이터 보강, 요약 적용과 이탈리아 에밀리아로마냐주 등의 실제 적용을 분석했다. AI 처리 과정을 기록으로 남기는 패러데이터(paradata) 틀도 함께 제시했다.",
+  "tags": [
+   "자동분류",
+   "NATO",
+   "패러데이터",
+   "사례연구"
+  ],
+  "url": "https://interparestrustai.org/assets/public/dissemination/CU05_TheroleofAIforrecordsmanagement_Findingsfromcasestudies_FINAL_v2.pdf"
+ },
+ {
+  "id": "0e5d5e7590",
+  "title": "국내 지자체 사진 기록물의 효율적 관리를 위한 메타데이터 설계 및 기계학습 기반 자동 인덱싱 방법 연구",
+  "org": "김인아·강영선·이규철 / 한국기록관리학회지 20(2)",
+  "orgIds": [
+   "ksarm"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2020,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "지방자치단체 사진 기록물에 표준 메타데이터가 없어 기관 간 호환과 검색이 어렵다는 문제를 다룬 논문이다. 지자체 사진 기록물용 메타데이터를 설계하고, 기계학습으로 사진 속 글자와 객체를 인식해 색인어를 자동으로 붙이는 방법을 제안·적용했다.",
+  "tags": [
+   "사진기록물",
+   "자동색인",
+   "객체인식",
+   "지자체"
+  ],
+  "url": "https://www.dbpia.co.kr/journal/articleDetail?nodeId=NODE09384833"
+ },
+ {
+  "id": "ac36e86ddf",
+  "title": "기록관리 AI 기술적용을 위한 공통 학습데이터 세트 구축 연구",
+  "org": "행정안전부 국가기록원 (연구책임자 오효정)",
+  "orgIds": [
+   "national-archives-of-korea",
+   "jeonbuk-national-university"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2021,
+  "format": "보고서",
+  "category": "메타데이터·기술",
+  "summary": "국가기록원이 2021년 수행한 R&D 연구로, 기록관리 업무에 AI를 적용할 때 함께 쓸 학습데이터 세트를 설계했다. 전거 작성, 분류·기술, 지능형 검색을 대상 업무로 정하고 경제 분야 기록물 2,470철, 10,049건으로 시범 데이터를 실제로 구축했다.",
+  "tags": [
+   "학습데이터",
+   "전거",
+   "분류·기술",
+   "국가기록원"
+  ],
+  "url": "https://archives.go.kr/next/newdata/researchReportDetail.do?seq=98398"
+ },
+ {
+  "id": "ac7133c1c2",
+  "title": "Arabic Optical Character Recognition (OCR) Technology at Qatar National Library",
+  "titleKo": "카타르국립도서관의 아랍어 OCR 기술",
+  "org": "Qatar National Library",
+  "orgIds": [
+   "qatar-national-library"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "카타르",
+  "year": 2020,
+  "format": "기사·발표",
+  "category": "OCR·고문서",
+  "summary": "카타르국립도서관(QNL)이 디지털 저장소의 아랍어 자료에 적용한 OCR 기술을 소개한 글이다. 아랍어 글자 단위 정확도 99%를 보고했고, 이를 바탕으로 디지털 저장소에서 문서 본문을 검색하는 기능을 제공한다고 설명했다.",
+  "tags": [
+   "아랍어",
+   "OCR",
+   "전문검색",
+   "국립도서관"
+  ],
+  "url": "https://nafath.mada.org.qa/nafath-article/arabic-optical-character-recognition-ocr-technology-at-qatar-national-library/"
+ },
+ {
+  "id": "0828a2aea7",
+  "title": "ARCHANGEL - Trusted Archives of Digital Public Records",
+  "titleKo": "ARCHANGEL: 디지털 공공기록의 신뢰 아카이브",
+  "org": "University of Surrey · The National Archives (UK) · Open Data Institute",
+  "orgIds": [
+   "university-of-surrey",
+   "tna-uk"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "영국",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "보존·관리 자동화",
+  "summary": "영국 서리대학교가 영국 국립기록원(TNA), 오픈데이터연구소와 함께 진행한 디지털 공공기록 무결성 보증 연구다. 기록마다 신경망으로 내용 지문을 만들어 블록체인에 저장해, 보존 과정에서 파일 형식이 바뀌어도 같은 기록인지 검증할 수 있게 했다.",
+  "tags": [
+   "진본성",
+   "블록체인",
+   "디지털보존",
+   "TNA"
+  ],
+  "url": "https://www.archangel.ac.uk/"
+ },
+ {
+  "id": "3723036e1c",
+  "title": "챗GPT를 활용한 기록관리 메타데이터 추출 사례연구",
+  "org": "김민지·강성희·이해영 / 한국기록관리학회지 24(2)",
+  "orgIds": [
+   "ksarm"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2024,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "기록물 메타데이터 자동 추출에 챗GPT를 쓸 수 있는지 실제로 시험한 사례연구다. Python과 LangChain으로 GPT-3.5 turbo를 연결한 방식은 보안에 유리했지만 정확도가 낮았고, 온라인 ChatGPT-4는 더 정확했으나 민감한 파일을 올릴 수 없다는 한계가 있었다.",
+  "tags": [
+   "ChatGPT",
+   "메타데이터 추출",
+   "LangChain",
+   "사례연구"
+  ],
+  "url": "https://accesson.kr/jksarm/v.24/2/89/42778"
+ },
+ {
+  "id": "f7a4b6792d",
+  "title": "자연어 처리의 개체명 인식을 통한 기록집합체의 메타데이터 추출 방안",
+  "org": "송치호 / 한국기록관리학회지 24(2)",
+  "orgIds": [
+   "ksarm"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2024,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "구로공단 관련 수기 기록물 약 1,200쪽에 BERT 기반 개체명 인식을 적용해 기록집합체 메타데이터를 추출한 연구다. 인명 173개와 조직·기관 314개를 뽑아 기록 기술에 활용하는 방안을 제시했다.",
+  "tags": [
+   "개체명인식",
+   "BERT",
+   "기록기술",
+   "메타데이터 추출"
+  ],
+  "url": "https://accesson.kr/jksarm/v.24/2/65/42782"
+ },
+ {
+  "id": "4985f2cb32",
+  "title": "엑스플로어 뮤지엄 (Xplore Museum)",
+  "org": "서강대학교 아트&테크놀로지학과 / 국립현대미술관",
+  "orgIds": [
+   "sogang-university",
+   "mmca"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2025,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "서강대 연구팀이 문화기술 R&D로 국립현대미술관 소장품을 대상으로 만든 개방형 수장고 서비스다. 대화형 AI로 소장품 9,000여 점을 탐색하는 StorageChat Collection, 생성형 AI 큐레이터, 스마트 글라스 AI 도슨트로 구성했고 2025년 9~11월 국립현대미술관 청주에서 시범 운영했다.",
+  "tags": [
+   "소장품탐색",
+   "대화형AI",
+   "개방형수장고",
+   "미술관"
+  ],
+  "url": "https://creative.sogang.ac.kr/mmca/"
+ },
+ {
+  "id": "f9923009d5",
+  "title": "Newspaper Navigator",
+  "titleKo": "뉴스페이퍼 내비게이터: 역사 신문 이미지 시각 유사도 검색",
+  "org": "Library of Congress (LC Labs)",
+  "orgIds": [
+   "library-of-congress"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2020,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "미국 의회도서관 LC Labs가 2020년 혁신 레지던시로 만든 서비스로, Chronicling America 디지털화 신문에서 머신러닝으로 뽑은 이미지 156만여 장을 시각 유사도로 검색·탐색하게 했다. 신문 1,600만여 쪽에서 추출한 시각 자료 데이터셋과 처리 파이프라인도 공개했다.",
+  "tags": [
+   "신문아카이브",
+   "이미지검색",
+   "객체탐지",
+   "LC Labs"
+  ],
+  "url": "https://labs.loc.gov/work/experiments/newspaper-navigator/"
+ },
+ {
+  "id": "60794c3060",
+  "title": "Nautilus-OCR",
+  "titleKo": "Nautilus-OCR: 룩셈부르크 국립도서관의 신문 OCR 개선 도구",
+  "org": "Bibliothèque nationale du Luxembourg (BnL)",
+  "orgIds": [
+   "bnl-luxembourg"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "룩셈부르크",
+  "year": 2021,
+  "format": "GitHub·오픈소스",
+  "category": "OCR·고문서",
+  "summary": "룩셈부르크 국립도서관이 공개한 OCR 개선 도구다. 디지털화 신문의 METS/ALTO 패키지에서 다시 인식할 블록을 예측하고, 새로 OCR한 결과를 패키지에 반영한다. 사전학습된 OCR·글꼴 인식·개선 예측 모델을 함께 담았다.",
+  "tags": [
+   "OCR 품질개선",
+   "신문",
+   "ALTO",
+   "오픈소스"
+  ],
+  "url": "https://github.com/natliblux/nautilusocr"
+ },
+ {
+  "id": "bb0e37143c",
+  "title": "KBLab (National Library of Sweden)",
+  "titleKo": "스웨덴 국립도서관 KBLab 허깅페이스 저장소",
+  "org": "Kungliga biblioteket (KBLab)",
+  "orgIds": [
+   "kb-sweden"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "스웨덴",
+  "year": null,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "스웨덴 국립도서관 데이터 연구실 KBLab이 허깅페이스에 공개한 모델·데이터셋 모음이다. 스웨덴어 BERT, 문장 임베딩, 개체명 인식 모델과 Whisper 기반 음성 인식 모델(kb-whisper), 의회 음성 데이터셋 RixVox 등을 내려받을 수 있다.",
+  "tags": [
+   "허깅페이스",
+   "kb-whisper",
+   "스웨덴어",
+   "국립도서관"
+  ],
+  "url": "https://huggingface.co/KBLab"
+ },
+ {
+  "id": "b122fcdf91",
+  "title": "CAMPI: Computer-Aided Metadata Generation for Photo archives Initiative",
+  "titleKo": "CAMPI: 컴퓨터 비전 기반 사진 아카이브 메타데이터 생성 사업",
+  "org": "Carnegie Mellon University Libraries",
+  "orgIds": [
+   "carnegie-mellon-university"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2020,
+  "format": "보고서",
+  "category": "메타데이터·기술",
+  "summary": "카네기멜런대 도서관이 대학 아카이브 사진 컬렉션 정리에 컴퓨터 비전을 적용한 사업의 백서다. 중복 사진을 찾고 비슷한 장면의 사진에 태그를 한꺼번에 붙이는 시제품을 만들어 시험했고, 방법·결과·기술 로드맵과 참조 코드를 함께 공개했다.",
+  "tags": [
+   "사진아카이브",
+   "컴퓨터비전",
+   "중복탐지",
+   "태깅"
+  ],
+  "url": "https://kilthub.cmu.edu/articles/preprint/CAMPI_Computer-Aided_Metadata_Generation_for_Photo_archives_Initiative/12791807"
+ },
+ {
+  "id": "dd2ef75ef7",
+  "title": "inaFaceAnalyzer",
+  "titleKo": "inaFaceAnalyzer: 영상 속 얼굴 성별·연령 분석 도구",
+  "org": "Institut national de l'audiovisuel (INA)",
+  "orgIds": [
+   "ina"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2020,
+  "format": "GitHub·오픈소스",
+  "category": "음성·영상",
+  "summary": "프랑스 국립시청각연구소(INA)가 공개한 파이썬 라이브러리로, 영상 속 얼굴을 찾아 성별과 연령을 추정한다. 방송 아카이브에서 성별 재현을 얼굴 단위로 기술하려고 만들었다.",
+  "tags": [
+   "얼굴분석",
+   "방송아카이브",
+   "성평등",
+   "오픈소스"
+  ],
+  "url": "https://github.com/ina-foss/inaFaceAnalyzer"
+ },
+ {
+  "id": "531ffd7ada",
+  "title": "GallicaPix",
+  "titleKo": "GallicaPix: 갈리카 삽화 AI 검색 실험 서비스",
+  "org": "Bibliothèque nationale de France (BnF)",
+  "orgIds": [
+   "bnf"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "프랑스 국립도서관이 갈리카 디지털 장서 속 삽화를 찾도록 만든 실험 검색 서비스다. IBM Watson, Google Cloud Vision, YOLO 등으로 인식한 개념·색상·얼굴 정보로 이미지를 검색할 수 있다. 1차 세계대전기 자료 47만 5천 쪽에서 삽화 22만여 점을 색인했고 결과를 IIIF로 내보낼 수 있다.",
+  "tags": [
+   "삽화검색",
+   "Gallica",
+   "이미지인식",
+   "IIIF"
+  ],
+  "url": "http://web.archive.org/web/20250519024424/https://gallicapix.bnf.fr/rest?run=findIllustrations-form.xq"
+ },
+ {
+  "id": "e5c780aaa3",
+  "title": "Maken",
+  "titleKo": "Maken: 노르웨이 국립도서관 AI 유사 자료 찾기",
+  "org": "Nasjonalbiblioteket (National Library of Norway) AI Lab",
+  "orgIds": [
+   "nb-norway"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "노르웨이",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "노르웨이 국립도서관 AI 연구실이 일반 이용자에게 내놓은 유사도 검색 서비스다. 디지털화 도서는 본문 텍스트로, 사진은 이미지 자체로 서로 비슷한 자료를 찾아 보여 준다.",
+  "tags": [
+   "유사도검색",
+   "임베딩",
+   "국립도서관",
+   "실운영"
+  ],
+  "url": "https://www.nb.no/maken/"
+ },
+ {
+  "id": "ebcf716047",
+  "title": "BigLAM: BigScience Libraries, Archives and Museums",
+  "titleKo": "BigLAM: 도서관·기록관·박물관 머신러닝 데이터셋 모음",
+  "org": "BigLAM (Hugging Face × BigScience)",
+  "orgIds": [
+   "biglam"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "국제",
+  "year": null,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "BigScience 이니셔티브에서 출발한 허깅페이스 조직으로, 도서관·기록관·박물관 자료를 머신러닝에 바로 쓸 수 있는 데이터셋으로 정리해 공개한다. 영국도서관 도서 삽화, 유로피아나 신문, American Stories 같은 GLAM 데이터셋을 내려받을 수 있다.",
+  "tags": [
+   "데이터셋",
+   "허깅페이스",
+   "GLAM",
+   "머신러닝"
+  ],
+  "url": "https://huggingface.co/biglam"
+ },
+ {
+  "id": "269134bd07",
+  "title": "NbAiLab (Nasjonalbiblioteket AI Lab)",
+  "titleKo": "노르웨이 국립도서관 AI 연구실 허깅페이스 저장소",
+  "org": "Nasjonalbiblioteket (National Library of Norway) AI Lab",
+  "orgIds": [
+   "nb-norway"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "노르웨이",
+  "year": null,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "노르웨이 국립도서관 AI 연구실이 허깅페이스에 공개한 모델·데이터셋 모음이다. 장서로 학습한 노르웨이어 BERT(nb-bert), 문장 임베딩, 보크몰·뉘노르스크 음성 인식 모델과 노르웨이어 말뭉치 NCC를 내려받을 수 있다.",
+  "tags": [
+   "허깅페이스",
+   "nb-bert",
+   "음성인식",
+   "국립도서관"
+  ],
+  "url": "https://huggingface.co/NbAiLab"
+ },
+ {
+  "id": "4c2b0fc45c",
+  "title": "In Codice Ratio: Machine Transcription in the Vatican Secret Archive (TF Dev Summit '19)",
+  "titleKo": "In Codice Ratio: 바티칸 비밀문서고 필사본 기계 전사",
+  "org": "In Codice Ratio 연구팀 (Università Roma Tre)",
+  "orgIds": [
+   "roma-tre-university"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "이탈리아",
+  "year": 2019,
+  "format": "기사·발표",
+  "category": "OCR·고문서",
+  "summary": "바티칸 비밀문서고의 중세 필사본을 기계로 전사하는 시스템을 만든 In Codice Ratio 연구를 TensorFlow Dev Summit 2019에서 소개한 발표다. 글자 단위로 나눠 인식하는 딥러닝 방식과, 대규모 역사 기록의 검색과 지식 발견을 앞당기려는 목표를 설명한다.",
+  "tags": [
+   "필사본",
+   "HTR",
+   "바티칸",
+   "TensorFlow"
+  ],
+  "url": "https://www.youtube.com/watch?v=8khPUtwaVaw"
+ },
+ {
+  "id": "2d7ecfc24e",
+  "title": "PleIAs",
+  "titleKo": "PleIAs 허깅페이스 저장소(OCRonos·Common Corpus)",
+  "org": "PleIAs",
+  "orgIds": [
+   "pleias"
+  ],
+  "orgType": "기업",
+  "region": "해외",
+  "country": "프랑스",
+  "year": null,
+  "format": "GitHub·오픈소스",
+  "category": "OCR·고문서",
+  "summary": "프랑스 AI 기업 PleIAs가 허깅페이스에 공개한 모델·데이터셋 모음이다. 옛 문헌의 OCR 오류를 고치는 OCRonos 모델, 퍼블릭 도메인 문헌을 모은 Common Corpus, 미국·프랑스 퍼블릭 도메인 신문 데이터셋 등을 내려받을 수 있다.",
+  "tags": [
+   "OCR보정",
+   "Common Corpus",
+   "퍼블릭도메인",
+   "허깅페이스"
+  ],
+  "url": "https://huggingface.co/PleIAs"
+ },
+ {
+  "id": "1602843b78",
+  "title": "NSDAP-Mitgliederkartei: War Ihre Familie in der NSDAP?",
+  "titleKo": "나치당원 카드 색인 검색: Die Zeit의 AI 판독 데이터베이스",
+  "org": "Die Zeit 데이터팀 (NARA 공개 자료 활용)",
+  "orgIds": [
+   "die-zeit"
+  ],
+  "orgType": "기업",
+  "region": "해외",
+  "country": "독일",
+  "year": 2026,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "독일 주간지 Die Zeit가 미국 국립기록청(NARA)이 공개한 나치당원 카드 마이크로필름을 바탕으로 만든 검색 도구다. 스캔 PDF 5,442개(파일당 약 3,000쪽)의 카드를 여러 OCR과 Gemini로 판독해 성씨·생년월일·출생지로 찾게 했고, 공개 뒤 수백만 회 이용됐다. 역사학자들은 색인이 불완전하고 AI 판독 오류가 있을 수 있다고 지적했다.",
+  "tags": [
+   "Gemini",
+   "필기체판독",
+   "공개기록",
+   "데이터저널리즘"
+  ],
+  "url": "https://www.zeit.de/wissen/2026-04/nsdap-mitgliederkartei-karteikarten-familienmitglieder-suche"
+ },
+ {
+  "id": "621b6e2d1f",
+  "title": "ai-readable-gazette-kr",
+  "titleKo": "AI가 읽을 수 있는 대한민국 관보",
+  "org": "hosungseo (중앙부처 행정사무관 개인 프로젝트)",
+  "orgIds": [
+   "hosungseo"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "중앙부처 행정사무관이 개인 작업으로 2020년 1월부터 2026년 4월까지의 대한민국 관보 약 12만 8천 건을 마크다운으로 바꿔 공개한 저장소다. 원본 PDF는 그대로 두고 한컴의 오픈소스 오픈데이터로더로 텍스트를 뽑아 후보정했으며, 날짜·기관별 정적 리더와 JSON 색인을 함께 만들었다.",
+  "tags": [
+   "관보",
+   "AI-Ready",
+   "마크다운",
+   "공공기록"
+  ],
+  "url": "https://github.com/hosungseo/ai-readable-gazette-kr"
+ },
+ {
+  "id": "da73eb2988",
+  "title": "현용기록의 활용성 증진을 위한 지능형 기록관리시스템 구축: 한국중부발전 사례중심으로",
+  "org": "한국중부발전 / 한국기록관리학회지 19(4)",
+  "orgIds": [
+   "komipo",
+   "ksarm"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2019,
+  "format": "논문",
+  "category": "분류·평가",
+  "summary": "한국중부발전이 전자결재와 기록관리를 하나로 운영하는 시스템(i-Works)에 지능형 서비스를 붙인 과정을 소개한 논문이다. 실시간 이관과 기능분류체계를 설계하고, 기계학습으로 기록물 분류를 추천해 처리과의 오분류를 줄였으며 규정·기록 활용을 돕는 챗봇을 도입했다.",
+  "tags": [
+   "분류추천",
+   "챗봇",
+   "현용기록",
+   "공공기관"
+  ],
+  "url": "https://accesson.kr/jksarm/v.19/4/221/1465"
+ },
+ {
+  "id": "4c1bc38f8e",
+  "title": "rijksmuseum-mcp+",
+  "titleKo": "레이크스뮤지엄 소장품 MCP 서버",
+  "org": "Arno Bosse (kintopp)",
+  "orgIds": [
+   "kintopp"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "국제",
+  "year": 2026,
+  "format": "MCP·API",
+  "apiType": "MCP",
+  "category": "검색·챗봇",
+  "summary": "레이크스뮤지엄 공개 소장품 메타데이터를 보강한 사본을 AI 어시스턴트와 대화로 탐색하게 해 주는 MCP 서버다. 전문·의미 검색, 출처(provenance) 분석, 작품 유사도 비교, 공간 질의 등 박물관 자체 API보다 넓은 기능을 제공한다. 일부 LLM 보강 내용은 박물관 검토를 거치지 않았다고 밝힌 개발 중 시연판이다.",
+  "tags": [
+   "MCP",
+   "레이크스뮤지엄",
+   "의미검색",
+   "출처분석"
+  ],
+  "url": "https://github.com/kintopp/rijksmuseum-mcp-plus"
+ },
+ {
+  "id": "0f7358e855",
+  "title": "rijksmuseum-iconclass-mcp",
+  "titleKo": "Iconclass 도상 분류 MCP 서버",
+  "org": "Arno Bosse (kintopp)",
+  "orgIds": [
+   "kintopp"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "국제",
+  "year": 2026,
+  "format": "MCP·API",
+  "apiType": "MCP",
+  "category": "메타데이터·기술",
+  "summary": "도상 분류 체계 Iconclass의 표기 130만여 건을 AI 어시스턴트와 자연어로 검색·탐색하게 해 주는 MCP 서버다. 의미 검색을 지원하고 레이크스뮤지엄 작품에 붙은 표기 수를 보여 주며, 목록 작성 때 분류 조언에도 쓸 수 있다.",
+  "tags": [
+   "MCP",
+   "Iconclass",
+   "도상분류",
+   "목록작성"
+  ],
+  "url": "https://github.com/kintopp/rijksmuseum-iconclass-mcp"
+ },
+ {
+  "id": "bd90165c13",
+  "title": "CuratorBot (VisboeckGPT)",
+  "titleKo": "VisboeckGPT: 네덜란드 왕립도서관 소장 자료 대화형 큐레이터 챗봇",
+  "org": "TU Delft Future Libraries Lab",
+  "orgIds": [
+   "tu-delft"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "네덜란드",
+  "year": 2022,
+  "format": "GitHub·오픈소스",
+  "category": "검색·챗봇",
+  "summary": "델프트공대 Future Libraries Lab이 네덜란드 왕립도서관(KB)의 소장 자료 Visboeck에 대해 이용자가 대화로 질문할 수 있게 만든 대화형 에이전트 시제품이다. 도슨트나 큐레이터를 보조하는 용도로 만들어 2022년 9월 키오스크 형태로 시연했고 코드를 공개했다.",
+  "tags": [
+   "챗봇",
+   "큐레이션",
+   "소장자료",
+   "시제품"
+  ],
+  "url": "https://github.com/gukuma/VisboeckGPT"
+ },
+ {
+  "id": "42a9002140",
+  "title": "Cabinet Office: Automated Digital Document Review",
+  "titleKo": "영국 내각사무처 자동 디지털 문서 검토 도구(알고리즘 투명성 기록)",
+  "org": "UK Cabinet Office",
+  "orgIds": [
+   "cabinet-office-uk"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "영국",
+  "year": 2024,
+  "format": "보고서",
+  "category": "분류·평가",
+  "summary": "영국 내각사무처가 부처에 쌓인 레거시 디지털 정보에서 공식 기록으로 남길 것과 폐기할 것을 가려내는 알고리즘 도구를 알고리즘 투명성 기록 표준(ATRS)에 따라 공개한 문서다. 분류와 언어 패턴·키워드로 정보를 정렬해 담당자 판단을 돕고, 삭제는 사람이 검토한 뒤 실행한다. 운영(Production) 단계로 등록돼 있다.",
+  "tags": [
+   "기록 평가·선별",
+   "전자기록",
+   "알고리즘투명성",
+   "실운영"
+  ],
+  "url": "https://www.gov.uk/algorithmic-transparency-records/cabinet-office-automated-digital-document-review"
+ },
+ {
+  "id": "3b3a113272",
+  "title": "How we deployed AI agents to navigate one of Europe's largest criminal investigations",
+  "titleKo": "팔메 총리 암살 사건 수사기록 탐색 AI 에이전트 PalmeNet-Chat 2.0",
+  "org": "ML6 · Softwerk · Spår",
+  "orgIds": [
+   "ml6"
+  ],
+  "orgType": "기업",
+  "region": "해외",
+  "country": "스웨덴",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "스웨덴 올로프 팔메 총리 암살 사건의 경찰 수사기록(서가 약 250m 분량)을 탐색하는 PalmeNet-Chat 2.0을 ML6가 Softwerk, 탐사보도팀 Spår와 함께 만든 과정을 정리한 글이다. RAG, 하이브리드 검색, 여러 에이전트가 나눠 일하는 구조를 Google Cloud에 배포해 근거 문서를 찾아 답하도록 했다.",
+  "tags": [
+   "AI에이전트",
+   "RAG",
+   "수사기록",
+   "딥리서치"
+  ],
+  "url": "https://www.ml6.eu/en/blog/how-we-deployed-ai-agents-to-navigate-one-of-europes-largest-criminal-investigations"
+ },
+ {
+  "id": "f4d4670274",
+  "title": "WARC-GPT",
+  "titleKo": "WARC-GPT: 웹 아카이브 WARC 파일용 RAG 도구",
+  "org": "Harvard Law School Library Innovation Lab",
+  "orgIds": [
+   "harvard-library"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2024,
+  "format": "GitHub·오픈소스",
+  "category": "검색·챗봇",
+  "summary": "하버드 로스쿨 도서관 혁신연구소가 공개한 오픈소스 도구로, 웹 아카이브 수집 파일(WARC)을 불러와 검색 증강 생성(RAG)으로 질문에 답한다. 웹 화면과 REST API를 제공하고 답변에 참고한 원본 기록을 함께 보여 준다.",
+  "tags": [
+   "웹아카이브",
+   "WARC",
+   "RAG",
+   "오픈소스"
+  ],
+  "url": "https://github.com/harvard-lil/warc-gpt"
+ },
+ {
+  "id": "074f25bb88",
+  "title": "Retrieval-Augmented Generation for Web Archives: A Comparative Study of WARC-GPT and a Custom Pipeline",
+  "titleKo": "웹 아카이브 RAG: WARC-GPT와 자체 파이프라인 비교 연구",
+  "org": "Corey Davis (University of Victoria) / Code4Lib Journal 61",
+  "orgIds": [
+   "university-of-victoria"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "캐나다",
+  "year": 2025,
+  "format": "논문",
+  "category": "검색·챗봇",
+  "summary": "Archive-It에서 받은 WARC 파일에 WARC-GPT 기본 구성과 전처리·모델을 최적화한 자체 RAG 파이프라인을 각각 적용해 비교한 연구다. 수천 쪽 분량 웹 아카이브로 전처리, 임베딩, 검색 정확도, 응답 속도를 시험했고, 기술 역량이 있는 기관은 자체 파이프라인으로 품질과 신뢰성을 크게 높일 수 있다고 결론지었다.",
+  "tags": [
+   "웹아카이브",
+   "RAG",
+   "Archive-It",
+   "Code4Lib"
+  ],
+  "url": "https://journal.code4lib.org/articles/18555"
+ },
+ {
+  "id": "ceb9894f8a",
+  "title": "The Library's New Entryway",
+  "titleKo": "도서관의 새 입구: 노스이스턴대 도서관 MCP 서버와 Claude 플러그인",
+  "org": "Dan Cohen (Northeastern University Library)",
+  "orgIds": [
+   "northeastern-university-library"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "노스이스턴대 도서관장 Dan Cohen이 도서관이 직접 만들어 공개한 MCP 서버와 Claude 플러그인을 소개한 글이다. LLM은 이용자의 연구 의도를 파악하고 실제 자료 검색은 도서관 색인과 소장 컬렉션이 맡아, 일반 웹이 아닌 도서관 자료를 근거로 답하게 하는 방식을 설명한다.",
+  "tags": [
+   "MCP",
+   "Claude",
+   "도서관검색",
+   "실운영"
+  ],
+  "url": "https://newsletter.dancohen.org/archive/the-librarys-new-entryway/"
+ },
+ {
+  "id": "89ba99964f",
+  "title": "Providing More Efficient Access to Government Records: A Use Case Involving Application of Machine Learning to Improve FOIA Review for the Deliberative Process Privilege",
+  "titleKo": "정부 기록 접근 효율화: 심의과정 특권 FOIA 검토에 머신러닝 적용",
+  "org": "Jason R. Baron·Mahmoud F. Sayed·Douglas W. Oard (University of Maryland)",
+  "orgIds": [
+   "university-of-maryland"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2022,
+  "format": "논문",
+  "category": "공개·비식별",
+  "summary": "미국 정보공개법(FOIA)의 비공개 사유 중 '심의과정 특권'에 해당하는 기록을 머신러닝으로 찾아내는 연구다. 비공개 여부를 표시한 공개 테스트 컬렉션을 새로 만들어 텍스트 분류 성능을 시험했고, 같은 검토자의 판정으로 학습·평가하면 안정적이지만 검토자나 기록 주제가 바뀌면 성능 유지가 어렵다고 보고했다.",
+  "tags": [
+   "FOIA",
+   "민감성검토",
+   "텍스트분류",
+   "테스트컬렉션"
+  ],
+  "url": "https://arxiv.org/abs/2011.07203"
+ },
+ {
+  "id": "d207e17e7c",
+  "title": "Text Classification for Records Management",
+  "titleKo": "기록관리를 위한 텍스트 분류",
+  "org": "Jason Franks / ACM Journal on Computing and Cultural Heritage 15(3)",
+  "orgIds": [
+   "acm"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2022,
+  "format": "논문",
+  "category": "분류·평가",
+  "summary": "메타데이터에 기대던 기존 자동 분류의 한계를 넘기 위해 기록 본문으로 분류하는 텍스트 분류를 실제 기록 데이터로 시험한 연구다. 전통적 기법과 Transformer 언어모델을 비교해 최신 모델이 가장 좋았지만 전통적 방법도 쓸 만했으며, 기록관리자 포커스 그룹은 위험 관리와 법규 준수에 도움이 된다고 평가했다.",
+  "tags": [
+   "자동분류",
+   "Transformer",
+   "기록관리",
+   "포커스그룹"
+  ],
+  "url": "https://dl.acm.org/doi/10.1145/3485846"
+ },
+ {
+  "id": "f36eda1798",
+  "title": "A framework for technology-assisted sensitivity review: using sensitivity classification to prioritise documents for review",
+  "titleKo": "기술 지원 민감성 검토 프레임워크: 민감성 분류로 검토 순서 정하기",
+  "org": "Graham McDonald (University of Glasgow)",
+  "orgIds": [
+   "university-of-glasgow"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "영국",
+  "year": 2019,
+  "format": "논문",
+  "category": "공개·비식별",
+  "summary": "영국 정부 부처가 기록을 국립기록원(TNA)으로 이관하기 전 거치는 민감성 검토를 돕는 박사학위논문이다. 개인정보나 외교 관계에 민감한 문서를 자동으로 분류하는 모델을 만들고, 이를 이용해 검토자를 보조하고 검토 순서를 정하는 기술 지원 민감성 검토 틀을 제안·평가했다.",
+  "tags": [
+   "민감성검토",
+   "자동분류",
+   "이관",
+   "TNA"
+  ],
+  "url": "https://theses.gla.ac.uk/41076/"
+ },
+ {
+  "id": "d072116444",
+  "title": "Comparing Intrinsic and Extrinsic Evaluation of Sensitivity Classification",
+  "titleKo": "민감성 분류의 내재적·외재적 평가 비교",
+  "org": "Mahmoud F. Sayed·Nishanth Mallekav·Douglas W. Oard (University of Maryland)",
+  "orgIds": [
+   "university-of-maryland"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2022,
+  "format": "논문",
+  "category": "공개·비식별",
+  "summary": "민감 정보와 공유 가능한 정보가 섞여 쓸모 있는 기록까지 접근이 막히는 문제를 다룬 ECIR 2022 논문이다. 전통적 기법과 신경망 기법을 비교해 함께 쓰면 분류 성능이 좋아진다는 결과를 두 테스트 컬렉션에서 확인했고, 민감 문서를 드러내면 감점하는 민감성 고려 검색 틀로 실제 효과도 평가했다.",
+  "tags": [
+   "민감성분류",
+   "신경망",
+   "검색평가",
+   "ECIR"
+  ],
+  "url": "https://link.springer.com/chapter/10.1007/978-3-030-99739-7_25"
+ },
+ {
+  "id": "2ead3b0f7e",
+  "title": "edge-ai: Proof-of-concept AI Backend Module for FOLIO",
+  "titleKo": "edge-ai: FOLIO용 AI 목록 작성 백엔드 모듈(개념증명)",
+  "org": "FOLIO Labs (Stanford University Libraries)",
+  "orgIds": [
+   "stanford-university-libraries"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2024,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "오픈소스 도서관 플랫폼 FOLIO에 생성형 AI를 연결하는 시험용 백엔드 모듈이다. 텍스트나 이미지를 받아 PydanticAI 에이전트가 소장 레코드 초안을 만들고 참조값은 FOLIO API로 채운다. FastAPI로 동작하며 MCP 서버로도 열려 있어 Claude Desktop 등에서 호출할 수 있다.",
+  "tags": [
+   "목록작성",
+   "FOLIO",
+   "AI에이전트",
+   "MCP"
+  ],
+  "url": "https://github.com/folio-labs/edge-ai"
+ },
+ {
+  "id": "0dbd215376",
+  "title": "transcript_processing_scripts",
+  "titleKo": "GBH 전사본 후처리 스크립트 모음(Whisper 환각 제거)",
+  "org": "GBH Media Library and Archives (AAPB)",
+  "orgIds": [
+   "gbh"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2025,
+  "format": "GitHub·오픈소스",
+  "category": "음성·영상",
+  "summary": "GBH 아카이브가 americanarchive.org에 올릴 전사본을 만들 때 쓰는 스크립트 모음이다. Whisper 출력에서 같은 단어열이 연달아 반복되는 환각을 걸러내고, 단어 단위 결과를 구 단위 JSON으로 바꾼다. Whisper 전사 작업을 자동으로 돌리는 설정 파일도 함께 공개했다.",
+  "tags": [
+   "Whisper",
+   "전사후처리",
+   "방송아카이브",
+   "AAPB"
+  ],
+  "url": "https://github.com/WGBH-MLA/transcript_processing_scripts"
+ },
+ {
+  "id": "d8a32035a4",
+  "title": "Proof Of Concept: AI to enhance the value of The National Archives, and support UK Government Appraisal and Selection decisions at scale",
+  "titleKo": "영국 국립기록원, 정부 '디지털 더미' 평가·선별 AI 개념검증(FF2025)",
+  "org": "The National Archives (UK)",
+  "orgIds": [
+   "tna-uk"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "영국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "분류·평가",
+  "summary": "영국 국립기록원(TNA)이 정부 부처 공유 드라이브에 쌓인 '디지털 더미'의 평가·선별을 돕는 AI 개념검증을 Fantastic Futures 2025에서 발표했다. 언어모델 임베딩과 BERTopic으로 파일을 군집하고 생성형 AI로 군집 요약을 만들었으며, 연차 보고서·조직도에서 LLM으로 정보를 뽑아 조직 이력을 구조화했다.",
+  "tags": [
+   "기록 평가·선별",
+   "BERTopic",
+   "LLM",
+   "Fantastic Futures"
+  ],
+  "url": "https://www.conftool.org/fantastic-futures-2025/index.php?page=browseSessions&form_session=16&presentations=show#paperID231"
+ },
+ {
+  "id": "5a33a0636e",
+  "title": "Challenges of Building a RAG System for Library Reference",
+  "titleKo": "도서관 참고봉사용 RAG 시스템 구축의 과제(Legislación Mexicana 챗봇)",
+  "org": "El Colegio de México, Biblioteca Daniel Cosío Villegas",
+  "orgIds": [
+   "el-colegio-de-mexico"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "멕시코",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "콜레히오 데 메히코 도서관이 1680년대~1920년대 멕시코 법령 문헌을 탐색하는 RAG 챗봇 'Legislación Mexicana'를 만든 경험을 Fantastic Futures 2025에서 발표했다. 답을 바로 주는 RAG가 이용자 스스로 찾게 돕는 참고봉사 원칙과 부딪히는 문제를 다뤘고, 요약보다 문헌 검색과 원문 연결에 무게를 두는 방식으로 대응했다.",
+  "tags": [
+   "RAG",
+   "법령문헌",
+   "참고봉사",
+   "Fantastic Futures"
+  ],
+  "url": "https://www.conftool.org/fantastic-futures-2025/index.php?page=browseSessions&form_session=6&presentations=show#paperID183"
+ },
+ {
+  "id": "2055cf77b6",
+  "title": "eluxemburgensia chat",
+  "titleKo": "eluxemburgensia 챗봇: 룩셈부르크 디지털화 신문 RAG 서비스",
+  "org": "Bibliothèque nationale du Luxembourg (BnL)",
+  "orgIds": [
+   "bnl-luxembourg"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "룩셈부르크",
+  "year": 2023,
+  "format": "사이트·서비스",
+  "category": "검색·챗봇",
+  "summary": "룩셈부르크 국립도서관이 2023년 10월 공개한 RAG 챗봇으로, 디지털화 신문 기사 800만 건에서 관련 독일어·프랑스어 기사를 찾아 ChatGPT로 답을 만든다. 답변마다 근거 기사 목록을 함께 보여 주며, 독서카드나 구글 계정으로 로그인해 무료로 쓴다.",
+  "tags": [
+   "RAG",
+   "신문아카이브",
+   "다국어",
+   "실운영"
+  ],
+  "url": "https://chat.eluxemburgensia.lu/info"
+ },
+ {
+  "id": "e0844102ec",
+  "title": "Collabscore project",
+  "titleKo": "CollabScore: 유산 악보 광학 악보 인식(OMR)과 공동 교정",
+  "org": "Cnam CEDRIC · BnF · IRISA 외",
+  "orgIds": [
+   "cnam",
+   "bnf"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2020,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "프랑스 국립공예원(Cnam) CEDRIC이 이끌고 BnF, IRISA 등이 참여한 ANR 사업이다. 이미지로만 디지털화된 Gallica의 유산 악보를 AI 기반 광학 악보 인식(OMR)으로 편집 가능한 악보로 바꾸고, 이용자 공동 교정을 거쳐 음원·영상과 동기화해 보여 준다. 정답 데이터셋과 인식 결과를 공개했다.",
+  "tags": [
+   "OMR",
+   "악보",
+   "Gallica",
+   "크라우드소싱"
+  ],
+  "url": "https://collabscore.cnam.fr/"
+ },
+ {
+  "id": "44abf7a6d3",
+  "title": "Himanis | HIstorical MANuscript Indexing for user-controlled Search",
+  "titleKo": "HIMANIS: 프랑스 왕실 상서원 등록부 필기체 전문 검색",
+  "org": "IRHT · A2iA · Archives nationales · BnF 외",
+  "orgIds": [
+   "irht",
+   "archives-nationales-france"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2015,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "IRHT가 주도하고 국립기록원·BnF 등이 참여해 2015~2017년 수행한 사업이다. 14~15세기 프랑스 왕실 상서원 등록부(Trésor des chartes)에 필기체 인식과 키워드 검색 기술을 적용했고, 199권을 확률 색인으로 검색하는 Himanis Chancery 화면으로 결과를 공개했다.",
+  "tags": [
+   "HTR",
+   "확률색인",
+   "중세기록",
+   "전문검색"
+  ],
+  "url": "https://himanis.hypotheses.org/"
+ },
+ {
+  "id": "3a5da520ac",
+  "title": "Sparnatural Archives Nationales : Démonstrateur",
+  "titleKo": "프랑스 국립기록원 RiC-O 지식그래프 Sparnatural 탐색 사이트",
+  "org": "Archives nationales / Sparna",
+  "orgIds": [
+   "archives-nationales-france"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "프랑스",
+  "year": 2022,
+  "format": "MCP·API",
+  "apiType": "SPARQL",
+  "category": "메타데이터·기술",
+  "summary": "프랑스 국립기록원이 공개한 시연 사이트로, 파리 공증 기록 메타데이터 일부를 RiC-O 온톨로지 지식그래프로 바꿔 Sparnatural 시각적 질의 도구로 탐색하게 했다. SPARQL 엔드포인트도 함께 제공해 프로그램이나 AI 에이전트가 기록 메타데이터를 질의할 수 있다.",
+  "tags": [
+   "RiC-O",
+   "SPARQL",
+   "지식그래프",
+   "공증기록"
+  ],
+  "url": "https://sparna-git.github.io/sparnatural-demonstrateur-an/"
+ },
+ {
+  "id": "b50eed1453",
+  "title": "TIB Subject Indexing Dataset (TIB-SID)",
+  "titleKo": "TIB 주제색인 데이터셋(LLM 자동 주제색인용)",
+  "org": "TIB – Leibniz Information Centre for Science and Technology",
+  "orgIds": [
+   "tib"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "독일",
+  "year": 2025,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "독일 TIB가 공개한 영어·독일어 도서관 목록 레코드 136,569건 데이터셋이다. 레코드마다 사서가 부여한 GND 주제명이 붙어 있어 LLM 기반 자동 주제색인 연구에 쓰이며, SemEval 2025 LLMs4Subjects 공유 태스크에서 여러 LLM 시스템이 이 데이터로 개발·평가됐다.",
+  "tags": [
+   "주제색인",
+   "GND",
+   "LLM",
+   "데이터셋"
+  ],
+  "url": "https://github.com/sciknoworg/tib-sid"
+ },
+ {
+  "id": "3e5396bfbd",
+  "title": "The OCR-D project",
+  "titleKo": "OCR-D: 독일 근세 인쇄물 OCR 표준·오픈소스 도구",
+  "org": "OCR-D (DFG 지원 협력 프로젝트)",
+  "orgIds": [
+   "ocr-d"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "독일",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "독일연구재단(DFG)이 지원하는 협력 프로젝트로, 16~18세기 독일어권 인쇄물(VD16·VD17·VD18)을 전문 텍스트로 바꾸는 OCR 표준과 오픈소스 도구를 만든다. 전처리, 레이아웃 분석, 신경망 문자 인식, 후보정을 모듈로 나눠 워크플로를 짤 수 있게 했고 정답 데이터 지침도 공개했다.",
+  "tags": [
+   "OCR",
+   "근세인쇄물",
+   "워크플로",
+   "오픈소스"
+  ],
+  "url": "https://ocr-d.de/en/about"
+ },
+ {
+  "id": "1f429469b7",
+  "title": "QURATOR (Project ID 1060, 2018)",
+  "titleKo": "QURATOR: 베를린 국립도서관 디지털화 문화유산 자동 큐레이션",
+  "org": "Staatsbibliothek zu Berlin",
+  "orgIds": [
+   "staatsbibliothek-berlin"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "독일",
+  "year": 2018,
+  "format": "사이트·서비스",
+  "category": "메타데이터·기술",
+  "summary": "베를린 국립도서관이 BMBF 지원 컨소시엄 QURATOR에서 2018~2021년 수행한 사업이다. AI로 디지털화 품질과 색인 효율을 높이는 것을 목표로, 레이아웃 분석(eynollah), OCR 평가(dinglehopper), 개체명 인식·연결 도구 등을 만들어 GitHub에 공개했다.",
+  "tags": [
+   "레이아웃분석",
+   "OCR평가",
+   "개체명인식",
+   "오픈소스"
+  ],
+  "url": "https://staatsbibliothek-berlin.de/en/about-the-library/projects/project-id-1060-2018"
+ },
+ {
+  "id": "d1e4e41fa2",
+  "title": "KuroNetくずし字認識サービス（AI OCR）",
+  "titleKo": "KuroNet 쿠즈시지 인식 서비스(AI OCR)",
+  "org": "ROIS-DS 인문학오픈데이터공동이용센터(CODH)",
+  "orgIds": [
+   "codh"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "일본",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "일본 CODH가 운영하는 쿠즈시지(고전적의 흘림체 문자) AI OCR 서비스다. IIIF 이미지와 매니페스트를 받아 이미지 단위로 문자를 인식하며 로그인하면 무료로 쓸 수 있다. 딥러닝 모델 KuroNet에서 출발했고 2022년 인식 모델을 RURI로 바꿨다.",
+  "tags": [
+   "쿠즈시지",
+   "AI OCR",
+   "IIIF",
+   "고전적"
+  ],
+  "url": "https://codh.rois.ac.jp/kuronet/"
+ },
+ {
+  "id": "1303019f6d",
+  "title": "日本古典籍くずし字データセット",
+  "titleKo": "일본 고전적 쿠즈시지 데이터셋",
+  "org": "국문학연구자료관(NIJL) · CODH",
+  "orgIds": [
+   "codh",
+   "nijl"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "일본",
+  "year": 2019,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "국문학연구자료관 등이 소장한 에도 시대 중심 고전적을 번각하면서 나온 문자 좌표와 글자 이미지를 기계학습용으로 공개한 데이터셋이다. 고전적 44점에서 4,328자종 108만여 자를 담았고(2019년 11월 기준), KuroNet 개발과 Kaggle 쿠즈시지 인식 대회, KMNIST에 쓰였다.",
+  "tags": [
+   "쿠즈시지",
+   "학습데이터",
+   "고전적",
+   "CC BY-SA"
+  ],
+  "url": "https://codh.rois.ac.jp/char-shape/"
+ },
+ {
+  "id": "33317d7e25",
+  "title": "Calamari (Line based ATR Engine based on OCRopy)",
+  "titleKo": "Calamari: 줄 단위 문자 인식 엔진",
+  "org": "Calamari-OCR (Christoph Wick·Christian Reul·Frank Puppe)",
+  "orgIds": [
+   "calamari-ocr"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "독일",
+  "year": 2018,
+  "format": "GitHub·오픈소스",
+  "category": "OCR·고문서",
+  "summary": "OCRopy와 Kraken을 바탕으로 TensorFlow로 만든 오픈소스 줄 단위 OCR 엔진이다. 사전학습 모델 저장소를 함께 제공하며, 역사 인쇄물 OCR 프레임워크 OCR-D용 처리기와 베를린 국립도서관 GT4HistOCR 모델 학습 등에 쓰였다.",
+  "tags": [
+   "OCR",
+   "역사인쇄물",
+   "TensorFlow",
+   "오픈소스"
+  ],
+  "url": "https://github.com/Calamari-OCR/calamari"
+ },
+ {
+  "id": "783f777c8f",
+  "title": "OIDA-QA: A Multimodal Benchmark for Analyzing the Opioid Industry Documents Archive",
+  "titleKo": "OIDA-QA: 오피오이드 산업 문서 아카이브 분석용 멀티모달 질의응답 벤치마크",
+  "org": "OIDA-QA 연구진 (UCSF Industry Documents Library · Johns Hopkins 협력)",
+  "orgIds": [
+   "ucsf"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "미국",
+  "year": 2025,
+  "format": "논문",
+  "category": "검색·챗봇",
+  "summary": "UCSF와 존스홉킨스대가 운영하는 오피오이드 산업 문서 아카이브(OIDA)의 소송 공개 문서로 멀티모달 질의응답 벤치마크를 만든 논문이다. 학습용 문서 40만 건과 질의응답 36만 쌍, 평가용 문서 1만 건과 질의응답 1만 쌍으로 구성했고, 텍스트·시각 요소·레이아웃을 함께 다루는 모델 개발을 지원한다.",
+  "tags": [
+   "벤치마크",
+   "질의응답",
+   "산업문서",
+   "멀티모달"
+  ],
+  "url": "https://arxiv.org/abs/2511.09914"
+ },
+ {
+  "id": "1313b6f49c",
+  "title": "낙동강 페놀사고·일제 강제동원 등 국가기록물 174만 건 공개 전환",
+  "org": "행정안전부 국가기록원",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "공개·비식별",
+  "summary": "행정안전부가 비공개로 관리하던 국가기록물 174만여 건을 공개 또는 부분공개로 바꿔 공개율이 66.9%에서 68.3%로 올랐다고 발표했다. 이 가운데 전자기록물 112만여 건은 AI로 개인정보 등 비공개 정보를 자동 식별해 공개 여부 검토 시간을 줄였다.",
+  "tags": [
+   "공개재분류",
+   "개인정보탐지",
+   "국가기록원",
+   "실운영"
+  ],
+  "url": "https://www.korea.kr/news/policyNewsView.do?newsId=148959966"
+ },
+ {
+  "id": "5a8cfd1f09",
+  "title": "ジャパンサーチ 開発者向け情報 (SPARQL API, EasySPARQL, 簡易Web API)",
+  "titleKo": "재팬서치 개발자 정보(SPARQL API·간이 Web API)",
+  "org": "ジャパンサーチ (Japan Search, 国立国会図書館 운영)",
+  "orgIds": [
+   "ndl"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "일본",
+  "year": null,
+  "format": "MCP·API",
+  "apiType": "SPARQL",
+  "category": "메타데이터·기술",
+  "summary": "일본의 도서·문서·미술 등 분야별 디지털 아카이브 메타데이터를 모은 국가 플랫폼 재팬서치의 개발자용 통로다. JPS-RDF 스키마 기반 SPARQL 엔드포인트, EasySPARQL, 간이 Web API를 제공해 AI 에이전트나 프로그램이 일본 아카이브 메타데이터를 질의할 수 있다.",
+  "tags": [
+   "재팬서치",
+   "SPARQL",
+   "디지털아카이브",
+   "메타데이터"
+  ],
+  "url": "https://jpsearch.go.jp/static/developer/"
+ },
+ {
+  "id": "a20857ee5d",
+  "title": "北京市国际档案日系列活动启动 推出三个“首次发布”",
+  "titleKo": "베이징시 기록 기반 정무 보조 대형모델 '란타이징화(兰台菁华)' 가동",
+  "org": "北京市档案馆 · 首都智慧档案联合创新实验室 (人民网 보도)",
+  "orgIds": [
+   "beijing-municipal-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "베이징시 기록 부문이 2025년 국제기록의 날에 기록 데이터를 바탕으로 한 지방 정무 보조 대형모델 '란타이징화'를 정식 가동했다. 중국전신 등과 함께 만든 이 모델은 정책 결정 보조, 기관 지식 질의응답, 원고·공문 초안 생성 등 여섯 가지 기능을 갖췄고, 대형 행사 온라인 답변에 투입됐다.",
+  "tags": [
+   "기록대형모델",
+   "정무지원",
+   "지식질의응답",
+   "중국"
+  ],
+  "url": "http://society.people.com.cn/n1/2025/0609/c1008-40497262.html"
+ },
+ {
+  "id": "e0a7881b76",
+  "title": "重庆市档案馆 档案开放审核质效双升",
+  "titleKo": "충칭시 당안관, AI 공개 심사 플랫폼으로 심사 기간 40% 단축",
+  "org": "重庆市档案馆 (国家档案局 보도)",
+  "orgIds": [
+   "chongqing-municipal-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "공개·비식별",
+  "summary": "충칭시 당안관이 OCR, 자연어처리, 의미 분석을 결합한 지능형 공개 심사 플랫폼을 만들고 'AI 1차 선별, 전문가 재검토' 방식을 도입했다. AI가 기록 내용 인식·분류와 민감정보 표시를 맡고 심사 인력이 다시 확인해, 전체 심사 기간을 40% 이상 줄였다.",
+  "tags": [
+   "공개심사",
+   "민감정보",
+   "OCR",
+   "실운영"
+  ],
+  "url": "https://www.saac.gov.cn/daj/c100247/202505/409856cdd3a44a47b422e890831d6a85.shtml"
+ },
+ {
+  "id": "b154f0560e",
+  "title": "陕西省档案馆：数智赋能 高效服务",
+  "titleKo": "산시성 당안관, 디지털 기록관에 문자·음성·얼굴 인식 적용",
+  "org": "陕西省档案馆 (国家档案局 디지털 기록관 건설 전형 사례)",
+  "orgIds": [
+   "shaanxi-provincial-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "메타데이터·기술",
+  "summary": "산시성 당안관이 디지털 기록관 운영 사례를 정리하며 소장 디지털 자원에 문자 인식, 음성 인식, 얼굴 인식, 영상 분석을 적용하고 시청각 기록 관리 시스템을 운영한다고 밝혔다. 황제릉·열사 관련 지식그래프를 만들었고 기록 정보 개발에 대형모델 활용을 시험하고 있다.",
+  "tags": [
+   "디지털기록관",
+   "얼굴인식",
+   "지식그래프",
+   "중국"
+  ],
+  "url": "https://www.saac.gov.cn/daj/szdagjsdxal/202504/0a6c72c47c0c4d89945cc7c53efab2b2.shtml"
+ },
+ {
+  "id": "fbdbc3fb29",
+  "title": "人工智能在档案领域的探索应用与思考",
+  "titleKo": "상하이시 당안관의 기록 분야 AI 적용 경험(AI 영상 기록 복원 시스템)",
+  "org": "上海市档案局（馆）",
+  "orgIds": [
+   "shanghai-municipal-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "보존·관리 자동화",
+  "summary": "상하이시 당안관이 2022년 개발한 'AI 영상 기록 복원 시스템'을 비롯한 기록 분야 AI 적용 경험을 정리한 글이다. 딥러닝으로 이미지 초해상도 보정, 훼손 영상의 긁힘 복원, 흑백 사진·영상 자동 채색을 지원해 수작업 복원 시간을 줄였다. 지식그래프 질의응답과 지능형 공개 심사 계획도 소개한다.",
+  "tags": [
+   "영상복원",
+   "자동채색",
+   "초해상도",
+   "중국"
+  ],
+  "url": "https://www.shda.gov.cn/dayw/ywjs/202602/t20260224_76444.html"
+ },
+ {
+  "id": "1a68a89044",
+  "title": "安徽合肥 智慧无人库房提升档案管理效能",
+  "titleKo": "허페이시 당안관, 로봇·디지털 트윈 기반 스마트 무인 서고 가동",
+  "org": "合肥市档案馆 (国家档案局 보도)",
+  "orgIds": [
+   "hefei-municipal-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2025,
+  "format": "기사·발표",
+  "category": "보존·관리 자동화",
+  "summary": "허페이시 당안관이 안후이성 첫 스마트 무인 서고를 가동했다. 서고 관리·운반 로봇이 기록을 꺼내 열람 창구로 옮기고 되돌려 놓으며, 디지털 트윈이 서가와 온습도·유해 가스를 실시간 감시한다. iFLYTEK과 만든 질의응답 로봇에 DeepSeek를 연결해 열람객 문의에도 답한다.",
+  "tags": [
+   "무인서고",
+   "로봇",
+   "디지털트윈",
+   "DeepSeek"
+  ],
+  "url": "https://www.saac.gov.cn/daj/c100207/202507/bf64f6ab737040adbb736ccaa7e9650b.shtml"
+ },
+ {
+  "id": "8fa58ffe06",
+  "title": "江苏省档案馆智能化档案开放审核取得新成果",
+  "titleKo": "장쑤성 당안관, 의미 분석 기반 지능형 기록 공개 심사 성과",
+  "org": "江苏省档案馆 (中国档案报 보도)",
+  "orgIds": [
+   "jiangsu-provincial-archives"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "중국",
+  "year": 2022,
+  "format": "기사·발표",
+  "category": "공개·비식별",
+  "summary": "장쑤성 당안관이 수행한 국가당안국 과학기술 과제 '의미 분석 기반 기록관 공개 범위 지능형 감정 연구'가 검수를 통과했다. 공개 심사용 의미 지식베이스와 AI 심사 모델을 만들어 실제 기록 공개 심사 시스템을 개선했고, 논문·특허·표준화 성과도 냈다.",
+  "tags": [
+   "공개심사",
+   "의미분석",
+   "지식베이스",
+   "중국"
+  ],
+  "url": "https://www.saac.gov.cn/daj/c100202/202211/2c0b0698765c46df9ae33355867d81b0.shtml"
+ },
+ {
+  "id": "da799be993",
+  "title": "AI to review government records: new work to unlock historically significant digital records",
+  "titleKo": "정부 기록 검토에 AI 활용: 역사적으로 중요한 디지털 기록 찾아내기",
+  "org": "UK Cabinet Office · Loughborough University (David Canning, Lise Jaillant 외)",
+  "orgIds": [
+   "cabinet-office-uk",
+   "loughborough-university",
+   "ai-and-society"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "영국",
+  "year": 2025,
+  "format": "논문",
+  "category": "분류·평가",
+  "summary": "영국 내각사무처가 약 199TB 규모의 디지털 생산 기록에서 보존 가치가 있는 문서를 AI로 골라내고 단명 자료를 처분 대상으로 나눈 과정을 다룬 논문이다. 가중 어휘 목록과 파일 형식 규칙을 Elasticsearch 질의와 결합했고, 1,000건 표본의 오분류율은 0.4%였다. 수작업 검토 인력 59명분, 연 220만 파운드의 비용을 피했다고 보고했다.",
+  "tags": [
+   "기록 평가·선별",
+   "전자기록",
+   "Elasticsearch",
+   "실운영"
+  ],
+  "url": "https://link.springer.com/article/10.1007/s00146-025-02221-0"
+ },
+ {
+  "id": "2a3f370ec3",
+  "title": "기록물 OCR 데이터셋 구축 및 한글 필기체 인식 성능 개선 연구",
+  "org": "행정안전부 국가기록원 (연구책임자 강지홍)",
+  "orgIds": [
+   "national-archives-of-korea"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2021,
+  "format": "보고서",
+  "category": "OCR·고문서",
+  "summary": "국가기록원이 2021년 수행한 R&D 연구로, 필기체 중심 기록물 OCR 데이터셋 8,416면(635,799단어)을 만들고 딥러닝 문자 탐지·인식 모델을 학습했다. 문자 탐지 98.38%, 탐지·인식 통합 89.92%의 성능을 얻었고, 오토라벨링으로 데이터 작업량을 단위 시간당 75% 늘렸다.",
+  "tags": [
+   "한글필기체",
+   "OCR",
+   "학습데이터",
+   "국가기록원"
+  ],
+  "url": "https://www.archives.go.kr/next/newdata/researchReportDetail.do?seq=98383&page=2"
+ },
+ {
+  "id": "b4a8252b60",
+  "title": "1950 Census",
+  "titleKo": "미국 1950년 인구조사 기록 공개 사이트",
+  "org": "U.S. National Archives and Records Administration (NARA)",
+  "orgIds": [
+   "nara-us"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2022,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "NARA가 2022년 4월 공개한 1950년 인구조사 기록 사이트다. 인구조사표 약 657만 장을 지역과 이름으로 검색할 수 있으며, Amazon Textract로 손글씨 이름을 추출해 이름 색인을 만들었다. 이용자가 이름 전사를 고치고 보태는 기능도 갖췄다.",
+  "tags": [
+   "인구조사",
+   "필기체인식",
+   "Textract",
+   "실운영"
+  ],
+  "url": "https://1950census.archives.gov/"
  }
 ]

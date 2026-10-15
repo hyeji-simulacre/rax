@@ -551,6 +551,10 @@
    {
     "label": "홈페이지",
     "url": "https://library.harvard.edu"
+   },
+   {
+    "label": "연구실",
+    "url": "https://lil.law.harvard.edu"
    }
   ]
  },
@@ -1479,6 +1483,10 @@
    {
     "label": "カレントアウェアネス",
     "url": "https://current.ndl.go.jp"
+   },
+   {
+    "label": "홈페이지",
+    "url": "https://jpsearch.go.jp"
    }
   ]
  },
@@ -1565,6 +1573,661 @@
    {
     "label": "홈페이지",
     "url": "https://www.nlb.gov.sg"
+   }
+  ]
+ },
+ {
+  "id": "chrisryugj",
+  "name": "chrisryugj",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/chrisryugj"
+   }
+  ]
+ },
+ {
+  "id": "hosungseo",
+  "name": "hosungseo",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/hosungseo"
+   }
+  ]
+ },
+ {
+  "id": "tbs-canada",
+  "name": "Treasury Board of Canada Secretariat",
+  "type": "공공기관",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.canada.ca/en/treasury-board-secretariat.html"
+   }
+  ]
+ },
+ {
+  "id": "european-parliament-archives",
+  "name": "Archives of the European Parliament",
+  "type": "공공기관",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://historicalarchives.europarl.europa.eu"
+   }
+  ]
+ },
+ {
+  "id": "sema",
+  "name": "서울시립미술관",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://sema.seoul.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "list-luxembourg",
+  "name": "Luxembourg Institute of Science and Technology (LIST)",
+  "type": "학계·연구",
+  "country": "룩셈부르크",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.list.lu"
+   }
+  ]
+ },
+ {
+  "id": "ai-and-society",
+  "name": "AI & SOCIETY (Springer)",
+  "type": "학계·연구",
+  "country": "국제",
+  "links": [
+   {
+    "label": "학술지",
+    "url": "https://link.springer.com/journal/146"
+   }
+  ]
+ },
+ {
+  "id": "nfsa",
+  "name": "National Film and Sound Archive of Australia (NFSA)",
+  "type": "공공기관",
+  "country": "호주",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nfsa.gov.au"
+   }
+  ]
+ },
+ {
+  "id": "university-of-washington",
+  "name": "University of Washington",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.washington.edu"
+   }
+  ]
+ },
+ {
+  "id": "brandeis-university",
+  "name": "Brandeis University",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.brandeis.edu"
+   },
+   {
+    "label": "홈페이지",
+    "url": "https://clams.ai"
+   }
+  ]
+ },
+ {
+  "id": "cenl",
+  "name": "Conference of European National Librarians (CENL)",
+  "type": "공공기관",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.cenl.org"
+   }
+  ]
+ },
+ {
+  "id": "archives-nationales-france",
+  "name": "Archives nationales",
+  "type": "공공기관",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.archives-nationales.culture.gouv.fr"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/ArchivesNationalesFR"
+   }
+  ]
+ },
+ {
+  "id": "teklia",
+  "name": "Teklia",
+  "type": "기업",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://teklia.com"
+   }
+  ]
+ },
+ {
+  "id": "qatar-national-library",
+  "name": "Qatar National Library",
+  "type": "공공기관",
+  "country": "카타르",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.qnl.qa"
+   }
+  ]
+ },
+ {
+  "id": "university-of-surrey",
+  "name": "University of Surrey",
+  "type": "학계·연구",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.surrey.ac.uk"
+   },
+   {
+    "label": "홈페이지",
+    "url": "https://www.archangel.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "sogang-university",
+  "name": "서강대학교",
+  "type": "학계·연구",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.sogang.ac.kr"
+   }
+  ]
+ },
+ {
+  "id": "mmca",
+  "name": "국립현대미술관",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.mmca.go.kr"
+   }
+  ]
+ },
+ {
+  "id": "bnl-luxembourg",
+  "name": "Bibliothèque nationale du Luxembourg (BnL)",
+  "type": "공공기관",
+  "country": "룩셈부르크",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/natliblux"
+   }
+  ]
+ },
+ {
+  "id": "kb-sweden",
+  "name": "Kungliga biblioteket (National Library of Sweden)",
+  "type": "공공기관",
+  "country": "스웨덴",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.kb.se"
+   },
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/KBLab"
+   }
+  ]
+ },
+ {
+  "id": "carnegie-mellon-university",
+  "name": "Carnegie Mellon University",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.cmu.edu"
+   }
+  ]
+ },
+ {
+  "id": "nb-norway",
+  "name": "Nasjonalbiblioteket (National Library of Norway)",
+  "type": "공공기관",
+  "country": "노르웨이",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nb.no"
+   },
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/NbAiLab"
+   }
+  ]
+ },
+ {
+  "id": "biglam",
+  "name": "BigLAM",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/biglam"
+   }
+  ]
+ },
+ {
+  "id": "roma-tre-university",
+  "name": "Università degli Studi Roma Tre",
+  "type": "학계·연구",
+  "country": "이탈리아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uniroma3.it"
+   }
+  ]
+ },
+ {
+  "id": "pleias",
+  "name": "PleIAs",
+  "type": "기업",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "Hugging Face",
+    "url": "https://huggingface.co/PleIAs"
+   }
+  ]
+ },
+ {
+  "id": "die-zeit",
+  "name": "Die Zeit",
+  "type": "기업",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.zeit.de"
+   }
+  ]
+ },
+ {
+  "id": "komipo",
+  "name": "한국중부발전",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.komipo.co.kr"
+   }
+  ]
+ },
+ {
+  "id": "kintopp",
+  "name": "Arno Bosse (kintopp)",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/kintopp"
+   }
+  ]
+ },
+ {
+  "id": "tu-delft",
+  "name": "Delft University of Technology",
+  "type": "학계·연구",
+  "country": "네덜란드",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.tudelft.nl"
+   }
+  ]
+ },
+ {
+  "id": "cabinet-office-uk",
+  "name": "Cabinet Office (UK)",
+  "type": "공공기관",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.gov.uk/government/organisations/cabinet-office"
+   }
+  ]
+ },
+ {
+  "id": "ml6",
+  "name": "ML6",
+  "type": "기업",
+  "country": "벨기에",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ml6.eu"
+   }
+  ]
+ },
+ {
+  "id": "university-of-victoria",
+  "name": "University of Victoria",
+  "type": "학계·연구",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.uvic.ca"
+   }
+  ]
+ },
+ {
+  "id": "northeastern-university-library",
+  "name": "Northeastern University Library",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://library.northeastern.edu"
+   }
+  ]
+ },
+ {
+  "id": "university-of-maryland",
+  "name": "University of Maryland",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.umd.edu"
+   }
+  ]
+ },
+ {
+  "id": "acm",
+  "name": "Association for Computing Machinery (ACM)",
+  "type": "학계·연구",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.acm.org"
+   }
+  ]
+ },
+ {
+  "id": "university-of-glasgow",
+  "name": "University of Glasgow",
+  "type": "학계·연구",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.gla.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "stanford-university-libraries",
+  "name": "Stanford University Libraries",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://library.stanford.edu"
+   }
+  ]
+ },
+ {
+  "id": "el-colegio-de-mexico",
+  "name": "El Colegio de México",
+  "type": "학계·연구",
+  "country": "멕시코",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.colmex.mx"
+   }
+  ]
+ },
+ {
+  "id": "cnam",
+  "name": "Conservatoire national des arts et métiers (Cnam)",
+  "type": "학계·연구",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.cnam.fr"
+   }
+  ]
+ },
+ {
+  "id": "irht",
+  "name": "Institut de recherche et d'histoire des textes (IRHT)",
+  "type": "학계·연구",
+  "country": "프랑스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.irht.cnrs.fr"
+   }
+  ]
+ },
+ {
+  "id": "tib",
+  "name": "TIB – Leibniz Information Centre for Science and Technology",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.tib.eu"
+   }
+  ]
+ },
+ {
+  "id": "ocr-d",
+  "name": "OCR-D",
+  "type": "학계·연구",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://ocr-d.de"
+   }
+  ]
+ },
+ {
+  "id": "staatsbibliothek-berlin",
+  "name": "Staatsbibliothek zu Berlin",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://staatsbibliothek-berlin.de"
+   },
+   {
+    "label": "GitHub",
+    "url": "https://github.com/qurator-spk"
+   }
+  ]
+ },
+ {
+  "id": "codh",
+  "name": "ROIS-DS 人文学オープンデータ共同利用センター (CODH)",
+  "nameKo": "ROIS-DS 인문학오픈데이터공동이용센터",
+  "type": "학계·연구",
+  "country": "일본",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://codh.rois.ac.jp"
+   }
+  ]
+ },
+ {
+  "id": "nijl",
+  "name": "国文学研究資料館",
+  "nameKo": "국문학연구자료관",
+  "type": "학계·연구",
+  "country": "일본",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.nijl.ac.jp"
+   }
+  ]
+ },
+ {
+  "id": "calamari-ocr",
+  "name": "Calamari-OCR",
+  "type": "개인·커뮤니티",
+  "country": "독일",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/Calamari-OCR"
+   }
+  ]
+ },
+ {
+  "id": "ucsf",
+  "name": "University of California, San Francisco (UCSF)",
+  "type": "학계·연구",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ucsf.edu"
+   }
+  ]
+ },
+ {
+  "id": "beijing-municipal-archives",
+  "name": "北京市档案馆",
+  "nameKo": "베이징시 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
+ },
+ {
+  "id": "chongqing-municipal-archives",
+  "name": "重庆市档案馆",
+  "nameKo": "충칭시 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
+ },
+ {
+  "id": "shaanxi-provincial-archives",
+  "name": "陕西省档案馆",
+  "nameKo": "산시성 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
+ },
+ {
+  "id": "shanghai-municipal-archives",
+  "name": "上海市档案局（馆）",
+  "nameKo": "상하이시 당안국(관)",
+  "type": "공공기관",
+  "country": "중국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.shda.gov.cn"
+   }
+  ]
+ },
+ {
+  "id": "hefei-municipal-archives",
+  "name": "合肥市档案馆",
+  "nameKo": "허페이시 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
+ },
+ {
+  "id": "jiangsu-provincial-archives",
+  "name": "江苏省档案馆",
+  "nameKo": "장쑤성 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
+ },
+ {
+  "id": "loughborough-university",
+  "name": "Loughborough University",
+  "type": "학계·연구",
+  "country": "영국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.lboro.ac.uk"
+   }
+  ]
+ },
+ {
+  "id": "national-assembly-secretariat",
+  "name": "국회사무처",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.assembly.go.kr"
    }
   ]
  }
