@@ -32,24 +32,21 @@
   <main>
     <section class="hero" id="top">
       <div class="hero-head">
-        <p class="eyebrow en">Records Management × AI Transformation</p>
-        <h1>기록을 다루는 일에 <em>AI</em>가 들어온 순간들</h1>
-        <p class="lede">국내외 공공기관, 기업, 연구자, 개인이 기록관리와 아카이브에 AI를 적용한 사례를 모았습니다.
-          서비스, GitHub 저장소, 논문, 보고서까지 한곳에서 찾아보세요.</p>
+        <p class="eyebrow en">Archives &amp; Records Management × AI Transformation</p>
+        <h1>지금 가장 궁금한<br>기록관리 AX는 뭔가요?</h1>
+        <p class="lede">국내외 공공기관, 기업, 연구자, 개인이<br>기록관리와 아카이브에 AI를 적용한 사례를 모았습니다.<br>서비스, GitHub 저장소, 논문, 보고서까지 한곳에서 찾아보세요.</p>
+        <dl class="stats" id="stats"></dl>
       </div>
 
       <div class="ask">
-        <h2 class="ask-q">지금 AX와 관련해 가장 궁금한 건 뭔가요?</h2>
         <form class="search glass" id="askForm" role="search">
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="궁금한 것을 문장으로 물어보세요" autocomplete="off" aria-label="궁금한 것 물어보기">
-          <button class="ask-go" type="submit" aria-label="찾기"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <input id="q" type="search" placeholder="AI에게 질문하기" autocomplete="off" aria-label="AI에게 질문하기">
+          <button class="ask-go" type="submit" aria-label="질문 보내기"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         </form>
         <p class="ask-hint">이런 질문으로 시작해 보세요</p>
         <div class="prompts" id="prompts"></div>
       </div>
-
-      <dl class="stats" id="stats"></dl>
     </section>
 
     <section id="askView" class="ask-view" hidden aria-label="질문과 답">

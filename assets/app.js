@@ -219,8 +219,7 @@
   // ---------- 질문 제시어 · 안내 패널 ----------
   function renderPrompts() {
     $("#prompts").innerHTML = guides.map(g => {
-      const c = CAT[g.filter.cat];
-      return `<button class="prompt" type="button" data-guide="${esc(g.id)}"><span class="dot" style="background:${c ? c.c[0] : "#0f1115"}"></span>${esc(g.q)}</button>`;
+      return `<button class="prompt" type="button" data-guide="${esc(g.id)}">${esc(g.q)}</button>`;
     }).join("");
   }
 
