@@ -375,11 +375,13 @@
     wait.remove();
     if (out.ok) return addBot(out.answer, ids, "AI 답변", true);
     // AI를 쓸 수 없으면: 가까운 안내 또는 관련 사례 요약으로 답한다
+    const why = { daily_limit: "오늘 AI 답변 한도를 다 썼어요", not_configured: "" }[out.error] ?? `AI 답변 오류: ${out.error}`;
+    if (why) $("#avNote").textContent = `${why} — 검색 결과로 안내해요.`;
     if (g && !prevQ) return addBot(`${g.intro}`, ids, "가까운 안내");
     if (!list.length) return addBot("RAX에 실린 사례 중에서는 딱 맞는 것을 찾지 못했어요. 아래 질문으로 시작해 보거나, 다른 표현으로 물어보세요.", [], "", false, true);
     const top = list.slice(0, 3).map((it, i) => `${titleOf(it)} [${i + 1}]`).join(", ");
     addBot(`관련 사례 ${list.length}건을 찾았어요. 가장 가까운 사례는 ${top}예요. 오른쪽 목록에서 자세히 볼 수 있어요.`, ids, "검색 요약");
-    if (out.error && out.error !== "not_configured") $("#avNote").textContent = "지금은 AI 답변을 쓸 수 없어 검색 결과로 안내해요.";
+
   }
 
   async function callChat(question, list) {
