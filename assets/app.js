@@ -1,7 +1,7 @@
 (() => {
   // 사례 제보를 받는 Google Apps Script 웹 앱 주소 (scripts/apps-script.gs 참고)
   // 비어 있으면 GitHub 이슈 양식으로 대신 연결한다
-  const SUBMIT_ENDPOINT = "";
+  const SUBMIT_ENDPOINT = "https://script.google.com/macros/s/AKfycbxX87E9EWyTEdpv6V-K8oH5MqfjljS5fP9HmDvJAiGsq0aijcNDjbk-xUhej3NH5-_JYw/exec";
   const ISSUE_URL = "https://github.com/hyeji-simulacre/rax/issues/new?template=case.yml";
 
   // 카테고리: 색상 두 개(그라데이션)와 라인 아이콘
