@@ -5,6 +5,10 @@
 
 - 사이트: **https://hyeji-simulacre.github.io/rax/**
 
+[![RAX 시연: 질문을 입력하면 AI가 관련 사례를 근거로 답하고, 오른쪽에 관련 사례 목록이 나옵니다](docs/media/rax-demo.gif)](docs/media/rax-demo.mp4)
+
+<sub>▲ 질문을 입력하면 AI가 아카이브의 사례를 근거로 답하고 [번호]로 출처를 붙입니다. 이미지를 누르면 원본 영상(MP4)이 열립니다.</sub>
+
 영감: [PAX — 모두의 공공AX 사례 아카이브](https://hollobit.github.io/PAX/)
 
 ## 카테고리
