@@ -397,7 +397,9 @@
       }
     }
     if (want.success) list = [...list.filter(isOutcome), ...list.filter(it => !isOutcome(it))];
-    return list;
+    // 기술이 빨리 바뀌므로 2025년 이후 사례를 앞에, 그 이전 사례는 참고용으로 뒤에 둔다 (각 묶음 안의 순서는 유지)
+    const recent = it => !it.year || it.year >= 2025;
+    return [...list.filter(recent), ...list.filter(it => !recent(it))];
   }
 
   function startAsk(q, guide) {
