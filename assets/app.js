@@ -81,7 +81,7 @@
     return best;
   }
   let cases = [];
-  let orgs = [], ORG = {}; // 만든 곳(기관·사람): data/orgs.json
+  let orgs = [], ORG = {}; // 만든 사람·조직(기관·사람): data/orgs.json
 
   // ---------- 부드러운 스크롤 (Lenis) ----------
   // 움직임 줄이기를 켠 사용자에게는 쓰지 않는다. 내부 스크롤 영역과 창(dialog)은 data-lenis-prevent 로 제외한다.
@@ -141,7 +141,7 @@
   const shortOrg = o => { const s = String(o || "").split(/[·,(/]/)[0].trim(); return s.length > 22 ? s.slice(0, 21) + "…" : s; };
   const titleOf = it => it.titleKo || it.title;
   const makersOf = it => (it.orgIds || []).map(id => ORG[id]).filter(Boolean);
-  // by 뒤 이름: 만든 곳의 대표 주소가 있으면 그 주소로 연결한다
+  // by 뒤 이름: 만든 사람·조직의 대표 주소가 있으면 그 주소로 연결한다
   function byLink(it) {
     const o = makersOf(it)[0], name = esc(o ? shortOrg(o.name) : shortOrg(it.org)), url = o && o.links && o.links[0] && o.links[0].url;
     return url ? `<a class="org-link" href="${esc(url)}" target="_blank" rel="noopener"><b>${name}</b></a>` : `<b>${name}</b>`;
@@ -508,18 +508,18 @@
     $("#dTags").innerHTML = (it.tags || []).map(t => `<span>${esc(t)}</span>`).join("");
     $("#dLink").href = it.url;
 
-    // 만든 곳: 이름, 종류·나라, 모아 둔 주소들, 이 곳의 사례 보기
+    // 만든 사람·조직: 이름, 종류·나라, 모아 둔 주소들, 이 사람·조직의 사례 보기
     const makers = makersOf(it);
-    $("#dMakers").innerHTML = makers.length ? `<p class="side-label">만든 곳</p>` + makers.map(o => {
+    $("#dMakers").innerHTML = makers.length ? `<p class="side-label">만든 사람·조직</p>` + makers.map(o => {
       const n = cases.filter(c => (c.orgIds || []).includes(o.id)).length;
       return `<div class="maker">
         <b>${esc(o.name)}</b><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small>
         ${(o.links || []).length ? `<ul class="maker-links">${o.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}<span>${esc(l.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</span></a></li>`).join("")}</ul>` : ""}
-        ${n > 1 ? `<button class="maker-cases" type="button" data-org="${esc(o.id)}">이 곳의 사례 ${n}건 보기 →</button>` : ""}
+        ${n > 1 ? `<button class="maker-cases" type="button" data-org="${esc(o.id)}">이 사람·조직의 사례 ${n}건 보기 →</button>` : ""}
       </div>`;
-    }).join("") : `<p class="side-label">만든 곳</p><div class="maker"><b>${esc(it.org)}</b></div>`;
+    }).join("") : `<p class="side-label">만든 사람·조직</p><div class="maker"><b>${esc(it.org)}</b></div>`;
 
-    // 관련 사례: 같은 곳 → 같은 카테고리 → 다른 카테고리
+    // 관련 사례: 같은 사람·조직 → 같은 카테고리 → 다른 카테고리
     const rel = relatedOf(it);
     const sameOrg = rel.filter(r => r.org).sort((a, b) => b.s - a.s).map(r => r.c).slice(0, 6);
     const used = new Set(sameOrg.map(c => c.id));
@@ -527,7 +527,7 @@
     const sameCat = rest.filter(r => r.c.category === it.category).map(r => r.c).slice(0, 6);
     const otherCat = rest.filter(r => r.c.category !== it.category).map(r => r.c).slice(0, 6);
     const put = (el, list, title, note) => { el.hidden = !list.length; el.innerHTML = list.length ? relList(title, list, note) : ""; };
-    put($("#dSameOrg"), sameOrg, "같은 곳의 다른 사례");
+    put($("#dSameOrg"), sameOrg, "같은 사람·조직의 다른 사례");
     put($("#dSameCat"), sameCat, `${it.category}의 다른 사례`);
     put($("#dOtherCat"), otherCat, "다른 카테고리의 관련 사례", "주제가 겹치는 다른 업무 영역의 사례예요.");
 
@@ -608,7 +608,7 @@
   }
   const catFromHash = () => { const m = /^#cat=(.+)$/.exec(location.hash); return m ? decodeURIComponent(m[1]) : null; };
 
-  // ---------- 만든 곳 목록 ----------
+  // ---------- 만든 사람·조직 목록 ----------
   let makerTab = "전체", makerShown = 24;
   // 이름순: 한글 → 영어 → 숫자·기타, 같은 묶음 안에서는 가나다·ABC 순
   const nameGroup = n => /^[가-힣]/.test(n) ? 0 : /^[A-Za-z]/.test(n) ? 1 : /^[0-9]/.test(n) ? 2 : 3;
@@ -620,7 +620,7 @@
     const types = ["전체", "공공기관", "기업", "학계·연구", "개인·커뮤니티"];
     const pool = orgs.filter(o => counts[o.id] && (makerTab === "전체" || o.type === makerTab))
       .sort(byName);
-    $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳과 그 주소를 모았습니다.`;
+    $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳(명)과 그 주소를 모았습니다.`;
     $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
     $("#makerList").innerHTML = pool.slice(0, makerShown).map(o => `<li>
       <div class="mk-name"><b>${esc(o.name)}</b><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small></div>
