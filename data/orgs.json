@@ -1460,6 +1460,7 @@
  {
   "id": "ndl",
   "name": "国立国会図書館 (National Diet Library)",
+  "nameKo": "국립국회도서관",
   "type": "공공기관",
   "country": "일본",
   "links": [
@@ -1520,6 +1521,7 @@
  {
   "id": "taiwan-national-archives-administration",
   "name": "國家發展委員會檔案管理局",
+  "nameKo": "국가발전위원회 기록관리국",
   "type": "공공기관",
   "country": "대만",
   "links": [
@@ -1532,6 +1534,7 @@
  {
   "id": "saac-china",
   "name": "国家档案局",
+  "nameKo": "국가당안국",
   "type": "공공기관",
   "country": "중국",
   "links": [

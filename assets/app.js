@@ -513,7 +513,7 @@
     $("#dMakers").innerHTML = makers.length ? `<p class="side-label">만든 곳</p>` + makers.map(o => {
       const n = cases.filter(c => (c.orgIds || []).includes(o.id)).length;
       return `<div class="maker">
-        <b>${esc(o.name)}</b><small>${esc([o.type, o.country].filter(Boolean).join(" · "))}</small>
+        <b>${esc(o.name)}</b><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small>
         ${(o.links || []).length ? `<ul class="maker-links">${o.links.map(l => `<li><a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)}<span>${esc(l.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""))}</span></a></li>`).join("")}</ul>` : ""}
         ${n > 1 ? `<button class="maker-cases" type="button" data-org="${esc(o.id)}">이 곳의 사례 ${n}건 보기 →</button>` : ""}
       </div>`;
@@ -623,7 +623,7 @@
     $("#makersInfo").textContent = `사례를 만든 기관·회사·연구실·개인 ${orgs.filter(o => counts[o.id]).length}곳과 그 주소를 모았습니다.`;
     $("#makerTabs").innerHTML = types.map(t => `<button type="button" role="tab" aria-selected="${t === makerTab}" data-mtab="${esc(t)}">${esc(t)}</button>`).join("");
     $("#makerList").innerHTML = pool.slice(0, makerShown).map(o => `<li>
-      <div class="mk-name"><b>${esc(o.name)}</b><small>${esc([o.type, o.country].filter(Boolean).join(" · "))}</small></div>
+      <div class="mk-name"><b>${esc(o.name)}</b><small>${esc([o.nameKo, o.type, o.country].filter(Boolean).join(" · "))}</small></div>
       <div class="mk-links">${(o.links || []).map(l => `<a href="${esc(l.url)}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div>
       <button class="mk-count" type="button" data-org="${esc(o.id)}">사례 ${counts[o.id]}건</button>
     </li>`).join("");

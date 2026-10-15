@@ -39,6 +39,8 @@ for o in orgs:
     org_ids.add(oid)
     if not o.get("name"):
         errors.append(f"{where}: 'name' 누락")
+    if "nameKo" in o and (not isinstance(o["nameKo"], str) or not o["nameKo"].strip()):
+        errors.append(f"{where}: 'nameKo'는 비어 있지 않은 문자열이어야 함")
     if o.get("type") not in ORG_TYPES:
         errors.append(f"{where}: type='{o.get('type')}' 허용되지 않은 값")
     if not o.get("country"):
