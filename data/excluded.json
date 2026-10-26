@@ -903,5 +903,15 @@
     "url": "https://github.com/changgi/insta-carousel-skill",
     "reason": "SNS 카드뉴스 제작 스킬: 기록관리 AI 사례로 보기 어려움(발굴 기능은 korea-archive 플러그인 사례에 포함)",
     "date": "2026-10-15"
+  },
+  {
+    "url": "https://www.newspim.com/news/view/20260918000573",
+    "reason": "기사·발표: 기관 간 AI 에이전트 기반 통합 검색 체계 시범 검증 착수 소식(성과 전) — AX로 실제 성과가 난 기사만 싣는다",
+    "date": "2026-10-25"
+  },
+  {
+    "url": "https://www.thestar.com.my/news/nation/2026/10/05/ai-to-be-integrated-into-management-of-archives",
+    "reason": "기사·발표: 말레이시아 국립기록원 AI 기록관리 시스템 개발 계획(2028년 개시 예정) — 계획 단계",
+    "date": "2026-10-25"
   }
 ]
