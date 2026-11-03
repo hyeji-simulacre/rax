@@ -2339,5 +2339,18 @@
     "url": "https://www.archives.go.jp"
    }
   ]
+ },
+ {
+  "id": "bundesarchiv",
+  "name": "Bundesarchiv",
+  "nameKo": "독일 연방기록원",
+  "type": "공공기관",
+  "country": "독일",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.bundesarchiv.de"
+   }
+  ]
  }
 ]

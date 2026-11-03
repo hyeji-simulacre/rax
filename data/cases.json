@@ -5325,5 +5325,29 @@
    "레퍼런스"
   ],
   "url": "https://www.archives.go.jp/news/20260326.html"
+ },
+ {
+  "id": "529c7920fb",
+  "title": "Kolonialakten dank Künstlicher Intelligenz jetzt vollständig durchsuchbar",
+  "titleKo": "식민지 문서, AI 덕분에 전문 검색 가능해졌다 (독일 연방기록원)",
+  "org": "Bundesarchiv (독일 연방기록원)",
+  "orgIds": [
+   "bundesarchiv"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "독일",
+  "year": null,
+  "format": "사이트·서비스",
+  "category": "OCR·고문서",
+  "summary": "독일 연방기록원은 제국식민청 문서군(R 1001) 약 1만 건을 AI 필기체 인식으로 전사해 전문 검색할 수 있게 했다. 이 문서군은 독일어 쿠렌트(Sütterlin) 손글씨 비중이 높아 2021년 시범사업으로 인식 모델을 다듬었다. 전사 변형을 모두 검색해 철자가 다른 인명·지명도 찾을 수 있고, 지금은 베를린 리히터펠데 열람실에서만 쓸 수 있으며 약 2년 뒤 디지털 열람실에 통합해 외부에서도 쓰게 할 계획이다.",
+  "tags": [
+   "필기체인식",
+   "HTR",
+   "식민지 문서",
+   "쿠렌트",
+   "전문검색"
+  ],
+  "url": "https://www.bundesarchiv.de/presse-und-medien/pressemitteilung/kolonialakten-dank-kuenstlicher-intelligenz-jetzt-vollstaendig-durchsuchbar/"
  }
 ]
