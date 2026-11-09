@@ -2371,7 +2371,7 @@
  },
  {
   "id": "yukyeongz",
-  "name": "yukyeongz",
+  "name": "이유경 (yukyeongz)",
   "type": "개인·커뮤니티",
   "country": "대한민국",
   "links": [
@@ -2380,5 +2380,12 @@
     "url": "https://github.com/yukyeongz"
    }
   ]
+ },
+ {
+  "id": "jinan-office-of-education",
+  "name": "전북특별자치도진안교육지원청",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": []
  }
 ]
