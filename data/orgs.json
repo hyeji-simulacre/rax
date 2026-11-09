@@ -2352,5 +2352,33 @@
     "url": "https://www.bundesarchiv.de"
    }
   ]
+ },
+ {
+  "id": "namwon-office-of-education",
+  "name": "전북특별자치도남원교육지원청",
+  "type": "공공기관",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "폐교 기록 아카이브",
+    "url": "https://office.jbedu.kr/v4/hosts/jbnwe/M01/jbnwe/images/archive/namwon-archive/"
+   },
+   {
+    "label": "학교 계보도",
+    "url": "https://office.jbedu.kr/v4/hosts/jbnwe/M01/jbnwe/images/archive/namwon-genealogy/"
+   }
+  ]
+ },
+ {
+  "id": "yukyeongz",
+  "name": "yukyeongz",
+  "type": "개인·커뮤니티",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "GitHub",
+    "url": "https://github.com/yukyeongz"
+   }
+  ]
  }
 ]
