@@ -2439,5 +2439,18 @@
     "url": "https://www.aegean.gr"
    }
   ]
+ },
+ {
+  "id": "cas-archives",
+  "name": "中国科学院档案馆",
+  "nameKo": "중국과학원 당안관",
+  "type": "공공기관",
+  "country": "중국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.acas.ac.cn"
+   }
+  ]
  }
 ]
