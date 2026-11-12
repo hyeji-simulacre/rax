@@ -290,6 +290,11 @@
  "b9027b544f": "thumbs/b9027b544f.jpg",
  "b90ae3b8c4": "thumbs/b90ae3b8c4.jpg",
  "bb0e37143c": "thumbs/bb0e37143c.jpg",
+ "bb39fc7816": {
+  "fail": true,
+  "date": "2026-11-12",
+  "reason": "page.goto: Timeout 25000ms exceeded.\nCall log:\n  - navigating to \"https://www.acas.ac.cn/xwdt/gzdt/202405/t20240506_7174"
+ },
  "bcf92f9da2": {
   "fail": true,
   "date": "2026-10-15",
