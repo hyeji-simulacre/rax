@@ -2387,5 +2387,57 @@
   "type": "공공기관",
   "country": "대한민국",
   "links": []
+ },
+ {
+  "id": "ehri",
+  "name": "EHRI (European Holocaust Research Infrastructure)",
+  "type": "학계·연구",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.ehri-project.eu"
+   },
+   {
+    "label": "EHRI 지식그래프",
+    "url": "https://ehri-kg.ehri-project.eu/"
+   }
+  ]
+ },
+ {
+  "id": "openric",
+  "name": "OpenRiC (Johan Pieterse)",
+  "type": "개인·커뮤니티",
+  "country": "국제",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://openric.org/"
+   }
+  ]
+ },
+ {
+  "id": "artefactual",
+  "name": "Artefactual Systems",
+  "type": "기업",
+  "country": "캐나다",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.artefactual.com"
+   }
+  ]
+ },
+ {
+  "id": "university-of-the-aegean",
+  "name": "University of the Aegean",
+  "type": "학계·연구",
+  "country": "그리스",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.aegean.gr"
+   }
+  ]
  }
 ]

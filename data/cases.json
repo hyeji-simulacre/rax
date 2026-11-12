@@ -5420,5 +5420,148 @@
    "학교 연혁"
   ],
   "url": "https://yukyeongz.github.io/sparql/demo/"
+ },
+ {
+  "id": "7149447b38",
+  "title": "EHRI Knowledge Graph",
+  "titleKo": "EHRI 지식그래프: 홀로코스트 기록 메타데이터의 RiC-O 연결 데이터",
+  "org": "EHRI (European Holocaust Research Infrastructure)",
+  "orgIds": [
+   "ehri"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2026,
+  "format": "MCP·API",
+  "apiType": "SPARQL",
+  "category": "메타데이터·기술",
+  "summary": "유럽 홀로코스트 연구 인프라 EHRI가 세계 약 2,000개 기관의 기록 기술 37만여 건을 지식그래프로 묶은 서비스다. 2026년 EHRI 온톨로지 0.2.0을 국제 기록 표준 온톨로지 RiC-O 1.1에 맞춰 정렬하고, 사람과 AI 에이전트가 직접 질의할 수 있는 SPARQL 엔드포인트, REST API, 패싯 탐색 화면을 함께 갱신했다. 포털 데이터와 계속 동기화되는 지식그래프로 바꾸는 중이다. 원문 사이트는 직접 열어 보지 못하고 검색 결과로 확인했다.",
+  "tags": [
+   "지식그래프",
+   "RiC-O",
+   "SPARQL",
+   "연결 데이터",
+   "홀로코스트"
+  ],
+  "url": "https://ehri-kg.ehri-project.eu/"
+ },
+ {
+  "id": "4c9a84e9a7",
+  "title": "OpenRiC",
+  "titleKo": "OpenRiC: RiC 기록 데이터를 웹으로 제공·탐색하는 공개 규격",
+  "org": "OpenRiC (Johan Pieterse)",
+  "orgIds": [
+   "openric"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "국제",
+  "year": 2026,
+  "format": "GitHub·오픈소스",
+  "category": "메타데이터·기술",
+  "summary": "Records in Contexts(RiC-CM·RiC-O)로 모델링한 기록 데이터를 웹 API로 내보내고 그래프로 따라가며 탐색하는 방법을 정한 공개 규격과 적합성 검사 도구다. 2026년 4월 v0.2.0을 냈고, 약 40개 엔드포인트와 그래프 탐색 기능, AtoM 기술을 RiC-O로 발행하는 참조 구현을 갖췄다. 개인 개발자가 운영하며 ICA 공식 확장은 아니다. 공개 메일링리스트 소개로 확인했다.",
+  "tags": [
+   "RiC-O",
+   "오픈소스",
+   "연결 데이터",
+   "AtoM",
+   "API 규격"
+  ],
+  "url": "https://openric.org/"
+ },
+ {
+  "id": "3e96e4d6bd",
+  "title": "Mnemian",
+  "titleKo": "Mnemian: AtoM 기술을 RiC로 바꾸는 시제품",
+  "org": "Artefactual Systems / Imagiz",
+  "orgIds": [
+   "artefactual"
+  ],
+  "orgType": "기업",
+  "region": "해외",
+  "country": "캐나다",
+  "year": 2026,
+  "format": "사이트·서비스",
+  "category": "메타데이터·기술",
+  "summary": "AtoM 개발사 Artefactual Systems가 지원하고 Imagiz가 만든 시제품으로, AtoM에 쌓인 ISAD(G) 기술 레코드를 가져와 서로 연결된 RiC 요소로 변환해 아키비스트가 RiC 모델로 작업하도록 돕는다. 2026년 1월 공개 설명회와 매핑 검토 워크숍을 열었고 AtoM-RiC 매핑을 GitHub에 공개했다. 시제품 단계이며 변환에 AI를 쓰는지는 확인하지 못했다.",
+  "tags": [
+   "RiC",
+   "AtoM",
+   "ISAD(G)",
+   "매핑",
+   "시제품"
+  ],
+  "url": "https://www.artefactual.com/post/mnemian-what-s-mnew"
+ },
+ {
+  "id": "40ee969877",
+  "title": "RiC 적용의 단계적 전개 양상: ANF 사례를 중심으로",
+  "org": "이세은 / 한국기록관리학회지 26(1)",
+  "orgIds": [
+   "ksarm"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "프랑스 국립기록원(ANF)이 국제 기록 기술 표준 Records in Contexts(RiC)를 단계적으로 도입해 온 과정을 분석한 논문이다. 2026년 2월 『한국기록관리학회지』 26권 1호에 실렸다. 기록 데이터를 온톨로지 기반 연결 데이터로 바꾸려는 국내 기관이 참고할 만한 도입 단계와 시사점을 다룬다.",
+  "tags": [
+   "RiC",
+   "온톨로지",
+   "프랑스 국립기록원",
+   "기록 기술"
+  ],
+  "url": "https://www.kci.go.kr/kciportal/ci/sereArticleSearch/ciSereArtiView.kci?sereArticleSearchBean.artiId=ART003309102"
+ },
+ {
+  "id": "e9429ca7b9",
+  "title": "공공 R&D 기록물 분류체계의 개체 구조 진단과 RiC 기반 재설계: 단위과제의 이중 지위",
+  "org": "백인의 / 한국기록관리학회지 26(3)",
+  "orgIds": [
+   "ksarm"
+  ],
+  "orgType": "학계·연구",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "논문",
+  "category": "분류·평가",
+  "summary": "기록관리기준표의 '단위과제'가 업무 분류 단위이면서 기록 편철·보존기간 책정 단위라는 이중 지위 때문에 업무 맥락이 사라진다고 진단하고, 이를 RiC-CM의 활동(Activity)과 기록집합(RecordSet)으로 나눠 다시 설계한 논문이다. RiC-O 1.1을 따르는 7개 관계 유형을 JSON Schema, JSON-LD, SHACL 3계층으로 구현했다. 2026년 8월 『한국기록관리학회지』 26권 3호에 실렸다.",
+  "tags": [
+   "RiC-O",
+   "기록관리기준표",
+   "단위과제",
+   "JSON-LD",
+   "SHACL"
+  ],
+  "url": "https://doi.org/10.14404/JKSARM.2026.26.3.047"
+ },
+ {
+  "id": "c0daab66dd",
+  "title": "Using LLMs for Semantic Alignment: A Study on Archival Metadata Description",
+  "titleKo": "LLM으로 기록 메타데이터를 RiC-O 온톨로지에 정렬하기",
+  "org": "University of the Aegean (Maratsi·Alexopoulos·Charalabidis)",
+  "orgIds": [
+   "university-of-the-aegean",
+   "riksarkivet"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2025,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "스웨덴 국립기록원의 기록 메타데이터 스키마를 GPT-4o로 국제 기록 표준 온톨로지 RiC-O에 자동 매핑하고, 다른 문화유산 어휘와의 연결도 추천하게 한 연구다. 전문가가 검증한 기존 매핑을 기준으로 LLM 정렬의 정확도와 한계를 측정했고, GPT-4.5로 결과를 일부 검증했다. ISWC 2025에 발표된 뒤 2026년까지 Semantic Web Journal 심사가 이어졌다.",
+  "tags": [
+   "LLM",
+   "GPT-4o",
+   "RiC-O",
+   "온톨로지 정렬",
+   "스웨덴 국립기록원"
+  ],
+  "url": "https://www.semantic-web-journal.net/content/using-llms-semantic-alignment-study-archival-metadata-description"
  }
 ]
