@@ -2452,5 +2452,13 @@
     "url": "https://www.acas.ac.cn"
    }
   ]
+ },
+ {
+  "id": "sichuan-archives-bureau",
+  "name": "四川省档案局",
+  "nameKo": "쓰촨성 당안국",
+  "type": "공공기관",
+  "country": "중국",
+  "links": []
  }
 ]
