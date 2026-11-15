@@ -918,5 +918,20 @@
   "url": "https://newsseoul.co.kr/news/view/1065601822001611",
   "reason": "기사·발표: 국가기록원·국사편찬위원회 업무협약(MOU) 소식 — AI 검색 서비스는 실증 단계이고 협약 자체는 성과가 아님",
   "date": "2026-11-03"
+ },
+ {
+  "url": "https://riksarkivet.se/inlagg/400-000-nya-sidor-i-vart-ai-sok",
+  "reason": "기존 사례(스웨덴 국립기록원 손글씨 검색)와 같은 서비스의 갱신 소식",
+  "date": "2026-11-15"
+ },
+ {
+  "url": "https://www.researchlatvia.gov.lv/en/first-open-latvian-handwritten-text-recognition-model-has-been-created",
+  "reason": "라트비아 19세기 필기체 Transkribus 모델(2026-06): 원문에 접근하지 못해 확인 불가",
+  "date": "2026-11-15"
+ },
+ {
+  "url": "https://sites.google.com/view/ai4lam/fantastic-futures-2026-proposals",
+  "reason": "컨퍼런스 일정 페이지: 구현 사례가 아님",
+  "date": "2026-11-15"
  }
 ]
