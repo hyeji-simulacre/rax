@@ -9,6 +9,11 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     branches: [main]
 
+# 같은 PR에 커밋이 연달아 올라오면 앞선 실행을 취소하고 마지막 것만 처리한다
+concurrency:
+  group: auto-merge-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
   pull-requests: write
@@ -45,6 +50,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          state=$(gh pr view "${{ github.event.pull_request.number }}" --json state -q .state)
+          if [ "$state" != "OPEN" ]; then echo "이미 병합되었거나 닫힌 PR이라 건너뜁니다 ($state)."; exit 0; fi
           gh pr merge "${{ github.event.pull_request.number }}" --merge --delete-branch
           # GITHUB_TOKEN으로 한 병합은 push 배포를 깨우지 않으므로 배포를 직접 실행한다
           gh workflow run pages.yml --ref main
