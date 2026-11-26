@@ -9,7 +9,7 @@ ENUMS = {
     "orgType": {"공공기관", "기업", "학계·연구", "개인·커뮤니티"},
     "format": {"사이트·서비스", "GitHub·오픈소스", "MCP·API", "논문", "보고서", "기사·발표"},
     "apiType": {"MCP", "REST API", "GraphQL", "IIIF", "SPARQL", "SDK"},
-    "category": {"분류·평가", "공개·비식별", "OCR·고문서", "메타데이터·기술",
+    "category": {"분류·평가", "공개·비식별", "정보공개", "OCR·고문서", "메타데이터·기술",
                  "검색·챗봇", "음성·영상", "보존·관리 자동화", "정책·가이드"},
 }
 REQUIRED = ["id", "title", "org", "region", "country", "orgType", "format", "category", "summary", "url"]

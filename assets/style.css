@@ -1136,3 +1136,8 @@ body::before, body::after { max-width: 100%; }
 .catalog .yr { color: #6b7180; }
 .catalog .cc { color: rgba(213, 71, 70, .18); }
 .card .thumb:has(.catalog:only-child), .rel-thumb:has(.catalog:only-child) { border-color: rgba(213, 71, 70, .14); }
+
+/* 카테고리 9개: 넓은 화면 3×3, 휴대폰 2열에서 마지막 하나는 한 줄 전체 */
+.cat-grid { grid-template-columns: repeat(3, 1fr); }
+.cat-tile { aspect-ratio: 16 / 9; }
+@media (max-width: 960px) { .cat-grid { grid-template-columns: repeat(2, 1fr); } .cat-tile:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: auto; min-height: 120px; } }

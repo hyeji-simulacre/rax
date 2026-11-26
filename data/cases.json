@@ -238,7 +238,7 @@
   "country": "대한민국",
   "year": 2017,
   "format": "논문",
-  "category": "공개·비식별",
+  "category": "정보공개",
   "summary": "대량의 전자결재문서를 원문 공개하기 전에 담당자가 일일이 검토하기 어렵다는 문제를 다뤘다. 기존 필터링 도구는 정형 개인정보만 거르고 비정형 민감정보는 놓친다는 점을 짚었다. 기계학습 기반 필터링 기능을 분석하고, 필터링 단계를 넣어 원문정보공개 프로세스를 다시 설계했다.",
   "tags": [
    "민감정보",
@@ -4388,7 +4388,7 @@
   "country": "미국",
   "year": 2022,
   "format": "논문",
-  "category": "공개·비식별",
+  "category": "정보공개",
   "summary": "미국 정보공개법(FOIA)의 비공개 사유 중 '심의과정 특권'에 해당하는 기록을 머신러닝으로 찾아내는 연구다. 비공개 여부를 표시한 공개 테스트 컬렉션을 새로 만들어 텍스트 분류 성능을 시험했고, 같은 검토자의 판정으로 학습·평가하면 안정적이지만 검토자나 기록 주제가 바뀌면 성능 유지가 어렵다고 보고했다.",
   "tags": [
    "FOIA",
@@ -5131,7 +5131,7 @@
   "year": 2026,
   "format": "MCP·API",
   "apiType": "MCP",
-  "category": "검색·챗봇",
+  "category": "정보공개",
   "summary": "정보공개포털의 사전정보공표 문서를 Python 수집기로 모아 Supabase에 저장하고, MCP 서버로 AI 에이전트가 검색·조회하게 만든 오픈소스 시스템이다. MCP 도구는 키워드·날짜·기관·공개구분 검색, 원문등록번호별 상세·첨부파일 조회, 수집 실행, 수집 통계를 지원한다. GitHub Actions로 6시간마다 자동 수집하고 Next.js 대시보드로 현황을 보여 준다.",
   "tags": [
    "정보공개",
@@ -5636,5 +5636,103 @@
    "쓰촨성"
   ],
   "url": "https://cbgc.scol.com.cn/news/7658062"
+ },
+ {
+  "id": "6481092497",
+  "title": "솔트룩스, 국가기록원 AI 지능형 기록정보 검색 실증",
+  "titleKo": "국가기록원 AI 지능형 기록정보 검색 솔루션 개발·실증 (솔트룩스)",
+  "org": "솔트룩스 / 국가기록원",
+  "orgIds": [
+   "saltlux",
+   "national-archives-of-korea"
+  ],
+  "orgType": "공공기관",
+  "region": "국내",
+  "country": "대한민국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "검색·챗봇",
+  "summary": "국가기록원의 'AI 기반 지능형 기록정보 검색 솔루션 개발 및 실증' 사업(과기정통부·NIPA 지원, 2025~2026년)으로 솔트룩스가 기록물 목록 약 2,380만 건과 원문 데이터 청크 54만여 건을 색인했다. 자체 LLM 루시아(LUXIA), AI 에이전트, 기관·정책·업무 관계를 잇는 온톨로지를 적용해 자연어 질문에 근거 원문과 함께 답하고, 기관명이 바뀌어도 관련 기록을 찾도록 설계했다. 2026년 11월 보도 기준 현장 실증을 앞둔 단계다.",
+  "tags": [
+   "RAG",
+   "온톨로지",
+   "AI 에이전트",
+   "기록정보 검색",
+   "국가기록원"
+  ],
+  "url": "https://news.mtn.co.kr/article/2026111209184975421"
+ },
+ {
+  "id": "408535205e",
+  "title": "Arke Institute MCP Server",
+  "titleKo": "Arke Institute MCP 서버: NARA 기록·대통령도서관 자료 의미 검색",
+  "org": "Arke Institute",
+  "orgIds": [
+   "arke-institute"
+  ],
+  "orgType": "개인·커뮤니티",
+  "region": "해외",
+  "country": "미국",
+  "year": null,
+  "format": "MCP·API",
+  "apiType": "MCP",
+  "category": "검색·챗봇",
+  "summary": "Arke Institute가 디지털화한 미국 국립기록관리청(NARA) 기록과 대통령도서관 자료를 AI 비서가 자연어로 의미 검색하게 해 주는 MCP 서버다. OpenAI 임베딩과 Pinecone 벡터 검색을 쓰며, 검색 결과로 파일 단위·디지털 객체·추출 텍스트와 날짜·장소 메타데이터를 돌려준다. MIT 라이선스로 공개됐다. 운영 주체와 공개 시기는 MCP 목록 사이트의 소개로만 확인했다.",
+  "tags": [
+   "MCP",
+   "의미 검색",
+   "NARA",
+   "대통령도서관",
+   "벡터 검색"
+  ],
+  "url": "https://glama.ai/mcp/servers/@Arke-Institute/arke-mcp-server"
+ },
+ {
+  "id": "ca3eba2298",
+  "title": "厚労省、情報公開事務の迅速化に生成AI・RAG基盤を導入",
+  "titleKo": "일본 후생노동성, 정보공개 업무에 생성형 AI·RAG 도입",
+  "org": "厚生労働省",
+  "orgIds": [
+   "mhlw-japan"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "일본",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "정보공개",
+  "summary": "일본 후생노동성이 정보공개 청구·심사청구·심리 업무를 빠르게 처리하려고 AI 활용 기반 'MOA'를 구축한 사례다. 첫 단계로 과거 공개 결정 사례와 관련 문서를 찾는 의미 검색 시스템을 가동했고, 직원의 문서 요약과 회신 작성을 돕는 대화형 RAG를 단계적으로 붙이고 있다. 손글씨가 섞인 종이 문서는 AI-OCR로 텍스트화해 검색 대상에 넣는다.",
+  "tags": [
+   "정보공개",
+   "RAG",
+   "AI-OCR",
+   "의미 검색",
+   "일본"
+  ],
+  "url": "https://atmarkit.itmedia.co.jp/ait/articles/2608/14/news052.html"
+ },
+ {
+  "id": "68d1a8de50",
+  "title": "Tazewell County Clerk's office adds AI search enhancement to analyze handwritten details in historic documents",
+  "titleKo": "미국 일리노이주 테이즈웰 카운티, 손글씨 기록 AI 검색 도입",
+  "org": "Tazewell County Clerk & Recorder (Illinois)",
+  "orgIds": [
+   "tazewell-county-clerk"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "OCR·고문서",
+  "summary": "미국 일리노이주 테이즈웰 카운티 서기실이 디지털화한 옛 카운티 위원회 회의록과 전역 증명 기록의 손글씨까지 AI로 읽어 이름 등 세부 내용을 검색하게 했다. 업체 ArcaSearch에 약 4만 7천 달러를 일회성으로 지불해 2026년 3월 도입했으며, 이미 공개된 기록을 더 빨리 찾게 하는 접근성 개선이다. 일리노이주 첫 사례라고 밝혔다.",
+  "tags": [
+   "손글씨 인식",
+   "AI 검색",
+   "지방기록",
+   "회의록",
+   "미국"
+  ],
+  "url": "https://www.wcbu.org/local-news/2026-03-11/tazewell-county-clerks-office-adds-ai-search-enhancement-to-analyze-handwritten-details-in-historic-documents"
  }
 ]

@@ -10,6 +10,8 @@
       icon: '<rect x="3" y="4" width="18" height="5" rx="1.5"/><rect x="3" y="11" width="18" height="5" rx="1.5"/><path d="M8 20h8M7 6.5h3M7 13.5h3"/>' },
     { key: "공개·비식별", en: "Access & Privacy", c: ["#7e201f", "#a02928"],
       icon: '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 20 20 4"/>' },
+    { key: "정보공개", en: "Freedom of Information", c: ["#8f2423", "#b12f2d"],
+      icon: '<path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h4"/>' },
     { key: "OCR·고문서", en: "OCR & Manuscripts", c: ["#a02928", "#c23634"],
       icon: '<path d="M4 4h11l5 5v11H4z"/><path d="M15 4v5h5M8 13h8M8 17h5"/>' },
     { key: "메타데이터·기술", en: "Metadata & Description", c: ["#c23634", "#d54746"],

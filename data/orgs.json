@@ -2460,5 +2460,54 @@
   "type": "공공기관",
   "country": "중국",
   "links": []
+ },
+ {
+  "id": "saltlux",
+  "name": "솔트룩스",
+  "type": "기업",
+  "country": "대한민국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.saltlux.com"
+   }
+  ]
+ },
+ {
+  "id": "arke-institute",
+  "name": "Arke Institute",
+  "type": "개인·커뮤니티",
+  "country": "미국",
+  "links": [
+   {
+    "label": "MCP 서버 소개",
+    "url": "https://glama.ai/mcp/servers/@Arke-Institute/arke-mcp-server"
+   }
+  ]
+ },
+ {
+  "id": "mhlw-japan",
+  "name": "厚生労働省",
+  "nameKo": "일본 후생노동성",
+  "type": "공공기관",
+  "country": "일본",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.mhlw.go.jp"
+   }
+  ]
+ },
+ {
+  "id": "tazewell-county-clerk",
+  "name": "Tazewell County Clerk & Recorder (Illinois)",
+  "type": "공공기관",
+  "country": "미국",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.tazewell-il.gov"
+   }
+  ]
  }
 ]
