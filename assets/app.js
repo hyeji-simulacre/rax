@@ -454,6 +454,7 @@
     } catch { return null; } finally { clearTimeout(timer); }
   }
   // 키워드 순위와 의미 순위를 섞는다(Reciprocal Rank Fusion). 두 쪽에서 모두 위에 있는 사례가 가장 앞에 온다.
+  let semHits = new Set(); // 키워드로는 못 찾고 뜻으로만 찾은 사례
   function fuse(list, sem, cond) {
     const byId = new Map(cases.map(c => [c.id, c]));
     let semList = sem.map(id => byId.get(id)).filter(Boolean);
@@ -463,6 +464,8 @@
     head.forEach((it, i) => score.set(it, (score.get(it) || 0) + 1 / (60 + i)));
     semList.forEach((it, i) => score.set(it, (score.get(it) || 0) + 1 / (60 + i)));
     const fused = [...score.entries()].sort((a, b) => b[1] - a[1]).map(e => e[0]);
+    const kw = new Set(list);
+    semHits = new Set(semList.filter(it => !kw.has(it)).map(it => it.id));
     return [...fused, ...list.slice(30).filter(it => !score.has(it))];
   }
 
@@ -478,7 +481,9 @@
     ask(q, guide);
   }
 
+  function semNote(text) { const el = $("#avSem"); if (!el) return; el.textContent = text || ""; el.hidden = !text; }
   async function ask(q, guide) {
+    semHits = new Set(); semNote("");
     const prevQ = conv.lastQ; conv.lastQ = q;
     addMsg("user", esc(q));
     let list = retrieve(q, prevQ);
@@ -507,12 +512,11 @@
     // 뜻이 가까운 사례를 더해 목록을 다시 매긴다 (짧은 추가 질문은 앞 질문과 이어서 본다)
     const sem = await semanticRank(prevQ && q.length < 20 ? `${prevQ} ${q}` : q);
     if (sem) {
-      const fused = retrieve(q, prevQ, sem);
-      if (fused.slice(0, 8).map(it => it.id).join() !== ids.join()) {
-        list = fused; ids = list.slice(0, 8).map(it => it.id);
-        renderResults(list, q);
-      }
-    }
+      list = retrieve(q, prevQ, sem); ids = list.slice(0, 8).map(it => it.id);
+      renderResults(list, q);
+      const n = list.slice(0, 30).filter(it => semHits.has(it.id)).length;
+      semNote(n ? `의미 검색 사용 · 뜻으로 더 찾은 사례 ${n}건` : "의미 검색 사용 · 키워드 결과와 뜻이 같았어요");
+    } else semNote("키워드 검색만 썼어요");
     const out = await callChat(q, list.slice(0, 8));
     wait.remove();
     if (out.ok) return addBot(out.answer, ids, "AI 답변", true);
@@ -580,7 +584,7 @@
     $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
       <li><button type="button" data-src="${esc(it.id)}">
         <span class="rank${i < 8 ? " cited" : ""}">${i + 1}</span>
-        <span><b>${esc(titleOf(it))}</b><small>${esc(it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}${isOld(it) ? ` · <span class="old-ref">참고용</span>` : ""}</small></span>
+        <span><b>${esc(titleOf(it))}</b><small>${esc(it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}${isOld(it) ? ` · <span class="old-ref">참고용</span>` : ""}${semHits.has(it.id) ? ` · <span class="sem-ref">뜻으로 찾음</span>` : ""}</small></span>
       </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
   }
 
