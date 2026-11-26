@@ -765,9 +765,14 @@
       const t = href && href.startsWith("#") && href.length > 1 ? $(href) : null;
       requestAnimationFrame(() => t ? goTo(t) : goTo(0));
     }, true);
+    // 페이지 안 이동 링크(#categories, #archive 등)는 주소창에 #을 남기지 않는다.
+    // 남기면 다음에 사이트를 열 때 브라우저가 그 위치로 바로 내려가 버린다.
     document.addEventListener("click", e => {
-      const a = e.target.closest('a[href="#archive"]'); if (!a || inView) return;
-      e.preventDefault(); e.stopPropagation(); goTo("#archive");
+      const a = e.target.closest('a[href^="#"]'); if (!a || inView || a.id === "headAsk") return;
+      const href = a.getAttribute("href");
+      if (!/^#(top|categories|archive|makers|feature)$/.test(href)) return;
+      e.preventDefault(); e.stopPropagation();
+      goTo(href === "#top" ? 0 : href);
     }, true);
     // 카테고리 페이지
     $("#cpBack").addEventListener("click", closeCat);
@@ -883,6 +888,12 @@
   }
 
   async function init() {
+    // 처음 열 때는 늘 맨 위에서 시작한다 (예전에 남은 #categories 같은 주소, 새로고침 시 스크롤 복원 무시)
+    if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+    if (/^#(top|categories|archive|makers|feature)$/.test(location.hash)) {
+      history.replaceState(null, "", location.pathname + location.search);
+      scrollTo(0, 0);
+    }
     bind(); readParams();
     try {
       const [res, gres] = await Promise.all([
