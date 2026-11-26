@@ -2509,5 +2509,17 @@
     "url": "https://www.tazewell-il.gov"
    }
   ]
+ },
+ {
+  "id": "university-of-bologna",
+  "name": "Università di Bologna",
+  "type": "학계·연구",
+  "country": "이탈리아",
+  "links": [
+   {
+    "label": "홈페이지",
+    "url": "https://www.unibo.it"
+   }
+  ]
  }
 ]

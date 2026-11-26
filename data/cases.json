@@ -630,7 +630,8 @@
    "투명성 성명",
    "AI 거버넌스",
    "호주 정부",
-   "책임 있는 AI"
+   "책임 있는 AI",
+   "패러데이터"
   ],
   "url": "https://naa.gov.au/about-us/who-we-are/accountability-and-reporting/artificial-intelligence-ai-transparency-statement"
  },
@@ -795,7 +796,8 @@
    "인물 식별",
    "사진기록",
    "메타데이터 자동생성",
-   "에스토니아"
+   "에스토니아",
+   "패러데이터"
   ],
   "url": "https://vra2022.sched.com/event/rDXz/photographic-glass-plates-and-birthdates-secrets-to-optimizing-ai-generated-metadata-accuracy-with-the-national-archives-of-estonia"
  },
@@ -3446,7 +3448,8 @@
    "LLM",
    "메타데이터 보강",
    "서신",
-   "시각적 검색도구"
+   "시각적 검색도구",
+   "패러데이터"
   ],
   "url": "https://link.springer.com/article/10.1007/s00146-025-02238-5"
  },
@@ -4279,7 +4282,8 @@
    "기록 평가·선별",
    "전자기록",
    "알고리즘투명성",
-   "실운영"
+   "실운영",
+   "패러데이터"
   ],
   "url": "https://www.gov.uk/algorithmic-transparency-records/cabinet-office-automated-digital-document-review"
  },
@@ -5461,13 +5465,14 @@
   "year": 2026,
   "format": "GitHub·오픈소스",
   "category": "메타데이터·기술",
-  "summary": "Records in Contexts(RiC-CM·RiC-O)로 모델링한 기록 데이터를 웹 API로 내보내고 그래프로 따라가며 탐색하는 방법을 정한 공개 규격과 적합성 검사 도구다. 2026년 4월 v0.2.0을 냈고, 약 40개 엔드포인트와 그래프 탐색 기능, AtoM 기술을 RiC-O로 발행하는 참조 구현을 갖췄다. 개인 개발자가 운영하며 ICA 공식 확장은 아니다. 공개 메일링리스트 소개로 확인했다.",
+  "summary": "Records in Contexts(RiC-CM·RiC-O)로 모델링한 기록 데이터를 웹 API로 내보내고 그래프로 따라가며 탐색하는 방법을 정한 공개 규격과 적합성 검사 도구다. 2026년 4월 v0.2.0을 냈고, 약 40개 엔드포인트와 그래프 탐색 기능, AtoM 기술을 RiC-O로 발행하는 참조 구현을 갖췄다. 개인 개발자가 운영하며 ICA 공식 확장은 아니다. 공개 메일링리스트 소개로 확인했다. AI가 추론한 관계를 기록에서 확인된 사실과 구분해 PROV-O로 생성 모델·신뢰도를 남기는 출처 프로파일도 제안돼 있다.",
   "tags": [
    "RiC-O",
    "오픈소스",
    "연결 데이터",
    "AtoM",
-   "API 규격"
+   "API 규격",
+   "패러데이터"
   ],
   "url": "https://openric.org/"
  },
@@ -5734,5 +5739,77 @@
    "미국"
   ],
   "url": "https://www.wcbu.org/local-news/2026-03-11/tazewell-county-clerks-office-adds-ai-search-enhancement-to-analyze-handwritten-details-in-historic-documents"
+ },
+ {
+  "id": "300d50fcf1",
+  "title": "Provenance Metadata for Slop Control, with Transcripts and other Digital Objects",
+  "titleKo": "AI 전사문의 생성 과정을 기록하는 출처 메타데이터 (미국 공영방송 아카이브, TPME)",
+  "org": "American Archive of Public Broadcasting (GBH·Library of Congress)",
+  "orgIds": [
+   "gbh",
+   "library-of-congress"
+  ],
+  "orgType": "공공기관",
+  "region": "해외",
+  "country": "미국",
+  "year": 2026,
+  "format": "기사·발표",
+  "category": "음성·영상",
+  "summary": "미국 공영방송 아카이브(AAPB)가 AI로 만든 대량 전사문에 '어떤 모델이 어떤 설정으로 언제 만들었는지'를 함께 기록하는 방법을 정리한 글이다. AI4LAM이 만든 전사문 출처 메타데이터 요소(TPME)를 적용해, AI 전사문과 사람이 검수한 전사문을 구분하고 품질 문제를 추적할 수 있게 한다. TPME를 AI가 바꾼 모든 디지털 객체에 쓰는 일반 출처 기록 체계로 넓히자는 제안도 담았다.",
+  "tags": [
+   "패러데이터",
+   "출처 메타데이터",
+   "TPME",
+   "AI 전사",
+   "Whisper"
+  ],
+  "url": "https://blog.americanarchive.org/2026/09/11/provenance-metadata-for-slop-control-with-transcripts-and-other-digital-objects/"
+ },
+ {
+  "id": "dd6dc9a373",
+  "title": "CHAD-KG: A Knowledge Graph for Representing Cultural Heritage Objects and Digitisation Paradata",
+  "titleKo": "CHAD-KG: 문화유산 객체와 디지털화 패러데이터를 함께 표현하는 지식그래프",
+  "org": "Università di Bologna (Barzaghi·Heibi·Moretti·Peroni)",
+  "orgIds": [
+   "university-of-bologna"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "이탈리아",
+  "year": 2026,
+  "format": "논문",
+  "category": "메타데이터·기술",
+  "summary": "문화유산 객체의 기술 메타데이터와 함께, 그 객체를 '어떤 장비·절차·사람이 어떻게 디지털화했는지'라는 패러데이터를 OWL 온톨로지(CHAD-AP) 기반 지식그래프로 모델링한 연구다. 기존 문화유산 지식그래프가 객체 설명에만 집중하고 생성·처리 과정 정보를 놓친다는 점을 메우려 했고, 실제 전시·소장 컬렉션 데이터로 지식그래프를 구축해 공개했다. 2025년 공개 후 2026년 저널에 실렸다.",
+  "tags": [
+   "패러데이터",
+   "지식그래프",
+   "온톨로지",
+   "디지털화",
+   "출처"
+  ],
+  "url": "https://arxiv.org/abs/2505.13276"
+ },
+ {
+  "id": "376b66ea5f",
+  "title": "Positioning Paradata: A Conceptual Frame for AI Processual Documentation in Archives and Recordkeeping Contexts",
+  "titleKo": "패러데이터 자리매김: 기록관리 맥락에서 AI 처리 과정을 기록하는 개념 틀",
+  "org": "InterPARES Trust AI",
+  "orgIds": [
+   "interpares-trust-ai"
+  ],
+  "orgType": "학계·연구",
+  "region": "해외",
+  "country": "국제",
+  "year": 2023,
+  "format": "논문",
+  "category": "정책·가이드",
+  "summary": "InterPARES Trust AI 연구진이 기록관에서 AI를 쓸 때 남겨야 할 '패러데이터'를 개념적으로 정의하고 모델링한 논문이다. 패러데이터를 기록을 만들고 처리한 절차·도구·사람에 관한 정보로 정의하고, 선택한 AI 모델, 학습 데이터, 학습 설정, 모델 카드, AI 정책 등 기록연구사가 문서화해야 할 요소와 기존 기록 기술과의 관계를 정리했다. 2023년 연구라 지금 기술과는 차이가 있을 수 있다.",
+  "tags": [
+   "패러데이터",
+   "AI 처리 기록",
+   "InterPARES",
+   "설명 책임"
+  ],
+  "url": "https://dl.acm.org/doi/10.1145/3594728"
  }
 ]

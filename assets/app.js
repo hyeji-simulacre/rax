@@ -429,8 +429,13 @@
     let list = retrieve(q, prevQ);
     const g = guide || (!prevQ && guideFor(tokenize(q)));
     if (guide) {
-      const picks = picksFor(guide);
-      list = [...picks, ...list.filter(it => !picks.some(p => p.id === it.id))];
+      // 질문 안내를 누른 경우: 추천 사례 → 안내 주제(카테고리·형식·주제어)에 맞는 사례 순으로 보여 준다
+      const picks = picksFor(guide), f = guide.filter || {};
+      const inTopic = cases.filter(it => (!f.cat || it.category === f.cat) && (!f.format || it.format === f.format)
+        && (!f.q || it._hay.includes(f.q.toLowerCase())))
+        .sort((a, b) => (b.year || 0) - (a.year || 0));
+      list = [...new Set([...picks.map(p => cases.find(c => c.id === p.id)).filter(Boolean), ...inTopic])];
+      list = list.map(it => picks.find(p => p.id === it.id) || it);
     }
     const ids = list.slice(0, 8).map(it => it.id);
     renderResults(list, guide ? guide.q : q);
