@@ -65,6 +65,11 @@
  "2a3f370ec3": "thumbs/2a3f370ec3.jpg",
  "2d7ecfc24e": "thumbs/2d7ecfc24e.jpg",
  "2ead3b0f7e": "thumbs/2ead3b0f7e.jpg",
+ "300d50fcf1": {
+  "fail": true,
+  "date": "2026-11-26",
+  "reason": "status 403"
+ },
  "31fb1e30f0": "thumbs/31fb1e30f0.jpg",
  "3250ce7b21": "thumbs/3250ce7b21.jpg",
  "32defe3f5e": "thumbs/32defe3f5e.jpg",
@@ -72,6 +77,11 @@
  "34e9f63fe0": "thumbs/34e9f63fe0.jpg",
  "35e4adb9dd": "thumbs/35e4adb9dd.jpg",
  "3723036e1c": "thumbs/3723036e1c.jpg",
+ "376b66ea5f": {
+  "fail": true,
+  "date": "2026-11-26",
+  "reason": "status 403"
+ },
  "377f8d8d07": "thumbs/377f8d8d07.jpg",
  "3844509a25": "thumbs/3844509a25.jpg",
  "38ac89b0dd": "thumbs/38ac89b0dd.jpg",
@@ -317,6 +327,7 @@
  "db2adea7a6": "thumbs/db2adea7a6.jpg",
  "dba29cbb03": "thumbs/dba29cbb03.jpg",
  "dd2ef75ef7": "thumbs/dd2ef75ef7.jpg",
+ "dd6dc9a373": "thumbs/dd6dc9a373.jpg",
  "dedc4e9456": "thumbs/dedc4e9456.jpg",
  "e0844102ec": "thumbs/e0844102ec.jpg",
  "e0a7881b76": "thumbs/e0a7881b76.jpg",
