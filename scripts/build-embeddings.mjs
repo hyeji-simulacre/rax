@@ -7,7 +7,10 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { createHash } from "node:crypto";
 
-const MODEL = process.env.EMBED_MODEL || "nvidia/llama-3.2-nv-embedqa-1b-v2";
+// 앞 모델이 없어졌으면(404·410) 다음 모델을 쓴다. 쓸 수 있는 모델을 찾으면 그 모델로 전부 계산한다.
+const MODELS = (process.env.EMBED_MODEL || "nvidia/llama-nemotron-embed-1b-v2,baai/bge-m3,nvidia/nv-embedqa-e5-v5")
+  .split(",").map(m => m.trim()).filter(Boolean);
+let MODEL = MODELS[0];
 const DIMS = Number(process.env.EMBED_DIMS || 1024);
 const OUT = "data/embeddings.json";
 const BATCH = 16;
@@ -21,6 +24,7 @@ export const textOf = c => [c.title, c.titleKo, c.org, c.category, c.format, c.c
 
 const cases = JSON.parse(readFileSync("data/cases.json", "utf8"));
 let prev = existsSync(OUT) ? JSON.parse(readFileSync(OUT, "utf8")) : null;
+if (prev && MODELS.includes(prev.model)) MODEL = prev.model; // 지난번에 쓴 모델을 먼저 쓴다
 if (prev && (prev.model !== MODEL || prev.req !== DIMS)) prev = null; // 모델이 바뀌면 전부 다시 만든다
 const items = {};
 const todo = [];
@@ -44,6 +48,7 @@ async function embed(input) {
       if (out.ok && Array.isArray(out.vectors) && out.vectors.length === input.length) return out;
       throw new Error(out.error || `HTTP ${res.status}`);
     } catch (err) {
+      if (/embed_(404|410)/.test(String(err))) throw err; // 모델이 없으면 다시 시도해도 소용없다
       console.log(`  시도 ${attempt} 실패: ${String(err).slice(0, 200)}`);
       if (attempt === 3) throw err;
       await new Promise(r => setTimeout(r, 3000 * attempt));
@@ -62,7 +67,15 @@ let dims = DIMS, failed = 0;
 for (let i = 0; i < todo.length; i += BATCH) {
   const part = todo.slice(i, i + BATCH);
   try {
-    const out = await embed(part.map(p => p.text));
+    let out;
+    for (;;) {
+      try { out = await embed(part.map(p => p.text)); break; } catch (err) {
+        const gone = /embed_(404|410)/.test(String(err)) && Object.keys(items).length === 0;
+        const next = MODELS[MODELS.indexOf(MODEL) + 1];
+        if (!gone || !next) throw err;
+        console.log(`  모델 ${MODEL}을 쓸 수 없어 ${next}로 바꿉니다`); MODEL = next;
+      }
+    }
     out.vectors.forEach((v, k) => { items[part[k].id] = { h: part[k].h, v: pack(v) }; dims = v.length; });
     console.log(`  ${Math.min(i + BATCH, todo.length)}/${todo.length}`);
   } catch { failed += part.length; }
