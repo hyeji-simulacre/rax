@@ -483,12 +483,23 @@
     return el;
   }
 
-  // 답변 글은 이스케이프한 뒤 **굵게**, 줄바꿈, [n] 출처 번호만 살린다
+  // 2024년 이전 사례는 참고용으로 표시한다. AI가 안내를 빠뜨려도 화면에서 늘 같은 방식으로 보이게 코드가 붙인다.
+  // 연도가 없는 사례는 오래됐는지 알 수 없으므로 표시하지 않는다.
+  const isOld = it => !!(it && Number.isInteger(it.year) && it.year < 2025);
+
+  // 답변 글은 이스케이프한 뒤 **굵게**, 줄바꿈, [n] 출처 번호만 살린다.
+  // 오래된 사례는 답변에서 처음 나온 번호 옆에만 '○○년 사례 · 참고용'을 붙인다.
   function addBot(text, ids, label, isAI, isErr) {
     conv.turns.push({ role: "assistant", content: text });
     conv.ids = ids;
+    const marked = new Set();
     const html = esc(text).replace(/^#+\s*/gm, "").replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>")
-      .replace(/\[(\d{1,2})\]/g, (m, n) => ids[n - 1] ? `<button class="src" type="button" data-src="${esc(ids[n - 1])}" title="${esc(titleOf(cases.find(c => c.id === ids[n - 1])))}">${n}</button>` : "");
+      .replace(/\[(\d{1,2})\]/g, (m, n) => {
+        const id = ids[n - 1]; if (!id) return "";
+        const it = cases.find(c => c.id === id);
+        const old = isOld(it) && !marked.has(id) ? (marked.add(id), `<span class="old-ref">${it.year}년 사례 · 참고용</span>`) : "";
+        return `<button class="src" type="button" data-src="${esc(id)}" title="${esc(titleOf(it))}">${n}</button>${old}`;
+      });
     const el = addMsg("bot", `${label ? `<span class="label">${esc(label)}</span>` : ""}${html}`);
     if (isErr) el.classList.add("err");
     return el;
@@ -500,7 +511,7 @@
     $("#avResults").innerHTML = list.slice(0, 30).map((it, i) => `
       <li><button type="button" data-src="${esc(it.id)}">
         <span class="rank${i < 8 ? " cited" : ""}">${i + 1}</span>
-        <span><b>${esc(titleOf(it))}</b><small>${esc(it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}</small></span>
+        <span><b>${esc(titleOf(it))}</b><small>${esc(it.country)} · ${esc(shortOrg(it.org))}${it.year ? ` · ${it.year}` : ""} · ${esc(it.category)}${isOld(it) ? ` · <span class="old-ref">참고용</span>` : ""}</small></span>
       </button></li>`).join("") || `<li class="muted" style="padding:12px;font-family:var(--ko)">관련 사례가 없어요.</li>`;
   }
 

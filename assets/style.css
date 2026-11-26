@@ -182,6 +182,9 @@ body.asking .ask-q { font-size: 18px; color: var(--ink-2); }
 .msg.bot .src { display: inline-flex; align-items: center; justify-content: center; min-width: 20px; height: 20px; padding: 0 5px; margin: 0 2px;
   border-radius: 6px; border: 0; cursor: pointer; vertical-align: 2px; font: 600 11px var(--en); color: #fff; background: var(--accent, #5b7cff); }
 .msg.bot .src:hover { filter: brightness(1.1); }
+.msg.bot .old-ref { display: inline-block; margin: 0 4px 0 1px; padding: 1px 6px; border-radius: 6px; vertical-align: 1px;
+  font: 500 11px var(--ko); color: var(--ink-3); background: rgba(15, 17, 21, .06); white-space: nowrap; }
+.av-results .old-ref { color: var(--ink-3); font-weight: 600; }
 .msg.bot .label { display: block; margin-bottom: 4px; font: 600 12px var(--ko); color: var(--ink-3); }
 .msg.bot.err { color: var(--ink-3); font-size: 14px; }
 .typing { display: inline-flex; gap: 5px; padding: 6px 0; }
