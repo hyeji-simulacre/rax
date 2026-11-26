@@ -13,6 +13,7 @@
  *   CHAT_DAILY_MAX: (선택) 하루 최대 채팅 호출 수, 기본 300
  *   NOTIFY_EMAIL  : (선택) 의견 알림 메일을 받을 주소. 스크립트를 실행하는 계정과 다른 주소여야 받은편지함에 온다
  *   SKILL_URL     : (선택) 답변 스킬 문서 주소. 기본은 저장소의 data/skill.md (고치면 30분 안에 반영, 다시 배포할 필요 없음)
+ *   EMBED_DAILY_MAX: (선택) 의미 검색용 임베딩 호출의 하루 최대 수, 기본 2000 (같은 LLM_API_KEY를 쓴다)
  */
 const FIELDS = ["title", "url", "org", "category", "region", "summary", "contact"];
 const MAX_LEN = { title: 300, url: 1000, org: 200, category: 40, region: 40, summary: 2000, contact: 200 };
@@ -21,6 +22,7 @@ function doPost(e) {
   try {
     const data = JSON.parse(e.postData.contents || "{}");
     if (data.action === "chat") return json(chat(data));
+    if (data.action === "embed") return json(embed(data));
     return json(submit(data));
   } catch (err) {
     return json({ ok: false, error: String(err) });
@@ -151,17 +153,49 @@ function chat(data) {
   return { ok: true, answer };
 }
 
-// 하루 호출 수를 세어 무료 한도를 넘지 않게 한다
-function underDailyLimit(props) {
-  const max = Number(props.getProperty("CHAT_DAILY_MAX") || 300);
+// 의미 검색: 글을 숫자 벡터로 바꿔 돌려준다.
+// - 배포 때 GitHub Actions가 사례 글을 보내고(type: passage), 사이트는 질문 글을 보낸다(type: query).
+// - 같은 LLM_API_KEY로 NVIDIA 임베딩 API를 쓴다. 키는 밖으로 나가지 않는다.
+const DEFAULT_EMBED_MODEL = "nvidia/llama-3.2-nv-embedqa-1b-v2";
+function embed(data) {
+  const props = PropertiesService.getScriptProperties();
+  const key = props.getProperty("LLM_API_KEY");
+  if (!key) return { ok: false, error: "not_configured" };
+  const model = String(data.model || DEFAULT_EMBED_MODEL);
+  // 임베딩 모델만 허용한다 (이 주소로 다른 용도의 모델을 부르지 못하게)
+  if (!/^[\w.\-\/]{3,100}$/.test(model) || !/embed|bge|e5|arctic/i.test(model)) return { ok: false, error: "bad_model" };
+  const input = (Array.isArray(data.input) ? data.input : [data.input]).slice(0, 32)
+    .map(t => String(t == null ? "" : t).slice(0, 3000)).filter(Boolean);
+  if (!input.length) return { ok: false, error: "empty" };
+  if (!underDailyLimit(props, "EMBED_COUNT", Number(props.getProperty("EMBED_DAILY_MAX") || 2000))) return { ok: false, error: "daily_limit" };
+  const base = (props.getProperty("LLM_BASE_URL") || "https://integrate.api.nvidia.com/v1").replace(/\/$/, "");
+  const body = { model, input, input_type: data.type === "passage" ? "passage" : "query", encoding_format: "float", truncate: "END" };
+  const dims = Number(data.dims);
+  const send = b => UrlFetchApp.fetch(`${base}/embeddings`, {
+    method: "post", contentType: "application/json", headers: { Authorization: `Bearer ${key}` },
+    payload: JSON.stringify(b), muteHttpExceptions: true,
+  });
+  let res = send(dims > 0 ? Object.assign({ dimensions: dims }, body) : body);
+  if (res.getResponseCode() === 400 && dims > 0) res = send(body); // 차원 줄이기를 모르는 모델이면 빼고 다시
+  if (res.getResponseCode() !== 200) return { ok: false, error: `embed_${res.getResponseCode()} ${res.getContentText().slice(0, 160)}` };
+  const out = JSON.parse(res.getContentText());
+  const vectors = (out.data || []).sort((a, b) => a.index - b.index)
+    .map(d => d.embedding.map(x => Math.round(x * 1e5) / 1e5));
+  return { ok: true, model, vectors };
+}
+
+// 하루 호출 수를 세어 무료 한도를 넘지 않게 한다 (채팅과 임베딩은 따로 센다)
+function underDailyLimit(props, name, limit) {
+  name = name || "CHAT_COUNT";
+  const max = limit || Number(props.getProperty("CHAT_DAILY_MAX") || 300);
   const today = Utilities.formatDate(new Date(), "Asia/Seoul", "yyyy-MM-dd");
   const lock = LockService.getScriptLock();
   lock.waitLock(5000);
   try {
-    const [day, n] = (props.getProperty("CHAT_COUNT") || "").split("|");
+    const [day, n] = (props.getProperty(name) || "").split("|");
     const count = day === today ? Number(n) : 0;
     if (count >= max) return false;
-    props.setProperty("CHAT_COUNT", `${today}|${count + 1}`);
+    props.setProperty(name, `${today}|${count + 1}`);
     return true;
   } finally {
     lock.releaseLock();

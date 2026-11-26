@@ -373,7 +373,8 @@
   // 조건을 나타내는 말(형식·주체·나라)과, 모든 사례에 해당해 검색에 도움이 안 되는 말은 주제어에서 뺀다
   const COND_WORD = /^(mcp|엠씨피|api|오픈api|openapi|오픈소스|github|깃허브|공공|공공기관|정부|국가기관|기업|회사|상용|솔루션|논문|보고서|대학|개인|커뮤니티|개발자)/;
   const FILLER = /^(국내|한국|우리나라|해외|외국|국외|만$|것만|기관|성공|성과|사례|있어|있나|있을|알려|추천|잘|하는|해주는|해줘|뭐|무엇|어떻게|어떤|기록관리|아카이브|ax|ai|인공지능|무료|쓸|수$|도구|툴|좋은|방법)/;
-  function retrieve(q, prevQ) {
+  // sem: 의미 검색이 고른 사례 id 순위(없으면 키워드 검색만)
+  function retrieve(q, prevQ, sem) {
     const want = intentOf(q);
     const topicOf = text => tokenize(text).filter(t => !COND_WORD.test(t) && !FILLER.test(t) && !(want.country && t.startsWith(want.country)));
     let toks = topicOf(q);
@@ -394,11 +395,12 @@
     let list = rank(toks);
     if (list.length < 3 && prevQ && toks.length) list = rank([...new Set([...toks, ...topicOf(prevQ)])]);
     if (!toks.length && prevQ && hasCond) list = rank(topicOf(prevQ));
+    let condOnly = false;
     if (hasCond) {
       // 조건만 있는 질문에서는 성과가 드러나는 사례 → 국내 → 최신 순
       const pool = cases.filter(meets).sort((a, b) => (want.success ? isOutcome(b) - isOutcome(a) : 0)
         || (b.country === "대한민국") - (a.country === "대한민국") || (b.year || 0) - (a.year || 0));
-      if (!toks.length && !(prevQ && topicOf(prevQ).length)) list = pool; // 예: '공공기관 성공 사례'
+      if (!toks.length && !(prevQ && topicOf(prevQ).length)) { list = pool; condOnly = true; } // 예: '공공기관 성공 사례'
       else {
         const strict = loose.filter(meets);
         // 주제와 조건을 함께 만족하는 게 적으면, 주제만 맞는 것과 조건만 맞는 것을 뒤에 붙여 AI가 '가장 가까운 것'을 안내하게 한다
@@ -406,10 +408,62 @@
           : [...new Set([...strict, ...list.filter(it => !meets(it)).slice(0, 4), ...pool.slice(0, 3)])];
       }
     }
+    if (sem && sem.length && !condOnly) list = fuse(list, sem, hasCond ? meets : null);
     if (want.success) list = [...list.filter(isOutcome), ...list.filter(it => !isOutcome(it))];
     // 기술이 빨리 바뀌므로 2025년 이후 사례를 앞에, 그 이전 사례는 참고용으로 뒤에 둔다 (각 묶음 안의 순서는 유지)
     const recent = it => !it.year || it.year >= 2025;
     return [...list.filter(recent), ...list.filter(it => !recent(it))];
+  }
+
+  // ── 의미 검색 ──
+  // 배포 때 만든 사례 벡터(data/embeddings.json)와, Apps Script가 바꿔 준 질문 벡터를 비교해 뜻이 가까운 사례를 찾는다.
+  // 파일이 없거나 시간이 오래 걸리면 null을 돌려주고, 그때는 키워드 검색 결과만 쓴다.
+  let embLoad = null;
+  function loadEmb() {
+    if (!embLoad) embLoad = fetch("data/embeddings.json", { cache: "no-cache" }).then(r => r.ok ? r.json() : null).then(j => {
+      if (!j || !j.items) return null;
+      const ids = [], vecs = [];
+      for (const [id, x] of Object.entries(j.items)) {
+        const b = atob(x.v), a = new Int8Array(b.length);
+        for (let i = 0; i < b.length; i++) a[i] = (b.charCodeAt(i) << 24) >> 24;
+        ids.push(id); vecs.push(a);
+      }
+      return { model: j.model, req: j.req, dims: j.dims, ids, vecs };
+    }).catch(() => null);
+    return embLoad;
+  }
+  async function semanticRank(text) {
+    if (!SUBMIT_ENDPOINT) return null;
+    const emb = await loadEmb();
+    if (!emb || !emb.ids.length) return null;
+    const ctl = new AbortController(); const timer = setTimeout(() => ctl.abort(), 8000);
+    try {
+      const res = await fetch(SUBMIT_ENDPOINT, { method: "POST", signal: ctl.signal,
+        body: JSON.stringify({ action: "embed", type: "query", model: emb.model, dims: emb.req, input: [text.slice(0, 500)] }) });
+      const out = await res.json();
+      const qv = out && out.ok && out.vectors && out.vectors[0];
+      if (!qv || qv.length !== emb.dims) return null;
+      let n = 0; for (const x of qv) n += x * x; n = Math.sqrt(n) || 1;
+      const scored = emb.ids.map((id, k) => {
+        const v = emb.vecs[k]; let s = 0;
+        for (let i = 0; i < v.length; i++) s += v[i] * qv[i];
+        return { id, s: s / (127 * n) };
+      }).sort((a, b) => b.s - a.s);
+      const top = scored.length ? scored[0].s : 0;
+      return scored.filter(x => x.s >= top * 0.8).slice(0, 12).map(x => x.id);
+    } catch { return null; } finally { clearTimeout(timer); }
+  }
+  // 키워드 순위와 의미 순위를 섞는다(Reciprocal Rank Fusion). 두 쪽에서 모두 위에 있는 사례가 가장 앞에 온다.
+  function fuse(list, sem, cond) {
+    const byId = new Map(cases.map(c => [c.id, c]));
+    let semList = sem.map(id => byId.get(id)).filter(Boolean);
+    if (cond) semList = semList.filter(cond);
+    const score = new Map();
+    const head = list.slice(0, 30);
+    head.forEach((it, i) => score.set(it, (score.get(it) || 0) + 1 / (60 + i)));
+    semList.forEach((it, i) => score.set(it, (score.get(it) || 0) + 1 / (60 + i)));
+    const fused = [...score.entries()].sort((a, b) => b[1] - a[1]).map(e => e[0]);
+    return [...fused, ...list.slice(30).filter(it => !score.has(it))];
   }
 
   function startAsk(q, guide) {
@@ -420,6 +474,7 @@
     $("#q").value = guide ? "" : q;
     setPane("chat");
     goTo(0);
+    loadEmb(); // 질문하는 동안 사례 벡터를 미리 받아 둔다
     ask(q, guide);
   }
 
@@ -437,7 +492,7 @@
       list = [...new Set([...picks.map(p => cases.find(c => c.id === p.id)).filter(Boolean), ...inTopic])];
       list = list.map(it => picks.find(p => p.id === it.id) || it);
     }
-    const ids = list.slice(0, 8).map(it => it.id);
+    let ids = list.slice(0, 8).map(it => it.id);
     renderResults(list, guide ? guide.q : q);
     $("#askView").style.setProperty("--accent", (g && CAT[g.filter.cat]) ? CAT[g.filter.cat].c[0] : "#5b7cff");
     renderSuggest(g);
@@ -449,6 +504,15 @@
       return addBot(`${guide.intro}\n\n먼저 볼 사례 ${refs}`, ids, "RAX 안내");
     }
     const wait = addMsg("bot", '<span class="typing"><i></i><i></i><i></i></span>');
+    // 뜻이 가까운 사례를 더해 목록을 다시 매긴다 (짧은 추가 질문은 앞 질문과 이어서 본다)
+    const sem = await semanticRank(prevQ && q.length < 20 ? `${prevQ} ${q}` : q);
+    if (sem) {
+      const fused = retrieve(q, prevQ, sem);
+      if (fused.slice(0, 8).map(it => it.id).join() !== ids.join()) {
+        list = fused; ids = list.slice(0, 8).map(it => it.id);
+        renderResults(list, q);
+      }
+    }
     const out = await callChat(q, list.slice(0, 8));
     wait.remove();
     if (out.ok) return addBot(out.answer, ids, "AI 답변", true);
