@@ -61,6 +61,7 @@
 첫 화면에서 질문하면 왼쪽에 답변과 추가질문 채팅, 오른쪽에 관련 사례 목록이 나옵니다.
 
 - **질문 제시어**를 고르면 `data/guides.json`의 큐레이션된 안내를 바로 보여 줍니다(AI 호출 없음).
+- **사례 고르기**는 키워드 검색과 의미 검색을 섞습니다. 의미 검색은 배포 때 `scripts/build-embeddings.mjs`가 만든 사례 벡터(`data/embeddings.json`)와 Apps Script가 바꿔 준 질문 벡터를 비교해 뜻이 가까운 사례를 찾습니다. 실패하면 키워드 검색만 씁니다.
 - **직접 쓴 질문**은 관련 사례 최대 8건을 골라 구글 Apps Script(`scripts/apps-script.gs`)로 보내고, Apps Script가 숨겨 둔 키로 OpenAI 호환 LLM API(기본 NVIDIA build.nvidia.com)를 호출합니다. 답은 그 사례만 근거로 하고 `[1]`처럼 출처 번호를 답니다.
 - 키가 없거나 호출이 실패하면 가까운 안내나 검색 요약으로 대신 답합니다.
 - 설정: Apps Script 프로젝트 설정 → 스크립트 속성에 `LLM_API_KEY`, `LLM_MODEL`(필요하면 `LLM_BASE_URL`, `CHAT_DAILY_MAX`)을 넣고 새 버전으로 다시 배포합니다.
