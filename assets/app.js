@@ -481,7 +481,9 @@
     ask(q, guide);
   }
 
-  function semNote(text) { const el = $("#avSem"); if (!el) return; el.textContent = text || ""; el.hidden = !text; }
+  // 의미 검색 사용 여부: 관련 사례 목록 위와, 바로 다음 답변의 이름표 옆에 함께 보여 준다
+  let semTag = "";
+  function semNote(text) { semTag = text || ""; const el = $("#avSem"); if (!el) return; el.textContent = semTag; el.hidden = !semTag; }
   async function ask(q, guide) {
     semHits = new Set(); semNote("");
     const prevQ = conv.lastQ; conv.lastQ = q;
@@ -573,7 +575,8 @@
         const old = isOld(it) && !marked.has(id) ? (marked.add(id), `<span class="old-ref">${it.year}년 사례 · 참고용</span>`) : "";
         return `<button class="src" type="button" data-src="${esc(id)}" title="${esc(titleOf(it))}">${n}</button>${old}`;
       });
-    const el = addMsg("bot", `${label ? `<span class="label">${esc(label)}</span>` : ""}${html}`);
+    const tag = semTag ? `<span class="sem-tag">${esc(semTag)}</span>` : ""; semTag = "";
+    const el = addMsg("bot", `${label ? `<span class="label">${esc(label)}</span>` : ""}${tag}${html}`);
     if (isErr) el.classList.add("err");
     return el;
   }
