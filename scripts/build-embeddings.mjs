@@ -11,6 +11,18 @@ import { createHash } from "node:crypto";
 const MODELS = (process.env.EMBED_MODEL || "nvidia/llama-nemotron-embed-1b-v2,baai/bge-m3,nvidia/nv-embedqa-e5-v5")
   .split(",").map(m => m.trim()).filter(Boolean);
 let MODEL = MODELS[0];
+
+// NVIDIA의 공개 모델 목록에서 지금 쓸 수 있는 임베딩 모델을 찾아 후보 뒤에 붙인다 (키가 필요 없다)
+try {
+  const list = await (await fetch("https://integrate.api.nvidia.com/v1/models")).json();
+  const avail = (list.data || []).map(m => m.id).filter(id => /embed/i.test(id) && !/vl|8b|code/i.test(id));
+  console.log(`NVIDIA 임베딩 모델: ${avail.join(", ") || "(없음)"}`);
+  if (avail.length) {
+    const keep = MODELS.filter(m => avail.includes(m));
+    MODELS.splice(0, MODELS.length, ...keep, ...avail.filter(m => !keep.includes(m)));
+    MODEL = MODELS[0];
+  }
+} catch (err) { console.log(`모델 목록을 읽지 못했어요: ${err}`); }
 const DIMS = Number(process.env.EMBED_DIMS || 1024);
 const OUT = "data/embeddings.json";
 const BATCH = 16;
@@ -73,7 +85,7 @@ for (let i = 0; i < todo.length; i += BATCH) {
         const gone = /embed_(404|410)/.test(String(err)) && Object.keys(items).length === 0;
         const next = MODELS[MODELS.indexOf(MODEL) + 1];
         if (!gone || !next) throw err;
-        console.log(`  모델 ${MODEL}을 쓸 수 없어 ${next}로 바꿉니다`); MODEL = next;
+        console.log(`  모델 ${MODEL}을 쓸 수 없어 ${next}로 바꿉니다 (${String(err).slice(0, 200)})`); MODEL = next;
       }
     }
     out.vectors.forEach((v, k) => { items[part[k].id] = { h: part[k].h, v: pack(v) }; dims = v.length; });
